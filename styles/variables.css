@@ -1,0 +1,20 @@
+:root{
+    /*Colors*/
+    --color-gray-900: #212121;
+    --color-white: #FFFFFF;
+    --color-blue:#0045F4;
+
+    /*Typography*/
+    --font-family-primary:Futura PT, sans-serif;
+    --font-family-secondary:'Inter',sans-serif;
+
+    /*Spacing*/
+    --spacing-unit:7px;
+}
+
+@font-face {
+    font-family: "Inter";
+    font-weight: 500;
+    font-style: normal;
+    src: url('/fonts/Inter-Medium.ttf') format("truetype");
+}

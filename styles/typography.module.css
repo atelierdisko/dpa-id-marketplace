@@ -1,0 +1,46 @@
+
+.beta500{
+    font-size: 90px;
+    font-weight: 500;
+}
+
+.beta400{
+    font-size: 90px;
+}
+
+.gamma500{
+    font-size: 54px;
+    font-weight: 500;
+}
+
+.delta500{
+    font-size: 36px;
+    font-weight: 500;
+}
+
+.delta400{
+    font-size: 36px;
+}
+
+.epsilon500{
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.epsilon400{
+    font-size: 24px;
+}
+
+.zeta500{
+    font-size: 17px;
+    font-weight: 500;
+    text-transform: uppercase;
+
+}
+
+.etaInter500{
+    font-family:var(--font-family-secondary) ;
+    font-size: 17px;
+    font-weight: 500;
+
+}

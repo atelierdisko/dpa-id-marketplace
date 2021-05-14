@@ -1,0 +1,9 @@
+.root{
+    background-color: var(--color-blue);
+    padding: .5em 1em;
+    border-radius: 8px;
+}
+
+.isDoublePadding{
+    padding: 1em 1.5em;
+}
