@@ -5,7 +5,7 @@ import Navigation from "../components/navigation/navigation";
 import Footer from "../components/footer/footer";
 import Hero from "../components/hero/hero";
 import Applications from "../components/applications/applications";
-import Funktionalitaten from "../components/funtionalities/funktionalitäten";
+import Funktionalitaten from "../components/functionalities/functionalities";
 import PartnerProgram from "../components/partnerProgram/partnerProgram";
 import LogIn from "../components/logIn/logIn";
 import {joinClassNames} from "../utilities/componentsHelpers";
