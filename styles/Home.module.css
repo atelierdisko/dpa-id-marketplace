@@ -4,5 +4,17 @@
     min-width: 700px;
     margin: 0 auto;
 }
+.navigation,
+.footer{
+    position: fixed;
+    width: 100%;
+}
 
-.navigation{}
+.navigation{
+    top:0;
+}
+
+.footer{
+    bottom: 0;
+    height: 280px;
+}
