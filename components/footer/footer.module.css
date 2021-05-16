@@ -1,0 +1,27 @@
+.root{
+    background-color: var(--color-gray-900);
+    color: var(--color-white);
+    display: flex;
+    align-items: flex-end;
+}
+
+.container{
+    composes: container from '../../styles/Home.module.css';
+    margin-bottom: calc(var(--spacing-unit)*4);
+}
+
+.logo{
+    grid-column: 1/span 2;
+    margin-bottom: 4px;
+}
+
+.legal{
+    grid-column: span 3/-1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.legal li:not(:last-child){
+    margin-right: calc(var(--spacing-unit)*2);
+}
