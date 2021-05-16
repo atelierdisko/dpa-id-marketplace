@@ -4,6 +4,9 @@
     padding: calc(var(--spacing-unit)*3) 0;
 
 }
+.container{
+    composes: container from '../../styles/Home.module.css';
+}
 
 
 .logo{
@@ -15,7 +18,6 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    list-style: none;
 }
 
 .list li:not(:last-child){
