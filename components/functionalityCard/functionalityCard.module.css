@@ -28,7 +28,7 @@
     height: calc(var(--spacing-unit)*4.5);
 }
 
-.content{
+.container{
     width: 50%;
 
 }
