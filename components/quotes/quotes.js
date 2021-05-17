@@ -11,7 +11,12 @@ export default function Quotes({ className }) {
         <div className={joinClassNames(styles.container, grid.root)}>
           <img src="../images/img2.jpeg" className={styles.image} />
           <div className={styles.description}>
-            <p className={joinClassNames(typography.zeta500, styles.phrase)}>
+            <p
+              className={joinClassNames(
+                typography.zeta500,
+                styles.signalPhrase
+              )}
+            >
               Name der Person — Position der Person
             </p>
             <p className={joinClassNames(typography.gamma500, styles.quote)}>
