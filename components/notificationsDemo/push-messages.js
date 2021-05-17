@@ -393,7 +393,10 @@ ready(() => {
     };
 
     try {
-      const response = await fetch("/select-api");
+      const response = await fetch(
+        "/select-api"
+      ); /* use mock API under /api/select */
+
       if (response.status >= 200 && response.status < 300) {
         const json = await response.json();
         handleNewsData(json);
