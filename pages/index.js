@@ -5,9 +5,8 @@ import Footer from "../components/footer/footer";
 import Hero from "../components/hero/hero";
 import Quotes from "../components/quotes/quotes";
 import PartnerProgram from "../components/partnerProgram/partnerProgram";
-import LogIn from "../components/logIn/logIn";
+import SignIn from "../components/SignIn/signIn";
 import { joinClassNames } from "../utilities/componentsHelpers";
-
 import NotificationsDemo from "../components/notificationsDemo";
 import applicationsData from "../applicationsData";
 import Applications from "../components/applications/applications";
@@ -41,9 +40,9 @@ export default function Home() {
           filters={filters}
           applications={applicationsData}
         />
-        <PartnerProgram className={styles.partnerProgram} />
-        <LogIn className={styles.logIn} />
         <NotificationsDemo />
+        <PartnerProgram className={styles.partnerProgram} />
+        <SignIn className={styles.logIn} />
       </main>
 
       <Footer className={joinClassNames(styles.footer)} />
