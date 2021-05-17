@@ -1,4 +1,4 @@
-export default function Hero() {
-    return(<section>Hero section</section>)
+export default function Hero({className}) {
+    return(<section className={className}>Hero section</section>)
 
 }
