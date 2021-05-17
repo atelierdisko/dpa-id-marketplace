@@ -1,0 +1,32 @@
+.root{
+    background-color: var(--color-gray-900);
+    color: var(--color-white);
+    padding-top: 89px;
+    padding-bottom: 98px;
+}
+.container{
+    composes: container from '../../styles/Home.module.css';
+
+}
+
+.image{
+    grid-column: 1/6;
+    height: 400px;
+    width: 620px;
+}
+.description{
+    grid-column: 7/-2;
+}
+.phrase{
+
+}
+
+.quote{
+    margin-top: calc(var(--spacing-unit)*3);
+}
+
+.slider{
+    grid-column: 7/-2;
+    margin-top: calc(var(--spacing-unit)*6.5);
+
+}
