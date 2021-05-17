@@ -1,8 +1,8 @@
-import styles from "./functionalityCard.module.css";
+import styles from "./applicationCard.module.css";
 import typography from "../../styles/typography.module.css";
 import { joinClassNames } from "../../utilities/componentsHelpers";
 
-export default function FunctionalityCard({
+export default function ApplicationCard({
   title,
   excerpt,
   icon,
@@ -14,7 +14,7 @@ export default function FunctionalityCard({
       <div className={styles.iconContainer}>
         <img className={styles.icon} src={icon} alt="" />
       </div>
-      <div className={styles.content}>
+      <div className={styles.container}>
         <h5 className={joinClassNames(typography.epsilon500, styles.title)}>
           {title}
         </h5>

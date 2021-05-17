@@ -1,38 +1,40 @@
 .root {
-  background-color: var(--color-gray-900);
-  color: var(--color-white);
-  padding-top: 89px;
-  padding-bottom: 98px;
-}
-.container {
   composes: container from "../../styles/Home.module.css";
 }
 
-.image {
-  grid-column: 1/6;
-  height: 400px;
-  width: 620px;
+.title {
+  margin-top: calc(var(--spacing-unit) * 11);
+  grid-column: 1 / span 8;
 }
+
 .description {
-  grid-column: 7/-2;
-}
-.phrase {
-}
-
-.quote {
-  margin-top: calc(var(--spacing-unit) * 3);
+  margin-top: calc(var(--spacing-unit) * 4);
+  grid-column: 1 / span 11;
+  line-height: 1.5em;
 }
 
-.slider {
-  grid-column: 7/-2;
-  margin-top: calc(var(--spacing-unit) * 6.5);
+.filters {
+  grid-column: 1 / span 11;
+  margin-top: 112px;
+  color: var(--color-blue);
 }
 
-.textLoop {
-  padding: 1em 0;
-  background-color: var(--color-green);
-  color: var(--color-white);
-  font-family: var(--font-family-serif);
-  font-size: 28px;
-  line-height: 44px;
+.filters * {
+  margin-right: calc(var(--spacing-unit) * 3);
+}
+
+.list {
+  grid-column: 1/-1;
+  margin-top: calc(var(--spacing-unit) * 6);
+}
+
+.list > div {
+  margin-top: calc(var(--spacing-unit) * 2);
+}
+
+.showMoreButton {
+  grid-column: 1/-1;
+  margin-top: calc(var(--spacing-unit) * 6);
+  display: flex;
+  justify-content: center;
 }

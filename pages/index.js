@@ -1,15 +1,14 @@
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Navigation from "../components/navigation/navigation";
 import Footer from "../components/footer/footer";
 import Hero from "../components/hero/hero";
-import Applications from "../components/applications/applications";
-import Funktionalitaten from "../components/functionalities/functionalities";
+import Quotes from "../components/quotes/quotes";
 import PartnerProgram from "../components/partnerProgram/partnerProgram";
 import LogIn from "../components/logIn/logIn";
 import { joinClassNames } from "../utilities/componentsHelpers";
-import functionalitiesData from "../functionalitiesData";
+import applicationsData from "../applicationsData";
+import Applications from "../components/applications/applications";
 
 export default function Home() {
   const filters = [
@@ -34,11 +33,11 @@ export default function Home() {
 
       <main>
         <Hero className={styles.hero} />
-        <Applications className={styles.applications} />
-        <Funktionalitaten
-          className={styles.functionalities}
+        <Quotes className={styles.quotes} />
+        <Applications
+          className={styles.applications}
           filters={filters}
-          functionalities={functionalitiesData}
+          applications={applicationsData}
         />
         <PartnerProgram className={styles.partnerProgram} />
         <LogIn className={styles.logIn} />
