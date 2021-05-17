@@ -1,52 +1,48 @@
-
-.beta500{
-    font-size: 90px;
-    font-weight: 500;
-    line-height: 108px;
-    letter-spacing: -3px;
+.beta500 {
+  font-size: 90px;
+  font-weight: 500;
+  line-height: 108px;
+  letter-spacing: -3px;
 }
 
-.beta400{
-    font-size: 90px;
+.beta400 {
+  font-size: 90px;
 }
 
-.gamma500{
-    font-size: 54px;
-    font-weight: 500;
-    line-height: 57px;
+.gamma500 {
+  font-size: 54px;
+  font-weight: 500;
+  line-height: 57px;
 }
 
-.delta500{
-    font-size: 36px;
-    font-weight: 500;
+.delta500 {
+  font-size: 36px;
+  font-weight: 500;
 }
 
-.delta400{
-    font-size: 36px;
-    line-height: 51px;
+.delta400 {
+  font-size: 36px;
+  line-height: 51px;
 }
 
-.epsilon500{
-    font-size: 24px;
-    font-weight: 500;
+.epsilon500 {
+  font-size: 24px;
+  font-weight: 500;
 }
 
-.epsilon400{
-    font-size: 24px;
-
+.epsilon400 {
+  font-size: 24px;
 }
 
-.zeta500{
-    font-size: 17px;
-    font-weight: 500;
-    line-height: 25px;
-    text-transform: uppercase;
-
+.zeta500 {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 25px;
+  text-transform: uppercase;
 }
 
-.etaInter500{
-    font-family:var(--font-family-secondary) ;
-    font-size: 17px;
-    font-weight: 500;
-
+.etaInter500 {
+  font-family: var(--font-family-secondary);
+  font-size: 17px;
+  font-weight: 500;
 }

@@ -1,34 +1,36 @@
-.container{
-    width: 90%;
-    max-width: 1328px;
-    min-width: 700px;
-    margin: 0 auto;
+.container {
+  width: 90%;
+  max-width: 1328px;
+  min-width: 700px;
+  margin: 0 auto;
 }
 .navigation,
-.footer{
-    /*position: fixed;*/
-    width: 100%;
+.footer {
+  /*position: fixed;*/
+  width: 100%;
 }
 
-.navigation{
-    top:0;
+.navigation {
+  top: 0;
 }
 
-.footer{
-    bottom: 0;
-    height: 280px;
+.footer {
+  bottom: 0;
+  height: 280px;
 }
-.hero{
-    margin-top: 148px;
+.hero {
+  margin-top: 148px;
 }
-.applications{
-    margin-top: 102px;
-}
-
-.functionalities{
-    margin-bottom: 280px;
+.applications {
+  margin-top: 102px;
 }
 
-.partnerProgram{}
+.functionalities {
+  margin-bottom: 280px;
+}
 
-.logIn{}
+.partnerProgram {
+}
+
+.logIn {
+}

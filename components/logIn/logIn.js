@@ -1,4 +1,3 @@
 export default function LogIn() {
-    return(<section>Anmelden section</section>)
-
+  return <section>Anmelden section</section>;
 }

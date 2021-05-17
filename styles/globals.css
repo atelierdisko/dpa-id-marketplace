@@ -1,4 +1,4 @@
-@import './variables.css';
+@import "./variables.css";
 
 html,
 body,
@@ -9,7 +9,7 @@ h4,
 h5,
 h6,
 p,
-ul{
+ul {
   padding: 0;
   margin: 0;
   font-family: var(--font-family-primary);
@@ -17,7 +17,7 @@ ul{
   font-weight: 400;
 }
 
-ul{
+ul {
   list-style: none;
 }
 

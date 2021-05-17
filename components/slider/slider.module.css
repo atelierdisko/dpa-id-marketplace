@@ -1,22 +1,23 @@
-.root{
-    display: flex;
-    justify-content: space-between;
+.root {
+  display: flex;
+  justify-content: space-between;
 }
 
-.back{}
-.forward{}
-.pages{
-    display: flex;
-
+.back {
+}
+.forward {
+}
+.pages {
+  display: flex;
 }
 
-.page{
-    height: 1em;
-    width: 1em;
-    margin: 0 .25em;
-    border-radius: 50%;
-    background-color: var(--color-white);
+.page {
+  height: 1em;
+  width: 1em;
+  margin: 0 0.25em;
+  border-radius: 50%;
+  background-color: var(--color-white);
 }
-.isActive{
-    background-color: var(--color-blue);
+.isActive {
+  background-color: var(--color-blue);
 }

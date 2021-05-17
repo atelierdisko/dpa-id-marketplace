@@ -1,32 +1,31 @@
-:root{
-    /*Colors*/
-    --color-gray-900: #212121;
-    --color-gray-200: #EEEEEE;
-    --color-white: #FFFFFF;
-    --color-blue:#0045F4;
-    --color-royal-blue:#3A67E6;
-    --color-green:#00B064;
+:root {
+  /*Colors*/
+  --color-gray-900: #212121;
+  --color-gray-200: #eeeeee;
+  --color-white: #ffffff;
+  --color-blue: #0045f4;
+  --color-royal-blue: #3a67e6;
+  --color-green: #00b064;
 
+  /*Typography*/
+  --font-family-primary: Futura, sans-serif;
+  --font-family-secondary: "Inter", sans-serif;
+  --font-family-serif: "IBM Plex Mono", monospace, serif;
 
-    /*Typography*/
-    --font-family-primary: Futura, sans-serif;
-    --font-family-secondary:'Inter',sans-serif;
-    --font-family-serif:'IBM Plex Mono',monospace,serif;
-
-    /*Spacing*/
-    --spacing-unit:7px;
+  /*Spacing*/
+  --spacing-unit: 7px;
 }
 
 @font-face {
-    font-family: "Inter";
-    font-weight: 500;
-    font-style: normal;
-    src: url('/fonts/Inter-Medium.ttf') format("truetype");
+  font-family: "Inter";
+  font-weight: 500;
+  font-style: normal;
+  src: url("/fonts/Inter-Medium.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: "IBM Plex Mono";
-    font-weight: 400;
-    font-style: normal;
-    src: url('/fonts/IBMPlexMono-Regular.ttf') format("truetype");
+  font-family: "IBM Plex Mono";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/fonts/IBMPlexMono-Regular.ttf") format("truetype");
 }

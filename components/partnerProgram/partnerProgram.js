@@ -1,3 +1,3 @@
 export default function PartnerProgram() {
-    return(<section>PartnerProgramm section</section>)
+  return <section>PartnerProgramm section</section>;
 }
