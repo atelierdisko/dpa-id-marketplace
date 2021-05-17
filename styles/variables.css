@@ -1,11 +1,14 @@
 :root{
     /*Colors*/
     --color-gray-900: #212121;
+    --color-gray-200: #EEEEEE;
     --color-white: #FFFFFF;
     --color-blue:#0045F4;
+    --color-royal-blue:#3A67E6;
+
 
     /*Typography*/
-    --font-family-primary:Futura PT, sans-serif;
+    --font-family-primary: Futura, sans-serif;
     --font-family-secondary:'Inter',sans-serif;
 
     /*Spacing*/

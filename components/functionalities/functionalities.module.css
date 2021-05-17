@@ -27,10 +27,15 @@
 .list{
     grid-column: 1/-1;
     margin-top: calc(var(--spacing-unit)*6);
-
 }
+
+.list > div {
+    margin-top: calc(var(--spacing-unit)*2);
+}
+
 .showMoreButton{
     grid-column: 1/-1;
+    margin-top: calc(var(--spacing-unit)*6);
     display: flex;
     justify-content: center;
 }
