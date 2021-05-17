@@ -6,6 +6,7 @@ import Slider from "../slider/slider";
 
 export default function Applications({className}) {
     return (
+        <>
         <section className={joinClassNames(styles.root,className)}>
             <div className={joinClassNames(styles.container,grid.root)}>
                 <img src='../images/img2.jpeg' className={styles.image}/>
@@ -16,6 +17,8 @@ export default function Applications({className}) {
                 </div>
             </div>
         </section>
+        <div className={styles.textLoop}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+        </>
     )
 
 }
