@@ -2,6 +2,8 @@
 .beta500{
     font-size: 90px;
     font-weight: 500;
+    line-height: 108px;
+    letter-spacing: -3px;
 }
 
 .beta400{
@@ -20,6 +22,7 @@
 
 .delta400{
     font-size: 36px;
+    line-height: 51px;
 }
 
 .epsilon500{
