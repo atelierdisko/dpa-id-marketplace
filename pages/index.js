@@ -7,6 +7,8 @@ import Quotes from "../components/quotes/quotes";
 import PartnerProgram from "../components/partnerProgram/partnerProgram";
 import LogIn from "../components/logIn/logIn";
 import { joinClassNames } from "../utilities/componentsHelpers";
+
+import NotificationsDemo from "../components/notificationsDemo";
 import applicationsData from "../applicationsData";
 import Applications from "../components/applications/applications";
 
@@ -41,6 +43,7 @@ export default function Home() {
         />
         <PartnerProgram className={styles.partnerProgram} />
         <LogIn className={styles.logIn} />
+          <NotificationsDemo />
       </main>
 
       <Footer className={joinClassNames(styles.footer)} />
