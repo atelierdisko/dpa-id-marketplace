@@ -22,7 +22,15 @@ export default function Funktionalitaten({functionalities,filters,className}) {
                 <Button isActive={true}>Alle anzeigen</Button>
                 {/*{filters.map(filter=>(<Button isActive={filter.isActive}>{filter.title}</Button>))}*/}
             </div>
-            <div className={styles.list}>{functionalities.map(functionality=>(<FunctionalityCard/>))}</div>
+            <div className={styles.list}>{functionalities.map(functionality=>
+                (<FunctionalityCard
+                    title={functionality.title}
+                    excerpt={functionality.excerpt}
+                    description={functionality.description}
+                    icon={functionality.icon}
+                    images={functionality.images}
+                />))}
+            </div>
             <div className={styles.showMoreButton}>
                 <Button isActive={true} isDoublePadding={true} >Mehr anzeigen</Button>
             </div>
