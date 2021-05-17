@@ -5,11 +5,13 @@
     --color-white: #FFFFFF;
     --color-blue:#0045F4;
     --color-royal-blue:#3A67E6;
+    --color-green:#00B064;
 
 
     /*Typography*/
     --font-family-primary: Futura, sans-serif;
     --font-family-secondary:'Inter',sans-serif;
+    --font-family-serif:'IBM Plex Mono',monospace,serif;
 
     /*Spacing*/
     --spacing-unit:7px;
@@ -20,4 +22,11 @@
     font-weight: 500;
     font-style: normal;
     src: url('/fonts/Inter-Medium.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: "IBM Plex Mono";
+    font-weight: 400;
+    font-style: normal;
+    src: url('/fonts/IBMPlexMono-Regular.ttf') format("truetype");
 }
