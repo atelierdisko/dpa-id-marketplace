@@ -29,12 +29,12 @@ export default function Navigation({className}) {
                     </li>
                     <li className={typography.etaInter500}>
                         <Link href='#logIn'>
-                            <a className={styles.logIn}>Anmelden</a>
+                            <Button className={styles.logIn}>Anmelden</Button>
                         </Link>
                     </li>
                     <li className={typography.etaInter500}>
                         <Link href='#createId'>
-                            <Button>Jetzt dpa ID anlegen</Button>
+                            <Button isActive={true}>Jetzt dpa ID anlegen</Button>
                         </Link>
                     </li>
                 </ul></div>
