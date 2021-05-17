@@ -43,7 +43,7 @@ export default function Home() {
         />
         <PartnerProgram className={styles.partnerProgram} />
         <LogIn className={styles.logIn} />
-          <NotificationsDemo />
+        <NotificationsDemo />
       </main>
 
       <Footer className={joinClassNames(styles.footer)} />
