@@ -17,8 +17,11 @@ export default function Applications({ applications, filters, className }) {
         voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
         clita kasd gubergren, no sea takimata.
       </p>
+      <p className={joinClassNames(styles.filterOptions, typography.zeta500)}>
+        Filteroptionen:
+      </p>
       <div className={styles.filters}>
-        <Button className={styles.filter}>Aktuelles</Button>
+        <Button>Aktuelles</Button>
         <Button>Recherche</Button>
         <Button>Planung</Button>
         <Button>Distribution</Button>

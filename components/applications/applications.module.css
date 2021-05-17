@@ -13,9 +13,14 @@
   line-height: 1.5em;
 }
 
+.filterOptions {
+  grid-column: 1 / span 2;
+  margin-top: calc(var(--spacing-unit) * 11);
+}
+
 .filters {
   grid-column: 1 / span 11;
-  margin-top: 112px;
+  margin-top: calc(var(--spacing-unit) * 4);
   color: var(--color-blue);
 }
 
