@@ -1,0 +1,52 @@
+.root {
+  background-color: var(--color-royal-blue);
+  color: var(--color-white);
+  margin-top: calc(var(--spacing-unit) * 17);
+  padding-bottom: calc(var(--spacing-unit) * 12.5);
+}
+
+.container {
+  composes: container from "../../styles/Home.module.css";
+}
+
+.signalPhrase {
+  margin-top: calc(var(--spacing-unit) * 9);
+  grid-column: 1 / span 2;
+}
+
+.title {
+  margin-top: var(--spacing-unit);
+  grid-column: 1 / span 5;
+}
+
+.description {
+  margin-top: calc(var(--spacing-unit) * 3);
+  grid-column: 1 / span 7;
+  color: var(--color-gray-900);
+}
+
+.callToActionButton {
+  height: calc(var(--spacing-unit) * 6.4);
+  grid-column: 8 / span 4;
+  grid-row: 3 / span 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-white);
+  box-shadow: 0 20px 40px 0 rgba(26, 30, 40, 0.3);
+  border-radius: 8px;
+  padding: 0 calc(var(--spacing-unit) * 3);
+  margin: 0 calc(var(--spacing-unit) * 2);
+}
+
+.logo {
+  width: 27px;
+  height: 27px;
+  margin-right: calc(var(--spacing-unit) * 3);
+}
+
+.callToAction {
+  color: var(--color-gray-900);
+  font-size: 22px;
+  line-height: 32px;
+}
