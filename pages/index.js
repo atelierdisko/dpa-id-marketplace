@@ -9,6 +9,7 @@ import Funktionalitaten from "../components/functionalities/functionalities";
 import PartnerProgram from "../components/partnerProgram/partnerProgram";
 import LogIn from "../components/logIn/logIn";
 import {joinClassNames} from "../utilities/componentsHelpers";
+import functionalitiesData from "../functionalitiesData";
 
 export default function Home() {
     const filters=['Aktuelles','Recherche','Planung','Distribution', 'Audio','Video','Visuals','Daten','Alle anzeigen']
@@ -24,7 +25,7 @@ export default function Home() {
       <main>
           <Hero className={styles.hero}/>
           <Applications className={styles.applications}/>
-          <Funktionalitaten className={styles.functionalities} filters={filters}/>
+          <Funktionalitaten className={styles.functionalities} filters={filters} functionalities={functionalitiesData}/>
           <PartnerProgram className={styles.partnerProgram}/>
           <LogIn className={styles.logIn}/>
       </main>
