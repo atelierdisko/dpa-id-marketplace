@@ -6,7 +6,7 @@
 }
 .navigation,
 .footer{
-    position: fixed;
+    /*position: fixed;*/
     width: 100%;
 }
 
@@ -23,7 +23,9 @@
 }
 .applications{}
 
-.functionalities{}
+.functionalities{
+    margin-bottom: 280px;
+}
 
 .partnerProgram{}
 
