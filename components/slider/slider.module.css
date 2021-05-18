@@ -3,11 +3,14 @@
   justify-content: space-between;
 }
 
-.back {
-}
+.back,
 .forward {
+  background: none;
+  border: none;
+  color: var(--color-white);
 }
-.pages {
+
+.pageContainer {
   display: flex;
 }
 
@@ -20,4 +23,8 @@
 }
 .isActive {
   background-color: var(--color-blue);
+}
+
+.isDisabled {
+  color: rgba(255, 255, 255, 0.5);
 }

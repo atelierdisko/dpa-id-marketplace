@@ -2,27 +2,43 @@ import styles from "./slider.module.css";
 import typography from "../../styles/typography.module.css";
 import { joinClassNames } from "../../utilities/componentsHelpers";
 
-export default function Slider({ array, activePage, className }) {
+export default function Slider({ array, activePage, className, onClick }) {
   return (
     <div className={joinClassNames(className, styles.root)}>
-      <div className={joinClassNames(typography.zeta500, styles.back)}>
+      <button
+        className={joinClassNames(
+          typography.zeta500,
+          styles.back,
+          activePage === 0 && styles.isDisabled
+        )}
+        onClick={onClick}
+        name="back"
+      >
         ‹ Zurück
-      </div>
-      <div className={styles.pages}>
+      </button>
+      <div className={styles.pageContainer}>
         {array.map((el, index) => (
           <div
             className={joinClassNames(
               styles.page,
-              activePage === index + 1 && styles.isActive
+              activePage === index && styles.isActive
             )}
           >
             {}
           </div>
         ))}
       </div>
-      <div className={joinClassNames(typography.zeta500, styles.forward)}>
+      <button
+        className={joinClassNames(
+          typography.zeta500,
+          styles.forward,
+          activePage === array.length - 1 && styles.isDisabled
+        )}
+        onClick={onClick}
+        name="forward"
+      >
         Weiter ›
-      </div>
+      </button>
     </div>
   );
 }
