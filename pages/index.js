@@ -9,6 +9,7 @@ import SignIn from "../components/SignIn/signIn";
 import { joinClassNames } from "../utilities/componentsHelpers";
 import NotificationsDemo from "../components/notificationsDemo";
 import applicationsData from "../applicationsData";
+import quotesData from "../quotesData";
 import Applications from "../components/applications/applications";
 
 export default function Home() {
@@ -34,7 +35,7 @@ export default function Home() {
 
       <main>
         <Hero className={styles.hero} />
-        <Quotes className={styles.quotes} />
+        <Quotes className={styles.quotes} data={quotesData} />
         <Applications
           className={styles.applications}
           filters={filters}
