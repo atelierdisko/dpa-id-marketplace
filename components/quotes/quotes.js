@@ -26,7 +26,6 @@ export default function Quotes({ className, data }) {
     setCurrentSignalPhrase(data[currentSlide].signalPhrase);
     setCurrentQuote(data[currentSlide].quote);
     setCurrentImage(data[currentSlide].image);
-    console.log(currentSlide);
   }, [currentSlide]);
 
   return (
