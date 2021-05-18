@@ -3,6 +3,7 @@ import typography from "../../styles/typography.module.css";
 import grid from "../../styles/grid.module.css";
 import { joinClassNames } from "../../utilities/componentsHelpers";
 import Slider from "../slider/slider";
+import Marquee from "../marquee/marquee";
 
 export default function Quotes({ className }) {
   return (
@@ -31,9 +32,11 @@ export default function Quotes({ className }) {
           </div>
         </div>
       </section>
-      <div className={styles.textLoop}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      </div>
+      <Marquee className={styles.textLoop}>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ein Laufband
+        mit kurzen, prägnaten Benefits. Suspendisse quis mattis orci. Curabitur
+        libero erat, imperdiet eu posuere ac, blandit ut sem.
+      </Marquee>
     </>
   );
 }

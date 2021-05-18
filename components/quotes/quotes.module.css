@@ -29,10 +29,4 @@
 }
 
 .textLoop {
-  padding: 1em 0;
-  background-color: var(--color-green);
-  color: var(--color-white);
-  font-family: var(--font-family-serif);
-  font-size: 28px;
-  line-height: 44px;
 }
