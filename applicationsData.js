@@ -5,7 +5,7 @@ export default [
     description:
       "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
     images: ["./images/img1.jpeg", "./images/img2.jpeg"],
-    icon: "./icons/dpa-News 1.png",
+    icon: "dpaNews",
   },
   {
     title: "dpa-Select",
@@ -13,7 +13,7 @@ export default [
     description:
       "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
     images: ["./images/img1.jpeg", "./images/img2.jpeg"],
-    icon: "./icons/dpa-select.png",
+    icon: "dpaSelect",
   },
   {
     title: "dpa-Agenda",
@@ -21,7 +21,7 @@ export default [
     description:
       "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
     images: ["./images/img1.jpeg", "./images/img2.jpeg"],
-    icon: "./icons/dpa-agenda.png",
+    icon: "dpaAgenda",
   },
   {
     title: "dpa-Videoportal",
@@ -29,7 +29,7 @@ export default [
     description:
       "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
     images: ["./images/img1.jpeg", "./images/img2.jpeg"],
-    icon: "./icons/dpa-videoportal.png",
+    icon: "dpaVideoPortal",
   },
   {
     title: "dpa-Shop",
@@ -37,7 +37,7 @@ export default [
     description:
       "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
     images: ["./images/img1.jpeg", "./images/img2.jpeg"],
-    icon: "./icons/dpa-shop.png",
+    icon: "dpaShop",
   },
   {
     title: "dpa-picture alliance",
@@ -45,7 +45,7 @@ export default [
     description:
       "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
     images: ["./images/img1.jpeg", "./images/img2.jpeg"],
-    icon: "./icons/dpa-pa.png",
+    icon: "dpaPictureAlliance",
   },
   {
     title: "Polit-X",
@@ -53,7 +53,7 @@ export default [
     description:
       "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
     images: ["./images/img1.jpeg", "./images/img2.jpeg"],
-    icon: "./icons/dpa-politics.png",
+    icon: "politics",
   },
   {
     title: "BotTalk",
@@ -61,7 +61,7 @@ export default [
     description:
       "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
     images: ["./images/img1.jpeg", "./images/img2.jpeg"],
-    icon: "./icons/bottalk.png",
+    icon: "botTalk",
   },
   {
     title: "Lorem ipsum",
@@ -69,7 +69,7 @@ export default [
     description:
       "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
     images: ["./images/img1.jpeg", "./images/img2.jpeg"],
-    icon: "./icons/dpa-general.png",
+    icon: "generalIcon",
   },
   {
     title: "Lorem ipsum",
@@ -77,7 +77,7 @@ export default [
     description:
       "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
     images: ["./images/img1.jpeg", "./images/img2.jpeg"],
-    icon: "./icons/dpa-general.png",
+    icon: "generalIcon",
   },
   {
     title: "Lorem ipsum",
@@ -85,7 +85,7 @@ export default [
     description:
       "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
     images: ["./images/img1.jpeg", "./images/img2.jpeg"],
-    icon: "./icons/dpa-general.png",
+    icon: "generalIcon",
   },
   {
     title: "Lorem ipsum",
@@ -93,6 +93,6 @@ export default [
     description:
       "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
     images: ["./images/img1.jpeg", "./images/img2.jpeg"],
-    icon: "./icons/dpa-general.png",
+    icon: "generalIcon",
   },
 ];
