@@ -1,0 +1,32 @@
+.root {
+  padding: 1em 0;
+  background-color: var(--color-green);
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.2),
+    rgba(255, 255, 255, 0.5)
+  );
+}
+
+.content {
+  display: flex;
+  color: var(--color-white);
+  font-family: var(--font-family-serif);
+  font-size: 28px;
+  line-height: 44px;
+  animation: scrolling 20s linear infinite;
+}
+/*todo: ask Philipp how oto improve this animation.*/
+@keyframes scrolling {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(-230vw);
+  }
+}
+
+.word {
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
