@@ -1,6 +1,7 @@
 import styles from "./applicationCard.module.css";
 import typography from "../../styles/typography.module.css";
 import { joinClassNames } from "../../utilities/componentsHelpers";
+import Icons from "../icons/icons";
 
 export default function ApplicationCard({
   title,
@@ -12,7 +13,7 @@ export default function ApplicationCard({
   return (
     <div className={styles.root}>
       <div className={styles.iconContainer}>
-        <img className={styles.icon} src={icon} alt="" />
+        <Icons icon={icon} className={styles.icon} />
       </div>
       <div className={styles.textContainer}>
         <h5 className={joinClassNames(typography.epsilon500, styles.title)}>

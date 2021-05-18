@@ -25,7 +25,7 @@
 }
 
 .icon {
-  height: calc(var(--spacing-unit) * 4.5);
+  height: calc(var(--spacing-unit) * 6);
 }
 
 .textContainer {
