@@ -1,16 +1,39 @@
 import styles from "./quotes.module.css";
 import typography from "../../styles/typography.module.css";
-import grid from "../../styles/grid.module.css";
 import { joinClassNames } from "../../utilities/componentsHelpers";
 import Slider from "../slider/slider";
 import Marquee from "../marquee/marquee";
+import { useEffect, useState } from "react";
 
-export default function Quotes({ className }) {
+export default function Quotes({ className, data }) {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentSignalPhrase, setCurrentSignalPhrase] = useState(
+    data[0].signalPhrase
+  );
+  const [currentQuote, setCurrentQuote] = useState(data[0].quote);
+  const [currentImage, setCurrentImage] = useState(data[0].image);
+
+  const handleClick = ({ target }) => {
+    if (target.name === "forward" && currentSlide !== data.length - 1) {
+      setCurrentSlide((prevSlide) => prevSlide + 1);
+    }
+    if (target.name === "back" && currentSlide !== 0) {
+      setCurrentSlide((prevSlide) => prevSlide - 1);
+    }
+  };
+
+  useEffect(() => {
+    setCurrentSignalPhrase(data[currentSlide].signalPhrase);
+    setCurrentQuote(data[currentSlide].quote);
+    setCurrentImage(data[currentSlide].image);
+    console.log(currentSlide);
+  }, [currentSlide]);
+
   return (
     <>
       <section className={joinClassNames(styles.root, className)}>
-        <div className={joinClassNames(styles.container, grid.root)}>
-          <img src="../images/img2.jpeg" className={styles.image} />
+        <img src={currentImage} className={styles.image} alt={""} />
+        <div className={joinClassNames(styles.container)}>
           <div className={styles.description}>
             <p
               className={joinClassNames(
@@ -18,16 +41,16 @@ export default function Quotes({ className }) {
                 styles.signalPhrase
               )}
             >
-              Name der Person — Position der Person
+              {currentSignalPhrase}
             </p>
             <p className={joinClassNames(typography.gamma500, styles.quote)}>
-              „Hier steht ein kurzer Text mit einem Zitat. Lorem ipsum dolor sit
-              amet, consetetur sadipscing elitr”
+              {currentQuote}
             </p>
             <Slider
-              array={[1, 2, 3, 4, 5]}
-              activePage={1}
+              array={[...Array(data.length).keys()]}
+              activePage={currentSlide}
               className={styles.slider}
+              onClick={handleClick}
             />
           </div>
         </div>

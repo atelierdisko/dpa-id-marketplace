@@ -1,21 +1,21 @@
 .root {
-  background-color: var(--color-gray-900);
-  color: var(--color-white);
-  padding-top: 89px;
-  padding-bottom: 98px;
+  display: flex;
 }
 .container {
-  composes: container from "../../styles/Home.module.css";
+  background-color: var(--color-gray-900);
+  color: var(--color-white);
+  padding: calc(var(--spacing-unit) * 10) calc(var(--spacing-unit) * 21)
+    calc(var(--spacing-unit) * 12) calc(var(--spacing-unit) * 8);
+}
+/*todo: how to make the size of the image responsive to the text length*/
+.image {
+  height: auto;
+  width: 677px;
 }
 
-.image {
-  grid-column: 1/6;
-  height: 400px;
-  width: 620px;
-}
 .description {
-  grid-column: 7/-2;
 }
+
 .signalPhrase {
 }
 
@@ -24,7 +24,6 @@
 }
 
 .slider {
-  grid-column: 7/-2;
   margin-top: calc(var(--spacing-unit) * 6.5);
 }
 
