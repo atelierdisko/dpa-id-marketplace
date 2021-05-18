@@ -3,6 +3,7 @@ import styles from "./partnerProgram.module.css";
 import typography from "../../styles/typography.module.css";
 import grid from "../../styles/grid.module.css";
 import { joinClassNames } from "../../utilities/componentsHelpers";
+import Icons from "../icons/icons";
 
 export default function PartnerProgram() {
   return (
@@ -26,7 +27,74 @@ export default function PartnerProgram() {
         >
           Zur Partnerprogramm-Seite
         </Button>
-        <div className={styles.applicationsMenu}></div>
+        <Icons icon="appMenu" className={styles.appMenuIcon} />
+        <Icons icon="appContainer" className={styles.applicationsMenu} />
+        <div className={styles.appContainer}>
+          <div className={styles.cell}>
+            <Icons icon="dpaNews" className={styles.icon} />
+            <div
+              className={joinClassNames(styles.appName, typography.etaInter500)}
+            >
+              dpa-News
+            </div>
+          </div>
+          <div className={styles.cell}>
+            <Icons icon="dpaSelect" />
+            <div
+              className={joinClassNames(styles.appName, typography.etaInter500)}
+            >
+              dpa-Select
+            </div>
+          </div>
+          <div className={styles.cell}>
+            <Icons icon="dpaAgenda" />
+            <div
+              className={joinClassNames(styles.appName, typography.etaInter500)}
+            >
+              dpa-Agenda
+            </div>
+          </div>
+          <div className={styles.cell}>
+            <Icons icon="dpaVideoPortal" />
+            <div
+              className={joinClassNames(styles.appName, typography.etaInter500)}
+            >
+              dpa-Videoportal
+            </div>
+          </div>
+          <div className={styles.cell}>
+            <Icons icon="dpaShop" />
+            <div
+              className={joinClassNames(styles.appName, typography.etaInter500)}
+            >
+              dpa-Shop
+            </div>
+          </div>
+          <div className={styles.cell}>
+            <Icons icon="dpaPictureAlliance" />
+            <div
+              className={joinClassNames(styles.appName, typography.etaInter500)}
+            >
+              dpa picture alliance
+            </div>
+          </div>
+          <div className={styles.cell}>
+            <Icons icon="politics" />
+            <div
+              className={joinClassNames(styles.appName, typography.etaInter500)}
+            >
+              Polit-X
+            </div>
+          </div>
+          <div className={styles.cell}>
+            <Icons icon="botTalk" />
+            <div
+              className={joinClassNames(styles.appName, typography.etaInter500)}
+            >
+              BotTalk
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

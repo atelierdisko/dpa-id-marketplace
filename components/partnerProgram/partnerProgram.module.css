@@ -1,7 +1,15 @@
 .root {
+  background: linear-gradient(
+    to right,
+    var(--color-white) 60%,
+    rgba(0, 176, 100, 0.5) 60%,
+    rgba(0, 176, 100, 1)
+  );
+  padding-bottom: calc(var(--spacing-unit) * 17);
 }
 .container {
   composes: container from "../../styles/Home.module.css";
+  grid-template-rows: repeat(auto-fill, auto);
 }
 
 .signalPhrase {
@@ -19,6 +27,35 @@
   margin-top: calc(var(--spacing-unit) * 12);
   grid-column: 1 / span 3;
 }
+.appMenuIcon {
+  grid-column: -2;
+  grid-row: 1;
+  align-self: flex-end;
+}
+
 .applicationsMenu {
   grid-column: 7/-1;
+  grid-row: 2 / 6;
+  display: grid;
+}
+.appContainer {
+  /*background-color: rgba(2, 69, 45, 0.3);*/
+  margin: 33px 11px 26px 21px;
+  grid-column: 7/-1;
+  grid-row: 2/6;
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  align-items: center;
+}
+.cell {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+}
+.icon {
+  justify-self: center;
+}
+.appName {
+  text-align: center;
+  /*width: 90%;*/
 }
