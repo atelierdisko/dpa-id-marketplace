@@ -1,7 +1,6 @@
 .root {
   background-color: var(--color-royal-blue);
   color: var(--color-white);
-  margin-top: calc(var(--spacing-unit) * 17);
   padding-bottom: calc(var(--spacing-unit) * 12.5);
 }
 
