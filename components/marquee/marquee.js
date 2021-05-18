@@ -6,8 +6,10 @@ export default function Marquee({ children, className }) {
   return (
     <div className={joinClassNames(styles.root, className)}>
       <ul className={joinClassNames(styles.content)}>
-        {words.map((word) => (
-          <li className={styles.word}>{word}</li>
+        {words.map((word, index) => (
+          <li className={styles.word} key={index}>
+            {word}
+          </li>
         ))}
       </ul>
     </div>
