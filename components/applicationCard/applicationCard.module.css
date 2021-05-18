@@ -28,8 +28,8 @@
   height: calc(var(--spacing-unit) * 4.5);
 }
 
-.container {
-  width: 50%;
+.textContainer {
+  flex-grow: 1;
 }
 
 .title {
@@ -39,7 +39,7 @@
 }
 
 .showIcon {
-  justify-self: flex-end;
+  margin-right: calc(var(--spacing-unit) * 4);
 }
 
 .isOpen {

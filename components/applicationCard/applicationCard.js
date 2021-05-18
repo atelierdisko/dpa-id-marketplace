@@ -14,7 +14,7 @@ export default function ApplicationCard({
       <div className={styles.iconContainer}>
         <img className={styles.icon} src={icon} alt="" />
       </div>
-      <div className={styles.container}>
+      <div className={styles.textContainer}>
         <h5 className={joinClassNames(typography.epsilon500, styles.title)}>
           {title}
         </h5>
