@@ -69,7 +69,7 @@ export default [
     description:
       "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
     images: ["./images/img1.jpeg", "./images/img2.jpeg"],
-    icon: "generalIcon",
+    icon: "genericIcon",
   },
   {
     title: "Lorem ipsum",
@@ -77,7 +77,7 @@ export default [
     description:
       "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
     images: ["./images/img1.jpeg", "./images/img2.jpeg"],
-    icon: "generalIcon",
+    icon: "genericIcon",
   },
   {
     title: "Lorem ipsum",
@@ -85,7 +85,7 @@ export default [
     description:
       "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
     images: ["./images/img1.jpeg", "./images/img2.jpeg"],
-    icon: "generalIcon",
+    icon: "genericIcon",
   },
   {
     title: "Lorem ipsum",
@@ -93,6 +93,6 @@ export default [
     description:
       "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
     images: ["./images/img1.jpeg", "./images/img2.jpeg"],
-    icon: "generalIcon",
+    icon: "genericIcon",
   },
 ];
