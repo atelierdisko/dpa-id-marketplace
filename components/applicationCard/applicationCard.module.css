@@ -52,23 +52,24 @@
 }
 
 .showIconIsOpened {
-  -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 .details {
-  display: none;
-  visibility: hidden;
+  background-color: var(--color-gray-200);
+  display: flex;
+  justify-content: space-between;
+  height: 0;
+  opacity: 0;
   margin-left: calc(var(--spacing-unit) * 27.5);
   margin-right: calc(var(--spacing-unit) * 9);
-  padding-bottom: calc(var(--spacing-unit) * 7);
-  background-color: var(--color-gray-200);
-  transition: visibility 200ms;
+  padding-bottom: 0;
+  transition: opacity 50ms, height 200ms, padding-bottom 10ms;
 }
 
 .detailsDisplayed {
-  visibility: visible;
-  display: flex;
-  justify-content: space-between;
+  padding-bottom: calc(var(--spacing-unit) * 7);
+  opacity: 1;
+  height: auto;
 }
 
 .description {
