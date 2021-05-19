@@ -2,6 +2,9 @@ import styles from "./applicationCard.module.css";
 import typography from "../../styles/typography.module.css";
 import { joinClassNames } from "../../utilities/componentsHelpers";
 import Icons from "../icons/icons";
+import Button from "../button/button";
+import Slider from "../slider/slider";
+import { useEffect, useState } from "react";
 
 export default function ApplicationCard({
   title,
@@ -10,30 +13,81 @@ export default function ApplicationCard({
   images,
   description,
 }) {
+  const [currentImage, setCurrentImage] = useState(images[0]);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
+  const handleSliderClick = ({ target }) => {
+    if (target.name === "back" && currentImageIndex !== 0) {
+      setCurrentImageIndex((prevIndex) => prevIndex - 1);
+    }
+    if (target.name === "forward" && currentImageIndex !== images.length - 1) {
+      setCurrentImageIndex((prevIndex) => prevIndex + 1);
+    }
+  };
+  useEffect(() => {
+    setCurrentImage(images[currentImageIndex]);
+  }, [currentImageIndex]);
+
+  const handleShowDetailsClick = () => {
+    setIsOpen((prevState) => !prevState);
+    setCurrentImage(images[0]);
+    setCurrentImageIndex(0);
+  };
+
   return (
     <div className={styles.root}>
-      <div className={styles.iconContainer}>
-        <Icons icon={icon} className={styles.icon} />
+      <div className={styles.compact}>
+        <div className={styles.iconContainer}>
+          <Icons icon={icon} className={styles.icon} />
+        </div>
+        <div className={styles.textContainer}>
+          <h5 className={joinClassNames(typography.epsilon500, styles.title)}>
+            {title}
+          </h5>
+          <p className={joinClassNames(typography.epsilon400, styles.excerpt)}>
+            {excerpt}
+          </p>
+        </div>
+
+        <Icons
+          icon="show"
+          className={joinClassNames(
+            styles.showIcon,
+            isOpen && styles.showIconIsOpened
+          )}
+          onClick={handleShowDetailsClick}
+        />
       </div>
-      <div className={styles.textContainer}>
-        <h5 className={joinClassNames(typography.epsilon500, styles.title)}>
-          {title}
-        </h5>
-        <p className={joinClassNames(typography.epsilon400, styles.excerpt)}>
-          {excerpt}
-        </p>
-      </div>
-      <div className={styles.showIcon}>
-        <svg
-          width="41"
-          height="44"
-          viewBox="0 0 41 44"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <line y1="22.5" x2="41" y2="22.5" stroke="black" />
-          <line x1="21.5" y1="2.18557e-08" x2="21.5" y2="44" stroke="black" />
-        </svg>
+
+      <div
+        className={joinClassNames(
+          styles.details,
+          isOpen && styles.detailsDisplayed
+        )}
+      >
+        <div className={styles.description}>
+          <div className={joinClassNames(typography.epsilon400)}>
+            {description}
+          </div>
+          <Button
+            isActive={true}
+            isDoublePadding={true}
+            className={styles.button}
+          >
+            Jetzt dpa-News testen
+          </Button>
+        </div>
+
+        <div className={styles.carrusel}>
+          <img src={currentImage} alt="" className={styles.image} />
+          <Slider
+            className={styles.slider}
+            activePage={currentImageIndex}
+            array={[...Array(images.length).keys()]}
+            onClick={handleSliderClick}
+            dark={true}
+          />
+        </div>
       </div>
     </div>
   );

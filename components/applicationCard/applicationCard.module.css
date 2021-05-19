@@ -1,5 +1,9 @@
 .root {
   background-color: var(--color-gray-200);
+  width: 100%;
+}
+
+.compact {
   height: calc(var(--spacing-unit) * 15);
   width: 100%;
   display: flex;
@@ -40,7 +44,54 @@
 
 .showIcon {
   margin-right: calc(var(--spacing-unit) * 4);
+  border: none;
+  transition: transform 200ms;
+}
+.showIcon:hover {
+  cursor: pointer;
 }
 
-.isOpen {
+.showIconIsOpened {
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.details {
+  display: none;
+  visibility: hidden;
+  margin-left: calc(var(--spacing-unit) * 27.5);
+  margin-right: calc(var(--spacing-unit) * 9);
+  padding-bottom: calc(var(--spacing-unit) * 7);
+  background-color: var(--color-gray-200);
+  transition: visibility 200ms;
+}
+
+.detailsDisplayed {
+  visibility: visible;
+  display: flex;
+  justify-content: space-between;
+}
+
+.description {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.button {
+  margin-top: calc(var(--spacing-unit) * 4);
+}
+.carrusel {
+  width: 55%;
+}
+
+.image {
+  height: auto;
+  width: 100%;
+}
+
+.slider {
+  margin-top: var(--spacing-unit);
+  color: var(--color-gray-900);
 }
