@@ -6,6 +6,7 @@ export default function Button({
   isDoublePadding,
   className,
   isActive,
+  onClick,
 }) {
   return (
     <a
@@ -15,6 +16,8 @@ export default function Button({
         isDoublePadding && styles.isDoublePadding,
         isActive && styles.isActive
       )}
+      onClick={onClick}
+      name={children}
     >
       {children}
     </a>
