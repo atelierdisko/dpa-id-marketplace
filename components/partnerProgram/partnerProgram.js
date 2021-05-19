@@ -15,18 +15,22 @@ export default function PartnerProgram() {
         <h2 className={joinClassNames(typography.beta500, styles.title)}>
           Partner werden
         </h2>
-        <p className={joinClassNames(typography.delta500, styles.description)}>
-          Dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-          tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-          voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-        </p>
-        <Button
-          isActive={true}
-          isDoublePadding={true}
-          className={styles.button}
-        >
-          Zur Partnerprogramm-Seite
-        </Button>
+        <div className={styles.descriptionAndButtonContainer}>
+          <p
+            className={joinClassNames(typography.delta500, styles.description)}
+          >
+            Dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+            voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+          </p>
+          <Button
+            isActive={true}
+            isDoublePadding={true}
+            className={styles.button}
+          >
+            Zur Partnerprogramm-Seite
+          </Button>
+        </div>
         <Icons icon="appMenu" className={styles.appMenuIcon} />
         <Icons icon="appContainer" className={styles.applicationsMenu} />
         <div className={styles.appContainer}>
