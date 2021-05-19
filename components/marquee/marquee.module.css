@@ -14,7 +14,7 @@
   font-family: var(--font-family-serif);
   font-size: 28px;
   line-height: 44px;
-  /*animation: scrolling 20s linear infinite;*/
+  animation: scrolling 20s linear infinite;
 }
 /*todo: ask Philipp how oto improve this animation.*/
 @keyframes scrolling {
