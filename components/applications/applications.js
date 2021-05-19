@@ -4,8 +4,33 @@ import styles from "./applications.module.css";
 import typography from "../../styles/typography.module.css";
 import grid from "../../styles/grid.module.css";
 import { joinClassNames } from "../../utilities/componentsHelpers";
+import { useEffect, useState } from "react";
 
-export default function Applications({ applications, filters, className }) {
+export default function Applications({
+  applications,
+  filters,
+  initialApplicationNumber,
+  className,
+}) {
+  const [activeFilter, setActiveFilter] = useState(filters.length - 1);
+  const [displayedApplications, setDisplayedApplications] = useState([
+    ...applications,
+  ]);
+
+  const handleFilterClick = ({ target }) => {
+    setActiveFilter(filters.indexOf(target.name));
+  };
+
+  useEffect(() => {
+    activeFilter === filters.length - 1
+      ? setDisplayedApplications([...applications])
+      : setDisplayedApplications(
+          applications.filter((application) =>
+            application.tags.includes(filters[activeFilter].toLowerCase())
+          )
+        );
+  }, [activeFilter]);
+
   return (
     <section className={joinClassNames(grid.root, styles.root, className)}>
       <h2 className={joinClassNames(typography.gamma500, styles.title)}>
@@ -21,19 +46,14 @@ export default function Applications({ applications, filters, className }) {
         Filteroptionen:
       </p>
       <div className={styles.filters}>
-        <Button>Aktuelles</Button>
-        <Button>Recherche</Button>
-        <Button>Planung</Button>
-        <Button>Distribution</Button>
-        <Button>Audio</Button>
-        <Button>Video</Button>
-        <Button>Visuals</Button>
-        <Button>Daten</Button>
-        <Button isActive={true}>Alle anzeigen</Button>
-        {/*{filters.map(filter=>(<Button isActive={filter.isActive}>{filter.title}</Button>))}*/}
+        {filters.map((filter, index) => (
+          <Button isActive={index === activeFilter} onClick={handleFilterClick}>
+            {filter}
+          </Button>
+        ))}
       </div>
       <div className={styles.list}>
-        {applications.map((application) => (
+        {displayedApplications.map((application) => (
           <ApplicationCard
             title={application.title}
             excerpt={application.excerpt}
