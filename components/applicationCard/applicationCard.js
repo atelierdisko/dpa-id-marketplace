@@ -61,9 +61,9 @@ export default function ApplicationCard({
       className={joinClassNames(styles.root, styles["root" + backgroundColor])}
       onMouseEnter={toggleHover}
       onMouseLeave={toggleHover}
-      style={{
-        background: `linear-gradient(150deg, ${color}, ${grayShade} ${gradientLimit})`,
-      }}
+      // style={{
+      //   background: `linear-gradient(150deg, ${color}, ${grayShade} ${gradientLimit})`,
+      // }}
     >
       <div className={styles.compact}>
         <div className={styles.iconContainer}>

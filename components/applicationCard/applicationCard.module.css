@@ -1,7 +1,7 @@
 .root {
   /*background: linear-gradient(150deg, #e5fcf2, #f5f5f5 35%);*/
   width: 100%;
-  transition: background 200ms;
+  transition: background 300ms;
   border-radius: 8px;
 }
 .root:hover {
@@ -87,7 +87,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  transition: box-shadow 250ms;
+  /*transition: box-shadow 250ms;*/
 }
 
 .root:hover {
