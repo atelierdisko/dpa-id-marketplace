@@ -30,7 +30,10 @@ export default function Navigation({ className }) {
           </li>
           <li className={typography.etaInter500}>
             <Link href="#logIn">
-              <Button className={styles.logIn}>Anmelden</Button>
+              <Button className={styles.signIn}>
+                <Logo classname={styles.logoAnmelden} withName={false} />
+                Anmelden
+              </Button>
             </Link>
           </li>
           <li className={typography.etaInter500}>
