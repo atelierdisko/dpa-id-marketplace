@@ -19,10 +19,10 @@
   height: 280px;
 }
 .hero {
-  margin-top: 148px;
+  /*margin-top: calc(var(--spacing-unit) * 12);*/
 }
 .quotes {
-  margin-top: 102px;
+  /*margin-top: 102px;*/
 }
 
 .applications {
