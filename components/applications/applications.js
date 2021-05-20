@@ -33,21 +33,23 @@ export default function Applications({
 
   return (
     <section className={joinClassNames(grid.root, styles.root, className)}>
-      <h2 className={joinClassNames(typography.gamma500, styles.title)}>
-        Die Welt der dpa ID im Überblick
+      <h2 className={joinClassNames(typography.beta500, styles.title)}>
+        Der dpa ID Marktplatz im Überblick
       </h2>
       <p className={joinClassNames(typography.delta400, styles.description)}>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-        voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-        clita kasd gubergren, no sea takimata.
+        Mit Ihrer dpa ID betreten Sie den dpa ID Martkpltz und haben direkten
+        Zugang zu allen Tools der dpa und unserer Partner.
       </p>
       <p className={joinClassNames(styles.filterOptions, typography.zeta500)}>
         Filteroptionen:
       </p>
       <div className={styles.filters}>
         {filters.map((filter, index) => (
-          <Button isActive={index === activeFilter} onClick={handleFilterClick}>
+          <Button
+            isActive={index === activeFilter}
+            onClick={handleFilterClick}
+            className={joinClassNames(typography.etaInter500, styles.filter)}
+          >
             {filter}
           </Button>
         ))}
@@ -60,11 +62,18 @@ export default function Applications({
             description={application.description}
             icon={application.icon}
             images={application.images}
+            // backgroundColor={application.backgroundColor}
+            color={application.color}
           />
         ))}
       </div>
       <div className={styles.showMoreButton}>
-        <Button isActive={true} isDoublePadding={true}>
+        <Button
+          isActive={true}
+          isDoublePadding={true}
+          isDisabled={true}
+          className={typography.etaInter500}
+        >
           Mehr anzeigen
         </Button>
       </div>

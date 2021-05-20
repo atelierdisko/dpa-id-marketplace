@@ -1,6 +1,84 @@
 .root {
-  background-color: var(--color-gray-200);
+  /*background: linear-gradient(150deg, #e5fcf2, #f5f5f5 35%);*/
   width: 100%;
+  transition: background 200ms;
+  border-radius: 8px;
+}
+.root:hover {
+  /*background: linear-gradient(150deg, #e5fcf2, #eeeeee 65%);*/
+}
+
+.rootOrange {
+  background: linear-gradient(
+    150deg,
+    var(--color-light-orange-background),
+    var(--color-gray-100) 35%
+  );
+}
+.rootOrange:hover {
+  background: linear-gradient(
+    150deg,
+    var(--color-light-orange-background),
+    var(--color-gray-200) 65%
+  );
+}
+
+.rootGreen {
+  background: linear-gradient(
+    150deg,
+    var(--color-light-green-background),
+    var(--color-gray-100) 35%
+  );
+}
+.rootGreen:hover {
+  background: linear-gradient(
+    150deg,
+    var(--color-light-green-background),
+    var(--color-gray-200) 65%
+  );
+}
+
+.rootBlack {
+  background: linear-gradient(
+    150deg,
+    var(--color-light-black-background),
+    var(--color-gray-100) 35%
+  );
+}
+.rootBlack:hover {
+  background: linear-gradient(
+    150deg,
+    var(--color-light-black-background),
+    var(--color-gray-200) 65%
+  );
+}
+.rootPurple {
+  background: linear-gradient(
+    150deg,
+    var(--color-light-purple-background),
+    var(--color-gray-100) 35%
+  );
+}
+.rootPurple:hover {
+  background: linear-gradient(
+    150deg,
+    var(--color-light-purple-background),
+    var(--color-gray-200) 65%
+  );
+}
+.rootBlue {
+  background: linear-gradient(
+    150deg,
+    var(--color-light-blue-background),
+    var(--color-gray-100) 35%
+  );
+}
+.rootBlue:hover {
+  background: linear-gradient(
+    150deg,
+    var(--color-light-blue-background),
+    var(--color-gray-200) 65%
+  );
 }
 
 .compact {
@@ -13,7 +91,6 @@
 }
 
 .root:hover {
-  box-shadow: 0 0 20px 0 var(--color-royal-blue);
 }
 
 .iconContainer {
@@ -55,7 +132,6 @@
   transform: rotate(45deg);
 }
 .details {
-  background-color: var(--color-gray-200);
   display: flex;
   justify-content: space-between;
   height: 0;

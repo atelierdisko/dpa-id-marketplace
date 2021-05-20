@@ -12,10 +12,32 @@ export default function ApplicationCard({
   icon,
   images,
   description,
+  backgroundColor,
+  color,
 }) {
+  console.log(backgroundColor, title);
   const [currentImage, setCurrentImage] = useState(images[0]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
+  const [isHovered, setIsHovered] = useState(true);
+  const [grayShade, setGrayShade] = useState("blue");
+  const [gradientLimit, setGradientLimit] = useState("35%");
+
+  const toggleHover = () => {
+    setIsHovered((prevState) => !prevState);
+    console.log(isHovered);
+  };
+
+  useEffect(() => {
+    if (!isHovered) {
+      setGrayShade("#eeeeee");
+      setGradientLimit("65%");
+    } else {
+      setGrayShade("#f5f5f5");
+      setGradientLimit("35%");
+    }
+  }, [isHovered]);
+
   const handleSliderClick = ({ target }) => {
     if (target.name === "back" && currentImageIndex !== 0) {
       setCurrentImageIndex((prevIndex) => prevIndex - 1);
@@ -35,7 +57,14 @@ export default function ApplicationCard({
   };
 
   return (
-    <div className={styles.root}>
+    <div
+      className={joinClassNames(styles.root, styles["root" + backgroundColor])}
+      onMouseEnter={toggleHover}
+      onMouseLeave={toggleHover}
+      style={{
+        background: `linear-gradient(150deg, ${color}, ${grayShade} ${gradientLimit})`,
+      }}
+    >
       <div className={styles.compact}>
         <div className={styles.iconContainer}>
           <Icons icon={icon} className={styles.icon} />
@@ -51,6 +80,7 @@ export default function ApplicationCard({
 
         <Icons
           icon="show"
+          color="#0045F4"
           className={joinClassNames(
             styles.showIcon,
             isOpen && styles.showIconIsOpened
