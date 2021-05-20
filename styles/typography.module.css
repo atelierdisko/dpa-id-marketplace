@@ -1,4 +1,5 @@
 .beta500 {
+  font-family: var(--font-family-primary-demi);
   font-size: 90px;
   font-weight: 500;
   line-height: 108px;
