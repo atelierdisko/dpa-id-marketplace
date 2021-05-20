@@ -7,14 +7,16 @@ export default function Button({
   className,
   isActive,
   onClick,
+  isDisabled,
 }) {
   return (
     <a
       className={joinClassNames(
-        className,
         styles.root,
         isDoublePadding && styles.isDoublePadding,
-        isActive && styles.isActive
+        isActive && styles.isActive,
+        isDisabled && styles.isDisabled,
+        className
       )}
       onClick={onClick}
       name={children}
