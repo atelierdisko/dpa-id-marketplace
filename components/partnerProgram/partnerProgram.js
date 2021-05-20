@@ -13,15 +13,19 @@ export default function PartnerProgram() {
           Jederzeit nur einen Klick entfernt
         </p>
         <h2 className={joinClassNames(typography.beta500, styles.title)}>
-          Partner werden
+          Jetzt Marktplatz- partner werden{" "}
         </h2>
         <div className={styles.descriptionAndButtonContainer}>
           <p
             className={joinClassNames(typography.delta500, styles.description)}
           >
-            Dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-            voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+            Werden Sie Teil der Plattform und positionieren Sie Ihr Angebot so,
+            dass es immer in Reichweite liegt.
+          </p>
+          <p className={joinClassNames(typography.epsilon400, styles.details)}>
+            Nach der initialen und sehr einfachen technischen Integration
+            profitieren dpa ID Partner von den Leistungen des dpa ID
+            Partnerprogramms, das wir kontinuierlich weiterentwickeln.
           </p>
           <Button
             isActive={true}
@@ -43,7 +47,7 @@ export default function PartnerProgram() {
             </div>
           </div>
           <div className={styles.cell}>
-            <Icons icon="dpaSelect" />
+            <Icons icon="dpaSelect" className={styles.icon} />
             <div
               className={joinClassNames(styles.appName, typography.etaInter500)}
             >
@@ -51,7 +55,7 @@ export default function PartnerProgram() {
             </div>
           </div>
           <div className={styles.cell}>
-            <Icons icon="dpaAgenda" />
+            <Icons icon="dpaAgenda" className={styles.icon} />
             <div
               className={joinClassNames(styles.appName, typography.etaInter500)}
             >
@@ -59,7 +63,7 @@ export default function PartnerProgram() {
             </div>
           </div>
           <div className={styles.cell}>
-            <Icons icon="dpaVideoPortal" />
+            <Icons icon="dpaVideoPortal" className={styles.icon} />
             <div
               className={joinClassNames(styles.appName, typography.etaInter500)}
             >
@@ -67,7 +71,7 @@ export default function PartnerProgram() {
             </div>
           </div>
           <div className={styles.cell}>
-            <Icons icon="dpaShop" />
+            <Icons icon="dpaShop" className={styles.icon} />
             <div
               className={joinClassNames(styles.appName, typography.etaInter500)}
             >
@@ -75,7 +79,7 @@ export default function PartnerProgram() {
             </div>
           </div>
           <div className={styles.cell}>
-            <Icons icon="dpaPictureAlliance" />
+            <Icons icon="dpaPictureAlliance" className={styles.icon} />
             <div
               className={joinClassNames(styles.appName, typography.etaInter500)}
             >
@@ -83,7 +87,7 @@ export default function PartnerProgram() {
             </div>
           </div>
           <div className={styles.cell}>
-            <Icons icon="politics" />
+            <Icons icon="politics" className={styles.icon} />
             <div
               className={joinClassNames(styles.appName, typography.etaInter500)}
             >
@@ -91,7 +95,7 @@ export default function PartnerProgram() {
             </div>
           </div>
           <div className={styles.cell}>
-            <Icons icon="botTalk" />
+            <Icons icon="botTalk" className={styles.icon} />
             <div
               className={joinClassNames(styles.appName, typography.etaInter500)}
             >
