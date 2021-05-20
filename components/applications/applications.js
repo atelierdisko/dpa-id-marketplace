@@ -48,7 +48,7 @@ export default function Applications({
           <Button
             isActive={index === activeFilter}
             onClick={handleFilterClick}
-            className={joinClassNames(typography.etaInter500, styles.filter)}
+            className={styles.filter}
           >
             {filter}
           </Button>
@@ -62,18 +62,13 @@ export default function Applications({
             description={application.description}
             icon={application.icon}
             images={application.images}
-            // backgroundColor={application.backgroundColor}
-            color={application.color}
+            backgroundColor={application.backgroundColor}
+            // color={application.color}
           />
         ))}
       </div>
       <div className={styles.showMoreButton}>
-        <Button
-          isActive={true}
-          isDoublePadding={true}
-          isDisabled={true}
-          className={typography.etaInter500}
-        >
+        <Button isActive={true} isDoublePadding={true} isDisabled={true}>
           Mehr anzeigen
         </Button>
       </div>
