@@ -1,18 +1,20 @@
 .root {
   composes: container from "../../styles/Home.module.css";
   color: var(--color-gray-900);
+  padding-bottom: calc(var(--spacing-unit) * 18);
 }
 
 .title {
-  grid-column: 1/-4;
+  margin-top: calc(var(--spacing-unit) * 12);
+  grid-column: 1/8;
 }
 
 .description {
   margin-top: calc(var(--spacing-unit) * 3);
-  grid-column: 1/-3;
+  grid-column: 1/8;
 }
 .buttonContainer {
-  margin-top: calc(var(--spacing-unit) * 5);
+  margin-top: calc(var(--spacing-unit) * 4);
   grid-column: 1/4;
   display: flex;
   justify-content: flex-start;
