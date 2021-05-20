@@ -5,11 +5,11 @@
     rgba(0, 176, 100, 0.5) 60%,
     rgba(0, 176, 100, 1)
   );
-  padding-bottom: calc(var(--spacing-unit) * 17);
+  /*padding-bottom: calc(var(--spacing-unit) * 2);*/
 }
 .container {
   composes: container from "../../styles/Home.module.css";
-  grid-template-rows: repeat(auto-fill, auto);
+  grid-template-rows: repeat(3, auto) 60px calc(var(--spacing-unit) * 12);
 }
 
 .signalPhrase {
@@ -21,11 +21,15 @@
 }
 .descriptionAndButtonContainer {
   grid-column: 1 / span 6;
+  grid-row: 3/5;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 .description {
+  margin-top: calc(var(--spacing-unit) * 5);
+}
+.details {
   margin-top: calc(var(--spacing-unit) * 5);
 }
 .button {
@@ -40,14 +44,13 @@
 
 .applicationsMenu {
   grid-column: 7/-1;
-  grid-row: 2 / 6;
+  grid-row: 2 / 4;
   display: grid;
 }
 .appContainer {
-  /*background-color: rgba(2, 69, 45, 0.3);*/
-  margin: 33px 11px 26px 21px;
+  margin: 33px 11px 98px 21px;
   grid-column: 7/-1;
-  grid-row: 2/6;
+  grid-row: 2/4;
   display: grid;
   grid-template: repeat(3, 1fr) / repeat(3, 1fr);
   align-items: center;
