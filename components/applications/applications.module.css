@@ -1,5 +1,6 @@
 .root {
   composes: container from "../../styles/Home.module.css";
+  margin-bottom: calc(var(--spacing-unit) * 12);
 }
 
 .title {
