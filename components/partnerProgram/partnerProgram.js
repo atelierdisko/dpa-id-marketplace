@@ -5,9 +5,9 @@ import grid from "../../styles/grid.module.css";
 import { joinClassNames } from "../../utilities/componentsHelpers";
 import Icons from "../icons/icons";
 
-export default function PartnerProgram() {
+export default function PartnerProgram({ id, className }) {
   return (
-    <section className={styles.root}>
+    <section className={joinClassNames(styles.root, className)} id={id}>
       <div className={joinClassNames(grid.root, styles.container)}>
         <p className={joinClassNames(typography.zeta500, styles.signalPhrase)}>
           Jederzeit nur einen Klick entfernt
@@ -15,29 +15,37 @@ export default function PartnerProgram() {
         <h2 className={joinClassNames(typography.beta500, styles.title)}>
           Jetzt Marktplatz- partner werden{" "}
         </h2>
-        <div className={styles.descriptionAndButtonContainer}>
-          <p
-            className={joinClassNames(typography.delta500, styles.description)}
-          >
-            Werden Sie Teil der Plattform und positionieren Sie Ihr Angebot so,
-            dass es immer in Reichweite liegt.
-          </p>
-          <p className={joinClassNames(typography.epsilon400, styles.details)}>
-            Nach der initialen und sehr einfachen technischen Integration
-            profitieren dpa ID Partner von den Leistungen des dpa ID
-            Partnerprogramms, das wir kontinuierlich weiterentwickeln.
-          </p>
-          <Button
-            isActive={true}
-            isDoublePadding={true}
-            className={styles.button}
-          >
-            Zur Partnerprogramm-Seite
-          </Button>
-        </div>
+
+        <p
+          className={joinClassNames(
+            typography.delta400,
+            styles.firstDescription
+          )}
+        >
+          Werden Sie Teil der Plattform und positionieren Sie Ihr Angebot so,
+          dass es immer in Reichweite liegt.
+        </p>
+        <p
+          className={joinClassNames(
+            typography.epsilon400,
+            styles.secondDescription
+          )}
+        >
+          Nach der initialen und sehr einfachen technischen Integration
+          profitieren dpa ID Partner von den Leistungen des dpa ID
+          Partnerprogramms, das wir kontinuierlich weiterentwickeln.
+        </p>
+
+        <Button
+          isActive={true}
+          isDoublePadding={true}
+          className={styles.button}
+        >
+          Zur Partnerprogramm-Seite
+        </Button>
         <Icons icon="appMenu" className={styles.appMenuIcon} />
-        <Icons icon="appContainer" className={styles.applicationsMenu} />
-        <div className={styles.appContainer}>
+        <div className={styles.triangleUp}>{}</div>
+        <div className={styles.applicationsContainer}>
           <div className={styles.cell}>
             <Icons icon="dpaNews" className={styles.icon} />
             <div
@@ -79,7 +87,13 @@ export default function PartnerProgram() {
             </div>
           </div>
           <div className={styles.cell}>
-            <Icons icon="dpaPictureAlliance" className={styles.icon} />
+            <Icons
+              icon="dpaPictureAlliance"
+              className={joinClassNames(
+                styles.icon,
+                styles.pictureAllianceIcon
+              )}
+            />
             <div
               className={joinClassNames(styles.appName, typography.etaInter500)}
             >
@@ -87,7 +101,10 @@ export default function PartnerProgram() {
             </div>
           </div>
           <div className={styles.cell}>
-            <Icons icon="politics" className={styles.icon} />
+            <Icons
+              icon="politics"
+              className={joinClassNames(styles.icon, styles.politicsIcon)}
+            />
             <div
               className={joinClassNames(styles.appName, typography.etaInter500)}
             >
@@ -95,7 +112,10 @@ export default function PartnerProgram() {
             </div>
           </div>
           <div className={styles.cell}>
-            <Icons icon="botTalk" className={styles.icon} />
+            <Icons
+              icon="botTalk"
+              className={joinClassNames(styles.icon, styles.botTalkIcon)}
+            />
             <div
               className={joinClassNames(styles.appName, typography.etaInter500)}
             >

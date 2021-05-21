@@ -5,65 +5,123 @@
     rgba(0, 176, 100, 0.5) 60%,
     rgba(0, 176, 100, 1)
   );
-  /*padding-bottom: calc(var(--spacing-unit) * 2);*/
 }
 .container {
   composes: container from "../../styles/Home.module.css";
-  grid-template-rows: repeat(3, auto) 60px calc(var(--spacing-unit) * 12);
+  grid-template-rows:
+    calc(var(--spacing-unit) * 9) auto auto
+    calc(var(--spacing-unit) * 5) auto
+    calc(var(--spacing-unit) * 5) auto calc(var(--spacing-unit) * 2)
+    calc(var(--spacing-unit) * 12) auto
+    calc(var(--spacing-unit) * 12);
+  align-items: flex-end;
+}
+.signalPhrase,
+.title,
+.firstDescription,
+.secondDescription {
+  grid-column: 1 / span 7;
+  margin-right: calc(var(--spacing-unit) * 3);
+}
+.signalPhrase {
+  grid-row: 2/3;
 }
 
-.signalPhrase {
-  margin-top: calc(var(--spacing-unit) * 12);
-  grid-column: 1 / span 4;
-}
 .title {
-  grid-column: 1 / span 6;
+  grid-row: 3/4;
 }
-.descriptionAndButtonContainer {
-  grid-column: 1 / span 6;
-  grid-row: 3/5;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+
+.firstDescription {
+  grid-row: 5/6;
 }
-.description {
-  margin-top: calc(var(--spacing-unit) * 5);
+
+.secondDescription {
+  grid-row: 7/9;
 }
-.details {
-  margin-top: calc(var(--spacing-unit) * 5);
-}
+
 .button {
-  margin-top: calc(var(--spacing-unit) * 12);
+  grid-column: 1 / span 6;
+  grid-row: 10/11;
+  justify-self: flex-start;
 }
+
+.appMenuIcon,
+.triangleUp {
+  margin-left: calc(var(--spacing-unit) * 2);
+}
+
 .appMenuIcon {
   grid-column: -2;
   grid-row: 1;
   align-self: flex-end;
-  margin-left: 18px;
 }
 
-.applicationsMenu {
-  grid-column: 7/-1;
-  grid-row: 2 / 4;
-  display: grid;
+.triangleUp {
+  grid-column: -2;
+  grid-row: 2;
+  width: 0;
+  height: 0;
+  border-left: calc(var(--spacing-unit) * 2.4) solid transparent;
+  border-right: calc(var(--spacing-unit) * 2.4) solid transparent;
+  border-bottom: calc(var(--spacing-unit) * 2.2) solid var(--color-white);
+  z-index: 2;
 }
-.appContainer {
-  margin: 33px 11px 98px 21px;
-  grid-column: 7/-1;
-  grid-row: 2/4;
+
+.applicationsContainer {
+  grid-column: -6/-1;
+  grid-row: 3 / 8;
+  width: 100%;
+  height: 100%;
   display: grid;
-  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 35% 25% 40%;
   align-items: center;
+  background-color: var(--color-white);
+  box-shadow: 0 5px 20px 0 rgba(26, 30, 40, 0.3);
 }
+
 .cell {
-  display: flex;
-  flex-direction: column;
-  justify-self: center;
+  /*height: 100%;*/
+  width: auto;
+  display: grid;
+  grid-template-rows: 80% 20%;
+  align-items: flex-end;
 }
+
 .icon {
   justify-self: center;
+  width: 50%;
 }
 .appName {
+  align-self: flex-start;
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  justify-content: center;
   text-align: center;
-  /*width: 90%;*/
+  line-height: 26px;
+
+  /*flex-wrap: wrap;*/
+}
+
+.pictureAllianceIcon,
+.botTalkIcon {
+  margin-bottom: calc(var(--spacing-unit) * 1.8);
+}
+
+.politicsIcon {
+  height: 60%;
+  width: auto;
+  margin-bottom: calc(var(--spacing-unit) * 0.5);
+}
+
+.botTalkIcon {
+  height: 45%;
+  width: auto;
+}
+
+.applicationsContainer > :nth-last-child(-n + 2) {
+  /*margin-bottom: calc(var(--spacing-unit) * 2);*/
+  position: relative;
+  top: calc(var(--spacing-unit) * -3);
 }
