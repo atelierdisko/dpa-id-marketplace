@@ -1,4 +1,11 @@
-export default function Icons({ icon, className, onClick, color }) {
+export default function Icons({
+  icon,
+  width,
+  height,
+  className,
+  onClick,
+  color,
+}) {
   switch (icon) {
     case "appMenu":
       return (
@@ -84,10 +91,9 @@ export default function Icons({ icon, className, onClick, color }) {
     case "appContainer":
       return (
         <svg
-          width="671"
-          height="582"
-          viewBox="0 0 671 582"
-          fill="blue"
+          width={width}
+          height={height}
+          viewBox={`0 0 ${width} ${height}`}
           xmlns="http://www.w3.org/2000/svg"
           className={className}
         >
@@ -102,8 +108,8 @@ export default function Icons({ icon, className, onClick, color }) {
               id="filter0_d"
               x="0"
               y="0.606934"
-              width="671"
-              height="581.028"
+              width={width}
+              height={height}
               filterUnits="userSpaceOnUse"
               colorInterpolationFilters="sRGB"
             >
