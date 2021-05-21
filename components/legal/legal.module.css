@@ -1,0 +1,27 @@
+.root {
+  padding-top: calc(var(--spacing-unit) * 13);
+  padding-bottom: calc(var(--spacing-unit) * 30);
+  composes: container from "../../styles/Home.module.css";
+}
+.buttonContainer {
+  grid-column: 1 / span 3;
+}
+
+.button {
+  color: var(--color-blue);
+}
+
+.title {
+  margin-top: calc(var(--spacing-unit) * 5);
+  grid-column: 1 / span 8;
+}
+
+.description {
+  grid-column: 1 / span 8;
+  margin-top: calc(var(--spacing-unit) * 4);
+  line-height: 34px;
+}
+
+.description *:not(:first-child) {
+  margin-top: calc(var(--spacing-unit) * 2);
+}
