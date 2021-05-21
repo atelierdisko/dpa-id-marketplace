@@ -12,12 +12,12 @@ export default function Footer({ className }) {
         <Logo classname={styles.logo} />
         <ul className={joinClassNames(styles.legal, typography.etaInter500)}>
           <li>
-            <Link href="/">
-              <a>Impresum</a>
+            <Link href="/impressum">
+              <a>Impressum</a>
             </Link>
           </li>
           <li>
-            <Link href="/">
+            <Link href="/datenshutz">
               <a>Datenschutz</a>
             </Link>
           </li>
