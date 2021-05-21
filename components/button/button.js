@@ -9,6 +9,7 @@ export default function Button({
   isActive,
   onClick,
   isDisabled,
+  href,
 }) {
   return (
     <a
@@ -22,6 +23,7 @@ export default function Button({
       )}
       onClick={onClick}
       name={children}
+      href={href}
     >
       {children}
     </a>
