@@ -16,7 +16,7 @@
 
 .footer {
   bottom: 0;
-  height: 280px;
+  height: calc(var(--spacing-unit) * 35);
 }
 .hero {
   /*margin-top: calc(var(--spacing-unit) * 12);*/
@@ -26,7 +26,7 @@
 }
 
 .applications {
-  margin-bottom: 280px;
+  margin-bottom: calc(var(--spacing-unit) * 35);
 }
 
 .partnerProgram {
