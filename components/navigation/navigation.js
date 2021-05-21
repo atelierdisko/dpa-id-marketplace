@@ -18,22 +18,22 @@ export default function Navigation({ className, displayNavigation }) {
           style={!displayNavigation ? { display: "none" } : null}
         >
           <li className={typography.zeta500}>
-            <Link href="#applications">
+            <Link href="/#applications" scroll={true}>
               <a>Anwendungen</a>
             </Link>
           </li>
           <li className={typography.zeta500}>
-            <Link href="#funtionalities">
+            <Link href="/#functionalities">
               <a>Funktionalitäten</a>
             </Link>
           </li>
           <li className={typography.zeta500}>
-            <Link href="#partnerProgram">
+            <Link href="/#partnerProgram">
               <a>Partnerprogramm</a>
             </Link>
           </li>
           <li className={typography.etaInter500}>
-            <Link href="#logIn">
+            <Link href="/#signIn">
               <Button className={styles.signIn}>
                 <Logo classname={styles.logoAnmelden} withName={false} />
                 Anmelden
@@ -41,7 +41,7 @@ export default function Navigation({ className, displayNavigation }) {
             </Link>
           </li>
           <li className={typography.etaInter500}>
-            <Link href="#createId">
+            <Link href="/#createId">
               <Button isActive={true}>Jetzt dpa ID anlegen</Button>
             </Link>
           </li>
