@@ -10,6 +10,8 @@ import NotificationsDemo from "../components/notificationsDemo";
 import applicationsData from "../applicationsData";
 import quotesData from "../quotesData";
 import Applications from "../components/applications/applications";
+import Functionalities from "../components/functionalities/functionalities";
+import functionalitiesData from "../functionalitiesData";
 
 export default function Home() {
   const filters = [
@@ -41,7 +43,11 @@ export default function Home() {
           applications={applicationsData}
           id="applications"
         />
-        <NotificationsDemo id="functionalities" />
+        <Functionalities
+          functionalities={functionalitiesData}
+          id="functionalities"
+        />
+        {/*<NotificationsDemo id="functionalities" />*/}
         <PartnerProgram className={styles.partnerProgram} id="partnerProgram" />
         <SignIn className={styles.signIn} id="signIn" />
       </main>
