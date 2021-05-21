@@ -7,12 +7,16 @@ import typography from "../../styles/typography.module.css";
 import { joinClassNames } from "../../utilities/componentsHelpers";
 import Button from "../button/button";
 
-export default function Navigation({ className }) {
+export default function Navigation({ className, displayNavigation }) {
   return (
     <nav className={joinClassNames(styles.root, className)}>
       <div className={joinClassNames(grid.root, styles.container)}>
         <Logo classname={styles.logo} />
-        <ul className={styles.list}>
+
+        <ul
+          className={styles.list}
+          style={!displayNavigation ? { display: "none" } : null}
+        >
           <li className={typography.zeta500}>
             <Link href="#applications">
               <a>Anwendungen</a>
