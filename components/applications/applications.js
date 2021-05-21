@@ -11,6 +11,7 @@ export default function Applications({
   filters,
   initialApplicationNumber,
   className,
+  id,
 }) {
   const [activeFilter, setActiveFilter] = useState(filters.length - 1);
   const [displayedApplications, setDisplayedApplications] = useState([
@@ -32,7 +33,10 @@ export default function Applications({
   }, [activeFilter]);
 
   return (
-    <section className={joinClassNames(grid.root, styles.root, className)}>
+    <section
+      className={joinClassNames(grid.root, styles.root, className)}
+      id={id}
+    >
       <h2 className={joinClassNames(typography.beta500, styles.title)}>
         Der dpa ID Marktplatz im Überblick
       </h2>

@@ -5,8 +5,7 @@ import Footer from "../components/footer/footer";
 import Hero from "../components/hero/hero";
 import Quotes from "../components/quotes/quotes";
 import PartnerProgram from "../components/partnerProgram/partnerProgram";
-import SignIn from "../components/SignIn/signIn";
-import { joinClassNames } from "../utilities/componentsHelpers";
+import SignIn from "../components/signIn/signIn";
 import NotificationsDemo from "../components/notificationsDemo";
 import applicationsData from "../applicationsData";
 import quotesData from "../quotesData";
@@ -32,10 +31,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Navigation
-        className={joinClassNames(styles.navigation)}
-        displayNavigation={true}
-      />
+      <Navigation className={styles.navigation} displayNavigation={true} />
       <main>
         <Hero className={styles.hero} />
         <Quotes className={styles.quotes} data={quotesData} />
@@ -43,13 +39,14 @@ export default function Home() {
           className={styles.applications}
           filters={filters}
           applications={applicationsData}
+          id="applications"
         />
-        <NotificationsDemo />
-        <PartnerProgram className={styles.partnerProgram} />
-        <SignIn className={styles.logIn} />
+        <NotificationsDemo id="functionalities" />
+        <PartnerProgram className={styles.partnerProgram} id="partnerProgram" />
+        <SignIn className={styles.signIn} id="signIn" />
       </main>
 
-      <Footer className={joinClassNames(styles.footer)} />
+      <Footer className={styles.footer} />
     </div>
   );
 }

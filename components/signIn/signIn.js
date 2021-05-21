@@ -4,9 +4,9 @@ import grid from "../../styles/grid.module.css";
 import { joinClassNames } from "../../utilities/componentsHelpers";
 import Logo from "../logo/logo";
 
-export default function SignIn({ className }) {
+export default function SignIn({ className, id }) {
   return (
-    <section className={joinClassNames(className, styles.root)}>
+    <section className={joinClassNames(className, styles.root)} id={id}>
       <div className={joinClassNames(styles.container)}>
         <p className={joinClassNames(typography.zeta500, styles.signalPhrase)}>
           Der Marktplatz wartet

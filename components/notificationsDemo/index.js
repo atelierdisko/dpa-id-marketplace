@@ -46,9 +46,9 @@ function Brand() {
   );
 }
 
-export default function NotificationsDemo() {
+export default function NotificationsDemo({ id }) {
   return (
-    <section className="intro grid">
+    <section className="intro grid" id={id}>
       <div className="intro__text t--delta">
         <span>
           Die dpa ID App ist der persönliche Informationsassistent für
