@@ -1,0 +1,33 @@
+.root {
+  background-color: rgba(0, 62, 219, 0.8);
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.1),
+    rgba(0, 0, 0, 0.1)
+  );
+}
+.container {
+  composes: container from "../../styles/Home.module.css";
+  grid-template-rows:
+    calc(var(--spacing-unit) * 12) auto
+    auto
+    calc(var(--spacing-unit) * 12);
+}
+
+.title {
+  grid-row: 2/3;
+  grid-column: 1/-1;
+  justify-self: flex-start;
+}
+.functionalities {
+  grid-row: 3/4;
+  grid-column: 1/8;
+  justify-self: flex-start;
+}
+.functionalityCard {
+}
+.functionalityTitle {
+}
+.functionalityDescription {
+}
+.notificationsDemo {
+}
