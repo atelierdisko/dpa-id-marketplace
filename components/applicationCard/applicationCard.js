@@ -15,7 +15,7 @@ export default function ApplicationCard({
   backgroundColor,
   color,
 }) {
-  console.log(backgroundColor, title);
+  // console.log(backgroundColor, title);
   const [currentImage, setCurrentImage] = useState(images[0]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
@@ -25,7 +25,7 @@ export default function ApplicationCard({
 
   const toggleHover = () => {
     setIsHovered((prevState) => !prevState);
-    console.log(isHovered);
+    // console.log(isHovered);
   };
 
   useEffect(() => {
@@ -39,6 +39,11 @@ export default function ApplicationCard({
   }, [isHovered]);
 
   const handleSliderClick = ({ target }) => {
+    if (/^page/.test(target.id)) {
+      const pageNumber = parseInt(target.id.match(/\d+/)[0]);
+      setCurrentImageIndex(pageNumber);
+      return;
+    }
     if (target.name === "back" && currentImageIndex !== 0) {
       setCurrentImageIndex((prevIndex) => prevIndex - 1);
     }

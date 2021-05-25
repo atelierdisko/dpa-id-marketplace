@@ -14,6 +14,12 @@ export default function Quotes({ className, data }) {
   const [currentImage, setCurrentImage] = useState(data[0].image);
 
   const handleClick = ({ target }) => {
+    if (/^page/.test(target.id)) {
+      const pageNumber = parseInt(target.id.match(/\d+/)[0]);
+      setCurrentSlide(pageNumber);
+      return;
+    }
+
     if (target.name === "forward" && currentSlide !== data.length - 1) {
       setCurrentSlide((prevSlide) => prevSlide + 1);
     }
