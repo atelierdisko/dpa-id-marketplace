@@ -6,15 +6,18 @@
     rgba(255, 255, 255, 0.3)
   );
   color: var(--color-white);
-  padding-bottom: calc(var(--spacing-unit) * 12.5);
+
   display: grid;
   grid-template-columns: 40% 60%;
+  grid-template-rows: calc(var(--spacing-unit) * 9) auto calc(
+      var(--spacing-unit) * 12
+    );
 }
 
 .container {
   composes: container from "../../styles/Home.module.css";
   grid-column: 1/-1;
-  grid-row: 1/-1;
+  grid-row: 1/-2;
 }
 
 .signalPhrase {
