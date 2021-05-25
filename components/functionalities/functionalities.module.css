@@ -8,26 +8,62 @@
 .container {
   composes: container from "../../styles/Home.module.css";
   grid-template-rows:
-    calc(var(--spacing-unit) * 12) auto
+    calc(var(--spacing-unit) * 12)
+    auto
+    calc(var(--spacing-unit) * 10.5)
+    auto
+    calc(var(--spacing-unit) * 3)
+    auto auto
+    calc(var(--spacing-unit) * 7)
+    auto
+    calc(var(--spacing-unit) * 3)
     auto
     calc(var(--spacing-unit) * 12);
+  color: var(--color-white);
+}
+.title,
+.functionalityTitle,
+.functionalityDescription,
+.chooseMessage,
+.messageContainer {
+  grid-column: 1/9;
+  margin-right: calc(var(--spacing-unit) * 9);
 }
 
 .title {
   grid-row: 2/3;
-  grid-column: 1/-1;
-  justify-self: flex-start;
+  color: var(--color-gray-900);
 }
-.functionalities {
-  grid-row: 3/4;
+
+.slider {
+  grid-row: 4/5;
   grid-column: 1/8;
-  justify-self: flex-start;
 }
-.functionalityCard {
-}
+
 .functionalityTitle {
+  grid-row: 6/7;
 }
+
 .functionalityDescription {
+  grid-row: 7/8;
 }
-.notificationsDemo {
+
+.chooseMessage {
+  grid-row: 9/10;
+}
+.messageContainer {
+  grid-row: 11/12;
+  display: flex;
+  justify-content: space-between;
+}
+.message {
+  height: calc(var(--spacing-unit) * 11.5);
+  width: calc(var(--spacing-unit) * 32);
+  background-color: var(--color-white);
+  border-radius: 4px;
+}
+.phone {
+  grid-column: span 4/-1;
+  grid-row: span 6/-1;
+  justify-self: flex-end;
 }

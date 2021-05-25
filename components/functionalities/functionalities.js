@@ -3,6 +3,7 @@ import typography from "../../styles/typography.module.css";
 import grid from "../../styles/grid.module.css";
 import { joinClassNames } from "../../utilities/componentsHelpers";
 import { useEffect, useState } from "react";
+import Slider from "../slider/slider";
 
 export default function Functionalities({ functionalities, className, id }) {
   const [functionalityTitle, setFunctionalityTitle] = useState(
@@ -12,6 +13,7 @@ export default function Functionalities({ functionalities, className, id }) {
     functionalities[0].description
   );
   const [functionalityIndex, setFunctionalityIndex] = useState(0);
+
   useEffect(() => {
     setFunctionalityTitle(functionalities[functionalityIndex].title);
     setFunctionalityDescription(
@@ -30,28 +32,58 @@ export default function Functionalities({ functionalities, className, id }) {
         <h2 className={joinClassNames(styles.title, typography.beta500)}>
           Features Ihrer dpa ID
         </h2>
-        <div className={styles.functionalities}>
-          {/*{another slider goes here}*/}
-          <div className={styles.functionalityCard}>
-            <h5
-              className={joinClassNames(
-                typography.delta500,
-                styles.functionalityTitle
-              )}
-            >
-              {" "}
-              {functionalityTitle}
-            </h5>
-            <p
-              className={joinClassNames(
-                typography.delta400,
-                styles.functionalityDescription
-              )}
-            >
-              {functionalityDescription}
-            </p>
-          </div>
+
+        <Slider
+          className={styles.slider}
+          backAndForward={false}
+          activePageColor="green"
+          array={functionalities}
+          activePage={functionalityIndex}
+          onClick={handleClick}
+        />
+
+        <h5
+          className={joinClassNames(
+            typography.delta500,
+            styles.functionalityTitle
+          )}
+        >
+          {" "}
+          {functionalityTitle}
+        </h5>
+        <p
+          className={joinClassNames(
+            typography.delta400,
+            styles.functionalityDescription
+          )}
+        >
+          {functionalityDescription}
+        </p>
+        <p
+          className={joinClassNames(
+            typography.etaInter500,
+            styles.chooseMessage
+          )}
+        >
+          Aus Ihrer Anwendung direkt in die Taschen Ihre Nutzer – wählen Sie
+          eine Nachricht:
+        </p>
+        <div className={styles.messageContainer}>
+          <div className={styles.message} />
+          <div className={styles.message} />
+          <div className={styles.message} />
         </div>
+
+        <svg
+          width="379"
+          height="653"
+          viewBox="0 0 379 653"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className={styles.phone}
+        >
+          <rect width="379" height="864" rx="37" fill="#1A1E28" />
+        </svg>
       </div>
     </section>
   );
