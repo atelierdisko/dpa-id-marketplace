@@ -4,6 +4,7 @@ import grid from "../../styles/grid.module.css";
 import { joinClassNames } from "../../utilities/componentsHelpers";
 import { useEffect, useState } from "react";
 import Slider from "../slider/slider";
+import Message from "../message/message";
 
 export default function Functionalities({ functionalities, className, id }) {
   const [functionalityTitle, setFunctionalityTitle] = useState(
@@ -69,9 +70,15 @@ export default function Functionalities({ functionalities, className, id }) {
           eine Nachricht:
         </p>
         <div className={styles.messageContainer}>
-          <div className={styles.message} />
-          <div className={styles.message} />
-          <div className={styles.message} />
+          <Message type="Meldung">
+            Hier steht eine wichtige Meldung, lorem ipsum dolorum sum
+          </Message>
+          <Message type="Meldung">
+            Niederlage für Özdemir: Hofreiter bleibt Grünen Franktionschef
+          </Message>
+          <Message type="Termin">
+            Niederlage für Özdemir: Hofreiter bleibt Grünen Franktionschef
+          </Message>
         </div>
 
         <svg
