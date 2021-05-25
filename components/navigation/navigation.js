@@ -7,11 +7,17 @@ import typography from "../../styles/typography.module.css";
 import { joinClassNames } from "../../utilities/componentsHelpers";
 import Button from "../button/button";
 
-export default function Navigation({ className, displayNavigation }) {
+export default function Navigation({ className, displayNavigation, isLight }) {
   return (
-    <nav className={joinClassNames(styles.root, className)}>
+    <nav
+      className={joinClassNames(
+        styles.root,
+        isLight && styles.isLight,
+        className
+      )}
+    >
       <div className={joinClassNames(grid.root, styles.container)}>
-        <Logo classname={styles.logo} />
+        <Logo classname={styles.logo} isDark={isLight} />
 
         <ul
           className={styles.list}
