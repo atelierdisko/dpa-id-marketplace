@@ -42,6 +42,8 @@ export default function Slider({
       <div className={styles.pageContainer}>
         {array.map((el, index) => (
           <div
+            key={"page" + index}
+            onClick={onClick}
             className={joinClassNames(
               styles.page,
               dark && styles.pageDark,
