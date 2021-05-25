@@ -33,7 +33,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Navigation className={styles.navigation} displayNavigation={true} />
+      <Navigation
+        className={styles.navigation}
+        displayNavigation={true}
+        isLight={true}
+      />
       <main>
         <Hero className={styles.hero} />
         <Quotes className={styles.quotes} data={quotesData} />
