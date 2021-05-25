@@ -21,8 +21,9 @@ export default function SignIn({ className, id }) {
       <div className={styles.drawingsAndCallToAction}>
         <div className={styles.callToActionButton}>
           <Logo classname={styles.logo} withName={false} />
-          <div className={styles.callToAction}>dpa ID anlegen</div>
+          <div className={typography.etaInter500}>dpa ID anlegen</div>
         </div>
+        <img src={"./images/signUp-pattern.svg"} className={styles.pattern} />
       </div>
     </section>
   );
