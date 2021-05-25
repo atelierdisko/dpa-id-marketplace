@@ -29,6 +29,7 @@ export default function Functionalities({ functionalities, className, id }) {
 
   return (
     <section className={joinClassNames(styles.root, className)} id={id}>
+      <img src="./images/features-pattern.svg" className={styles.pattern} />
       <div className={joinClassNames(styles.container, grid.root)}>
         <h2 className={joinClassNames(styles.title, typography.beta500)}>
           Features Ihrer dpa ID
