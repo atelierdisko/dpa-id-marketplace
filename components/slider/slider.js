@@ -1,6 +1,18 @@
 import styles from "./slider.module.css";
 import typography from "../../styles/typography.module.css";
 import { joinClassNames } from "../../utilities/componentsHelpers";
+import PropTypes from "prop-types";
+
+Slider.propTypes = {
+  array: PropTypes.array.isRequired,
+  onClick: PropTypes.func.isRequired,
+};
+
+Slider.defaultProps = {
+  activePage: 0,
+  activePageColor: "Blue",
+  backAndForward: true,
+};
 
 export default function Slider({
   array,
@@ -8,27 +20,35 @@ export default function Slider({
   className,
   dark,
   onClick,
+  activePageColor,
+  backAndForward,
 }) {
   return (
     <div className={joinClassNames(className, styles.root)}>
-      <button
-        className={joinClassNames(
-          typography.zeta500,
-          styles.back,
-          activePage === 0 && (dark ? styles.isDisabledDark : styles.isDisabled)
-        )}
-        onClick={onClick}
-        name="back"
-      >
-        ‹ Zurück
-      </button>
+      {backAndForward && (
+        <button
+          className={joinClassNames(
+            typography.zeta500,
+            styles.back,
+            activePage === 0 &&
+              (dark ? styles.isDisabledDark : styles.isDisabled)
+          )}
+          onClick={onClick}
+          name="back"
+        >
+          ‹ Zurück
+        </button>
+      )}
       <div className={styles.pageContainer}>
         {array.map((el, index) => (
           <div
             className={joinClassNames(
               styles.page,
               dark && styles.pageDark,
-              activePage === index && styles.isActive
+              activePage === index &&
+                styles[
+                  activePageColor === "Blue" ? "isActiveBlue" : "isActiveGreen"
+                ]
             )}
           >
             {}
@@ -45,7 +65,7 @@ export default function Slider({
         onClick={onClick}
         name="forward"
       >
-        Weiter ›
+        {backAndForward ? "Weiter ›" : "Nächste Funktionalität ›"}
       </button>
     </div>
   );

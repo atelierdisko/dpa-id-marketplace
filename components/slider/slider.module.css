@@ -8,6 +8,10 @@
   background: none;
   border: none;
 }
+.back:hover,
+.forward:hover {
+  cursor: pointer;
+}
 
 .pageContainer {
   display: flex;
@@ -24,8 +28,17 @@
   background-color: var(--color-gray-900);
 }
 
-.isActive {
+.isActiveBlue {
   background-color: var(--color-blue);
+}
+
+.isActiveGreen {
+  background-color: var(--color-light-green);
+}
+
+.isDisabled:hover,
+.isDisabledDark:hover {
+  cursor: auto;
 }
 
 .isDisabled {
