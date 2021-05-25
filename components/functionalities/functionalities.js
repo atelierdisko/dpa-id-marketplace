@@ -22,9 +22,15 @@ export default function Functionalities({ functionalities, className, id }) {
     );
   }, [functionalityIndex]);
 
-  const handleClick = () => {
-    if (functionalityIndex !== functionalities.length - 1)
+  const handleClick = ({ target }) => {
+    if (/^page/.test(target.id)) {
+      const pageNumber = parseInt(target.id.match(/\d+/)[0]);
+      setFunctionalityIndex(pageNumber);
+      return;
+    }
+    if (functionalityIndex !== functionalities.length - 1) {
       setFunctionalityIndex((prevIndex) => prevIndex + 1);
+    }
   };
 
   return (
@@ -50,7 +56,6 @@ export default function Functionalities({ functionalities, className, id }) {
             styles.functionalityTitle
           )}
         >
-          {" "}
           {functionalityTitle}
         </h5>
         <p
