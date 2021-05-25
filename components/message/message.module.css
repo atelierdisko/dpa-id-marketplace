@@ -1,0 +1,27 @@
+.root {
+  height: calc(var(--spacing-unit) * 11.5);
+  width: calc(var(--spacing-unit) * 32);
+}
+.typeContainer {
+  border-radius: 4px 4px 0 0;
+  padding: 8px;
+  background-color: var(--color-gray-100);
+  font-family: var(--font-family-secondary);
+  font-size: 12px;
+  line-height: 17px;
+  color: var(--color-gray-600);
+  display: flex;
+}
+
+.typeLogo {
+  height: 19px;
+  width: auto;
+  margin-right: 8px;
+}
+.content {
+  border-radius: 0 0 4px 4px;
+  background-color: var(--color-white);
+  color: var(--color-gray-900);
+  padding: 10px 8px 16px 8px;
+  font-size: 14px;
+}
