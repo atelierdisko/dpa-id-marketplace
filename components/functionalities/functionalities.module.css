@@ -77,19 +77,22 @@
   grid-column: span 4/-1;
   grid-row: span 6/-1;
   width: 379px;
-  height: 650px;
+  height: 600px;
   justify-self: flex-end;
   border-radius: 37px 37px 0 0;
   background-color: var(--color-black);
   display: grid;
   grid-template-columns: 22px 336px 22px;
-  grid-template-rows: 69px 58px 522px;
+  grid-template-rows: 69px 58px 45px auto;
+  z-index: 1;
 }
 
 .phoneScreen {
   grid-column: 2/3;
   grid-row: 2/-1;
   background-color: var(--color-white);
+  z-index: 2;
+  overflow: hidden;
 }
 .headerDpaApplication {
   grid-column: 2/3;
@@ -98,6 +101,7 @@
   display: grid;
   grid-template-rows: 3px 12px 8px auto 10px;
   grid-template-columns: 3px 95px 177px 25px 4px 25px 7px;
+  z-index: 3;
 }
 
 .Block1,
@@ -137,7 +141,18 @@
 }
 
 .applicationTitle {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  background-color: var(--color-gray-100);
+  color: var(--color-gray-600);
+  z-index: 3;
+  padding: 14px 0 14px 0;
+  text-align: center;
 }
 
-.applicationMessages {
+.applicationTitle span {
+  border-bottom: 2px solid var(--color-gray-300);
+}
+
+.applicationMessageContainer {
 }
