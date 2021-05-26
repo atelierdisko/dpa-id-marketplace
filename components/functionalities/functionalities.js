@@ -5,6 +5,7 @@ import { joinClassNames } from "../../utilities/componentsHelpers";
 import { useEffect, useState } from "react";
 import Slider from "../slider/slider";
 import Message from "../message/message";
+import Logo from "../logo/logo";
 
 export default function Functionalities({ functionalities, className, id }) {
   const [functionalityTitle, setFunctionalityTitle] = useState(
@@ -87,16 +88,18 @@ export default function Functionalities({ functionalities, className, id }) {
           </Message>
         </div>
 
-        <svg
-          width="379"
-          height="653"
-          viewBox="0 0 379 653"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className={styles.phone}
-        >
-          <rect width="379" height="864" rx="37" fill="#1A1E28" />
-        </svg>
+        <div className={styles.phoneContainer}>
+          <div className={styles.phoneScreen} />
+          <div className={styles.headerDpaApplication}>
+            <div className={styles.Block1} />
+            <div className={styles.Block2} />
+            <div className={styles.Block3} />
+            <div className={styles.applicationTime}>13:00</div>
+            <Logo whiteLogo={true} classname={styles.applicationLogo} />
+          </div>
+          <div className={styles.applicationTitle}>HEUTE</div>
+          <div className={styles.applicationMessages}>{}</div>
+        </div>
       </div>
     </section>
   );
