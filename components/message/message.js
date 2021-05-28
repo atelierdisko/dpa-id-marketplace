@@ -3,6 +3,11 @@ import Icons from "../icons/icons";
 import { joinClassNames } from "../../utilities/componentsHelpers";
 import typography from "../../styles/typography.module.css";
 
+Message.defaultProps = {
+  onPhone: false,
+  disabled: false,
+};
+
 export default function Message({
   type,
   className,
@@ -12,16 +17,12 @@ export default function Message({
   disabled,
   onPhone,
   theme,
-  themeColor,
+  colorTheme,
   postingTime,
   content,
 }) {
   return (
-    <div
-      className={joinClassNames(styles.root, className)}
-      id={id}
-      onClick={onClick}
-    >
+    <div className={joinClassNames(styles.root, className)} onClick={onClick}>
       <div
         className={joinClassNames(
           styles.typeContainer,
@@ -29,15 +30,15 @@ export default function Message({
         )}
       >
         <Icons className={styles.typeLogo} icon={icon} />
-        <div>{onPhone ? type : `Neue ${type} im`}</div>
+        <div>{onPhone ? `Neue ${type} im` : type}</div>
         {onPhone && (
           <div
             className={styles.diamond}
-            style={{ backgroundColor: themeColor }}
+            style={{ backgroundColor: colorTheme }}
           />
         )}
         {onPhone && (
-          <span className={styles.theme} style={{ color: themeColor }}>
+          <span className={styles.theme} style={{ color: colorTheme }}>
             {theme}
           </span>
         )}
@@ -54,6 +55,7 @@ export default function Message({
       </div>
       {!onPhone && (
         <div
+          id={id}
           className={joinClassNames(
             styles.overlay,
             disabled && styles.isDisabled
