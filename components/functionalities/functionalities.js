@@ -41,9 +41,10 @@ export default function Functionalities({
   };
 
   /* states and handler for animation*/
-  const [message1, setMessage1] = useState(messages[0]);
-  const [message2, setMessage2] = useState(messages[1]);
-  const [message3, setMessage3] = useState(messages[2]);
+  const [message1, setMessage1] = useState({ ...messages[0], disabled: false });
+  const [message2, setMessage2] = useState({ ...messages[1], disabled: false });
+  const [message3, setMessage3] = useState({ ...messages[2], disabled: false });
+  const [hiddenMessages, setHiddenMessages] = useState(messages.slice(7));
   const [phoneMessages, setPhoneMessages] = useState([
     messages[3],
     messages[4],
@@ -51,10 +52,28 @@ export default function Functionalities({
     messages[6],
   ]);
 
-  const handleClickAnimation = ({ target }) => {};
+  const handleClickAnimation = ({ target }) => {
+    const message = target.id;
 
-  /* setting messages*/
-  useEffect(() => {});
+    if (message === "message1") setPhoneMessages((prev) => [message1, ...prev]);
+    if (message === "message2") setPhoneMessages((prev) => [message2, ...prev]);
+    if (message === "message3") setPhoneMessages((prev) => [message3, ...prev]);
+
+    if (hiddenMessages.length === 0) {
+      if (message === "message1")
+        setMessage1((prevMessage) => ({ ...prevMessage, disabled: true }));
+      if (message === "message2")
+        setMessage2((prevMessage) => ({ ...prevMessage, disabled: true }));
+      if (message === "message3")
+        setMessage3((prevMessage) => ({ ...prevMessage, disabled: true }));
+    } else {
+      const newMessage = hiddenMessages[0];
+      if (message === "message1") setMessage1(newMessage);
+      if (message === "message2") setMessage2(newMessage);
+      if (message === "message3") setMessage3(newMessage);
+      setHiddenMessages((prev) => prev.slice(1));
+    }
+  };
 
   return (
     <section className={joinClassNames(styles.root, className)} id={id}>
@@ -106,6 +125,7 @@ export default function Functionalities({
             onClick={handleClickAnimation}
             className={styles.messageToSend}
             content={message1.content}
+            disabled={message1.disabled}
           />
           <Message
             type={message2.type}
@@ -114,6 +134,7 @@ export default function Functionalities({
             onClick={handleClickAnimation}
             className={styles.messageToSend}
             content={message2.content}
+            disabled={message2.disabled}
           />
           <Message
             type={message3.type}
@@ -122,6 +143,7 @@ export default function Functionalities({
             onClick={handleClickAnimation}
             className={styles.messageToSend}
             content={message3.content}
+            disabled={message3.disabled}
           />
         </div>
 
@@ -147,7 +169,7 @@ export default function Functionalities({
                 onPhone={true}
                 postingTime={message.time}
                 className={styles.messageOnPhone}
-                themeColor={message.themeColor}
+                colorTheme={message.colorTheme}
                 content={message.content}
               />
             ))}
