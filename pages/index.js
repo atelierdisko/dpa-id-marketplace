@@ -6,11 +6,11 @@ import Hero from "../components/hero/hero";
 import Quotes from "../components/quotes/quotes";
 import PartnerProgram from "../components/partnerProgram/partnerProgram";
 import SignIn from "../components/signIn/signIn";
+import Applications from "../components/applications/applications";
+import Functionalities from "../components/functionalities/functionalities";
 import NotificationsDemo from "../components/notificationsDemo";
 import applicationsData from "../applicationsData";
 import quotesData from "../quotesData";
-import Applications from "../components/applications/applications";
-import Functionalities from "../components/functionalities/functionalities";
 import functionalitiesData from "../functionalitiesData";
 import messagesData from "../messagesData";
 
