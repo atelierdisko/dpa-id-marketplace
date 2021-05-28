@@ -12,6 +12,7 @@ import quotesData from "../quotesData";
 import Applications from "../components/applications/applications";
 import Functionalities from "../components/functionalities/functionalities";
 import functionalitiesData from "../functionalitiesData";
+import messagesData from "../messagesData";
 
 export default function Home() {
   const filters = [
@@ -50,6 +51,7 @@ export default function Home() {
         <Functionalities
           functionalities={functionalitiesData}
           id="functionalities"
+          messages={messagesData}
         />
         {/*<NotificationsDemo id="functionalities" />*/}
         <PartnerProgram className={styles.partnerProgram} id="partnerProgram" />
