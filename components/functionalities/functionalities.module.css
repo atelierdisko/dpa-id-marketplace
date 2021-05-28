@@ -72,6 +72,10 @@
   display: flex;
   justify-content: space-between;
 }
+.messageToSend {
+  height: calc(var(--spacing-unit) * 11.5);
+  width: calc(var(--spacing-unit) * 32);
+}
 
 .phoneContainer {
   grid-column: span 4/-1;
@@ -90,7 +94,7 @@
 .phoneScreen {
   grid-column: 2/3;
   grid-row: 2/-1;
-  background-color: var(--color-white);
+  background-color: var(--color-gray-100);
   z-index: 2;
   overflow: hidden;
 }
@@ -155,4 +159,13 @@
 }
 
 .applicationMessageContainer {
+  grid-column: 2/-2;
+  grid-row: 4/-1;
+  z-index: 5;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.messageOnPhone {
+  margin-bottom: 24px;
 }
