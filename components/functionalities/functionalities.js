@@ -41,6 +41,9 @@ export default function Functionalities({
   };
 
   /* states and handler for animation*/
+  const [time, setTime] = useState(
+    new Date().toLocaleTimeString("de-DE", { timeStyle: "short" })
+  );
   const [message1, setMessage1] = useState({ ...messages[0], disabled: false });
   const [message2, setMessage2] = useState({ ...messages[1], disabled: false });
   const [message3, setMessage3] = useState({ ...messages[2], disabled: false });
@@ -74,6 +77,13 @@ export default function Functionalities({
       setHiddenMessages((prev) => prev.slice(1));
     }
   };
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setTime(new Date().toLocaleTimeString("de-DE", { timeStyle: "short" }));
+    }, 60000);
+    return () => clearInterval(intervalId);
+  }, []);
 
   return (
     <section className={joinClassNames(styles.root, className)} id={id}>
@@ -153,7 +163,7 @@ export default function Functionalities({
             <div className={styles.Block1} />
             <div className={styles.Block2} />
             <div className={styles.Block3} />
-            <div className={styles.applicationTime}>13:00</div>
+            <div className={styles.applicationTime}>{time}</div>
             <Logo whiteLogo={true} classname={styles.applicationLogo} />
           </div>
           <div className={styles.applicationTitle}>
