@@ -2,6 +2,8 @@ import styles from "./message.module.css";
 import Icons from "../icons/icons";
 import { joinClassNames } from "../../utilities/componentsHelpers";
 import typography from "../../styles/typography.module.css";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 Message.defaultProps = {
   onPhone: false,
@@ -20,9 +22,20 @@ export default function Message({
   colorTheme,
   postingTime,
   content,
+  variants,
+  controls,
 }) {
+  const { ref, inView, entry } = useInView();
+  // console.log(id, ref, inView, entry);
   return (
-    <div className={joinClassNames(styles.root, className)} onClick={onClick}>
+    <motion.div
+      ref={ref}
+      className={joinClassNames(styles.root, className)}
+      onClick={onClick}
+      initial="hidden"
+      animate={controls}
+      variants={variants}
+    >
       <div
         className={joinClassNames(
           styles.typeContainer,
@@ -62,6 +75,6 @@ export default function Message({
           )}
         />
       )}
-    </div>
+    </motion.div>
   );
 }
