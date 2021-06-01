@@ -9,20 +9,32 @@ import { useEffect, useState } from "react";
 export default function Applications({
   applications,
   filters,
-  initialApplicationNumber,
+  initialApplicationNumber /* todo: pass the name of the initial filter as prop */,
   className,
   id,
 }) {
+  /* todo: store the name of the filter in state instead of the index, makes debugging and maintenance easier */
   const [activeFilter, setActiveFilter] = useState(filters.length - 1);
   const [displayedApplications, setDisplayedApplications] = useState([
     ...applications,
   ]);
 
+  /* todo: obsolete, remove */
   const handleFilterClick = ({ target }) => {
     setActiveFilter(filters.indexOf(target.name));
   };
 
   useEffect(() => {
+    /* todo: use an early return for simplicity
+     *
+     * if(activeFilter === "Alle anzeigen") {
+     *    setDisplayedApplications([...applications])
+     *    return
+     * }
+     *
+     * implement filtering logic after
+     */
+
     activeFilter === filters.length - 1
       ? setDisplayedApplications([...applications])
       : setDisplayedApplications(
@@ -31,6 +43,11 @@ export default function Applications({
           )
         );
   }, [activeFilter]);
+
+  /*
+   * todo: use the name of the initial filter to find the index using findIndex() and set it as initial state,
+   * docs: https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex
+   */
 
   return (
     <section
@@ -49,9 +66,13 @@ export default function Applications({
       </p>
       <div className={styles.filters}>
         {filters.map((filter, index) => (
+          /* todo: render element as actual html button to improve accessibility, add a "asButton" prop to the #
+           * button component. When true is should return a <button> tag, otherwise default to <a> as is */
           <Button
             isActive={index === activeFilter}
-            onClick={handleFilterClick}
+            onClick={
+              handleFilterClick
+            } /* todo: pass the filter name to the onclick handler like onClick={() => setActiveFilter(filter)} */
             className={styles.filter}
           >
             {filter}
@@ -59,6 +80,7 @@ export default function Applications({
         ))}
       </div>
       <div className={styles.list}>
+        {/* todo: add key prop to ApplicationCard to fix https://reactjs.org/docs/lists-and-keys.html#keys*/}
         {displayedApplications.map((application) => (
           <ApplicationCard
             title={application.title}

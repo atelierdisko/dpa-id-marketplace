@@ -14,6 +14,10 @@ Slider.defaultProps = {
   backAndForward: true,
 };
 
+/* todo: use https://swiperjs.com/get-started,
+ * see https://github.com/atelierdisko/atelierdisko/blob/main/components/figureCarousel/figureCarousel.js
+ * for an implementation reference
+ */
 export default function Slider({
   array,
   activePage,

@@ -6,6 +6,10 @@ import Button from "../button/button";
 import Slider from "../slider/slider";
 import { useEffect, useState } from "react";
 
+/* todo: use https://swiperjs.com/get-started,
+ * see https://github.com/atelierdisko/atelierdisko/blob/main/components/figureCarousel/figureCarousel.js
+ * for an implementation reference
+ */
 export default function ApplicationCard({
   title,
   excerpt,
@@ -94,6 +98,7 @@ export default function ApplicationCard({
         />
       </div>
 
+      {/* todo: is card is not opened, do not render the details. this improves accessibility */}
       <div
         className={joinClassNames(
           styles.details,
@@ -115,6 +120,7 @@ export default function ApplicationCard({
 
         <div className={styles.carrusel}>
           <img src={currentImage} alt="" className={styles.image} />
+
           <Slider
             className={styles.slider}
             activePage={currentImageIndex}
