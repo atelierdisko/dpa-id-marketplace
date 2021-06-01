@@ -87,6 +87,7 @@ export default function ApplicationCard({
           </p>
         </div>
 
+        {/* todo: wrap icon in <button> or <a> element to improve accessibility */}
         <Icons
           icon="show"
           color="#0045F4"
