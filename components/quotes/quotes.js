@@ -60,11 +60,6 @@ export default function Quotes({ className, data }) {
           </div>
         </div>
       </section>
-      <Marquee className={styles.textLoop}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ein Laufband
-        mit kurzen, prägnaten Benefits. Suspendisse quis mattis orci. Curabitur
-        libero erat, imperdiet eu posuere ac, blandit ut sem.
-      </Marquee>
     </>
   );
 }
