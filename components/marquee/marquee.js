@@ -1,6 +1,6 @@
 import styles from "./marquee.module.css";
 import { joinClassNames } from "../../utilities/componentsHelpers";
-
+//todo: fix animation
 export default function Marquee({ children, className }) {
   const words = children.split(" ");
   return (
