@@ -1,9 +1,3 @@
-.container {
-  width: 90%;
-  max-width: 1328px;
-  min-width: 700px;
-  margin: 0 auto;
-}
 .navigation,
 .footer {
   /*position: fixed;*/
@@ -16,8 +10,8 @@
 
 .footer {
   bottom: 0;
-  height: calc(var(--spacing-unit) * 35);
 }
+
 .hero {
   /*margin-top: calc(var(--spacing-unit) * 12);*/
 }
