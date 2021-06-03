@@ -1,7 +1,6 @@
 .root {
   padding-top: calc(var(--spacing-unit) * 13);
   padding-bottom: calc(var(--spacing-unit) * 30);
-  /*composes: container from "../../styles/Home.module.css";*/
 }
 .buttonContainer {
   grid-column: 1 / span 3;
@@ -24,10 +23,4 @@
 
 .description *:not(:first-child) {
   margin-top: calc(var(--spacing-unit) * 2);
-}
-
-@media (--tablet) {
-  .button {
-    color: red;
-  }
 }
