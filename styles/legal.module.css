@@ -1,0 +1,13 @@
+.navigation {
+  padding-top: calc(var(--spacing-unit) * 2);
+  padding-bottom: calc(var(--spacing-unit) * 2);
+
+  @media (--tablet) {
+    padding-top: calc(var(--spacing-unit) * 3);
+    padding-bottom: calc(var(--spacing-unit) * 3);
+  }
+  @media (--mobile) {
+    padding-top: calc(var(--spacing-unit) * 2.5);
+    padding-bottom: calc(var(--spacing-unit) * 2);
+  }
+}
