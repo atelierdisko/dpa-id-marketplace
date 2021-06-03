@@ -1,19 +1,32 @@
 .root {
   background-color: var(--color-gray-900);
   color: var(--color-white);
-  display: flex;
-  align-items: flex-end;
-}
+  padding-top: calc(var(--spacing-unit) * 27);
+  padding-bottom: calc(var(--spacing-unit) * 3);
 
-.container {
-  composes: container from "../../styles/Home.module.css";
-  margin-bottom: calc(var(--spacing-unit) * 4);
+  @media (--mobile) {
+    padding-top: calc(var(--spacing-unit) * 5);
+    padding-bottom: 21px;
+  }
 }
 
 .logo {
-  grid-column: 1 / span 2;
+  grid-column: 1 / span 4;
   margin-bottom: 4px;
   cursor: pointer;
+  align-self: flex-end;
+  justify-self: flex-start;
+  display: flex;
+
+  @media (--mobile) {
+    justify-self: center;
+    align-self: flex-start;
+  }
+}
+
+.partnerProgram {
+  margin-left: var(--spacing-unit);
+  font-size: 23px;
 }
 
 .legal {
@@ -21,6 +34,10 @@
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
+
+  @media (--mobile) {
+    margin-top: calc(var(--spacing-unit) * 16);
+  }
 }
 
 .legal li:not(:last-child) {
