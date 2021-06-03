@@ -1,38 +1,67 @@
 .root {
-  composes: container from "../../styles/Home.module.css";
-  margin-bottom: calc(var(--spacing-unit) * 12);
+  padding-top: calc(var(--spacing-unit) * 12);
+  padding-bottom: calc(var(--spacing-unit) * 12);
+  color: var(--color-white);
+  background-color: var(--color-blue);
+  background-image: linear-gradient(
+    to right,
+    rgba(26, 30, 40, 0.1),
+    rgba(255, 255, 255, 0.1)
+  );
+  @media (--tablet) {
+    padding-top: calc(var(--spacing-unit) * 15);
+    padding-bottom: calc(var(--spacing-unit) * 15);
+  }
+  @media (--mobile) {
+    padding-top: calc(var(--spacing-unit) * 10);
+    padding-bottom: calc(var(--spacing-unit) * 7);
+  }
 }
 
-.title {
-  margin-top: calc(var(--spacing-unit) * 12);
+.title,
+.description,
+.filterOptions {
   grid-column: 1 / span 9;
+  justify-self: flex-start;
 }
 
 .description {
   margin-top: calc(var(--spacing-unit) * 3);
-  grid-column: 1 / span 9;
 }
 
 .filterOptions {
-  grid-column: 1 / span 2;
   margin-top: calc(var(--spacing-unit) * 11);
+  @media (--mobile) {
+    margin-top: calc(var(--spacing-unit) * 8);
+  }
 }
 
 .filters {
-  grid-column: 1 / span 11;
+  grid-column: 1 / -1;
   margin-top: calc(var(--spacing-unit) * 3);
-  color: var(--color-blue);
+  color: var(--color-white);
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 .filter {
+  border-color: var(--color-white);
   margin-right: calc(var(--spacing-unit) * 2);
+  margin-bottom: calc(var(--spacing-unit) * 3);
+}
+
+.filters :last-child {
+  background: var(--color-white);
+  color: var(--color-blue);
 }
 
 .list {
   grid-column: 1/-1;
-  margin-top: calc(var(--spacing-unit) * 5);
+  margin-top: calc(var(--spacing-unit) * 2);
+  @media (--tablet) {
+    margin-top: calc(var(--spacing-unit) * 3);
+  }
 }
 
 .list > div {
@@ -44,4 +73,5 @@
   margin-top: calc(var(--spacing-unit) * 6);
   display: flex;
   justify-content: center;
+  background: transparent;
 }
