@@ -4,6 +4,7 @@ import { joinClassNames } from "../../utilities/componentsHelpers";
 import typography from "../../styles/typography.module.css";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { useRef } from "react";
 
 Message.defaultProps = {
   onPhone: false,
@@ -25,7 +26,8 @@ export default function Message({
   variants,
   controls,
 }) {
-  const { ref, inView, entry } = useInView();
+  // const { ref, inView, entry } = useInView();
+  const ref = useRef();
   // console.log(id, ref, inView, entry);
   return (
     <motion.div

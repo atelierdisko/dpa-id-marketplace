@@ -52,33 +52,36 @@ export default function Functionalities({
   const controls = useAnimation();
 
   const messagesToSendVariants = {
-    hidden: {
+    normal: {
       scale: 1,
       transition: {
         duration: 0.3,
+        ease: "easeOut",
       },
     },
-    visible: {
+    enlarged: {
+      scale: 1.5,
+      transition: {
+        duration: 0.3,
+        ease: "easeOut",
+      },
+    },
+  };
+  const incomingMessageVariants = {
+    incoming: {
       scale: 1.5,
       transition: {
         duration: 0.3,
       },
     },
-  };
-  const incomingMessageVariants = {
-    hidden: {
-      scale: 0,
-      transition: {
-        duration: 0.3,
-      },
-    },
-    visible: {
+    onPhone: {
       scale: 1,
       transition: {
         duration: 0.3,
       },
     },
   };
+
   const [time, setTime] = useState(
     new Date().toLocaleTimeString("de-DE", { timeStyle: "short" })
   );
@@ -102,15 +105,15 @@ export default function Functionalities({
 
     if (!message.disabled) {
       if (messageId === "message1") {
-        controls1.start("visible").then(() => controls1.start("hidden"));
+        controls1.start("enlarged").then(() => controls1.start("normal"));
       }
       if (messageId === "message2") {
         // controls1.start("visible");
-        controls2.start("visible").then(() => controls2.start("hidden"));
+        controls2.start("enlarged").then(() => controls2.start("normal"));
       }
       if (messageId === "message3") {
         // controls1.start("visible");
-        controls3.start("visible").then(() => controls3.start("hidden"));
+        controls3.start("enlarged").then(() => controls3.start("normal"));
       }
       setPhoneMessages((prev) => [message, ...prev]);
     }
@@ -132,7 +135,7 @@ export default function Functionalities({
   };
 
   useEffect(() => {
-    controls.start("visible");
+    controls.start("incoming");
   }, [phoneMessages]);
 
   useEffect(() => {
