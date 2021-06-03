@@ -1,21 +1,58 @@
 .root {
-  composes: container from "../../styles/Home.module.css";
+  position: relative;
   color: var(--color-gray-900);
+  background: var(--color-gray-100);
+  padding-top: calc(var(--spacing-unit) * 12);
   padding-bottom: calc(var(--spacing-unit) * 18);
+  @media (--tablet) {
+    padding-top: calc(var(--spacing-unit) * 7.5);
+    padding-bottom: calc(var(--spacing-unit) * 15);
+  }
+  @media (--mobile) {
+    padding-top: calc(var(--spacing-unit) * 6.5);
+    padding-bottom: calc(var(--spacing-unit) * 7);
+  }
 }
 
-.title {
-  margin-top: calc(var(--spacing-unit) * 12);
-  grid-column: 1/8;
+.title,
+.description,
+.button {
+  grid-column: 1 / span 7;
+  justify-self: flex-start;
+  @media (--tablet) {
+    grid-column: 1 / -1;
+  }
+  @media (--mobile) {
+    grid-column: 1 / -1;
+  }
 }
 
 .description {
   margin-top: calc(var(--spacing-unit) * 3);
-  grid-column: 1/8;
 }
-.buttonContainer {
+.button {
   margin-top: calc(var(--spacing-unit) * 4);
-  grid-column: 1/5;
   display: flex;
-  justify-content: flex-start;
+  justify-self: flex-start;
+
+  @media (--tablet) {
+    margin-top: calc(var(--spacing-unit) * 5);
+  }
+  @media (--mobile) {
+    margin-top: calc(var(--spacing-unit) * 5);
+    justify-self: center;
+  }
+}
+
+.laptopImage {
+  position: absolute;
+  right: 0;
+  top: calc(var(--spacing-unit) * 12);
+}
+
+.appMenu {
+  grid-column: 9/12;
+  grid-row: 2;
+  align-self: flex-end;
+  z-index: 1;
 }
