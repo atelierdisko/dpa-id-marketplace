@@ -19,6 +19,6 @@
 
 .isDisabled {
   border-color: var(--color-gray-300);
-  background-color: var(--color-white);
+  background-color: transparent;
   color: var(--color-gray-300);
 }
