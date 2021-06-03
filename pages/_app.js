@@ -1,4 +1,4 @@
-import "../styles/globals.css";
+import "../styles/globals/index.css";
 
 import "../components/notificationsDemo/index.css";
 

@@ -4,12 +4,22 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "build": "npm run css-exports & next build",
+    "start": "next start",
+    "export": "next export",
+    "css-exports": "postcss styles/globals/variables.css --config ./config/ > /dev/null"
   },
   "dependencies": {
     "framer-motion": "^4.1.17",
     "next": "10.2.0",
+    "postcss": "^8.2.10",
+    "postcss-cli": "^8.3.1",
+    "postcss-extend-rule": "^3.0.0",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-import": "^14.0.1",
+    "postcss-nested": "^5.0.5",
+    "postcss-normalize": "^9.0.0",
+    "postcss-preset-env": "^6.7.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-intersection-observer": "^8.32.0"

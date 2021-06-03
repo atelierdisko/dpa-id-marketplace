@@ -27,7 +27,6 @@
 }
 
 @media (--tablet) {
-  /*@media (min-width: 641px) and (max-width: 1024px) {*/
   .button {
     color: red;
   }
