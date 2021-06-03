@@ -3,6 +3,7 @@
 @custom-media --desktop (min-width: 1160px) and (max-width: 1629px);
 @custom-media --tablet (min-width: 720px) and (max-width: 1159px);
 @custom-media --mobile (max-width: 719px);
+@custom-media --tablet-and-mobile (min-width: 720px) and (max-width: 719px);
 
 :root {
   /*Colors*/
