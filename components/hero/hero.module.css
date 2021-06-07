@@ -2,8 +2,8 @@
   position: relative;
   color: var(--color-gray-900);
   background: var(--color-gray-100);
-  padding-top: calc(var(--spacing-unit) * 12);
-  padding-bottom: calc(var(--spacing-unit) * 18);
+  padding-top: calc(var(--spacing-unit) * 8.5);
+  padding-bottom: calc(var(--spacing-unit) * 16.5);
   @media (--tablet) {
     padding-top: calc(var(--spacing-unit) * 7.5);
     padding-bottom: calc(var(--spacing-unit) * 15);
@@ -26,14 +26,24 @@
     grid-column: 1 / -1;
   }
 }
-
+.title {
+  grid-row: 1;
+  margin-top: 28px;
+}
 .description {
   margin-top: calc(var(--spacing-unit) * 3);
+  grid-row: 2/4;
 }
 .button {
+  grid-row: 4;
   margin-top: calc(var(--spacing-unit) * 4);
+  margin-bottom: calc(var(--spacing-unit) * 1.5);
   display: flex;
   justify-self: flex-start;
+  align-self: flex-start;
+  background: var(--color-blue);
+  color: var(--color-white);
+  transition: box-shadow 300ms;
 
   @media (--tablet) {
     margin-top: calc(var(--spacing-unit) * 5);
@@ -43,16 +53,22 @@
     justify-self: center;
   }
 }
+.button:hover {
+  box-shadow: 0 8px 24px rgba(26, 30, 40, 0.2);
+}
 
 .laptopImage {
-  position: absolute;
-  right: 0;
-  top: calc(var(--spacing-unit) * 12);
+  grid-column: -5/-1;
+  grid-row: 1/5;
+  justify-self: flex-start;
 }
 
 .appMenu {
   grid-column: 9/12;
-  grid-row: 2;
+  grid-row: 2/5;
+  width: 317px;
+  height: 298px;
   align-self: flex-end;
   z-index: 1;
+  margin-left: 20px;
 }
