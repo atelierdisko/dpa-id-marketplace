@@ -10,8 +10,26 @@ export default function Button({
   onClick,
   isDisabled,
   href,
+  asButton,
+  isBlue,
 }) {
-  return (
+  return asButton ? (
+    <button
+      className={joinClassNames(
+        typography.etaInter500,
+        styles.root,
+        isDoublePadding && styles.isDoublePadding,
+        isActive && styles.isActive,
+        isDisabled && styles.isDisabled,
+        isBlue && styles.isBlue,
+        className
+      )}
+      onClick={onClick}
+      name={children}
+    >
+      {children}
+    </button>
+  ) : (
     <a
       className={joinClassNames(
         typography.etaInter500,
@@ -19,6 +37,8 @@ export default function Button({
         isDoublePadding && styles.isDoublePadding,
         isActive && styles.isActive,
         isDisabled && styles.isDisabled,
+        isBlue && styles.isBlue,
+
         className
       )}
       onClick={onClick}
