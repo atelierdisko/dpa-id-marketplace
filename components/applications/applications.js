@@ -13,35 +13,23 @@ export default function Applications({
   className,
   id,
 }) {
-  /* todo: store the name of the filter in state instead of the index, makes debugging and maintenance easier */
-  const [activeFilter, setActiveFilter] = useState(filters.length - 1);
+  const [activeFilter, setActiveFilter] = useState("Alle anzeigen");
   const [displayedApplications, setDisplayedApplications] = useState([
     ...applications,
   ]);
 
-  /* todo: obsolete, remove */
-  const handleFilterClick = ({ target }) => {
-    setActiveFilter(filters.indexOf(target.name));
-  };
-
   useEffect(() => {
-    /* todo: use an early return for simplicity
-     *
-     * if(activeFilter === "Alle anzeigen") {
-     *    setDisplayedApplications([...applications])
-     *    return
-     * }
-     *
-     * implement filtering logic after
-     */
+    console.log(activeFilter);
+    if (activeFilter === "Alle anzeigen") {
+      setDisplayedApplications([...applications]);
+      return;
+    }
 
-    activeFilter === filters.length - 1
-      ? setDisplayedApplications([...applications])
-      : setDisplayedApplications(
-          applications.filter((application) =>
-            application.tags.includes(filters[activeFilter].toLowerCase())
-          )
-        );
+    setDisplayedApplications(
+      applications.filter((application) =>
+        application.tags.includes(activeFilter.toLowerCase())
+      )
+    );
   }, [activeFilter]);
 
   /*
@@ -65,24 +53,21 @@ export default function Applications({
         Filteroptionen:
       </p>
       <div className={styles.filters}>
-        {filters.map((filter, index) => (
-          /* todo: render element as actual html button to improve accessibility, add a "asButton" prop to the #
-           * button component. When true is should return a <button> tag, otherwise default to <a> as is */
+        {filters.map((filter) => (
           <Button
-            isActive={index === activeFilter}
-            onClick={
-              handleFilterClick
-            } /* todo: pass the filter name to the onclick handler like onClick={() => setActiveFilter(filter)} */
+            isActive={filter === activeFilter}
+            onClick={() => setActiveFilter(filter)}
             className={styles.filter}
+            asButton={filter !== activeFilter}
           >
             {filter}
           </Button>
         ))}
       </div>
       <div className={styles.list}>
-        {/* todo: add key prop to ApplicationCard to fix https://reactjs.org/docs/lists-and-keys.html#keys*/}
-        {displayedApplications.map((application) => (
+        {displayedApplications.map((application, index) => (
           <ApplicationCard
+            key={index}
             title={application.title}
             excerpt={application.excerpt}
             description={application.description}

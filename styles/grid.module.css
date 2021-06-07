@@ -1,7 +1,7 @@
 .root {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-column-gap: 16px;
+  //grid-column-gap: 16px;
 
   @media (--tablet) {
     grid-template-columns: repeat(8, 1fr);
@@ -16,6 +16,8 @@
   padding-left: 56px;
   padding-right: 56px;
 
+  @media (--desktop-xl) {
+  }
   @media (--tablet) {
     padding-left: 40px;
     padding-right: 40px;

@@ -33,4 +33,5 @@ a {
 button {
   font-family: inherit;
   color: inherit;
+  background: none;
 }
