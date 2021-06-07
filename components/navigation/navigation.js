@@ -52,7 +52,11 @@ export default function Navigation({ className, displayNavigation, isLight }) {
         {!isMobile && (
           <li className={typography.etaInter500}>
             <Link href="/#signIn">
-              <Button className={styles.signIn}>
+              <Button
+                className={styles.signIn}
+                asButton={false}
+                isActive={true}
+              >
                 <Logo classname={styles.logoAnmelden} withName={false} />
                 Anmelden
               </Button>
@@ -62,7 +66,9 @@ export default function Navigation({ className, displayNavigation, isLight }) {
 
         <li className={typography.etaInter500}>
           <Link href="/#createId">
-            <Button isActive={true}>Jetzt dpa ID anlegen</Button>
+            <Button asButton={false} isBlue={true}>
+              Jetzt dpa ID anlegen
+            </Button>
           </Link>
         </li>
       </ul>
