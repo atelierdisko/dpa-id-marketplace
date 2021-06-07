@@ -46,14 +46,9 @@
 }
 
 .filter {
-  border-color: var(--color-white);
   margin-right: calc(var(--spacing-unit) * 2);
   margin-bottom: calc(var(--spacing-unit) * 3);
-}
-
-.filters :last-child {
-  background: var(--color-white);
-  color: var(--color-blue);
+  border: 1px solid var(--color-white);
 }
 
 .list {
@@ -64,7 +59,7 @@
   }
 }
 
-.list > div {
+.list > div:not(:first-child) {
   margin-top: calc(var(--spacing-unit) * 2);
 }
 
@@ -74,4 +69,7 @@
   display: flex;
   justify-content: center;
   background: transparent;
+  @media (--tablet) {
+    margin-top: calc(var(--spacing-unit) * 5);
+  }
 }
