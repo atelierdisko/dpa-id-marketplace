@@ -1,0 +1,45 @@
+.root {
+}
+.swiperContainer {
+  width: 100%;
+  height: auto;
+}
+
+.swiperSlide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiperSlide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.pagination {
+  background: red;
+}
+.navigation {
+  margin-top: calc(var(--spacing-unit) * 2);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.prevButton,
+.nextButton {
+  border: none;
+  background: transparent;
+}
+
+.prevButton {
+}
+
+.nextButton {
+}
