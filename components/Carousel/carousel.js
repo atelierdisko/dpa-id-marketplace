@@ -8,31 +8,28 @@ import "swiper/components/navigation/navigation.min.css";
 import "swiper/components/pagination/pagination.min.css";
 
 import SwiperCore, {
-  Navigation,
   Pagination,
   Mousewheel,
   Keyboard,
 } from "swiper/core";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from 'react'
 
-SwiperCore.use([Navigation, Pagination, Mousewheel, Keyboard]);
+SwiperCore.use([Pagination, Mousewheel, Keyboard]);
 
 export default function Carousel({ children, className }) {
-  const prevRef = useRef(null);
-  const nextRef = useRef(null);
+  const [swiper, setSwiper] = useState(null);
+  if (typeof window !== "undefined") {
+    window.swiper = swiper;
+  }
   return (
     <div className={className}>
       <Swiper
         // cssMode={true}
-        // navigation={true}
         // pagination={true}
-        pagination={{ clickable: true, modifierClass: styles.pagination }}
-        navigation={{
-          prevEl: prevRef.current ? prevRef.current : undefined,
-          nextEl: nextRef.current ? nextRef.current : undefined,
-        }}
+        pagination={{ clickable: true, modifierClass: "", bulletClass: styles.bullet, bulletActiveClass: styles.bulletActive}}
         mousewheel={true}
         keyboard={true}
+        onSwiper={setSwiper}
         className={styles.swiperContainer}
       >
         {children.map((child, index) => (
@@ -43,13 +40,13 @@ export default function Carousel({ children, className }) {
       </Swiper>
       <div className={styles.navigation}>
         <button
-          ref={prevRef}
+          onClick={() => swiper?.slidePrev()}
           className={joinClassNames(typography.zeta500, styles.prevButton)}
         >
           ‹ Zurück
         </button>
         <button
-          ref={nextRef}
+          onClick={() => swiper?.slideNext()}
           className={joinClassNames(typography.zeta500, styles.nextButton)}
         >
           Weiter ›
