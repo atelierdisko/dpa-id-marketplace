@@ -8,6 +8,7 @@ import Slider from "../slider/slider";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { customMedia } from "../../styles/cssExports";
+import Carousel from "../Carousel/carousel";
 
 /* todo: use https://swiperjs.com/get-started,
  * see https://github.com/atelierdisko/atelierdisko/blob/main/components/figureCarousel/figureCarousel.js
@@ -99,18 +100,18 @@ export default function ApplicationCard({
           >
             Jetzt dpa-News testen
           </Button>
+          <Carousel className={styles.carousel}>{images}</Carousel>
+          {/*<div className={styles.carousel}>*/}
+          {/*  <img src={currentImage} alt="" className={styles.image} />*/}
 
-          <div className={styles.carrusel}>
-            <img src={currentImage} alt="" className={styles.image} />
-
-            <Slider
-              className={styles.slider}
-              activePage={currentImageIndex}
-              array={[...Array(images.length).keys()]}
-              onClick={handleSliderClick}
-              dark={true}
-            />
-          </div>
+          {/*  <Slider*/}
+          {/*    className={styles.slider}*/}
+          {/*    activePage={currentImageIndex}*/}
+          {/*    array={[...Array(images.length).keys()]}*/}
+          {/*    onClick={handleSliderClick}*/}
+          {/*    dark={true}*/}
+          {/*  />*/}
+          {/*</div>*/}
         </>
       )}
     </div>
