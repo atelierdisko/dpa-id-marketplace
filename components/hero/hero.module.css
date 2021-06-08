@@ -17,13 +17,13 @@
 .title,
 .description,
 .button {
-  grid-column: 1 / span 7;
+  grid-column: 3 / span 7;
   justify-self: flex-start;
   @media (--tablet) {
-    grid-column: 1 / -1;
+    grid-column: 3 / -3;
   }
   @media (--mobile) {
-    grid-column: 1 / -1;
+    grid-column: 3 / -3;
   }
 }
 .title {
@@ -57,18 +57,32 @@
   box-shadow: 0 8px 24px rgba(26, 30, 40, 0.2);
 }
 
-.laptopImage {
-  grid-column: -5/-1;
+.laptopImageWrapper {
+  grid-column: span 7 / -1;
   grid-row: 1/5;
-  justify-self: flex-start;
+  overflow: hidden;
+  margin-left: 64px;
+  @media (--tablet), (--mobile) {
+    display: none;
+  }
+}
+
+.laptopImage {
+  width: 100%;
+  height: 85%;
+  object-fit: cover;
+  object-position: top left;
 }
 
 .appMenu {
-  grid-column: 9/12;
+  grid-column: span 5/ -1;
   grid-row: 2/5;
   width: 317px;
   height: 298px;
   align-self: flex-end;
   z-index: 1;
   margin-left: 20px;
+  @media (--tablet), (--mobile) {
+    display: none;
+  }
 }

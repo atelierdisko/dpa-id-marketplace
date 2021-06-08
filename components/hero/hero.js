@@ -3,14 +3,11 @@ import { joinClassNames } from "../../utilities/componentsHelpers";
 import styles from "./hero.module.css";
 import typography from "../../styles/typography.module.css";
 import grid from "../../styles/grid.module.css";
-import { useMediaQuery } from "react-responsive";
-import { customMedia } from "../../styles/cssExports";
 
 export default function Hero({ className }) {
-  const isDesktop = useMediaQuery({ query: customMedia["--desktop"] });
   return (
     <section
-      className={joinClassNames(className, styles.root, grid.root, grid.margin)}
+      className={joinClassNames(className, styles.root, grid.gridFull)}
     >
       <h1 className={joinClassNames(styles.title, typography.beta500)}>
         Willkommen in der Welt der dpa ID!{" "}
@@ -26,12 +23,11 @@ export default function Hero({ className }) {
       <Button isDoublePadding={true} className={styles.button}>
         Jetzt dpa ID anlegen und Tools testen
       </Button>
-      {isDesktop && (
+      <div className={styles.laptopImageWrapper}>
         <img src={"./images/hero-laptop1.png"} className={styles.laptopImage} />
-      )}
-      {isDesktop && (
-        <img src={"./images/App_Switcher (1).png"} className={styles.appMenu} />
-      )}
+      </div>
+      <img src={"./images/App_Switcher (1).png"} className={styles.appMenu} />
+
     </section>
   );
 }
