@@ -13,13 +13,20 @@ import SwiperCore, {
   Mousewheel,
   Keyboard,
 } from "swiper/core";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 SwiperCore.use([Navigation, Pagination, Mousewheel, Keyboard]);
 
 export default function Carousel({ children, className }) {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+  let navigation;
+  useEffect(() => {
+    navigation = {
+      prevEl: prevRef.current,
+      nextEl: nextRef.current,
+    };
+  }, []);
   return (
     <div className={className}>
       <Swiper
@@ -27,10 +34,15 @@ export default function Carousel({ children, className }) {
         // navigation={true}
         // pagination={true}
         pagination={{ clickable: true, modifierClass: styles.pagination }}
-        navigation={{
-          prevEl: prevRef.current ? prevRef.current : undefined,
-          nextEl: nextRef.current ? nextRef.current : undefined,
-        }}
+        // navigation={{
+        //   prevEl: prevRef.current ? prevRef.current : undefined,
+        //   nextEl: nextRef.current ? nextRef.current : undefined,
+        // }}
+        navigation={{ navigation }}
+        // onBeforeInit={{
+        //     swiper.params.navigation.prevEl = prevRef.current,
+        //     swiper.params.navigation.nextEl = nextRef.current,
+        // }}
         mousewheel={true}
         keyboard={true}
         className={styles.swiperContainer}
