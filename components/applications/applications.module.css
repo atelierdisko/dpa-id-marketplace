@@ -21,8 +21,11 @@
 .title,
 .description,
 .filterOptions {
-  grid-column: 1 / span 9;
+  grid-column: 3 / span 9;
   justify-self: flex-start;
+  @media (--tablet) {
+    grid-column: 3/-3;
+  }
 }
 
 .description {
@@ -37,7 +40,7 @@
 }
 
 .filters {
-  grid-column: 1 / -1;
+  grid-column: 3 / -3;
   margin-top: calc(var(--spacing-unit) * 3);
   color: var(--color-white);
   display: flex;
@@ -50,9 +53,12 @@
   margin-bottom: calc(var(--spacing-unit) * 3);
   border: 1px solid var(--color-white);
 }
+.filter:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
 
 .list {
-  grid-column: 1/-1;
+  grid-column: 3/-3;
   margin-top: calc(var(--spacing-unit) * 2);
   @media (--tablet) {
     margin-top: calc(var(--spacing-unit) * 3);

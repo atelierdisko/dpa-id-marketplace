@@ -39,7 +39,7 @@ export default function Applications({
 
   return (
     <section
-      className={joinClassNames(grid.root, grid.margin, styles.root, className)}
+      className={joinClassNames(grid.root, styles.root, className)}
       id={id}
     >
       <h2 className={joinClassNames(typography.beta500, styles.title)}>
