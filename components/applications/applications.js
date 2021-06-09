@@ -73,8 +73,6 @@ export default function Applications({
             description={application.description}
             icon={application.icon}
             images={application.images}
-            // backgroundColor={application.backgroundColor}
-            // color={application.color}
           />
         ))}
       </div>
