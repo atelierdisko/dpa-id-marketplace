@@ -1,7 +1,13 @@
+@value marginL: 64px;
+@value marginM: 40px;
+@value marginS: 16px;
+@value maxInnerGridWidth: 1504px;
+@value innerColumnWidthXL: calc(maxInnerGridWidth / 12);
+
 .root {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
   //grid-column-gap: 16px;
+  grid-template-columns: repeat(12, 1fr);
 
   @media (--tablet) {
     grid-template-columns: repeat(8, 1fr);
@@ -13,18 +19,34 @@
   }
 }
 .margin {
-  padding-left: 56px;
-  padding-right: 56px;
+  padding-left: marginL;
+  padding-right: marginL;
 
   @media (--desktop-xl) {
   }
   @media (--tablet) {
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: marginM;
+    padding-right: marginM;
   }
 
   @media (--mobile) {
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: marginS;
+    padding-right: marginS;
+  }
+}
+
+.gridFull {
+  display: grid;
+  @media (--desktop-xl) {
+    grid-template-columns: 1fr marginL repeat(12, innerColumnWidthXL) marginL 1fr;
+  }
+  @media (--desktop) {
+    grid-template-columns: 0 marginL repeat(12, 1fr) marginL 0;
+  }
+  @media (--tablet) {
+    grid-template-columns: 0 marginM repeat(8, innerColumnWidthXL) marginM 0;
+  }
+  @media (--mobile) {
+    grid-template-columns: 0 marginS repeat(4, innerColumnWidthXL) marginS 0;
   }
 }

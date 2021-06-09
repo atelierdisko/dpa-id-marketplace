@@ -22,9 +22,19 @@
   height: auto;
   object-fit: cover;
 }
-.pagination {
-  background: red;
+
+.bullet {
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  display: block;
+  background-color: red;
 }
+
+.bulletActive {
+  background-color: blue;
+}
+
 .navigation {
   margin-top: calc(var(--spacing-unit) * 2);
   width: 100%;
@@ -36,6 +46,7 @@
 .nextButton {
   border: none;
   background: transparent;
+  cursor: pointer;
 }
 
 .prevButton {
