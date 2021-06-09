@@ -41,18 +41,26 @@ export default function Navigation({ className, displayNavigation, isLight }) {
         </li>
         <li className={typography.etaInter500}>
           <Link href="/#signIn">
-            <Button className={styles.signIn} asButton={false} isActive={true}>
-              <Logo classname={styles.signInLogo} withName={false} />
-              Anmelden
-            </Button>
+            <a>
+              <Button
+                className={styles.signIn}
+                asButton={false}
+                isActive={true}
+              >
+                <Logo classname={styles.signInLogo} withName={false} />
+                Anmelden
+              </Button>
+            </a>
           </Link>
         </li>
 
         <li className={typography.etaInter500}>
           <Link href="/#createId">
-            <Button asButton={false} isBlue={true}>
-              Jetzt dpa ID anlegen
-            </Button>
+            <a>
+              <Button asButton={false} isBlue={true}>
+                Jetzt dpa ID anlegen
+              </Button>
+            </a>
           </Link>
         </li>
       </ul>

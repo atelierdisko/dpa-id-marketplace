@@ -1,7 +1,7 @@
 module.exports = {
 	customMedia: {
-		'--desktop-xl': '(min-width: 1630px)',
-		'--desktop': '(min-width: 1160px) and (max-width: 1629px)',
+		'--desktop-xl': '(min-width: 1632px)',
+		'--desktop': '(min-width: 1160px) and (max-width: 1631px)',
 		'--tablet': '(min-width: 720px) and (max-width: 1159px)',
 		'--mobile': '(max-width: 719px)',
 		'--tablet-and-mobile': '(min-width: 720px) and (max-width: 719px)'
