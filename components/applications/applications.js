@@ -47,6 +47,7 @@ export default function Applications({
         Filteroptionen:
       </p>
       <div className={styles.filters}>
+        {/*  todo: add key prop to button https://reactjs.org/docs/lists-and-keys.html#keys */}
         {filters.map((filter) => (
           <Button
             isActive={filter === activeFilter}

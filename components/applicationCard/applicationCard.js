@@ -72,7 +72,9 @@ export default function ApplicationCard({
           styles.showIcon,
           isOpen && styles.showIconIsOpened
         )}
-        onClick={handleShowDetailsClick}
+        onClick={
+          handleShowDetailsClick
+        } /* todo: move onclick handler to root element */
       />
 
       {isOpen && (
