@@ -9,15 +9,11 @@ import { joinClassNames } from "../../utilities/componentsHelpers";
 import Button from "../button/button";
 
 export default function Navigation({ className, displayNavigation, isLight }) {
-  const isDesktop = useMediaQuery({ query: customMedia["--desktop"] });
-  const isTablet = useMediaQuery({ query: customMedia["--tablet"] });
-  const isMobile = useMediaQuery({ query: customMedia["--mobile"] });
   return (
     <nav
       className={joinClassNames(
         styles.root,
         grid.root,
-        grid.margin,
         isLight && styles.isLight,
         className
       )}
@@ -28,41 +24,29 @@ export default function Navigation({ className, displayNavigation, isLight }) {
         className={styles.list}
         style={!displayNavigation ? { display: "none" } : null}
       >
-        {isDesktop && (
-          <li className={typography.zeta500}>
-            <Link href="/#applications" scroll={true}>
-              <a>Anwendungen</a>
-            </Link>
-          </li>
-        )}
-        {isDesktop && (
-          <li className={typography.zeta500}>
-            <Link href="/#functionalities">
-              <a>Funktionalitäten</a>
-            </Link>
-          </li>
-        )}
-        {isDesktop && (
-          <li className={typography.zeta500}>
-            <Link href="/#partnerProgram">
-              <a>Partnerprogramm</a>
-            </Link>
-          </li>
-        )}
-        {!isMobile && (
-          <li className={typography.etaInter500}>
-            <Link href="/#signIn">
-              <Button
-                className={styles.signIn}
-                asButton={false}
-                isActive={true}
-              >
-                <Logo classname={styles.logoAnmelden} withName={false} />
-                Anmelden
-              </Button>
-            </Link>
-          </li>
-        )}
+        <li className={typography.zeta500}>
+          <Link href="/#applications" scroll={true}>
+            <a>Marktplatz</a>
+          </Link>
+        </li>
+        <li className={typography.zeta500}>
+          <Link href="/#functionalities">
+            <a>Best Practises</a>
+          </Link>
+        </li>
+        <li className={typography.zeta500}>
+          <Link href="/#partnerProgram">
+            <a>Funktionalitäten</a>
+          </Link>
+        </li>
+        <li className={typography.etaInter500}>
+          <Link href="/#signIn">
+            <Button className={styles.signIn} asButton={false} isActive={true}>
+              <Logo classname={styles.signInLogo} withName={false} />
+              Anmelden
+            </Button>
+          </Link>
+        </li>
 
         <li className={typography.etaInter500}>
           <Link href="/#createId">
