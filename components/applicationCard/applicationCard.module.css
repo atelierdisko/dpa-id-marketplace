@@ -4,14 +4,14 @@
   background: var(--color-gray-100);
   padding: 16px 32px;
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: auto repeat(11, 1fr);
   @media (--mobile) {
     padding: 16px;
     grid-template-columns: 48px 16px auto 21px;
   }
 }
 .root:hover {
-  background: rgba(245, 245, 245, 0.8);
+  background: var(--color-gray-200);
 }
 
 .iconContainer {
@@ -25,7 +25,6 @@
   align-items: center;
   grid-column: 1/2;
   @media (--mobile) {
-    margin-right: calc(var(--spacing-unit) * 2);
     height: calc(var(--spacing-unit) * 6);
     width: calc(var(--spacing-unit) * 6);
   }
@@ -52,6 +51,14 @@
 
 .excerpt {
   @media (--mobile) {
+    display: none;
+  }
+}
+
+.excerptMobile {
+  display: none;
+  @media (--mobile) {
+    display: inline-block;
     grid-column: 1/5;
     margin-top: 18px;
   }
@@ -59,7 +66,8 @@
 
 .showIcon {
   border: none;
-  transition: transform 400ms;
+  height: 100%;
+  transition: transform 400ms, top 500ms;
   grid-column: 12/13;
   grid-row: 1;
   justify-self: flex-end;
@@ -71,6 +79,8 @@
 }
 .showIcon:hover {
   cursor: pointer;
+  position: relative;
+  top: 8px;
 }
 .showIcon:active,
 .showIconIsOpened {
@@ -84,7 +94,7 @@
   grid-column: 2/7;
   margin-top: calc(var(--spacing-unit) * 5);
   @media (--tablet) {
-    grid-column: 2/9;
+    grid-column: 2/12;
     grid-row: 2/3;
     margin-top: calc(var(--spacing-unit) * 4.5);
   }
@@ -101,7 +111,8 @@
   align-self: flex-end;
   transition: box-shadow 300ms;
   @media (--tablet) {
-    grid-column: 2/6;
+    margin-top: calc(var(--spacing-unit) * 5.5);
+    grid-column: 2/9;
     grid-row: 4/5;
   }
   @media (--mobile) {
@@ -119,8 +130,10 @@
   margin-left: 56px;
   margin-top: calc(var(--spacing-unit) * 5);
   margin-bottom: calc(var(--spacing-unit) * 5);
+  width: 100%;
+  height: auto;
   @media (--tablet) {
-    grid-column: 2/9;
+    grid-column: 2/12;
     grid-row: 3/4;
     margin-left: 0;
     margin-top: calc(var(--spacing-unit) * 8);
@@ -128,18 +141,9 @@
   }
   @media (--mobile) {
     grid-column: 1/5;
+    grid-row: 4;
     margin-left: 0;
     margin-top: calc(var(--spacing-unit) * 5);
     margin-bottom: 0;
   }
-}
-
-.image {
-  height: auto;
-  width: 100%;
-}
-
-.slider {
-  margin-top: var(--spacing-unit);
-  color: var(--color-gray-900);
 }

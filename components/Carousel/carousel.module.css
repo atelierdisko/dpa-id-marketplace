@@ -1,8 +1,8 @@
 .root {
 }
 .swiperContainer {
-  width: 100%;
-  height: auto;
+  //width: 100%;
+  //height: auto;
 }
 
 .swiperSlide {
@@ -23,12 +23,21 @@
   object-fit: cover;
 }
 
+.pagination {
+  position: absolute;
+  bottom: 10px;
+}
+
+.pagination:not (:last-child) > * {
+  margin-right: 8px;
+}
+
 .bullet {
-  width: 10px;
-  height: 10px;
-  border-radius: 9999px;
-  display: block;
-  background-color: red;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: var(--color-black);
 }
 
 .bulletActive {

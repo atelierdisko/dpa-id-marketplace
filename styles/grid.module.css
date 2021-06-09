@@ -6,29 +6,26 @@
 
 .root {
   display: grid;
-  //grid-column-gap: 16px;
-  grid-template-columns: repeat(12, 1fr);
-
+  @media (--desktop-xl) {
+    grid-template-columns: 1fr marginL repeat(12, innerColumnWidthXL) marginL 1fr;
+  }
+  @media (--desktop) {
+    grid-template-columns: 0 marginL repeat(12, 1fr) marginL 0;
+  }
   @media (--tablet) {
-    grid-template-columns: repeat(8, 1fr);
-    grid-column-gap: 0;
+    grid-template-columns: 0 marginM repeat(8, 1fr) marginM 0;
   }
   @media (--mobile) {
-    grid-template-columns: repeat(4, 1fr);
-    grid-column-gap: 0;
+    grid-template-columns: 0 marginS repeat(4, 1fr) marginS 0;
   }
 }
 .margin {
   padding-left: marginL;
   padding-right: marginL;
-
-  @media (--desktop-xl) {
-  }
   @media (--tablet) {
     padding-left: marginM;
     padding-right: marginM;
   }
-
   @media (--mobile) {
     padding-left: marginS;
     padding-right: marginS;
@@ -44,9 +41,9 @@
     grid-template-columns: 0 marginL repeat(12, 1fr) marginL 0;
   }
   @media (--tablet) {
-    grid-template-columns: 0 marginM repeat(8, innerColumnWidthXL) marginM 0;
+    grid-template-columns: 0 marginM repeat(8, 1fr) marginM 0;
   }
   @media (--mobile) {
-    grid-template-columns: 0 marginS repeat(4, innerColumnWidthXL) marginS 0;
+    grid-template-columns: 0 marginS repeat(4, 1fr) marginS 0;
   }
 }

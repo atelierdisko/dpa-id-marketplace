@@ -7,12 +7,8 @@ import "swiper/swiper.min.css";
 import "swiper/components/navigation/navigation.min.css";
 import "swiper/components/pagination/pagination.min.css";
 
-import SwiperCore, {
-  Pagination,
-  Mousewheel,
-  Keyboard,
-} from "swiper/core";
-import { useEffect, useRef, useState } from 'react'
+import SwiperCore, { Pagination, Mousewheel, Keyboard } from "swiper/core";
+import { useEffect, useRef, useState } from "react";
 
 SwiperCore.use([Pagination, Mousewheel, Keyboard]);
 
@@ -24,9 +20,13 @@ export default function Carousel({ children, className }) {
   return (
     <div className={className}>
       <Swiper
-        // cssMode={true}
-        // pagination={true}
-        pagination={{ clickable: true, modifierClass: "", bulletClass: styles.bullet, bulletActiveClass: styles.bulletActive}}
+        pagination={{
+          clickable: true,
+          modifierClass: "",
+          bulletClass: styles.bullet,
+          bulletActiveClass: styles.bulletActive,
+          wrapperClass: styles.pagination,
+        }}
         mousewheel={true}
         keyboard={true}
         onSwiper={setSwiper}
