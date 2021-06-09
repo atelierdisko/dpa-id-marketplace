@@ -3,7 +3,6 @@
   color: var(--color-white);
   padding-top: calc(var(--spacing-unit) * 27);
   padding-bottom: calc(var(--spacing-unit) * 3);
-
   @media (--mobile) {
     padding-top: calc(var(--spacing-unit) * 5);
     padding-bottom: 21px;
@@ -11,13 +10,12 @@
 }
 
 .logo {
-  grid-column: 1 / span 4;
+  grid-column: 3 / span 4;
   margin-bottom: 4px;
   cursor: pointer;
   align-self: flex-end;
   justify-self: flex-start;
   display: flex;
-
   @media (--mobile) {
     justify-self: center;
     align-self: flex-start;
@@ -25,16 +23,19 @@
 }
 
 .partnerProgram {
+  display: none;
   margin-left: var(--spacing-unit);
   font-size: 23px;
+  @media (--tablet), (--mobile) {
+    display: inline-block;
+  }
 }
 
 .legal {
-  grid-column: span 3/-1;
+  grid-column: span 3/-3;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-
   @media (--mobile) {
     margin-top: calc(var(--spacing-unit) * 16);
   }
