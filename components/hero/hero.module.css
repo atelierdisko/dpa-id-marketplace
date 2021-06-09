@@ -61,6 +61,7 @@
   grid-column: -5/-1;
   grid-row: 1/5;
   justify-self: flex-start;
+  overflow: hidden;
 }
 
 .appMenu {
