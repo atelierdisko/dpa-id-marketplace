@@ -51,6 +51,7 @@ export default function Home() {
           className={styles.applications}
           filters={filters}
           applications={applicationsData}
+          initialFilter={"Alle anzeigen"}
           id="applications"
         />
 

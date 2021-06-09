@@ -9,17 +9,16 @@ import { useEffect, useState } from "react";
 export default function Applications({
   applications,
   filters,
-  initialApplicationNumber /* todo: pass the name of the initial filter as prop */,
+  initialFilter,
   className,
   id,
 }) {
-  const [activeFilter, setActiveFilter] = useState("Alle anzeigen");
+  const [activeFilter, setActiveFilter] = useState(initialFilter);
   const [displayedApplications, setDisplayedApplications] = useState([
     ...applications,
   ]);
 
   useEffect(() => {
-    console.log(activeFilter);
     if (activeFilter === "Alle anzeigen") {
       setDisplayedApplications([...applications]);
       return;
@@ -31,11 +30,6 @@ export default function Applications({
       )
     );
   }, [activeFilter]);
-
-  /*
-   * todo: use the name of the initial filter to find the index using findIndex() and set it as initial state,
-   * docs: https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex
-   */
 
   return (
     <section
