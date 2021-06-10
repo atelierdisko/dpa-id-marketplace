@@ -20,11 +20,14 @@
 
 .gamma500 {
   font-family: var(--font-family-primary-demi);
-
   font-size: 54px;
   font-weight: 500;
   line-height: 57px;
   letter-spacing: -1px;
+  @media (--mobile) {
+    font-size: 44px;
+    line-height: 53px;
+  }
 }
 
 .delta500 {
