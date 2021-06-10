@@ -17,7 +17,10 @@ export default function ApplicationCard({
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className={joinClassNames(styles.root)}>
+    <div
+      className={joinClassNames(styles.root)}
+      onClick={() => setIsOpen((prevState) => !prevState)}
+    >
       <div className={styles.iconContainer}>
         <Icons icon={icon} className={styles.icon} />
       </div>
