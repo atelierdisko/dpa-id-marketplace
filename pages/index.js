@@ -54,14 +54,13 @@ export default function Home() {
           id="applications"
         />
 
-        {/*<Quotes className={styles.quotes} data={quotesData} />*/}
+        <Quotes className={styles.quotes} data={quotesData} />
         {/*<Functionalities*/}
         {/*  functionalities={functionalitiesData}*/}
         {/*  id="functionalities"*/}
         {/*  messages={messagesData}*/}
         {/*/>*/}
         {/*<NotificationsDemo id="functionalities" />*/}
-        {/*<PartnerProgram className={styles.partnerProgram} id="partnerProgram" />*/}
         <SignIn className={styles.signIn} id="signIn" />
       </main>
 
