@@ -18,16 +18,16 @@ export default function Carousel({ children, className }) {
     window.swiper = swiper;
   }
   return (
-    <div className={className}>
+    <div className={joinClassNames(styles.root, className)}>
       <Swiper
         pagination={{
           clickable: true,
           modifierClass: "",
           bulletClass: styles.bullet,
           bulletActiveClass: styles.bulletActive,
-          wrapperClass: styles.pagination,
         }}
         mousewheel={true}
+        loop={true}
         keyboard={true}
         onSwiper={setSwiper}
         className={styles.swiperContainer}
