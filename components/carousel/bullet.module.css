@@ -1,0 +1,15 @@
+.root {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: var(--color-black);
+}
+
+.isActive {
+    background-color: blue;
+}
+
+.root :hover {
+    background-color: blue;
+}

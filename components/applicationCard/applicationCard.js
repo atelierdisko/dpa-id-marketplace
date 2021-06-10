@@ -6,7 +6,7 @@ import Button from "../button/button";
 import { useState } from "react";
 import PropTypes from "prop-types";
 
-import Carousel from "../Carousel/carousel";
+import Carousel from "../carousel/carousel";
 
 ApplicationCard.propTypes = {
   /**
@@ -25,29 +25,28 @@ export default function ApplicationCard({
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div
-      className={joinClassNames(styles.root)}
-      onClick={() => setIsOpen((prevState) => !prevState)}
-    >
-      <div className={styles.iconContainer}>{icon}</div>
+    <div className={joinClassNames(styles.root)}>
+      <div className={styles.header} onClick={() => setIsOpen(!isOpen)}>
+        <div className={styles.iconContainer}>{icon}</div>
 
-      <div className={styles.textContainer}>
-        <h5 className={joinClassNames(typography.epsilon500, styles.title)}>
-          {title}
-        </h5>
-        <p className={joinClassNames(typography.epsilon400, styles.excerpt)}>
-          {excerpt}
-        </p>
+        <div className={styles.textContainer}>
+          <h5 className={joinClassNames(typography.epsilon500, styles.title)}>
+            {title}
+          </h5>
+          <p className={joinClassNames(typography.epsilon400, styles.excerpt)}>
+            {excerpt}
+          </p>
+        </div>
+
+        <button
+            className={joinClassNames(
+                styles.showIcon,
+                isOpen && styles.showIconIsOpened
+            )}
+        >
+          <CaretDownIcon />
+        </button>
       </div>
-
-      <button
-        className={joinClassNames(
-          styles.showIcon,
-          isOpen && styles.showIconIsOpened
-        )}
-      >
-        <CaretDownIcon />
-      </button>
 
       {isOpen && (
         <>
