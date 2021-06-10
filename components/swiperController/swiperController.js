@@ -15,10 +15,6 @@ SwiperController.defaultProps = {
   backAndForward: true,
 };
 
-/* todo: use https://swiperjs.com/get-started,
- * see https://github.com/atelierdisko/atelierdisko/blob/main/components/figureCarousel/figureCarousel.js
- * for an implementation reference
- */
 export default function SwiperController({
   array,
   activePage,
@@ -60,6 +56,10 @@ export default function SwiperController({
             )}
           />
         ))}
+      </div>
+      <div className={styles.paginationMobile}>
+        <span className={styles.activePage}>{activePage + 1}</span>
+        {` / ${array.length}`}
       </div>
       <button
         className={joinClassNames(

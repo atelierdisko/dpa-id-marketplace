@@ -15,6 +15,18 @@
 
 .pagination {
   display: flex;
+  @media (--mobile) {
+    display: none;
+  }
+}
+.paginationMobile {
+  display: none;
+  @media (--mobile) {
+    display: inline-block;
+  }
+}
+.activePage {
+  color: var(--color-mid-blue);
 }
 
 .page {
@@ -26,9 +38,6 @@
 }
 .pageDark {
   background-color: var(--color-gray-900);
-}
-.page:hover {
-  cursor: pointer;
 }
 
 .isActiveBlue {
