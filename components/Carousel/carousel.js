@@ -3,6 +3,7 @@ import typography from "../../styles/typography.module.css";
 import { joinClassNames } from "../../utilities/componentsHelpers";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+
 import "swiper/swiper.min.css";
 import "swiper/components/navigation/navigation.min.css";
 import "swiper/components/pagination/pagination.min.css";
@@ -38,6 +39,7 @@ export default function Carousel({ children, className }) {
           </SwiperSlide>
         ))}
       </Swiper>
+
       <div className={styles.navigation}>
         <button
           onClick={() => swiper?.slidePrev()}

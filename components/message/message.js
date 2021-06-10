@@ -1,5 +1,4 @@
 import styles from "./message.module.css";
-import Icons from "../icons/icons";
 import { joinClassNames } from "../../utilities/componentsHelpers";
 import typography from "../../styles/typography.module.css";
 import { motion } from "framer-motion";
@@ -44,7 +43,7 @@ export default function Message({
           onPhone && styles.typeContainerIsOnPhone
         )}
       >
-        <Icons className={styles.typeLogo} icon={icon} />
+        {/* todo: add icon component */}
         <div>{onPhone ? `Neue ${type} im` : type}</div>
         {onPhone && (
           <div
