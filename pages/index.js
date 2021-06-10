@@ -4,7 +4,6 @@ import Navigation from "../components/navigation/navigation";
 import Footer from "../components/footer/footer";
 import Hero from "../components/hero/hero";
 import Quotes from "../components/quotes/quotes";
-import PartnerProgram from "../components/partnerProgram/partnerProgram";
 import SignIn from "../components/signIn/signIn";
 import Applications from "../components/applications/applications";
 import Functionalities from "../components/functionalities/functionalities";
@@ -63,7 +62,7 @@ export default function Home() {
         {/*/>*/}
         {/*<NotificationsDemo id="functionalities" />*/}
         {/*<PartnerProgram className={styles.partnerProgram} id="partnerProgram" />*/}
-        {/*<SignIn className={styles.signIn} id="signIn" />*/}
+        <SignIn className={styles.signIn} id="signIn" />
       </main>
 
       <Footer className={styles.footer} />
