@@ -1,14 +1,15 @@
-import styles from "./slider.module.css";
+import styles from "./swiperController.module.css";
 import typography from "../../styles/typography.module.css";
 import { joinClassNames } from "../../utilities/componentsHelpers";
 import PropTypes from "prop-types";
 
-Slider.propTypes = {
+SwiperController.propTypes = {
   array: PropTypes.array.isRequired,
-  onClick: PropTypes.func.isRequired,
+  onNextClick: PropTypes.func.isRequired,
+  onNextPrevious: PropTypes.func.isRequired,
 };
 
-Slider.defaultProps = {
+SwiperController.defaultProps = {
   activePage: 0,
   activePageColor: "Blue",
   backAndForward: true,
@@ -18,12 +19,13 @@ Slider.defaultProps = {
  * see https://github.com/atelierdisko/atelierdisko/blob/main/components/figureCarousel/figureCarousel.js
  * for an implementation reference
  */
-export default function Slider({
+export default function SwiperController({
   array,
   activePage,
   className,
   dark,
-  onClick,
+  onNextClick,
+  onPreviousClick,
   activePageColor,
   backAndForward,
 }) {
@@ -37,18 +39,17 @@ export default function Slider({
             activePage === 0 &&
               (dark ? styles.isDisabledDark : styles.isDisabled)
           )}
-          onClick={onClick}
+          onClick={onPreviousClick}
           name="back"
         >
           ‹ Zurück
         </button>
       )}
-      <div className={styles.pageContainer}>
+      <div className={styles.pagination}>
         {array.map((el, index) => (
           <div
             id={"page" + index}
             key={"page" + index}
-            onClick={onClick}
             className={joinClassNames(
               styles.page,
               dark && styles.pageDark,
@@ -57,9 +58,7 @@ export default function Slider({
                   activePageColor === "Blue" ? "isActiveBlue" : "isActiveGreen"
                 ]
             )}
-          >
-            {}
-          </div>
+          />
         ))}
       </div>
       <button
@@ -69,7 +68,7 @@ export default function Slider({
           activePage === array.length - 1 &&
             (dark ? styles.isDisabledDark : styles.isDisabled)
         )}
-        onClick={onClick}
+        onClick={onNextClick}
         name="forward"
       >
         {backAndForward ? "Weiter ›" : "Nächste Funktionalität ›"}

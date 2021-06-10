@@ -2,6 +2,7 @@ import styles from "./signIn.module.css";
 import typography from "../../styles/typography.module.css";
 import { joinClassNames } from "../../utilities/componentsHelpers";
 import Logo from "../logo/logo";
+import grid from "../../styles/grid.module.css";
 
 export default function SignIn({ className, id }) {
   return (

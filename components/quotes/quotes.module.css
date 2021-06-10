@@ -4,7 +4,7 @@
 .root {
   background-color: var(--color-gray-900);
   color: var(--color-white);
-  grid-template-rows: paddingTopL auto auto auto paddingBottomL;
+  grid-template-rows: paddingTopL 24px auto 24px paddingBottomL;
 }
 .container {
 }
@@ -17,6 +17,9 @@
   grid-column: 2/9;
   grid-row: 1/-1;
 }
+.image > * {
+  width: 100%;
+}
 
 .signalPhrase,
 .quote,
@@ -27,15 +30,17 @@
 }
 .signalPhrase {
   grid-row: 2/3;
-  margin-bottom: calc(var(--spacing-unit) * 3);
 }
 
 .quote {
   grid-row: 3/4;
+  margin-top: calc(var(--spacing-unit) * 3);
 }
 
-.slider {
+.swiperController {
   grid-row: 4/5;
-  margin-top: calc(var(--spacing-unit) * 3);
   justify-self: stretch;
+  align-self: center;
+  color: red;
+  z-index: 100;
 }

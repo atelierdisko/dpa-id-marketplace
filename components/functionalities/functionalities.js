@@ -3,7 +3,7 @@ import typography from "../../styles/typography.module.css";
 import grid from "../../styles/grid.module.css";
 import { joinClassNames } from "../../utilities/componentsHelpers";
 import { useEffect, useState } from "react";
-import Slider from "../slider/slider";
+import SwiperController from "../swiperController/swiperController";
 import Message from "../message/message";
 import Logo from "../logo/logo";
 import { useAnimation } from "framer-motion";
@@ -18,7 +18,7 @@ export default function Functionalities({
   id,
   messages,
 }) {
-  /* states and handler for slider */
+  /* states and handler for swiperController */
   const [functionalityTitle, setFunctionalityTitle] = useState(
     functionalities[0].title
   );
@@ -153,7 +153,7 @@ export default function Functionalities({
           Features Ihrer dpa ID
         </h2>
 
-        <Slider
+        <SwiperController
           className={styles.slider}
           backAndForward={false}
           activePageColor="green"
