@@ -40,6 +40,10 @@
   margin-right: 8px;
 }
 
+.bullets{
+  position: relative;
+}
+
 .bullet {
   width: 16px;
   height: 16px;
@@ -53,13 +57,10 @@
 }
 
 .navigation {
-  margin-top: calc(var(--spacing-unit) * 2);
-  width: 100%;
   display: flex;
   justify-content: space-between;
-  position: absolute;
-  bottom: -1px;
-  z-index: 2;
+  margin-top: calc(var(--spacing-unit) * 2);
+  width: 100%;
 }
 
 .prevButton,

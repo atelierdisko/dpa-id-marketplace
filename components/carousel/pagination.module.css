@@ -1,0 +1,7 @@
+.root > * {
+    margin-left: var(--spacing-unit);
+}
+
+.root > *:first-child {
+    margin-left: var(--spacing-unit);
+}
