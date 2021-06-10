@@ -1,22 +1,22 @@
 import styles from "./signIn.module.css";
 import typography from "../../styles/typography.module.css";
-import { joinClassNames } from "../../utilities/componentsHelpers";
 import Logo from "../logo/logo";
 import grid from "../../styles/grid.module.css";
+import cn from "classnames";
 
 export default function SignIn({ className, id }) {
   return (
     <section
-      className={joinClassNames(className, styles.root, grid.root)}
+      className={cn(className, styles.root, grid.root)}
       id={id}
     >
-      <p className={joinClassNames(typography.zeta500, styles.signalPhrase)}>
+      <p className={cn(typography.zeta500, styles.signalPhrase)}>
         Der Marktplatz wartet
       </p>
-      <h2 className={joinClassNames(typography.gamma500, styles.title)}>
+      <h2 className={cn(typography.gamma500, styles.title)}>
         Haben wir Ihr Interesse geweckt?
       </h2>
-      <p className={joinClassNames(typography.delta400, styles.description)}>
+      <p className={cn(typography.delta400, styles.description)}>
         Jetzt kostenlos dpa ID registrieren und den Marktplatz entdecken!
       </p>
       <div className={styles.drawingsAndCallToAction}>

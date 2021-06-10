@@ -1,7 +1,12 @@
+.root {
+    display: inline-flex;
+    align-items: center;
+}
+
 .root > * {
     margin-left: var(--spacing-unit);
 }
 
 .root > *:first-child {
-    margin-left: var(--spacing-unit);
+    margin-left: 0;
 }

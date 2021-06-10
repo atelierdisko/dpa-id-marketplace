@@ -1,18 +1,15 @@
 import Link from "next/link";
-import Logo from "../logo/logo";
 import styles from "./navigation.module.css";
 import grid from "../../styles/grid.module.css";
 import typography from "../../styles/typography.module.css";
-import { useMediaQuery } from "react-responsive";
-import { customMedia } from "../../styles/cssExports";
-import { joinClassNames } from "../../utilities/componentsHelpers";
 import Button from "../button/button";
 import { FullLogoIcon, LogoIcon } from "../icon/icon";
+import cn from "classnames";
 
 export default function Navigation({ className, displayNavigation, isLight }) {
   return (
     <nav
-      className={joinClassNames(
+      className={cn(
         styles.root,
         grid.root,
         isLight && styles.isLight,

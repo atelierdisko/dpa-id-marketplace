@@ -3,8 +3,8 @@ import ApplicationCard from "../applicationCard/applicationCard";
 import styles from "./applications.module.css";
 import typography from "../../styles/typography.module.css";
 import grid from "../../styles/grid.module.css";
-import { joinClassNames } from "../../utilities/componentsHelpers";
 import { useEffect, useState } from "react";
+import cn from "classnames";
 
 export default function Applications({
   applications,
@@ -33,17 +33,17 @@ export default function Applications({
 
   return (
     <section
-      className={joinClassNames(grid.root, styles.root, className)}
+      className={cn(grid.root, styles.root, className)}
       id={id}
     >
-      <h2 className={joinClassNames(typography.beta500, styles.title)}>
+      <h2 className={cn(typography.beta500, styles.title)}>
         Der dpa ID Marktplatz im Überblick
       </h2>
-      <p className={joinClassNames(typography.delta400, styles.description)}>
+      <p className={cn(typography.delta400, styles.description)}>
         Mit Ihrer dpa ID betreten Sie den dpa ID Martkpltz und haben direkten
         Zugang zu allen Tools der dpa und unserer Partner.
       </p>
-      <p className={joinClassNames(styles.filterOptions, typography.zeta500)}>
+      <p className={cn(styles.filterOptions, typography.zeta500)}>
         Filteroptionen:
       </p>
       <div className={styles.filters}>

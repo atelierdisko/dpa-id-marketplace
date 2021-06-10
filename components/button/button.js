@@ -1,6 +1,6 @@
 import styles from "./button.module.css";
 import typography from "../../styles/typography.module.css";
-import { joinClassNames } from "../../utilities/componentsHelpers";
+import cn from "classnames";
 
 export default function Button({
   children,
@@ -15,7 +15,7 @@ export default function Button({
 }) {
   return asButton ? (
     <button
-      className={joinClassNames(
+      className={cn(
         typography.etaInter500,
         styles.root,
         isDoublePadding && styles.isDoublePadding,
@@ -31,7 +31,7 @@ export default function Button({
     </button>
   ) : (
     <a
-      className={joinClassNames(
+      className={cn(
         typography.etaInter500,
         styles.root,
         isDoublePadding && styles.isDoublePadding,

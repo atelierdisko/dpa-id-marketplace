@@ -1,64 +1,51 @@
 import styles from "./quotes.module.css";
 import typography from "../../styles/typography.module.css";
 import grid from "../../styles/grid.module.css";
-import { joinClassNames } from "../../utilities/componentsHelpers";
-import SwiperController from "../swiperController/swiperController";
-import { useEffect, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import {Swiper, SwiperSlide} from "swiper/react";
+import cn from "classnames";
+import {Navigation} from "../carousel/navigation";
+import {useSwiper} from "../../hooks/useSwiper";
 
-export default function Quotes({ className, data: quotes }) {
-  const [swiper, setSwiper] = useState(null);
-  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+export default function Quotes({className, data: quotes}) {
+    const {
+        setSwiper,
+        slidePrev,
+        slideNext,
+        onSlideChange,
+        slideTo,
+        currentSlideIndex
+    } = useSwiper();
 
-  const slideNext = () => {
-    if (swiper !== null) {
-      swiper.slideNext();
-    }
-  };
+    return (
+        <div className={cn(styles.root, grid.root, className)}>
+            <Swiper
+                mousewheel={true}
+                loop={true}
+                keyboard={true}
+                onSwiper={setSwiper}
+                onSlideChange={onSlideChange}
+                className={styles.carouselContainer}>
+                {quotes.map((quote, index) => (
+                    <SwiperSlide key={index} className={styles.carouselSlide}>
+                        <img src={quote.image} alt={""}/>
+                    </SwiperSlide>
+                ))}
+            </Swiper>
 
-  const slidePrev = () => {
-    if (swiper !== null) {
-      swiper.slidePrev();
-    }
-  };
+            <p className={cn(typography.zeta500, styles.signalPhrase)}>
+                {quotes[currentSlideIndex].signalPhrase}
+            </p>
+            <p className={cn(typography.gamma500, styles.quote)}>
+                {quotes[currentSlideIndex].quote}
+            </p>
 
-  const onSlideChange = (swiper) => {
-    setCurrentSlideIndex(swiper.realIndex);
-  };
-  return (
-    <>
-      <section className={joinClassNames(styles.root, grid.root, className)}>
-        <Swiper
-          slidesPerView={1}
-          spaceBetween={0}
-          loop={true}
-          onSwiper={(swiper) => {
-            setSwiper(swiper);
-          }}
-          onSlideChange={onSlideChange}
-          className={styles.image}
-        >
-          {quotes.map((quote, index) => (
-            <SwiperSlide>
-              <img src={quote.image} alt={""} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        <p className={joinClassNames(typography.zeta500, styles.signalPhrase)}>
-          {quotes[currentSlideIndex].signalPhrase}
-        </p>
-        <p className={joinClassNames(typography.gamma500, styles.quote)}>
-          {quotes[currentSlideIndex].quote}
-        </p>
 
-        <SwiperController
-          array={[...Array(quotes.length).keys()]}
-          activePage={currentSlideIndex}
-          className={styles.swiperController}
-          onNextClick={() => slideNext()}
-          onPreviousClick={() => slidePrev()}
-        />
-      </section>
-    </>
-  );
+            <Navigation className={styles.carouselNavigation}
+                        index={currentSlideIndex}
+                        length={quotes.length}
+                        slideTo={slideTo}
+                        slideNext={slideNext}
+                        slidePrev={slidePrev} color={'white'}/>
+        </div>
+    );
 }

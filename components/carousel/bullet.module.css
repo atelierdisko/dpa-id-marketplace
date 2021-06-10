@@ -3,13 +3,21 @@
     height: 16px;
     border-radius: 50%;
     display: inline-block;
+}
+
+
+.isBlack {
     background-color: var(--color-black);
 }
 
-.isActive {
-    background-color: blue;
+.isWhite {
+    background-color: var(--color-white);
 }
 
 .root :hover {
+    background-color: blue;
+}
+
+.isActive {
     background-color: blue;
 }

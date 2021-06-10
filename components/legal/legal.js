@@ -1,24 +1,24 @@
 import styles from "./legal.module.css";
 import typography from "../../styles/typography.module.css";
 import Button from "../button/button";
-import { joinClassNames } from "../../utilities/componentsHelpers";
 import grid from "../../styles/grid.module.css";
+import cn from "classnames";
 
 export default function Legal({ type, className }) {
   return (
-    <div className={joinClassNames(styles.root, grid.root, grid.margin)}>
+    <div className={cn(styles.root, grid.root, grid.margin)}>
       <div className={styles.buttonContainer}>
         <Button isActive={false} className={styles.button} href="/">
           ← Zurück zur Startseite
         </Button>
       </div>
-      <h1 className={joinClassNames(styles.title, typography.gamma500)}>
+      <h1 className={cn(styles.title, typography.gamma500)}>
         {type === "imprint"
           ? "Impressum"
           : "Datenschutzerklärung der dpa Deutsche Presse-Agentur GmbH für die Website des dpa ID Partnerprogramms"}
       </h1>
       <div
-        className={joinClassNames(styles.description, typography.epsilon500)}
+        className={cn(styles.description, typography.epsilon500)}
       >
         <p>
           Die Nutzung dieser Informationsseite kann mit der Verarbeitung von

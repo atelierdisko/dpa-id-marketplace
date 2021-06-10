@@ -1,78 +1,87 @@
 @value paddingTopL: calc(var(--spacing-unit) * 12);
+
 @value paddingBottomL: calc(var(--spacing-unit) * 9);
+
 @value paddingTopM: calc(var(--spacing-unit) * 7);
+
 @value paddingBottomM: calc(var(--spacing-unit) * 10);
+
 @value paddingTopS: calc(var(--spacing-unit) * 5);
+
 @value paddingBottomS: calc(var(--spacing-unit) * 8);
 
 .root {
-  background-color: var(--color-gray-900);
-  color: var(--color-white);
-  grid-template-rows: paddingTopL 24px auto 24px paddingBottomL;
-  @media (--tablet) {
-    grid-template-rows: auto paddingTopM 24px auto auto paddingBottomM;
-  }
-  @media (--mobile) {
-    grid-template-rows: auto paddingTopS 24px auto auto paddingBottomS;
-  }
-}
-.container {
+    background-color: var(--color-gray-900);
+    color: var(--color-white);
+    grid-template-rows: paddingTopL 24px auto 24px paddingBottomL;
+    @media (--tablet) {
+        grid-template-rows: auto paddingTopM 24px auto auto paddingBottomM;
+    }
+    @media (--mobile) {
+        grid-template-rows: auto paddingTopS 24px auto auto paddingBottomS;
+    }
 }
 /*todo: how to make the size of the image responsive to the text length*/
-.image {
-  height: auto;
-  width: 100%;
-  object-fit: cover;
-  object-position: center;
-  grid-column: 2/9;
-  grid-row: 1/-1;
-  @media (--tablet), (--mobile) {
-    grid-row: 1/2;
-    grid-column: 1/-1;
-  }
-  @media (--mobile) {
-    height: 300px;
-  }
-}
-.image .swiper-slide {
-  width: 100%;
+.carouselContainer {
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    grid-column: 2/9;
+    grid-row: 1/-1;
+    @media (--tablet), (--mobile) {
+        grid-row: 1/2;
+        grid-column: 1/-1;
+    }
+    @media (--mobile) {
+        height: 300px;
+    }
 }
 
 .signalPhrase,
 .quote,
-.swiperController {
-  grid-column: 9/-3;
-  justify-self: flex-start;
-  margin-left: calc(var(--spacing-unit) * 7);
-  @media (--tablet), (--mobile) {
-    grid-column: 3/-3;
-    margin-left: 0;
-  }
+.carouselNavigation {
+    grid-column: 9/-3;
+    justify-self: flex-start;
+    margin-left: calc(var(--spacing-unit) * 7);
+    @media (--tablet), (--mobile) {
+        grid-column: 3/-3;
+        margin-left: 0;
+    }
 }
+
 .signalPhrase {
-  grid-row: 2/3;
-  @media (--tablet), (--mobile) {
-    grid-row: 3/4;
-  }
+    grid-row: 2/3;
+    @media (--tablet), (--mobile) {
+        grid-row: 3/4;
+    }
 }
 
 .quote {
-  grid-row: 3/4;
-  margin-top: calc(var(--spacing-unit) * 3);
-  @media (--tablet), (--mobile) {
-    grid-row: 4/5;
-  }
+    grid-row: 3/4;
+    margin-top: calc(var(--spacing-unit) * 3);
+    @media (--tablet), (--mobile) {
+        grid-row: 4/5;
+    }
 }
 
-.swiperController {
-  grid-row: 4/5;
-  justify-self: stretch;
-  align-self: center;
-  @media (--tablet), (--mobile) {
-    grid-row: 5/6;
-    margin-top: calc(var(--spacing-unit) * 5);
-  }
-  @media (--mobile) {
-    margin-top: calc(var(--spacing-unit) * 6);
-  }
+.carouselNavigation {
+    grid-row: 4/5;
+    justify-self: stretch;
+    align-self: center;
+    @media (--tablet), (--mobile) {
+        grid-row: 5/6;
+        margin-top: calc(var(--spacing-unit) * 5);
+    }
+    @media (--mobile) {
+        margin-top: calc(var(--spacing-unit) * 6);
+    }
+}
+
+.carouselSlide img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: top;
 }
