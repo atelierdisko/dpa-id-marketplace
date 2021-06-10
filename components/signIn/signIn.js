@@ -1,6 +1,5 @@
 import styles from "./signIn.module.css";
 import typography from "../../styles/typography.module.css";
-import grid from "../../styles/grid.module.css";
 import { joinClassNames } from "../../utilities/componentsHelpers";
 import Logo from "../logo/logo";
 

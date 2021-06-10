@@ -1,3 +1,16 @@
+import {
+  BotTalkIcon,
+  DpaAgendaIcon,
+  DpaNewsIcon,
+  DpaPictureAllianceIcon,
+  DpaSelectIcon,
+  DpaShopIcon,
+  DpaVideoPortalIcon,
+  GenericIcon,
+  Icon,
+  PoliticsIcon,
+} from "./components/icon/icon";
+
 export default [
   {
     title: "dpa-News",
@@ -5,7 +18,7 @@ export default [
     description:
       "Was sind die wichtigsten Themen der Stunde? Mit dpa-News ermöglichen wir redaktionell Verantwortlichen einen schnellen Zugang zum Informationsangebot der Nachrichtenagentur. ",
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
-    icon: "dpaNews",
+    icon: <Icon Component={DpaNewsIcon} />,
     color: "#E5FCF2",
     backgroundColor: "Green",
     tags: ["aktuelles", "daten"],
@@ -16,7 +29,7 @@ export default [
     description:
       "Erhalten Sie jederzeit alle dpa-Inhalte und bleiben Sie über wichtige Themen auf dem Laufenden. dpa-Select liefert alle relevanten News aus den dpa-Diensten in Echtzeit und nach Ihren Bedürfnissen gefiltert.",
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
-    icon: "dpaSelect",
+    icon: <Icon Component={DpaSelectIcon} />,
     color: "#E5FCF2",
     backgroundColor: "Green",
     tags: ["planung", "daten"],
@@ -27,7 +40,7 @@ export default [
     description:
       "Wann beginnt morgen die Online-Pressekonferenz? Welches Thema beschäftigt in den nächsten Wochen die Medien? Mit dpa-Agenda finden Sie Themen und Termine schnell und gezielt in einer minütlich aktualisierten Datenbank mit über 10.000 aktuellen Branchenevents. ",
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
-    icon: "dpaAgenda",
+    icon: <Icon Component={DpaAgendaIcon} />,
     color: "#E5FCF2",
     backgroundColor: "Green",
     tags: ["distribution", "daten"],
@@ -38,7 +51,7 @@ export default [
     description:
       "O-Töne, Interviews, Atmo – im dpa-Audio Hub bieten wir unseren Schatz an Audio-Inhalten sowie Inhalte von Partnern in einem übersichtlichen und schnell durchsuchbaren Audio-Baukasten zum Download an.",
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
-    icon: "dpaAudioHub",
+    icon: <Icon Component={GenericIcon} />,
     color: "#FFF1EB",
     backgroundColor: "Orange",
     tags: ["distribution", "daten"],
@@ -49,7 +62,7 @@ export default [
     description:
       "Auf dem dpa-Videoportal haben Sie Zugriff auf tagesaktuelle Beiträge und Rohmaterial aus allen Ressorts.",
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
-    icon: "dpaVideoPortal",
+    icon: <Icon Component={DpaVideoPortalIcon} />,
     color: "#E5FCF2",
     backgroundColor: "Green",
     tags: ["video", "audio", "visuals"],
@@ -60,7 +73,7 @@ export default [
     description:
       "Erhalten Sie Liveblogs, interaktive Grafiken und weitere Embed-Produkte der dpa schnell und unkompliziert über unseren Onlineshop.",
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
-    icon: "dpaShop",
+    icon: <Icon Component={DpaShopIcon} />,
     color: "#E5FCF2",
     backgroundColor: "Green",
     tags: ["recherche", "daten"],
@@ -71,7 +84,7 @@ export default [
     description:
       "Die dpa-Tochter news aktuell bietet mit den Marken ots, zimpel und dem Presseportal innovative Lösungen für die erfolgreiche Kommunikation an Medien und Verbrauchern. Übermitteln Sie mit Hilfe des Auftrags­systems Texte, Bilder und weiteres Pressematerial.",
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
-    icon: "myNewsAktuell",
+    icon: <Icon Component={GenericIcon} />,
     color: "#FFF1EB",
     backgroundColor: "Orange",
     tags: ["aktuelles"],
@@ -82,7 +95,7 @@ export default [
     description:
       "Das TNN-Videoportal versorgt öffentlich-rechtliche und private TV-Stationen mit tagesaktuellen Videos zu den relevanten News-Ereignissen und Entertainment-Themen.",
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
-    icon: "TNNvideoportal",
+    icon: <Icon Component={GenericIcon} />,
     color: "#FFF1EB",
     backgroundColor: "Orange",
     tags: ["video"],
@@ -93,7 +106,7 @@ export default [
     description:
       "Mit der dpa picture alliance stehen Ihnen mehr als 100 Mio. Bilder, Grafiken und Illustrationen von über 300 Partneragenturen weltweit zur Verfügung. ",
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
-    icon: "dpaPictureAlliance",
+    icon: <Icon Component={DpaPictureAllianceIcon} />,
     color: "#E5FCF2",
     backgroundColor: "Green",
     tags: ["aktuelles"],
@@ -104,7 +117,7 @@ export default [
     description:
       "Der dpa ID Partner Polit-X ermöglicht datengetriebenes und dokumentenbasiertes Politikmonitoring und Parlamentsanalysen.",
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
-    icon: "politics",
+    icon: <Icon Component={PoliticsIcon} />,
     color: "#E7EAEC",
     backgroundColor: "Black",
     tags: ["aktuelles", "distribution"],
@@ -115,7 +128,7 @@ export default [
     description:
       "Unser Partner BotTalk bietet eine Text-to-Speech-Lösung, die Nachrichtenartikel mit einem Klick in Audio-Dateien umwandelt.",
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
-    icon: "botTalk",
+    icon: <Icon Component={BotTalkIcon} />,
     color: "#EEEDFB",
     backgroundColor: "Purple",
     tags: ["recherche", "daten"],
@@ -126,7 +139,7 @@ export default [
     description:
       "Mit unserem Partner-Tool Minty finden Sie in Sekundenschnelle die richtigen Künstler für Ihre visuellen Produktionen. Das All-in-One-Tool bietet Kontakt zu 3.500 verifizierten Illustratorinnen und Illustratoren und unterstützt bei Lizenzierung und Projektmanagement.",
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
-    icon: "mintyIllustrators",
+    icon: <Icon Component={GenericIcon} />,
     color: "#E5EAF7",
     backgroundColor: "Blue",
     tags: ["daten"],
@@ -137,7 +150,7 @@ export default [
     description:
       "Mit unserem Partner 23° Atlas können Sie Ihre eigenen Statistiken publizieren oder Millionen von thematischen Statistiken einfach weiterverwenden – ob regionale Corona-Daten, Wirtschaftsstatistiken oder Studienergebnisse. Die automatisierten Statistiken funktionieren auf Websites, in Präsentationen oder Pressemitteilungen.",
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
-    icon: "23Atlas",
+    icon: <Icon Component={GenericIcon} />,
     color: "#E9E9E9",
     backgroundColor: "Black",
     tags: ["visuals", "daten"],

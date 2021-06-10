@@ -7,6 +7,7 @@ import { useMediaQuery } from "react-responsive";
 import { customMedia } from "../../styles/cssExports";
 import { joinClassNames } from "../../utilities/componentsHelpers";
 import Button from "../button/button";
+import { FullLogoIcon, LogoIcon } from "../icon/icon";
 
 export default function Navigation({ className, displayNavigation, isLight }) {
   return (
@@ -18,7 +19,11 @@ export default function Navigation({ className, displayNavigation, isLight }) {
         className
       )}
     >
-      <Logo classname={styles.logo} isDark={isLight} />
+      <Link href={"/"}>
+        <a className={styles.logo}>
+          <FullLogoIcon color={"black"} />
+        </a>
+      </Link>
 
       <ul
         className={styles.list}
@@ -43,11 +48,11 @@ export default function Navigation({ className, displayNavigation, isLight }) {
           <Link href="/#signIn">
             <a>
               <Button
-                className={styles.signIn}
+                className={styles.signInButton}
                 asButton={false}
                 isActive={true}
               >
-                <Logo classname={styles.signInLogo} withName={false} />
+                <LogoIcon className={styles.signInButtonLogo} />
                 Anmelden
               </Button>
             </a>
