@@ -1,31 +1,41 @@
+@value paddingTopL: calc(var(--spacing-unit) * 12);
+@value paddingBottomL: calc(var(--spacing-unit) * 9);
+
 .root {
-  display: flex;
-}
-.container {
   background-color: var(--color-gray-900);
   color: var(--color-white);
-  padding: calc(var(--spacing-unit) * 10) calc(var(--spacing-unit) * 21)
-    calc(var(--spacing-unit) * 12) calc(var(--spacing-unit) * 8);
+  grid-template-rows: paddingTopL auto auto auto paddingBottomL;
+}
+.container {
 }
 /*todo: how to make the size of the image responsive to the text length*/
 .image {
   height: auto;
-  width: 677px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  grid-column: 2/9;
+  grid-row: 1/-1;
 }
 
-.description {
+.signalPhrase,
+.quote,
+.slider {
+  grid-column: 9/-3;
+  justify-self: flex-start;
+  margin-left: calc(var(--spacing-unit) * 7);
 }
-
 .signalPhrase {
+  grid-row: 2/3;
+  margin-bottom: calc(var(--spacing-unit) * 3);
 }
 
 .quote {
-  margin-top: calc(var(--spacing-unit) * 3);
+  grid-row: 3/4;
 }
 
 .slider {
-  margin-top: calc(var(--spacing-unit) * 6.5);
-}
-
-.textLoop {
+  grid-row: 4/5;
+  margin-top: calc(var(--spacing-unit) * 3);
+  justify-self: stretch;
 }

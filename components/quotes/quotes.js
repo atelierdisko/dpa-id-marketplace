@@ -1,8 +1,8 @@
 import styles from "./quotes.module.css";
 import typography from "../../styles/typography.module.css";
+import grid from "../../styles/grid.module.css";
 import { joinClassNames } from "../../utilities/componentsHelpers";
 import Slider from "../slider/slider";
-import Marquee from "../marquee/marquee";
 import { useEffect, useState } from "react";
 
 export default function Quotes({ className, data }) {
@@ -36,29 +36,20 @@ export default function Quotes({ className, data }) {
 
   return (
     <>
-      <section className={joinClassNames(styles.root, className)}>
+      <section className={joinClassNames(styles.root, grid.root, className)}>
         <img src={currentImage} className={styles.image} alt={""} />
-        <div className={joinClassNames(styles.container)}>
-          <div className={styles.description}>
-            <p
-              className={joinClassNames(
-                typography.zeta500,
-                styles.signalPhrase
-              )}
-            >
-              {currentSignalPhrase}
-            </p>
-            <p className={joinClassNames(typography.gamma500, styles.quote)}>
-              {currentQuote}
-            </p>
-            <Slider
-              array={[...Array(data.length).keys()]}
-              activePage={currentSlide}
-              className={styles.slider}
-              onClick={handleClick}
-            />
-          </div>
-        </div>
+        <p className={joinClassNames(typography.zeta500, styles.signalPhrase)}>
+          {currentSignalPhrase}
+        </p>
+        <p className={joinClassNames(typography.gamma500, styles.quote)}>
+          {currentQuote}
+        </p>
+        <Slider
+          array={[...Array(data.length).keys()]}
+          activePage={currentSlide}
+          className={styles.slider}
+          onClick={handleClick}
+        />
       </section>
     </>
   );
