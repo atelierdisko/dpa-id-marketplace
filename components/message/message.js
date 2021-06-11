@@ -1,9 +1,8 @@
 import styles from "./message.module.css";
-import { joinClassNames } from "../../utilities/componentsHelpers";
 import typography from "../../styles/typography.module.css";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 import { useRef } from "react";
+import cn from "classnames";
 
 Message.defaultProps = {
   onPhone: false,
@@ -31,14 +30,14 @@ export default function Message({
   return (
     <motion.div
       ref={ref}
-      className={joinClassNames(styles.root, className)}
+      className={cn(styles.root, className)}
       onClick={onClick}
       initial="hidden"
       animate={controls}
       variants={variants}
     >
       <div
-        className={joinClassNames(
+        className={cn(
           styles.typeContainer,
           onPhone && styles.typeContainerIsOnPhone
         )}
@@ -59,7 +58,7 @@ export default function Message({
         {onPhone && <span>{postingTime}</span>}
       </div>
       <div
-        className={joinClassNames(
+        className={cn(
           typography.etaInter500,
           styles.content,
           onPhone && styles.contentIsOnPhone
@@ -70,7 +69,7 @@ export default function Message({
       {!onPhone && (
         <div
           id={id}
-          className={joinClassNames(
+          className={cn(
             styles.overlay,
             disabled && styles.isDisabled
           )}

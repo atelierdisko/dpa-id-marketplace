@@ -1,12 +1,11 @@
 import styles from "./functionalities.module.css";
 import typography from "../../styles/typography.module.css";
 import grid from "../../styles/grid.module.css";
-import { joinClassNames } from "../../utilities/componentsHelpers";
 import { useEffect, useState } from "react";
-import SwiperController from "../swiperController/swiperController";
 import Message from "../message/message";
 import Logo from "../logo/logo";
 import { useAnimation } from "framer-motion";
+import cn from "classnames";
 
 /* todo: use https://swiperjs.com/get-started,
  * see https://github.com/atelierdisko/atelierdisko/blob/main/components/figureCarousel/figureCarousel.js
@@ -146,24 +145,25 @@ export default function Functionalities({
   }, []);
 
   return (
-    <section className={joinClassNames(styles.root, className)} id={id}>
+    <section className={cn(styles.root, className)} id={id}>
       <img src="./images/features-pattern.svg" className={styles.pattern} />
-      <div className={joinClassNames(styles.container, grid.root)}>
-        <h2 className={joinClassNames(styles.title, typography.beta500)}>
+      <div className={cn(styles.container, grid.root)}>
+        <h2 className={cn(styles.title, typography.beta500)}>
           Features Ihrer dpa ID
         </h2>
 
-        <SwiperController
+        {/* todo: replace with useSwiper hook version as in applicationCard or quotes*/}
+       {/* <SwiperController
           className={styles.slider}
           backAndForward={false}
           activePageColor="green"
           array={functionalities}
           activePage={functionalityIndex}
           onClick={handleClickSlider}
-        />
+        />*/}
 
         <h5
-          className={joinClassNames(
+          className={cn(
             typography.delta500,
             styles.functionalityTitle
           )}
@@ -171,7 +171,7 @@ export default function Functionalities({
           {functionalityTitle}
         </h5>
         <p
-          className={joinClassNames(
+          className={cn(
             typography.delta400,
             styles.functionalityDescription
           )}
@@ -179,7 +179,7 @@ export default function Functionalities({
           {functionalityDescription}
         </p>
         <p
-          className={joinClassNames(
+          className={cn(
             typography.etaInter500,
             styles.chooseMessage
           )}

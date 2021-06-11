@@ -1,0 +1,24 @@
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.isWhite {
+    color: var(--color-white);
+}
+
+.isBlack {
+    color: var(--color-black);
+}
+
+.prevButton,
+.nextButton {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.prevButton:hover,
+.nextButton:hover {
+}

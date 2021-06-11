@@ -1,85 +1,126 @@
 import styles from "./applicationCard.module.css";
 import typography from "../../styles/typography.module.css";
-import { joinClassNames } from "../../utilities/componentsHelpers";
-import { CaretDownIcon } from "../icon/icon";
+import {CaretDownIcon} from "../icon/icon";
 import Button from "../button/button";
-import { useState } from "react";
+import {useState} from "react";
 import PropTypes from "prop-types";
-
-import Carousel from "../carousel/carousel";
+import {Swiper, SwiperSlide} from "swiper/react";
+import {Navigation} from "../carousel/navigation";
+import {useSwiper} from "../../hooks/useSwiper";
+import cn from "classnames";
 
 ApplicationCard.propTypes = {
-  /**
-   * Card Icon Component
-   */
-  icon: PropTypes.elementType.isRequired,
+    /**
+     * Card Icon Component
+     */
+    icon: PropTypes.elementType.isRequired,
 };
 
-export default function ApplicationCard({
-  title,
-  excerpt,
-  icon,
-  images,
-  description,
-}) {
-  const [isOpen, setIsOpen] = useState(false);
+function Carousel({children}) {
+    const {
+        setSwiper,
+        slidePrev,
+        slideNext,
+        onSlideChange,
+        slideTo,
+        currentSlideIndex
+    } = useSwiper();
 
-  return (
-    <div className={joinClassNames(styles.root)}>
-      <div className={styles.header} onClick={() => setIsOpen(!isOpen)}>
-        <div className={styles.iconContainer}>{icon}</div>
+    return (
+        <div className={cn(styles.carousel)}>
+            <Swiper
+                mousewheel={true}
+                loop={true}
+                keyboard={true}
+                onSwiper={setSwiper}
+                onSlideChange={onSlideChange}
+                className={styles.carouselContainer}
+            >
+                {children}
+            </Swiper>
 
-        <div className={styles.textContainer}>
-          <h5 className={joinClassNames(typography.epsilon500, styles.title)}>
-            {title}
-          </h5>
-          <p className={joinClassNames(typography.epsilon400, styles.excerpt)}>
-            {excerpt}
-          </p>
+
+            <Navigation className={styles.carouselNavigation}
+                        index={currentSlideIndex}
+                        length={children.length}
+                        slideTo={slideTo}
+                        slideNext={slideNext}
+                        slidePrev={slidePrev}/>
         </div>
+    )
+}
 
-        <button
-            className={joinClassNames(
-                styles.showIcon,
-                isOpen && styles.showIconIsOpened
+export default function ApplicationCard({
+                                            title,
+                                            excerpt,
+                                            icon,
+                                            images,
+                                            description,
+                                        }) {
+    const [isOpen, setIsOpen] = useState(false);
+
+    return (
+        <div className={cn(styles.root)}>
+            <div className={styles.header} onClick={() => setIsOpen(!isOpen)}>
+                <div className={styles.iconContainer}>{icon}</div>
+
+                <div className={styles.textContainer}>
+                    <h5 className={cn(typography.epsilon500, styles.title)}>
+                        {title}
+                    </h5>
+                    <p className={cn(typography.epsilon400, styles.excerpt)}>
+                        {excerpt}
+                    </p>
+                </div>
+
+                <button
+                    className={cn(
+                        styles.showIcon,
+                        isOpen && styles.showIconIsOpened
+                    )}
+                >
+                    <CaretDownIcon/>
+                </button>
+            </div>
+
+            {isOpen && (
+                <>
+                    <p
+                        className={cn(
+                            typography.epsilon400,
+                            styles.excerptMobile
+                        )}
+                    >
+                        {excerpt}
+                    </p>
+
+                    <div
+                        className={cn(
+                            styles.description,
+                            typography.epsilon400
+                        )}
+                    >
+                        {description}
+                    </div>
+
+                    <Button
+                        isActive={true}
+                        isDoublePadding={true}
+                        className={styles.button}
+                        isBlue={true}
+                    >
+                        Jetzt dpa-News testen
+                    </Button>
+
+                    <Carousel>
+                        {images.map((image, index) => (
+                            <SwiperSlide className={styles.carouselSlide}>
+                                <img src={image} alt={''} key={index}/>
+                            </SwiperSlide>
+                        ))}
+                    </Carousel>
+                </>
             )}
-        >
-          <CaretDownIcon />
-        </button>
-      </div>
-
-      {isOpen && (
-        <>
-          <p
-            className={joinClassNames(
-              typography.epsilon400,
-              styles.excerptMobile
-            )}
-          >
-            {excerpt}
-          </p>
-
-          <div
-            className={joinClassNames(
-              styles.description,
-              typography.epsilon400
-            )}
-          >
-            {description}
-          </div>
-
-          <Button
-            isActive={true}
-            isDoublePadding={true}
-            className={styles.button}
-            isBlue={true}
-          >
-            Jetzt dpa-News testen
-          </Button>
-
-          <Carousel className={styles.carousel}>{images}</Carousel>
-        </>
-      )}
-    </div>
-  );
+        </div>
+    );
 }

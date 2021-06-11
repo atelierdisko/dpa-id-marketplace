@@ -18,12 +18,12 @@
 
 .root:hover {
     background: var(--color-gray-200);
-    cursor: pointer;
 }
 
 /* todo: remove display content usage for improved browser support ,*/
 .header {
     display: contents;
+    cursor: pointer;
 }
 
 .iconContainer {
@@ -174,4 +174,33 @@
         margin-top: calc(var(--spacing-unit) * 5);
         margin-bottom: 0;
     }
+}
+
+.carouselContainer {
+    /* Swiper context fixes */
+    /* https://github.com/nolimits4web/swiper/issues/3599 */
+    width: 100%;
+    max-width: 100%;
+    max-height: 100vh;
+    /* CSS Grid/Flexbox bug size workaround */
+    /* @see https://github.com/kenwheeler/slick/issues/982 */
+    min-height: 0;
+    min-width: 0;
+}
+
+.carouselNavigation {
+    margin-top: var(--spacing-unit);
+}
+
+.carouselSlide {
+    text-align: center;
+    background: transparent;
+}
+
+.carouselSlide img {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: top;
 }
