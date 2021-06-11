@@ -6,43 +6,24 @@ import Message from "../message/message";
 import Logo from "../logo/logo";
 import { useAnimation } from "framer-motion";
 import cn from "classnames";
+import { useSwiper } from "../../hooks/useSwiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "../Carousel/navigation";
 
-/* todo: use https://swiperjs.com/get-started,
- * see https://github.com/atelierdisko/atelierdisko/blob/main/components/figureCarousel/figureCarousel.js
- * for an implementation reference
- */
 export default function Functionalities({
   functionalities,
   className,
   id,
   messages,
 }) {
-  /* states and handler for swiperController */
-  const [functionalityTitle, setFunctionalityTitle] = useState(
-    functionalities[0].title
-  );
-  const [functionalityDescription, setFunctionalityDescription] = useState(
-    functionalities[0].description
-  );
-  const [functionalityIndex, setFunctionalityIndex] = useState(0);
-
-  useEffect(() => {
-    setFunctionalityTitle(functionalities[functionalityIndex].title);
-    setFunctionalityDescription(
-      functionalities[functionalityIndex].description
-    );
-  }, [functionalityIndex]);
-
-  const handleClickSlider = ({ target }) => {
-    if (/^page/.test(target.id)) {
-      const pageNumber = parseInt(target.id.match(/\d+/)[0]);
-      setFunctionalityIndex(pageNumber);
-      return;
-    }
-    if (functionalityIndex !== functionalities.length - 1) {
-      setFunctionalityIndex((prevIndex) => prevIndex + 1);
-    }
-  };
+  const {
+    setSwiper,
+    slidePrev,
+    slideNext,
+    onSlideChange,
+    slideTo,
+    currentSlideIndex,
+  } = useSwiper();
 
   /* states and handler for animation*/
   const controls1 = useAnimation();
@@ -58,8 +39,8 @@ export default function Functionalities({
         ease: "easeOut",
       },
     },
-    enlarged: {
-      scale: 1.5,
+    shrink: {
+      scale: 0.85,
       transition: {
         duration: 0.3,
         ease: "easeOut",
@@ -68,13 +49,10 @@ export default function Functionalities({
   };
   const incomingMessageVariants = {
     incoming: {
-      scale: 1.5,
-      transition: {
-        duration: 0.3,
-      },
+      opacity: 0,
     },
     onPhone: {
-      scale: 1,
+      opacity: 1,
       transition: {
         duration: 0.3,
       },
@@ -104,15 +82,13 @@ export default function Functionalities({
 
     if (!message.disabled) {
       if (messageId === "message1") {
-        controls1.start("enlarged").then(() => controls1.start("normal"));
+        controls1.start("shrink").then(() => controls1.start("normal"));
       }
       if (messageId === "message2") {
-        // controls1.start("visible");
-        controls2.start("enlarged").then(() => controls2.start("normal"));
+        controls2.start("shrink").then(() => controls2.start("normal"));
       }
       if (messageId === "message3") {
-        // controls1.start("visible");
-        controls3.start("enlarged").then(() => controls3.start("normal"));
+        controls3.start("shrink").then(() => controls3.start("normal"));
       }
       setPhoneMessages((prev) => [message, ...prev]);
     }
@@ -134,7 +110,7 @@ export default function Functionalities({
   };
 
   useEffect(() => {
-    controls.start("incoming");
+    controls.start("incoming").then(() => controls.set("onPhone"));
   }, [phoneMessages]);
 
   useEffect(() => {
@@ -145,115 +121,121 @@ export default function Functionalities({
   }, []);
 
   return (
-    <section className={cn(styles.root, className)} id={id}>
-      <img src="./images/features-pattern.svg" className={styles.pattern} />
-      <div className={cn(styles.container, grid.root)}>
-        <h2 className={cn(styles.title, typography.beta500)}>
-          Features Ihrer dpa ID
-        </h2>
+    <section className={cn(styles.root, grid.root, className)} id={id}>
+      <img
+        src="./images/features-pattern.svg"
+        className={styles.pattern}
+        alt={""}
+      />
+      <h2 className={cn(styles.title, typography.beta500)}>
+        Features Ihrer dpa ID
+      </h2>
+      <Navigation
+        className={styles.carouselNavigation}
+        index={currentSlideIndex}
+        length={functionalities.length}
+        slideTo={slideTo}
+        slideNext={slideNext}
+        slidePrev={slidePrev}
+        color={"black"}
+        backAndForward={false}
+      />
+      <h5 className={cn(typography.delta500, styles.functionalityTitle)}>
+        {functionalities[currentSlideIndex].title}
+      </h5>
+      <Swiper
+        mousewheel={true}
+        loop={true}
+        keyboard={true}
+        onSwiper={setSwiper}
+        onSlideChange={onSlideChange}
+        className={styles.carouselContainer}
+      >
+        {functionalities.map((functionality, index) => (
+          <SwiperSlide key={index} className={styles.carouselSlide}>
+            <div
+              className={cn(
+                typography.delta400,
+                styles.functionalityDescription
+              )}
+            >
+              {functionality.description}
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
 
-        {/* todo: replace with useSwiper hook version as in applicationCard or quotes*/}
-       {/* <SwiperController
-          className={styles.slider}
-          backAndForward={false}
-          activePageColor="green"
-          array={functionalities}
-          activePage={functionalityIndex}
-          onClick={handleClickSlider}
-        />*/}
+      <p className={cn(typography.etaInter500, styles.chooseMessage)}>
+        Aus Ihrer Anwendung direkt in die Taschen Ihre Nutzer – wählen Sie eine
+        Nachricht:
+      </p>
 
-        <h5
-          className={cn(
-            typography.delta500,
-            styles.functionalityTitle
-          )}
-        >
-          {functionalityTitle}
-        </h5>
-        <p
-          className={cn(
-            typography.delta400,
-            styles.functionalityDescription
-          )}
-        >
-          {functionalityDescription}
-        </p>
-        <p
-          className={cn(
-            typography.etaInter500,
-            styles.chooseMessage
-          )}
-        >
-          Aus Ihrer Anwendung direkt in die Taschen Ihre Nutzer – wählen Sie
-          eine Nachricht:
-        </p>
-        <div className={styles.messageContainer}>
-          <Message
-            type={message1.type}
-            id="message1"
-            icon={message1.icon}
-            onClick={handleClickAnimation}
-            className={styles.messageToSend}
-            content={message1.content}
-            disabled={message1.disabled}
-            controls={controls1}
-            variants={messagesToSendVariants}
-          />
-          <Message
-            type={message2.type}
-            id="message2"
-            icon={message2.icon}
-            onClick={handleClickAnimation}
-            className={styles.messageToSend}
-            content={message2.content}
-            disabled={message2.disabled}
-            // controls={controls1}
-            controls={controls2}
-            variants={messagesToSendVariants}
-          />
-          <Message
-            type={message3.type}
-            id="message3"
-            icon={message3.icon}
-            onClick={handleClickAnimation}
-            className={styles.messageToSend}
-            content={message3.content}
-            disabled={message3.disabled}
-            // controls={controls1}
-            controls={controls3}
-            variants={messagesToSendVariants}
-          />
+      <div className={styles.messageContainer}>
+        <Message
+          type={message1.type}
+          id="message1"
+          icon={message1.icon}
+          onClick={handleClickAnimation}
+          className={styles.messageToSend}
+          content={message1.content}
+          disabled={message1.disabled}
+          controls={controls1}
+          variants={messagesToSendVariants}
+        />
+        <Message
+          type={message2.type}
+          id="message2"
+          icon={message2.icon}
+          onClick={handleClickAnimation}
+          className={styles.messageToSend}
+          content={message2.content}
+          disabled={message2.disabled}
+          // controls={controls1}
+          controls={controls2}
+          variants={messagesToSendVariants}
+        />
+        <Message
+          type={message3.type}
+          id="message3"
+          icon={message3.icon}
+          onClick={handleClickAnimation}
+          className={styles.messageToSend}
+          content={message3.content}
+          disabled={message3.disabled}
+          // controls={controls1}
+          controls={controls3}
+          variants={messagesToSendVariants}
+        />
+      </div>
+
+      <div className={styles.phoneContainer}>
+        <div className={styles.phoneScreen} />
+        <div className={styles.headerDpaApplication}>
+          <div className={styles.Block1} />
+          <div className={styles.Block2} />
+          <div className={styles.Block3} />
+          <div className={styles.applicationTime}>{time}</div>
+          <Logo whiteLogo={true} classname={styles.applicationLogo} />
         </div>
-
-        <div className={styles.phoneContainer}>
-          <div className={styles.phoneScreen} />
-          <div className={styles.headerDpaApplication}>
-            <div className={styles.Block1} />
-            <div className={styles.Block2} />
-            <div className={styles.Block3} />
-            <div className={styles.applicationTime}>{time}</div>
-            <Logo whiteLogo={true} classname={styles.applicationLogo} />
-          </div>
-          <div className={styles.applicationTitle}>
-            <span>HEUTE</span>
-          </div>
-          <div className={styles.applicationMessageContainer}>
-            {phoneMessages.map((message, index) => (
-              <Message
-                key={index}
-                type={message.type}
-                theme={message.theme}
-                icon={message.icon}
-                onPhone={true}
-                postingTime={message.time}
-                className={styles.messageOnPhone}
-                colorTheme={message.colorTheme}
-                content={message.content}
-                controls={controls}
-                variants={incomingMessageVariants}
-              />
-            ))}
-          </div>
+        <div className={styles.applicationTitle}>
+          <span>HEUTE</span>
+        </div>
+        <div className={styles.applicationMessageContainer}>
+          {phoneMessages.map((message, index) => (
+            <Message
+              key={index}
+              type={message.type}
+              theme={message.theme}
+              icon={message.icon}
+              onPhone={true}
+              postingTime={message.time}
+              className={styles.messageOnPhone}
+              colorTheme={message.colorTheme}
+              content={message.content}
+              // controls={controls}
+              // variants={incomingMessageVariants}
+            />
+          ))}
         </div>
       </div>
     </section>

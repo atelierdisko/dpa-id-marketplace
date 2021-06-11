@@ -42,11 +42,11 @@ export default function Home() {
       />
       <main>
         <Hero className={styles.hero} />
-        {/*<Marquee>*/}
-        {/*  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ein Laufband*/}
-        {/*  mit kurzen, prägnaten Benefits. Suspendisse quis mattis orci.*/}
-        {/*  Curabitur libero erat, imperdiet eu posuere ac, blandit ut sem.*/}
-        {/*</Marquee>*/}
+        <Marquee>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ein Laufband
+          mit kurzen, prägnaten Benefits. Suspendisse quis mattis orci.
+          Curabitur libero erat, imperdiet eu posuere ac, blandit ut sem.
+        </Marquee>
         <Applications
           className={styles.applications}
           filters={filters}
@@ -56,13 +56,12 @@ export default function Home() {
         />
 
         <Quotes className={styles.quotes} data={quotesData} />
-        {/*<Functionalities*/}
-        {/*  functionalities={functionalitiesData}*/}
-        {/*  id="functionalities"*/}
-        {/*  messages={messagesData}*/}
-        {/*/>*/}
+        <Functionalities
+          functionalities={functionalitiesData}
+          id="functionalities"
+          messages={messagesData}
+        />
         {/*<NotificationsDemo id="functionalities" />*/}
-        {/*<PartnerProgram className={styles.partnerProgram} id="partnerProgram" />*/}
         <SignIn className={styles.signIn} id="signIn" />
       </main>
 

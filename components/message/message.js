@@ -27,6 +27,42 @@ export default function Message({
   // const { ref, inView, entry } = useInView();
   const ref = useRef();
   // console.log(id, ref, inView, entry);
+  if (onPhone)
+    return (
+      <motion.div
+        ref={ref}
+        className={cn(styles.root, className)}
+        onClick={onClick}
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        <div
+          className={cn(styles.typeContainer, styles.typeContainerIsOnPhone)}
+        >
+          {/* todo: add icon component */}
+          <div>{`Neue ${type} im`}</div>
+          <div
+            className={styles.diamond}
+            style={{ backgroundColor: colorTheme }}
+          />
+          <span className={styles.theme} style={{ color: colorTheme }}>
+            {theme}
+          </span>
+          <span>{postingTime}</span>
+        </div>
+        <div
+          className={cn(
+            typography.etaInter500,
+            styles.content,
+            styles.contentIsOnPhone
+          )}
+        >
+          {content}
+        </div>
+      </motion.div>
+    );
+
   return (
     <motion.div
       ref={ref}
@@ -36,45 +72,17 @@ export default function Message({
       animate={controls}
       variants={variants}
     >
-      <div
-        className={cn(
-          styles.typeContainer,
-          onPhone && styles.typeContainerIsOnPhone
-        )}
-      >
+      <div className={cn(styles.typeContainer)}>
         {/* todo: add icon component */}
-        <div>{onPhone ? `Neue ${type} im` : type}</div>
-        {onPhone && (
-          <div
-            className={styles.diamond}
-            style={{ backgroundColor: colorTheme }}
-          />
-        )}
-        {onPhone && (
-          <span className={styles.theme} style={{ color: colorTheme }}>
-            {theme}
-          </span>
-        )}
-        {onPhone && <span>{postingTime}</span>}
+        <div>{type}</div>
       </div>
-      <div
-        className={cn(
-          typography.etaInter500,
-          styles.content,
-          onPhone && styles.contentIsOnPhone
-        )}
-      >
+      <div className={cn(typography.etaInter500, styles.content)}>
         {content}
       </div>
-      {!onPhone && (
-        <div
-          id={id}
-          className={cn(
-            styles.overlay,
-            disabled && styles.isDisabled
-          )}
-        />
-      )}
+      <div
+        id={id}
+        className={cn(styles.overlay, disabled && styles.isDisabled)}
+      />
     </motion.div>
   );
 }

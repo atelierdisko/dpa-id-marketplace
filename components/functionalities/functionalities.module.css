@@ -1,87 +1,115 @@
+@value paddingL: calc(var(--spacing-unit)*15);
+@value paddingM: calc(var(--spacing-unit)*12);
+@value paddingS: calc(var(--spacing-unit)*7);
+
 .root {
-  background-color: rgba(0, 62, 219, 0.8);
-  background-image: linear-gradient(
-    rgba(255, 255, 255, 0.1),
-    rgba(0, 0, 0, 0.1)
-  );
-  display: grid;
-  /*grid-template-rows: auto calc(var(--spacing-unit) * 18);*/
-  grid-template-columns: calc(var(--spacing-unit) * 12.5);
-}
-.pattern {
-  grid-column: 2/-1;
-  grid-row: 1/12;
-  justify-self: flex-end;
-  align-self: stretch;
-}
-.container {
-  grid-column: 1/3;
-  grid-row: 1/-1;
-  composes: container from "../../styles/Home.module.css";
-  color: var(--color-white);
+  background-color: var(--color-gray-400);
+  grid-template-rows: paddingM repeat(7, min-content) paddingM;
+  @media (--tablet) {
+    grid-template-rows: paddingL repeat(8, min-content);
+  }
+  @media (--mobile) {
+    grid-template-rows: paddingS repeat(8, min-content);
+  }
 }
 
-.container,
-.root {
-  grid-template-rows:
-    calc(var(--spacing-unit) * 12)
-    auto
-    calc(var(--spacing-unit) * 10.5)
-    auto
-    calc(var(--spacing-unit) * 3)
-    auto auto
-    calc(var(--spacing-unit) * 7)
-    auto
-    calc(var(--spacing-unit) * 3)
-    auto
-    calc(var(--spacing-unit) * 12);
+.pattern {
+  grid-column: 5/-1;
+  grid-row: 1/-3;
+  justify-self: flex-end;
+  align-self: flex-start;
+  width: 100%;
+  height: 600px;
+  object-fit: contain;
 }
 
 .title,
+.carouselNavigation,
+.carouselContainer,
 .functionalityTitle,
-.functionalityDescription,
 .chooseMessage,
 .messageContainer {
-  grid-column: 1/9;
-  margin-right: calc(var(--spacing-unit) * 9);
+  grid-column: 3 / span 7;
+  margin-right: 50px;
+  @media (--tablet), (--mobile) {
+    grid-column: 3/-3;
+    margin-right: 0;
+  }
+}
+.carouselContainer {
+  grid-row: 5 / span 1;
+  width: 100%;
+  @media (--tablet), (--mobile) {
+    grid-column: 3/-3;
+  }
 }
 
 .title {
-  grid-row: 2/3;
+  grid-row: 2 / span 1;
+}
+.carouselNavigation {
   color: var(--color-gray-900);
+  grid-row: 3 / span 1;
+  margin-top: calc(var(--spacing-unit) * 10);
+  align-self: flex-end;
+  @media (--tablet) {
+    margin-top: calc(var(--spacing-unit) * 8);
+  }
+  @media (--mobile) {
+    margin-top: calc(var(--spacing-unit) * 5);
+  }
 }
-
-.slider {
-  grid-row: 4/5;
-  grid-column: 1/8;
-}
-
 .functionalityTitle {
-  grid-row: 6/7;
-}
-
-.functionalityDescription {
-  grid-row: 7/8;
+  margin-top: calc(var(--spacing-unit) * 3);
+  grid-row: 4 / span 1;
 }
 
 .chooseMessage {
-  grid-row: 9/10;
+  grid-row: 6 / span 1;
+  margin-top: calc(var(--spacing-unit) * 7);
+  margin-bottom: calc(var(--spacing-unit) * 3);
+  @media (--tablet) {
+    margin-top: calc(var(--spacing-unit) * 10);
+    margin-bottom: calc(var(--spacing-unit) * 7.5);
+  }
+  @media (--mobile) {
+    margin-bottom: calc(var(--spacing-unit) * 6);
+  }
 }
 .messageContainer {
-  grid-row: 11/12;
+  grid-row: 7 / span 3;
   display: flex;
   justify-content: space-between;
+  @media (--tablet) {
+    grid-column: 3 / span 3;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  @media (--mobile) {
+    grid-column: 3 / -3;
+    flex-direction: column;
+    justify-content: stretch;
+  }
 }
 .messageToSend {
   height: calc(var(--spacing-unit) * 11.5);
   width: calc(var(--spacing-unit) * 32);
+  @media (--tablet) {
+    margin-bottom: calc(var(--spacing-unit) * 3);
+  }
+  @media (--mobile) {
+    width: 100%;
+    margin-bottom: calc(var(--spacing-unit) * 4);
+  }
 }
 
 .phoneContainer {
-  grid-column: span 4/-1;
-  grid-row: span 6/-1;
+  grid-column: span 4/-3;
+  grid-row: 4/-1;
+  overflow-y: hidden;
+  align-self: flex-end;
   width: 379px;
-  height: 600px;
+  height: 700px;
   justify-self: flex-end;
   border-radius: 37px 37px 0 0;
   background-color: var(--color-black);
@@ -89,6 +117,19 @@
   grid-template-columns: 22px 336px 22px;
   grid-template-rows: 69px 58px 45px auto;
   z-index: 1;
+  @media (--tablet), (--mobile) {
+    width: 343px;
+    height: 650px;
+    grid-template-columns: 20px 304px 20px;
+  }
+  @media (--tablet) {
+    grid-column: 7 / span 4;
+    grid-row: 7/-1;
+  }
+  @media (--mobile) {
+    grid-column: 3/-3;
+    grid-row: 10/-1;
+  }
 }
 
 .phoneScreen {
@@ -106,6 +147,9 @@
   grid-template-rows: 3px 12px 8px auto 10px;
   grid-template-columns: 3px 95px 177px 25px 4px 25px 7px;
   z-index: 3;
+  @media (--tablet) {
+    grid-template-columns: 3px 85px 160px 23px 4px 22px 7px;
+  }
 }
 
 .Block1,
