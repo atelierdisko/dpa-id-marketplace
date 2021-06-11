@@ -38,6 +38,7 @@ export default function Home() {
         className={styles.navigation}
         displayNavigation={true}
         isLight={true}
+        iconColor={"black"}
       />
       <main>
         <Hero className={styles.hero} />
