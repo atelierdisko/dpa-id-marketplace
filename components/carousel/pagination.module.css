@@ -1,12 +1,28 @@
 .root {
-    display: inline-flex;
-    align-items: center;
+  display: inline-flex;
+  align-items: center;
+}
+.root span:hover {
+  cursor: pointer;
 }
 
-.root > * {
-    margin-left: var(--spacing-unit);
+.root span :not (:first-child) {
+  margin-left: var(--spacing-unit);
 }
 
-.root > *:first-child {
-    margin-left: 0;
+.bullets {
+  @media (--mobile) {
+    display: none;
+  }
+}
+
+.numbers {
+  display: none;
+  @media (--mobile) {
+    display: inline-block;
+  }
+}
+
+.activePageNumber {
+  color: #003edb;
 }
