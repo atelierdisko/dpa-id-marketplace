@@ -24,7 +24,7 @@
   margin-top: calc(var(--spacing-unit) * 5);
   grid-column: 3 / span 8;
   @media (--tablet), (--mobile) {
-    grid-column: 3/-4;
+    grid-column: 3/-3;
     margin-top: calc(var(--spacing-unit) * 3);
   }
 }
@@ -33,12 +33,9 @@
   grid-column: 3 / span 8;
   margin-top: calc(var(--spacing-unit) * 4);
   line-height: 34px;
-  @media (--tablet) (--mobile) {
+  @media (--tablet), (--mobile) {
     grid-column: 3/-3;
   }
-}
-.description > * {
-  width: 100%;
 }
 
 .description *:not(:first-child) {
