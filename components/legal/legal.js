@@ -17,9 +17,7 @@ export default function Legal({ type, className }) {
           ? "Impressum"
           : "Datenschutzerklärung der dpa Deutsche Presse-Agentur GmbH für die Website des dpa ID Partnerprogramms"}
       </h1>
-      <div
-        className={cn(styles.description, typography.epsilon500)}
-      >
+      <div className={cn(styles.description, typography.epsilon500)}>
         <p>
           Die Nutzung dieser Informationsseite kann mit der Verarbeitung von
           personenbezogenen Daten verbunden sein. Damit diese Verarbeitungen für
