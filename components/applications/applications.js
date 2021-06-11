@@ -32,10 +32,7 @@ export default function Applications({
   }, [activeFilter]);
 
   return (
-    <section
-      className={cn(grid.root, styles.root, className)}
-      id={id}
-    >
+    <section className={cn(grid.root, styles.root, className)} id={id}>
       <h2 className={cn(typography.beta500, styles.title)}>
         Der dpa ID Marktplatz im Überblick
       </h2>
