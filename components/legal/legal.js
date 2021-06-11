@@ -6,7 +6,7 @@ import grid from "../../styles/grid.module.css";
 
 export default function Legal({ type, className }) {
   return (
-    <div className={joinClassNames(styles.root, grid.root, grid.margin)}>
+    <div className={joinClassNames(styles.root, grid.root)}>
       <div className={styles.buttonContainer}>
         <Button isActive={false} className={styles.button} href="/">
           ← Zurück zur Startseite

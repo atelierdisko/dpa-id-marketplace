@@ -1,24 +1,44 @@
 .root {
   padding-top: calc(var(--spacing-unit) * 13);
   padding-bottom: calc(var(--spacing-unit) * 30);
+  @media (--tablet) {
+    padding-top: calc(var(--spacing-unit) * 7.5);
+    padding-bottom: calc(var(--spacing-unit) * 17);
+  }
+  @media (--mobile) {
+    padding-top: calc(var(--spacing-unit) * 6.5);
+    padding-bottom: calc(var(--spacing-unit) * 11);
+  }
 }
 .buttonContainer {
-  grid-column: 1 / span 3;
+  grid-column: 3 / span 3;
+  justify-self: flex-start;
 }
 
 .button {
   color: var(--color-blue);
+  border: 1px solid blue;
 }
 
 .title {
   margin-top: calc(var(--spacing-unit) * 5);
-  grid-column: 1 / span 8;
+  grid-column: 3 / span 8;
+  @media (--tablet), (--mobile) {
+    grid-column: 3/-4;
+    margin-top: calc(var(--spacing-unit) * 3);
+  }
 }
 
 .description {
-  grid-column: 1 / span 8;
+  grid-column: 3 / span 8;
   margin-top: calc(var(--spacing-unit) * 4);
   line-height: 34px;
+  @media (--tablet) (--mobile) {
+    grid-column: 3/-3;
+  }
+}
+.description > * {
+  width: 100%;
 }
 
 .description *:not(:first-child) {
