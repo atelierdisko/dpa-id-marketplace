@@ -9,7 +9,12 @@ import { joinClassNames } from "../../utilities/componentsHelpers";
 import Button from "../button/button";
 import { FullLogoIcon, LogoIcon } from "../icon/icon";
 
-export default function Navigation({ className, displayNavigation, isLight }) {
+export default function Navigation({
+  className,
+  displayNavigation,
+  isLight,
+  iconColor,
+}) {
   return (
     <nav
       className={joinClassNames(
@@ -21,7 +26,7 @@ export default function Navigation({ className, displayNavigation, isLight }) {
     >
       <Link href={"/"}>
         <a className={styles.logo}>
-          <FullLogoIcon color={"black"} />
+          <FullLogoIcon color={iconColor} />
         </a>
       </Link>
 
