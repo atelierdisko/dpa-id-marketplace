@@ -138,7 +138,6 @@ export default function Functionalities({
           Nächste Funktionalität ›
         </Button>
       </div>
-      );
       <h5 className={cn(typography.delta500, styles.functionalityTitle)}>
         {functionalities[currentSlideIndex].title}
       </h5>
