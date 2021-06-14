@@ -20,7 +20,6 @@ export default [
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={DpaNewsIcon} />,
     color: "#E5FCF2",
-    backgroundColor: "Green",
     tags: ["aktuelles", "daten"],
   },
   {
@@ -31,7 +30,6 @@ export default [
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={DpaSelectIcon} />,
     color: "#E5FCF2",
-    backgroundColor: "Green",
     tags: ["planung", "daten"],
   },
   {
@@ -42,7 +40,6 @@ export default [
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={DpaAgendaIcon} />,
     color: "#E5FCF2",
-    backgroundColor: "Green",
     tags: ["distribution", "daten"],
   },
   {
@@ -53,7 +50,6 @@ export default [
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={GenericIcon} />,
     color: "#FFF1EB",
-    backgroundColor: "Orange",
     tags: ["distribution", "daten"],
   },
   {
@@ -64,7 +60,6 @@ export default [
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={DpaVideoPortalIcon} />,
     color: "#E5FCF2",
-    backgroundColor: "Green",
     tags: ["video", "audio", "visuals"],
   },
   {
@@ -75,7 +70,6 @@ export default [
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={DpaShopIcon} />,
     color: "#E5FCF2",
-    backgroundColor: "Green",
     tags: ["recherche", "daten"],
   },
   {
@@ -86,7 +80,6 @@ export default [
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={GenericIcon} />,
     color: "#FFF1EB",
-    backgroundColor: "Orange",
     tags: ["aktuelles"],
   },
   {
@@ -97,7 +90,6 @@ export default [
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={GenericIcon} />,
     color: "#FFF1EB",
-    backgroundColor: "Orange",
     tags: ["video"],
   },
   {
@@ -108,7 +100,6 @@ export default [
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={DpaPictureAllianceIcon} />,
     color: "#E5FCF2",
-    backgroundColor: "Green",
     tags: ["aktuelles"],
   },
   {
@@ -119,7 +110,6 @@ export default [
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={PoliticsIcon} />,
     color: "#E7EAEC",
-    backgroundColor: "Black",
     tags: ["aktuelles", "distribution"],
   },
   {
@@ -130,7 +120,6 @@ export default [
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={BotTalkIcon} />,
     color: "#EEEDFB",
-    backgroundColor: "Purple",
     tags: ["recherche", "daten"],
   },
   {
@@ -141,7 +130,6 @@ export default [
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={GenericIcon} />,
     color: "#E5EAF7",
-    backgroundColor: "Blue",
     tags: ["daten"],
   },
   {
@@ -152,7 +140,6 @@ export default [
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={GenericIcon} />,
     color: "#E9E9E9",
-    backgroundColor: "Black",
     tags: ["visuals", "daten"],
   },
 ];
