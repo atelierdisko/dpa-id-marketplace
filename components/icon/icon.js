@@ -3,7 +3,6 @@ import styles from "./icon.module.css";
 import PropTypes from "prop-types";
 
 function Icon({ className, Component, color, ...rest }) {
-  console.log("from icon", color);
   return (
     <span {...rest} className={cn(className, styles.root)}>
       <Component color={color} />
@@ -331,7 +330,6 @@ function CaretDownIcon() {
 }
 
 function GenericIcon({ color }) {
-  console.log("from generic icon", color);
   return (
     <svg
       width="32"
@@ -340,7 +338,7 @@ function GenericIcon({ color }) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <circle cx="16" cy="16.0006" r="16" fill="#0030AA" />
+      <circle cx="16" cy="16.0006" r="16" fill={color} />
     </svg>
   );
 }
