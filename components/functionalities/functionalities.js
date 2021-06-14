@@ -8,11 +8,11 @@ import { useAnimation } from "framer-motion";
 import cn from "classnames";
 import { useSwiper } from "../../hooks/useSwiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "../Carousel/navigation";
+import { Navigation } from "../carousel/navigation";
 import MessageOnPhone from "../message/messageOnPhone";
 import { motion } from "framer-motion";
-import Button from "../Carousel/button";
-import { Pagination } from "../Carousel/pagination";
+import Button from "../carousel/button";
+import { Pagination } from "../carousel/pagination";
 
 export default function Functionalities({
   functionalities,
