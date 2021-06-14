@@ -52,12 +52,17 @@
   grid-row: 3 / span 1;
   margin-top: calc(var(--spacing-unit) * 10);
   align-self: flex-end;
+  display: flex;
+  justify-content: space-between;
   @media (--tablet) {
     margin-top: calc(var(--spacing-unit) * 8);
   }
   @media (--mobile) {
     margin-top: calc(var(--spacing-unit) * 5);
   }
+}
+.nextButton {
+  border: none;
 }
 .functionalityTitle {
   margin-top: calc(var(--spacing-unit) * 3);

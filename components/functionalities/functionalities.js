@@ -11,6 +11,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "../Carousel/navigation";
 import MessageOnPhone from "../message/messageOnPhone";
 import { motion } from "framer-motion";
+import Button from "../Carousel/button";
+import { Pagination } from "../Carousel/pagination";
 
 export default function Functionalities({
   functionalities,
@@ -20,7 +22,6 @@ export default function Functionalities({
 }) {
   const {
     setSwiper,
-    slidePrev,
     slideNext,
     onSlideChange,
     slideTo,
@@ -122,16 +123,22 @@ export default function Functionalities({
       <h2 className={cn(styles.title, typography.beta500)}>
         Features Ihrer dpa ID
       </h2>
-      <Navigation
-        className={styles.carouselNavigation}
-        index={currentSlideIndex}
-        length={functionalities.length}
-        slideTo={slideTo}
-        slideNext={slideNext}
-        slidePrev={slidePrev}
-        color={"black"}
-        backAndForward={false}
-      />
+      <div className={cn(styles.carouselNavigation)}>
+        <Pagination
+          count={functionalities.length}
+          activeIndex={currentSlideIndex}
+          slideTo={slideTo}
+          color={"black"}
+        />
+
+        <Button
+          onClick={() => slideNext()}
+          className={cn(typography.zeta500, styles.nextButton)}
+        >
+          Nächste Funktionalität ›
+        </Button>
+      </div>
+      );
       <h5 className={cn(typography.delta500, styles.functionalityTitle)}>
         {functionalities[currentSlideIndex].title}
       </h5>
@@ -156,12 +163,10 @@ export default function Functionalities({
           </SwiperSlide>
         ))}
       </Swiper>
-
       <p className={cn(typography.etaInter500, styles.chooseMessage)}>
         Aus Ihrer Anwendung direkt in die Taschen Ihre Nutzer – wählen Sie eine
         Nachricht:
       </p>
-
       <div className={styles.messageContainer}>
         <Message
           type={message1.type}
@@ -197,7 +202,6 @@ export default function Functionalities({
           variants={messagesToSendVariants}
         />
       </div>
-
       <div className={styles.phoneContainer}>
         <div className={styles.phoneScreen} />
         <div className={styles.headerDpaApplication}>
