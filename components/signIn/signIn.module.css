@@ -75,14 +75,19 @@
 
 .patternTabletAndMobile {
   display: none;
+  width: 100%;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  object-fit: cover;
+
   @media (--tablet), (--mobile) {
     display: inline-block;
-    grid-column: 1/-1;
-    grid-row: 1/-1;
-    height: 100%;
-    width: 100%;
-    justify-self: stretch;
-    align-self: stretch;
+  }
+  @media (--tablet) {
+    height: 658px;
+  }
+  @media (--mobile) {
+    height: 580px;
   }
 }
 .callToActionButton {
