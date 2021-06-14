@@ -48,7 +48,8 @@ export default [
     description:
       "O-Töne, Interviews, Atmo – im dpa-Audio Hub bieten wir unseren Schatz an Audio-Inhalten sowie Inhalte von Partnern in einem übersichtlichen und schnell durchsuchbaren Audio-Baukasten zum Download an.",
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
-    icon: <Icon Component={GenericIcon} />,
+    // icon: <Icon Component={GenericIcon} color={"red"} />,
+    icon: <GenericIcon color={"red"} />,
     color: "#FFF1EB",
     tags: ["distribution", "daten"],
   },
