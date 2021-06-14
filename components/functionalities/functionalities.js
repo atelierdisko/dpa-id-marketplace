@@ -9,6 +9,8 @@ import cn from "classnames";
 import { useSwiper } from "../../hooks/useSwiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "../Carousel/navigation";
+import MessageOnPhone from "../message/messageOnPhone";
+import { motion } from "framer-motion";
 
 export default function Functionalities({
   functionalities,
@@ -29,7 +31,6 @@ export default function Functionalities({
   const controls1 = useAnimation();
   const controls2 = useAnimation();
   const controls3 = useAnimation();
-  const controls = useAnimation();
 
   const messagesToSendVariants = {
     normal: {
@@ -44,17 +45,6 @@ export default function Functionalities({
       transition: {
         duration: 0.3,
         ease: "easeOut",
-      },
-    },
-  };
-  const incomingMessageVariants = {
-    incoming: {
-      opacity: 0,
-    },
-    onPhone: {
-      opacity: 1,
-      transition: {
-        duration: 0.3,
       },
     },
   };
@@ -109,9 +99,9 @@ export default function Functionalities({
     }
   };
 
-  useEffect(() => {
-    controls.start("incoming").then(() => controls.set("onPhone"));
-  }, [phoneMessages]);
+  // useEffect(() => {
+  //   controls.start("incoming").then(() => controls.set("onPhone"));
+  // }, [phoneMessages]);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -119,6 +109,8 @@ export default function Functionalities({
     }, 60000);
     return () => clearInterval(intervalId);
   }, []);
+
+  const controls = messages.map((message) => useAnimation());
 
   return (
     <section className={cn(styles.root, grid.root, className)} id={id}>
@@ -190,7 +182,6 @@ export default function Functionalities({
           className={styles.messageToSend}
           content={message2.content}
           disabled={message2.disabled}
-          // controls={controls1}
           controls={controls2}
           variants={messagesToSendVariants}
         />
@@ -202,7 +193,6 @@ export default function Functionalities({
           className={styles.messageToSend}
           content={message3.content}
           disabled={message3.disabled}
-          // controls={controls1}
           controls={controls3}
           variants={messagesToSendVariants}
         />
@@ -220,23 +210,25 @@ export default function Functionalities({
         <div className={styles.applicationTitle}>
           <span>HEUTE</span>
         </div>
-        <div className={styles.applicationMessageContainer}>
-          {phoneMessages.map((message, index) => (
-            <Message
-              key={index}
-              type={message.type}
-              theme={message.theme}
-              icon={message.icon}
-              onPhone={true}
-              postingTime={message.time}
-              className={styles.messageOnPhone}
-              colorTheme={message.colorTheme}
-              content={message.content}
-              // controls={controls}
-              // variants={incomingMessageVariants}
-            />
-          ))}
-        </div>
+        <motion.div className={styles.applicationMessageContainer}>
+          {phoneMessages.map((message, index) => {
+            // const controls = useAnimation();
+            return (
+              <MessageOnPhone
+                key={index}
+                type={message.type}
+                theme={message.theme}
+                icon={message.icon}
+                postingTime={message.time}
+                className={styles.messageOnPhone}
+                colorTheme={message.colorTheme}
+                content={message.content}
+                controls={controls[index]}
+                // variants={incomingMessageVariants}
+              />
+            );
+          })}
+        </motion.div>
       </div>
     </section>
   );

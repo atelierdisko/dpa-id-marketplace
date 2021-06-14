@@ -143,6 +143,7 @@
   grid-column: 2/3;
   grid-row: 2/3;
   background-color: var(--color-blue);
+  color: var(--color-white);
   display: grid;
   grid-template-rows: 3px 12px 8px auto 10px;
   grid-template-columns: 3px 95px 177px 25px 4px 25px 7px;
