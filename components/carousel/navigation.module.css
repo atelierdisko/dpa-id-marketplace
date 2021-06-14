@@ -1,22 +1,22 @@
 .navigation {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: min-content;
 }
 
 .isWhite {
-    color: var(--color-white);
+  color: var(--color-white);
 }
 
 .isBlack {
-    color: var(--color-black);
+  color: var(--color-black);
 }
 
 .prevButton,
 .nextButton {
-    border: none;
-    background: transparent;
-    cursor: pointer;
+  border: none;
+  background: transparent;
+  cursor: pointer;
 }
 
 .prevButton:hover,

@@ -2,9 +2,11 @@ import cn from "classnames";
 import styles from "./navigation.module.css";
 import typography from "../../styles/typography.module.css";
 import { Pagination } from "./pagination";
+import Button from "./button";
 
 Navigation.defaultProps = {
   color: "black",
+  backAndForward: true,
 };
 
 function Navigation({
@@ -24,12 +26,12 @@ function Navigation({
         className
       )}
     >
-      <button
+      <Button
         onClick={() => slidePrev()}
         className={cn(typography.zeta500, styles.prevButton)}
       >
         ‹ Zurück
-      </button>
+      </Button>
 
       <Pagination
         count={length}
@@ -38,12 +40,12 @@ function Navigation({
         color={color}
       />
 
-      <button
+      <Button
         onClick={() => slideNext()}
         className={cn(typography.zeta500, styles.nextButton)}
       >
         Weiter ›
-      </button>
+      </Button>
     </div>
   );
 }
