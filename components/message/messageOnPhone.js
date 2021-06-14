@@ -25,9 +25,9 @@ export default function MessageOnPhone({
     <motion.div
       ref={ref}
       className={cn(styles.root, className)}
-      initial="initial"
-      animate={controls}
-      variants={variants}
+      initial={{ scale: 0 }}
+      animate={{ scale: 1 }}
+      // variants={variants}
       transition={{ duration: 3 }}
     >
       <div className={cn(styles.typeContainer, styles.typeContainerIsOnPhone)}>

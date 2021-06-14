@@ -8,7 +8,6 @@ import { useAnimation } from "framer-motion";
 import cn from "classnames";
 import { useSwiper } from "../../hooks/useSwiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "../carousel/navigation";
 import MessageOnPhone from "../message/messageOnPhone";
 import { motion } from "framer-motion";
 import Button from "../carousel/button";
@@ -226,7 +225,7 @@ export default function Functionalities({
                 className={styles.messageOnPhone}
                 colorTheme={message.colorTheme}
                 content={message.content}
-                controls={controls[index]}
+                // controls={controls[index]}
                 // variants={incomingMessageVariants}
               />
             );

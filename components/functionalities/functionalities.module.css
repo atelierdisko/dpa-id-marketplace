@@ -14,13 +14,14 @@
 }
 
 .pattern {
-  grid-column: 5/-1;
+  grid-column: 4/-1;
   grid-row: 1/-3;
-  justify-self: flex-end;
-  align-self: flex-start;
+  //justify-self: flex-end;
+  //align-self: flex-start;
   width: 100%;
-  height: 600px;
-  object-fit: contain;
+  height: 800px;
+  object-fit: cover;
+  object-position: 0 110%;
 }
 
 .title,
