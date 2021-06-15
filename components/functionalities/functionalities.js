@@ -169,7 +169,7 @@ export default function Functionalities({
           ))}
         </motion.div>
       </div>
-      <Circle className={styles.circle} />
+      {/*<Circle className={styles.circle} />*/}
     </section>
   );
 }
