@@ -96,7 +96,7 @@
 .showIcon:hover {
   cursor: pointer;
   position: relative;
-  top: 8px;
+  top: 4px;
 }
 
 .showIconIsOpened {
