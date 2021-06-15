@@ -212,8 +212,11 @@ export default function Functionalities({
         <div className={styles.applicationTitle}>
           <span>HEUTE</span>
         </div>
-        <motion.div className={styles.applicationMessageContainer}>
-          {phoneMessages.map((message, index) => {
+        <motion.div
+          className={styles.applicationMessageContainer}
+          transition={{ staggerDirection: -1 }}
+        >
+          {phoneMessages.map((message, index, array) => {
             // const controls = useAnimation();
             return (
               <MessageOnPhone
