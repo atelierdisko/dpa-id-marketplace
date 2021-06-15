@@ -12,7 +12,6 @@ export default function MessageOnPhone({
   type,
   className,
   icon,
-  id,
   theme,
   colorTheme,
   postingTime,
