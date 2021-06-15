@@ -310,7 +310,7 @@ function BotTalkIcon() {
   return "BotTalkIcon";
 }
 
-function CaretDownIcon() {
+function CaretDownIcon({ className }) {
   return (
     <svg
       width={30}
@@ -318,6 +318,7 @@ function CaretDownIcon() {
       viewBox="0 0 30 18"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
     >
       <path
         fillRule="evenodd"

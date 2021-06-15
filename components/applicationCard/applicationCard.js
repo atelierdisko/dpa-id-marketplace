@@ -1,6 +1,6 @@
 import styles from "./applicationCard.module.css";
 import typography from "../../styles/typography.module.css";
-import { CaretDownIcon } from "../icon/icon";
+import { CaretDownIcon, Icon } from "../icon/icon";
 import Button from "../button/button";
 import { useState } from "react";
 import PropTypes from "prop-types";
@@ -72,7 +72,7 @@ export default function ApplicationCard({
         <button
           className={cn(styles.showIcon, isOpen && styles.showIconIsOpened)}
         >
-          <CaretDownIcon />
+          <Icon Component={CaretDownIcon} />
         </button>
       </div>
 
