@@ -29,7 +29,6 @@ function Carousel({ children }) {
   return (
     <div className={cn(styles.carousel)}>
       <Swiper
-        mousewheel={true}
         loop={true}
         keyboard={true}
         onSwiper={setSwiper}

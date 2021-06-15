@@ -19,7 +19,6 @@ export default function Quotes({ className, data: quotes }) {
   return (
     <div className={cn(styles.root, grid.root, className)}>
       <Swiper
-        mousewheel={true}
         loop={true}
         keyboard={true}
         onSwiper={setSwiper}

@@ -77,7 +77,6 @@ export default function Functionalities({
         {functionalities[currentSlideIndex].title}
       </h5>
       <Swiper
-        mousewheel={false}
         loop={true}
         keyboard={true}
         onSwiper={setSwiper}
