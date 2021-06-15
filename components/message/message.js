@@ -1,33 +1,63 @@
 import styles from "./message.module.css";
 import typography from "../../styles/typography.module.css";
 import { motion, useAnimation } from "framer-motion";
-import { useRef } from "react";
 import cn from "classnames";
-import { DpaAgendaIcon, Icon } from "../icon/icon";
 
 Message.defaultProps = {
-  disabled: false,
+  isDisabled: false,
 };
 
 export default function Message({
   type,
   className,
   icon,
-  id,
-  onClick,
-  disabled,
+  isDisabled,
   content,
-  variants,
-  controls,
+  setHiddenMessages,
+  message,
+  setMessage,
+  setPhoneMessages,
+  hiddenMessages,
 }) {
-  const ref = useRef();
+  const controls = useAnimation();
+
+  const messagesToSendVariants = {
+    normal: {
+      scale: 1,
+      transition: {
+        duration: 0.3,
+        ease: "easeOut",
+      },
+    },
+    shrink: {
+      scale: 0.85,
+      transition: {
+        duration: 0.3,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const handleClick = () => {
+    if (!message.disabled) {
+      controls.start("shrink").then(() => controls.start("normal"));
+      setPhoneMessages((prev) => [message, ...prev]);
+    }
+
+    if (hiddenMessages.length === 0) {
+      setMessage((prevMessage) => ({ ...prevMessage, disabled: true }));
+    } else {
+      setMessage(hiddenMessages[0]);
+      setHiddenMessages((prev) => prev.slice(1));
+    }
+  };
+
   return (
     <motion.div
-      ref={ref}
       className={cn(styles.root, className)}
-      onClick={onClick}
+      onClick={handleClick}
       animate={controls}
-      variants={variants}
+      variants={messagesToSendVariants}
     >
       <div className={cn(styles.typeContainer)}>
         <div className={styles.typeLogo}>{icon}</div>
@@ -36,10 +66,7 @@ export default function Message({
       <div className={cn(typography.etaInter500, styles.content)}>
         {content}
       </div>
-      <div
-        id={id}
-        className={cn(styles.overlay, disabled && styles.isDisabled)}
-      />
+      <div className={cn(styles.overlay, isDisabled && styles.isDisabled)} />
     </motion.div>
   );
 }

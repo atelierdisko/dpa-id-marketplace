@@ -4,7 +4,6 @@ import grid from "../../styles/grid.module.css";
 import { useEffect, useState } from "react";
 import Message from "../message/message";
 import Logo from "../logo/logo";
-import { useAnimation } from "framer-motion";
 import cn from "classnames";
 import { useSwiper } from "../../hooks/useSwiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -27,28 +26,6 @@ export default function Functionalities({
     currentSlideIndex,
   } = useSwiper();
 
-  /* states and handler for animation*/
-  const controls1 = useAnimation();
-  const controls2 = useAnimation();
-  const controls3 = useAnimation();
-
-  const messagesToSendVariants = {
-    normal: {
-      scale: 1,
-      transition: {
-        duration: 0.3,
-        ease: "easeOut",
-      },
-    },
-    shrink: {
-      scale: 0.85,
-      transition: {
-        duration: 0.3,
-        ease: "easeOut",
-      },
-    },
-  };
-
   const [time, setTime] = useState(
     new Date().toLocaleTimeString("de-DE", { timeStyle: "short" })
   );
@@ -63,54 +40,12 @@ export default function Functionalities({
     messages[6],
   ]);
 
-  const handleClickAnimation = ({ target }) => {
-    const messageId = target.id;
-    let message;
-    if (messageId === "message1") message = message1;
-    if (messageId === "message2") message = message2;
-    if (messageId === "message3") message = message3;
-
-    if (!message.disabled) {
-      if (messageId === "message1") {
-        controls1.start("shrink").then(() => controls1.start("normal"));
-      }
-      if (messageId === "message2") {
-        controls2.start("shrink").then(() => controls2.start("normal"));
-      }
-      if (messageId === "message3") {
-        controls3.start("shrink").then(() => controls3.start("normal"));
-      }
-      setPhoneMessages((prev) => [message, ...prev]);
-    }
-
-    if (hiddenMessages.length === 0) {
-      if (messageId === "message1")
-        setMessage1((prevMessage) => ({ ...prevMessage, disabled: true }));
-      if (messageId === "message2")
-        setMessage2((prevMessage) => ({ ...prevMessage, disabled: true }));
-      if (messageId === "message3")
-        setMessage3((prevMessage) => ({ ...prevMessage, disabled: true }));
-    } else {
-      const newMessage = hiddenMessages[0];
-      if (messageId === "message1") setMessage1(newMessage);
-      if (messageId === "message2") setMessage2(newMessage);
-      if (messageId === "message3") setMessage3(newMessage);
-      setHiddenMessages((prev) => prev.slice(1));
-    }
-  };
-
-  // useEffect(() => {
-  //   controls.start("incoming").then(() => controls.set("onPhone"));
-  // }, [phoneMessages]);
-
   useEffect(() => {
     const intervalId = setInterval(() => {
       setTime(new Date().toLocaleTimeString("de-DE", { timeStyle: "short" }));
     }, 60000);
     return () => clearInterval(intervalId);
   }, []);
-
-  const controls = messages.map((message) => useAnimation());
 
   return (
     <section className={cn(styles.root, grid.root, className)} id={id}>
@@ -147,6 +82,9 @@ export default function Functionalities({
         onSwiper={setSwiper}
         onSlideChange={onSlideChange}
         className={styles.carouselContainer}
+        // noSwiping={false}
+        // allowSlidePrev={false}
+        // allowSlideNext={false}
       >
         {functionalities.map((functionality, index) => (
           <SwiperSlide key={index} className={styles.carouselSlide}>
@@ -168,36 +106,39 @@ export default function Functionalities({
       <div className={styles.messageContainer}>
         <Message
           type={message1.type}
-          id="message1"
           icon={message1.icon}
-          onClick={handleClickAnimation}
           className={styles.messageToSend}
           content={message1.content}
-          disabled={message1.disabled}
-          controls={controls1}
-          variants={messagesToSendVariants}
+          isDisabled={message1.disabled}
+          setPhoneMessages={setPhoneMessages}
+          setHiddenMessages={setHiddenMessages}
+          message={message1}
+          setMessage={setMessage1}
+          hiddenMessages={hiddenMessages}
         />
         <Message
           type={message2.type}
-          id="message2"
           icon={message2.icon}
-          onClick={handleClickAnimation}
           className={styles.messageToSend}
           content={message2.content}
-          disabled={message2.disabled}
-          controls={controls2}
-          variants={messagesToSendVariants}
+          isDisabled={message2.disabled}
+          setPhoneMessages={setPhoneMessages}
+          setHiddenMessages={setHiddenMessages}
+          message={message2}
+          setMessage={setMessage2}
+          hiddenMessages={hiddenMessages}
         />
         <Message
           type={message3.type}
-          id="message3"
           icon={message3.icon}
-          onClick={handleClickAnimation}
+          isDisabled={message3.disabled}
           className={styles.messageToSend}
           content={message3.content}
-          disabled={message3.disabled}
-          controls={controls3}
-          variants={messagesToSendVariants}
+          setPhoneMessages={setPhoneMessages}
+          setHiddenMessages={setHiddenMessages}
+          message={message3}
+          setMessage={setMessage3}
+          hiddenMessages={hiddenMessages}
         />
       </div>
       <div className={styles.phoneContainer}>
@@ -216,23 +157,18 @@ export default function Functionalities({
           className={styles.applicationMessageContainer}
           transition={{ staggerDirection: -1 }}
         >
-          {phoneMessages.map((message, index, array) => {
-            // const controls = useAnimation();
-            return (
-              <MessageOnPhone
-                key={index}
-                type={message.type}
-                theme={message.theme}
-                icon={message.icon}
-                postingTime={message.time}
-                className={styles.messageOnPhone}
-                colorTheme={message.colorTheme}
-                content={message.content}
-                // controls={controls[index]}
-                // variants={incomingMessageVariants}
-              />
-            );
-          })}
+          {phoneMessages.map((message, index) => (
+            <MessageOnPhone
+              key={index}
+              type={message.type}
+              theme={message.theme}
+              icon={message.icon}
+              postingTime={message.time}
+              className={styles.messageOnPhone}
+              colorTheme={message.colorTheme}
+              content={message.content}
+            />
+          ))}
         </motion.div>
       </div>
     </section>
