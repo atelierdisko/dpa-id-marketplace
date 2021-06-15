@@ -11,6 +11,7 @@ import MessageOnPhone from "../message/messageOnPhone";
 import { motion } from "framer-motion";
 import Button from "../carousel/button";
 import { Pagination } from "../carousel/pagination";
+import Circle from "../message/circle";
 
 export default function Functionalities({
   functionalities,
@@ -76,15 +77,12 @@ export default function Functionalities({
         {functionalities[currentSlideIndex].title}
       </h5>
       <Swiper
-        mousewheel={true}
+        mousewheel={false}
         loop={true}
         keyboard={true}
         onSwiper={setSwiper}
         onSlideChange={onSlideChange}
         className={styles.carouselContainer}
-        // noSwiping={false}
-        // allowSlidePrev={false}
-        // allowSlideNext={false}
       >
         {functionalities.map((functionality, index) => (
           <SwiperSlide key={index} className={styles.carouselSlide}>
@@ -171,6 +169,7 @@ export default function Functionalities({
           ))}
         </motion.div>
       </div>
+      <Circle className={styles.circle} />
     </section>
   );
 }

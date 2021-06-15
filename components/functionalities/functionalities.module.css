@@ -222,3 +222,11 @@
   margin-bottom: 24px;
   justify-self: flex-end;
 }
+
+.circle {
+  grid-column: 9 / span 1;
+  grid-row: 9 / span 1;
+  justify-self: flex-start;
+  align-self: flex-start;
+  z-index: 200;
+}
