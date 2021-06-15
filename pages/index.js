@@ -55,7 +55,7 @@ export default function Home() {
           id="applications"
         />
 
-        <Quotes className={styles.quotes} data={quotesData} />
+        <Quotes className={styles.quotes} data={quotesData} id="quotes" />
         <Functionalities
           functionalities={functionalitiesData}
           id="functionalities"

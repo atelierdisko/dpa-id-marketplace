@@ -37,12 +37,12 @@ export default function Navigation({
           </Link>
         </li>
         <li className={typography.zeta500}>
-          <Link href="/#functionalities">
+          <Link href="/#quotes">
             <a>Best Practises</a>
           </Link>
         </li>
         <li className={typography.zeta500}>
-          <Link href="/#partnerProgram">
+          <Link href="/#functionalities">
             <a>Funktionalitäten</a>
           </Link>
         </li>

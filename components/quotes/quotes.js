@@ -6,7 +6,7 @@ import cn from "classnames";
 import { Navigation } from "../carousel/navigation";
 import { useSwiper } from "../../hooks/useSwiper";
 
-export default function Quotes({ className, data: quotes }) {
+export default function Quotes({ className, data: quotes, id }) {
   const {
     setSwiper,
     slidePrev,
@@ -17,7 +17,7 @@ export default function Quotes({ className, data: quotes }) {
   } = useSwiper();
 
   return (
-    <div className={cn(styles.root, grid.root, className)}>
+    <div className={cn(styles.root, grid.root, className)} id={id}>
       <Swiper
         loop={true}
         keyboard={true}
