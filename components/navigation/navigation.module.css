@@ -1,87 +1,88 @@
 .root {
-  position: fixed;
-  width: 100%;
-  z-index: 10;
-  background-color: var(--color-gray-900);
-  color: var(--color-white);
-  padding-top: calc(var(--spacing-unit) * 3);
-  padding-bottom: calc(var(--spacing-unit) * 3);
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    background-color: var(--color-gray-900);
+    color: var(--color-white);
+    padding-top: calc(var(--spacing-unit) * 3);
+    padding-bottom: calc(var(--spacing-unit) * 3);
 }
 
 .isLight {
-  background-color: var(--color-white);
-  color: var(--color-gray-900);
+    background-color: var(--color-white);
+    color: var(--color-gray-900);
 }
 
 .logo {
-  grid-column: 3 / span 2;
-  align-self: center;
-  cursor: pointer;
-  width: 149px;
-  grid-row: 1;
-  display: inline-flex;
+    grid-column: 3 / span 2;
+    align-self: center;
+    cursor: pointer;
+    width: 149px;
+    grid-row: 1;
+    display: inline-flex;
 
-  @media (--mobile) {
-    width: 122px;
-  }
+    @media (--mobile) {
+        width: 122px;
+    }
 }
 
 .list {
-  grid-column: span 10/-3;
-  grid-row: 1;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+    grid-column: span 10/-3;
+    grid-row: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 
-  @media (--tablet) {
-    grid-column: span 5/-3;
-  }
+    @media (--tablet) {
+        grid-column: span 5/-3;
+    }
 
-  @media (--mobile) {
-    grid-column: span 3/-3;
-  }
+    @media (--mobile) {
+        grid-column: span 3/-3;
+    }
 }
 
 .list li:nth-child(-n + 2) {
-  margin-right: calc(var(--spacing-unit) * 4.5);
+    margin-right: calc(var(--spacing-unit) * 4.5);
 }
 
 .list li:nth-child(3) {
-  margin-right: calc(var(--spacing-unit) * 3.25);
+    margin-right: calc(var(--spacing-unit) * 3.25);
 }
 
 .list li:nth-child(-n + 3) {
-  @media (--tablet), (--mobile) {
-    display: none;
-  }
+    @media (--tablet), (--mobile) {
+        display: none;
+    }
 }
 
 .signInButton {
-  margin-right: calc(var(--spacing-unit) * 2);
-  display: flex;
-  align-items: center;
-  border: 1px solid var(--color-blue);
-  transition: background-color 100ms ease-in-out, color 100ms ease-in-out;
+    margin-right: calc(var(--spacing-unit) * 2);
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--color-blue);
+    transition: background-color 100ms ease-in-out, color 100ms ease-in-out;
+    padding: calc(.5em - 1px) calc(1em - 1px);
 
-  @media (--mobile) {
-    display: none;
-  }
+    @media (--mobile) {
+        display: none;
+    }
 }
 
 .signInButtonLogo {
-  height: 20px;
-  margin-right: 10px;
+    height: 20px;
+    margin-right: 10px;
 }
 
 .signInButtonLogo * {
-  transition: fill 100ms ease-in-out;
+    transition: fill 100ms ease-in-out;
 }
 
 .signInButton:hover {
-  background-color: var(--color-blue);
-  color: white;
+    background-color: var(--color-blue);
+    color: white;
 }
 
 .signInButton:hover .signInButtonLogo * {
-  fill: white;
+    fill: white;
 }
