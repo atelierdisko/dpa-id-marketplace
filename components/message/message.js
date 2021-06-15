@@ -21,7 +21,7 @@ export default function Message({
 }) {
   const controls = useAnimation();
 
-  const messagesToSendVariants = {
+  const variants = {
     normal: {
       scale: 1,
       transition: {
@@ -57,7 +57,7 @@ export default function Message({
       className={cn(styles.root, className)}
       onClick={handleClick}
       animate={controls}
-      variants={messagesToSendVariants}
+      variants={variants}
     >
       <div className={cn(styles.typeContainer)}>
         <div className={styles.typeLogo}>{icon}</div>
