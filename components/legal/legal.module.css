@@ -1,12 +1,16 @@
+@value navigationHeightL: 82px;
+@value navigationHeightM: 70px;
+@value navigationHeightS: 66px;
+
 .root {
-  padding-top: calc(var(--spacing-unit) * 13);
+  padding-top: calc(var(--spacing-unit) * 12 + navigationHeightS);
   padding-bottom: calc(var(--spacing-unit) * 30);
   @media (--tablet) {
-    padding-top: calc(var(--spacing-unit) * 7.5);
+    padding-top: calc(var(--spacing-unit) * 7.5 + navigationHeightL);
     padding-bottom: calc(var(--spacing-unit) * 17);
   }
   @media (--mobile) {
-    padding-top: calc(var(--spacing-unit) * 6.5);
+    padding-top: calc(var(--spacing-unit) * 6.5 + navigationHeightM);
     padding-bottom: calc(var(--spacing-unit) * 11);
   }
 }
