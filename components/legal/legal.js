@@ -4,13 +4,16 @@ import Button from "../button/button";
 import grid from "../../styles/grid.module.css";
 import cn from "classnames";
 
+import Link from "next/link"
 export default function Legal({ type, className }) {
   return (
     <div className={cn(styles.root, grid.root)}>
       <div className={styles.buttonContainer}>
-        <Button isActive={false} className={styles.button} href="/">
-          ← Zurück zur Startseite
-        </Button>
+        <Link href={"/"}>
+            <Button isActive={false} className={styles.button}>
+                ← Zurück zur Startseite
+            </Button>
+        </Link>
       </div>
       <h1 className={cn(styles.title, typography.gamma500)}>
         {type === "imprint"
