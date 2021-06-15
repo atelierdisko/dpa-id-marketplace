@@ -3,6 +3,7 @@ import typography from "../../styles/typography.module.css";
 import { motion, useAnimation } from "framer-motion";
 import { useRef } from "react";
 import cn from "classnames";
+import { DpaAgendaIcon, Icon } from "../icon/icon";
 
 Message.defaultProps = {
   disabled: false,
@@ -20,18 +21,16 @@ export default function Message({
   controls,
 }) {
   const ref = useRef();
-  // const controls = useAnimation();
   return (
     <motion.div
       ref={ref}
       className={cn(styles.root, className)}
       onClick={onClick}
-      initial="hidden"
       animate={controls}
       variants={variants}
     >
       <div className={cn(styles.typeContainer)}>
-        {/* todo: add icon component */}
+        <div className={styles.typeLogo}>{icon}</div>
         <div>{type}</div>
       </div>
       <div className={cn(typography.etaInter500, styles.content)}>

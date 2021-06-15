@@ -25,13 +25,13 @@ export default function MessageOnPhone({
     <motion.div
       ref={ref}
       className={cn(styles.root, className)}
-      initial={{ scale: 0 }}
-      animate={{ scale: 1 }}
+      initial={{ scale: 0, y: -100 }}
+      animate={{ scale: 1, y: 0 }}
       // variants={variants}
-      transition={{ duration: 3 }}
+      transition={{ stiffness: 100 }}
     >
       <div className={cn(styles.typeContainer, styles.typeContainerIsOnPhone)}>
-        {/* todo: add icon component */}
+        <div className={styles.typeLogo}>{icon}</div>
         <div>{`Neue ${type} im`}</div>
         <div
           className={styles.diamond}

@@ -34,8 +34,8 @@
   padding: 14px 14px 8px 14px;
 }
 .typeLogo {
-  height: 19px;
-  width: auto;
+  height: auto;
+  width: 15px;
   margin-right: 8px;
   @media (--mobile) {
     margin-right: 16px;
