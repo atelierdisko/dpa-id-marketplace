@@ -37,4 +37,9 @@ button {
   font-family: inherit;
   color: inherit;
   background: none;
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
 }

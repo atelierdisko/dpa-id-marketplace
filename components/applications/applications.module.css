@@ -60,6 +60,12 @@
 }
 .filter:hover {
   background: rgba(255, 255, 255, 0.16);
+  @media (--tablet), (--mobile) {
+    background: transparent;
+  }
+}
+.activeFilter:hover {
+  background: white;
 }
 
 .list {
@@ -74,7 +80,7 @@
   margin-top: calc(var(--spacing-unit) * 2);
 }
 
-.showMoreButton {
+.showMoreButtonContainer {
   grid-column: 1/-1;
   margin-top: calc(var(--spacing-unit) * 6);
   display: flex;
@@ -82,5 +88,21 @@
   background: transparent;
   @media (--tablet) {
     margin-top: calc(var(--spacing-unit) * 5);
+  }
+
+  .showMoreButton {
+    border: 1px solid var(--color-white);
+  }
+
+  .showMoreButton:hover {
+    background-color: var(--color-white);
+    color: var(--color-blue);
+  }
+  .showMoreButtonDisabled,
+  .showMoreButtonDisabled:hover {
+    border: 1px solid var(--color-gray-300);
+    background-color: transparent;
+    color: var(--color-gray-300);
+    cursor: auto;
   }
 }
