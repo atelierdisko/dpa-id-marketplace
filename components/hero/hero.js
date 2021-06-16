@@ -23,12 +23,12 @@ export default function Hero({ className }) {
         Jetzt dpa ID anlegen und Tools testen
       </Button>
       <img
-        src={"./images/hero-laptop1.png"}
+        src={"./images/hero-laptop3.png"}
         className={styles.laptopImage}
         alt={""}
       />
       <img
-        src={"./images/App_Switcher (1).png"}
+        src={"./images/appswitcher_trans.png"}
         className={styles.appMenu}
         alt={""}
       />
