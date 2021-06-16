@@ -14,7 +14,7 @@ module.exports = {
 		'--color-gray-100': '#f5f5f5',
 		'--color-white': '#ffffff',
 		'--color-blue': '#0045f4',
-		'--color-royal-blue': '#3365e2',
+		'--color-royal-blue': '#3a67e5',
 		'--color-dark-blue': '#fd7239',
 		'--color-mid-blue': '#003edb',
 		'--color-light-green': '#00e281',
@@ -31,8 +31,7 @@ module.exports = {
 		'--font-family-primary-demi': '"Futura PT Demi", sans-serif',
 		'--font-family-secondary': '"Inter", sans-serif',
 		'--font-family-serif': '"IBM Plex Mono", monospace, serif',
-		'--spacing-unit': '8px',
-		'--color-gray-400': '#e1e3eb'
+		'--spacing-unit': '8px'
 	},
 	customSelectors: {
 
