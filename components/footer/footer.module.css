@@ -3,6 +3,7 @@
   color: var(--color-white);
   padding-top: calc(var(--spacing-unit) * 27);
   padding-bottom: calc(var(--spacing-unit) * 3);
+  width: 100%;
   @media (--mobile) {
     padding-top: calc(var(--spacing-unit) * 5);
     padding-bottom: 21px;

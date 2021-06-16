@@ -1,5 +1,6 @@
-@value navigationHeightL: 86px;
-@value navigationHeightM: 82px;
+@value navigationHeightS: 66px;
+@value navigationHeightM: 76px;
+@value navigationHeightL: 84px;
 
 .root {
   position: relative;
@@ -7,15 +8,16 @@
   background: var(--color-gray-100);
   padding-top: calc(var(--spacing-unit) * 8.5);
   padding-bottom: calc(var(--spacing-unit) * 16.5);
-  margin-top: navigationHeightL;
+  margin-top: navigationHeightM;
   @media (--tablet) {
     padding-top: calc(var(--spacing-unit) * 7.5);
     padding-bottom: calc(var(--spacing-unit) * 14);
+    margin-top: navigationHeightL;
   }
   @media (--mobile) {
     padding-top: calc(var(--spacing-unit) * 6.5);
     padding-bottom: calc(var(--spacing-unit) * 7);
-    margin-top: navigationHeightM;
+    margin-top: navigationHeightS;
   }
 }
 
