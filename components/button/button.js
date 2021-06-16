@@ -26,6 +26,7 @@ export default function Button({
       )}
       onClick={onClick}
       name={children}
+      disabled={isDisabled}
     >
       {children}
     </button>

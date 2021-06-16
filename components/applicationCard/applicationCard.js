@@ -2,7 +2,7 @@ import styles from "./applicationCard.module.css";
 import typography from "../../styles/typography.module.css";
 import { CaretDownIcon, Icon } from "../icon/icon";
 import Button from "../button/button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "../carousel/navigation";
@@ -56,8 +56,12 @@ export default function ApplicationCard({
   icon,
   images,
   description,
+  filter,
 }) {
   const [isOpen, setIsOpen] = useState(false);
+  useEffect(() => {
+    setIsOpen(false);
+  }, [filter]);
 
   return (
     <div
