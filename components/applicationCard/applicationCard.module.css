@@ -9,7 +9,7 @@
 
   @media (--mobile) {
     padding: 16px;
-    grid-template-columns: 48px 16px auto auto;
+    grid-template-columns: 48px 16px 1fr auto;
   }
 }
 
