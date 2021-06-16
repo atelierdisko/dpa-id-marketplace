@@ -33,11 +33,6 @@ export default function Applications({
 
   return (
     <section className={cn(grid.root, styles.root, className)} id={id}>
-      {/*<img*/}
-      {/*  src="./images/applications-pattern.svg"*/}
-      {/*  className={styles.pattern}*/}
-      {/*  alt={""}*/}
-      {/*/>*/}
       <h2 className={cn(typography.beta500, styles.title)}>
         Der dpa ID Marktplatz im Überblick
       </h2>
