@@ -99,7 +99,7 @@ export default function ApplicationCard({
             className={styles.button}
             isBlue={true}
           >
-            Jetzt dpa-News testen
+            {`Jetzt ${title} testen`}
           </Button>
 
           <Carousel>
