@@ -18,50 +18,46 @@ export default function Applications({
   const [appNumber, setAppNumber] = useState(initialAppNumber);
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
   const [activeFilter, setActiveFilter] = useState(initialFilter);
-  // const [filteredApplications, setFilteredApplications] = useState(
-  //   applications.filter((application) =>
-  //     application.tags.includes(initialFilter.toLowerCase())
-  //   )
-  // );
+  const [filteredApplications, setFilteredApplications] = useState([
+    ...applications,
+  ]);
   const [displayedApplications, setDisplayedApplications] = useState([
     ...applications.slice(0, appNumber),
   ]);
-  // console.log(filteredApplications);
-
   useEffect(() => {
     setAppNumber(initialAppNumber);
     if (activeFilter === "Alle anzeigen") {
       setDisplayedApplications([...applications.slice(0, appNumber)]);
       return;
     }
-    // setFilteredApplications(
-    //   applications.filter((application) =>
-    //     application.tags.includes(activeFilter.toLowerCase())
-    //   )
-    // );
-    setDisplayedApplications(
-      applications
-        .filter((application) =>
-          application.tags.includes(activeFilter.toLowerCase())
-        )
-        .slice(0, appNumber)
+    setFilteredApplications(
+      applications.filter((application) =>
+        application.tags.includes(activeFilter.toLowerCase())
+      )
     );
   }, [activeFilter]);
 
-  // useEffect(() => {
-  //   console.log(appNumber, activeFilter, filteredApplications.length);
-  //   if (appNumber >= filteredApplications.length) {
-  //     setIsButtonDisabled(true);
-  //     return;
-  //   }
-  //   setDisplayedApplications(filteredApplications.slice(0, appNumber));
-  // }, [appNumber]);
+  useEffect(() => {
+    setDisplayedApplications(filteredApplications.slice(0, appNumber));
+  }, [filteredApplications]);
+
+  useEffect(() => {
+    setDisplayedApplications(filteredApplications.slice(0, appNumber));
+  }, [appNumber]);
+
+  useEffect(() => {
+    if (appNumber === filteredApplications.length) setIsButtonDisabled(true);
+    else setIsButtonDisabled(false);
+  }, [appNumber, filteredApplications, activeFilter]);
 
   const handleClick = () => {
-    console.log("click!");
-    // if (appNumber < filteredApplications.length) {
-    //   setAppNumber((prevNumber) => prevNumber + stepNumber);
-    // }
+    if (displayedApplications.length < filteredApplications.length) {
+      setAppNumber((prevNumber) =>
+        prevNumber + stepNumber < filteredApplications.length
+          ? prevNumber + stepNumber
+          : filteredApplications.length
+      );
+    }
   };
 
   return (

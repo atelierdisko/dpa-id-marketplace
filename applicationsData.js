@@ -46,7 +46,7 @@ export default [
       "O-Töne, Interviews, Atmo – im dpa-Audio Hub bieten wir unseren Schatz an Audio-Inhalten sowie Inhalte von Partnern in einem übersichtlichen und schnell durchsuchbaren Audio-Baukasten zum Download an.",
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={GenericIcon} color="#FD7239" />,
-    tags: ["distribution", "daten"],
+    tags: ["audio"],
   },
   {
     title: "dpa-Videoportal",
@@ -55,7 +55,7 @@ export default [
       "Auf dem dpa-Videoportal haben Sie Zugriff auf tagesaktuelle Beiträge und Rohmaterial aus allen Ressorts.",
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={DpaVideoPortalIcon} />,
-    tags: ["video", "audio", "visuals"],
+    tags: ["video", "visuals"],
   },
   {
     title: "dpa-Shop",
@@ -163,7 +163,7 @@ export default [
       "O-Töne, Interviews, Atmo – im dpa-Audio Hub bieten wir unseren Schatz an Audio-Inhalten sowie Inhalte von Partnern in einem übersichtlichen und schnell durchsuchbaren Audio-Baukasten zum Download an.",
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={GenericIcon} color="#FD7239" />,
-    tags: ["distribution", "daten"],
+    tags: ["audio"],
   },
   {
     title: "dpa-Videoportal",
@@ -172,7 +172,7 @@ export default [
       "Auf dem dpa-Videoportal haben Sie Zugriff auf tagesaktuelle Beiträge und Rohmaterial aus allen Ressorts.",
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={DpaVideoPortalIcon} />,
-    tags: ["video", "audio", "visuals"],
+    tags: ["video", "visuals"],
   },
   {
     title: "dpa-Shop",
