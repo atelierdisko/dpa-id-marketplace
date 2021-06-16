@@ -1,18 +1,18 @@
 import styles from "./legal.module.css";
-import typography from "../../styles/typography.module.css";
 import Button from "../button/button";
 import grid from "../../styles/grid.module.css";
 import cn from "classnames";
+import typography from "../../styles/typography.module.css";
 
-import Link from "next/link"
+import Link from "next/link";
 export default function Legal({ type, className }) {
   return (
     <div className={cn(styles.root, grid.root)}>
       <div className={styles.buttonContainer}>
         <Link href={"/"}>
-            <Button isActive={false} className={styles.button}>
-                ← Zurück zur Startseite
-            </Button>
+          <button className={cn(styles.button, typography.zeta500)}>
+            ‹ Zurück zur Startseite
+          </button>
         </Link>
       </div>
       <h1 className={cn(styles.title, typography.gamma500)}>

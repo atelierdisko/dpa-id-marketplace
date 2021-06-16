@@ -21,7 +21,8 @@
 
 .button {
   color: var(--color-blue);
-  border: 1px solid blue;
+  padding-left: 0;
+  border: none;
 }
 
 .title {
