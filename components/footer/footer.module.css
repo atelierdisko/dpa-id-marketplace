@@ -18,17 +18,8 @@
   justify-self: flex-start;
   display: flex;
   @media (--mobile) {
-    justify-self: center;
     align-self: flex-start;
-  }
-}
-
-.partnerProgram {
-  display: none;
-  margin-left: var(--spacing-unit);
-  font-size: 23px;
-  @media (--tablet), (--mobile) {
-    display: inline-block;
+    margin-left: var(--spacing-unit);
   }
 }
 
@@ -43,5 +34,8 @@
 }
 
 .legal li:not(:last-child) {
-  margin-right: calc(var(--spacing-unit) * 2);
+  margin-right: calc(var(--spacing-unit) * 5);
+  @media (--tablet), (--mobile) {
+    margin-right: calc(var(--spacing-unit) * 2);
+  }
 }

@@ -14,8 +14,6 @@ export default function Footer({ className }) {
             <FullLogoIcon />
           </a>
         </Link>
-
-        <div className={styles.partnerProgram}>Partnerprogramm</div>
       </div>
 
       <ul className={cn(styles.legal, typography.etaInter500)}>
