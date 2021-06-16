@@ -64,7 +64,11 @@ export default function Navigation({
         <li className={typography.etaInter500}>
           <Link href="/#createId">
             <a>
-              <Button asButton={false} isBlue={true}>
+              <Button
+                asButton={false}
+                isBlue={true}
+                className={styles.registerButton}
+              >
                 Jetzt dpa ID anlegen
               </Button>
             </a>

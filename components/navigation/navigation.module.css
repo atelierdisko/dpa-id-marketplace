@@ -94,3 +94,7 @@
 .signInButton:hover .signInButtonLogo * {
   fill: white;
 }
+
+.registerButton:hover {
+  background-color: var(--color-mid-blue);
+}
