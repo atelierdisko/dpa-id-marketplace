@@ -135,6 +135,7 @@
   @media (--mobile) {
     grid-column: 3/-3;
     grid-row: 10/-1;
+    justify-self: center;
   }
 }
 
