@@ -60,7 +60,10 @@ export default function ApplicationCard({
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className={cn(styles.root)}>
+    <div
+      className={cn(styles.root)}
+      style={isOpen ? { backgroundColor: "#eeeeee" } : null}
+    >
       <div className={styles.header} onClick={() => setIsOpen(!isOpen)}>
         <div className={styles.iconContainer}>{icon}</div>
 
