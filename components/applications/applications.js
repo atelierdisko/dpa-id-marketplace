@@ -24,10 +24,12 @@ export default function Applications({
   const [displayedApplications, setDisplayedApplications] = useState([
     ...applications.slice(0, appNumber),
   ]);
+
   useEffect(() => {
     setAppNumber(initialAppNumber);
     if (activeFilter === "Alle anzeigen") {
       setDisplayedApplications([...applications.slice(0, appNumber)]);
+      setFilteredApplications([...applications]);
       return;
     }
     setFilteredApplications(
@@ -46,9 +48,11 @@ export default function Applications({
   }, [appNumber]);
 
   useEffect(() => {
-    if (appNumber === filteredApplications.length) setIsButtonDisabled(true);
+    console.log(appNumber, filteredApplications.length);
+    if (displayedApplications.length === filteredApplications.length)
+      setIsButtonDisabled(true);
     else setIsButtonDisabled(false);
-  }, [appNumber, filteredApplications, activeFilter]);
+  }, [displayedApplications, filteredApplications, activeFilter]);
 
   const handleClick = () => {
     if (displayedApplications.length < filteredApplications.length) {
