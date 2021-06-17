@@ -81,11 +81,11 @@
 
 .showIcon {
   border: none;
-  transition: transform 400ms, top 500ms;
   grid-column: 12/13;
   grid-row: 1;
   justify-self: flex-end;
   align-self: center;
+  transition: transform 400ms, top 500ms;
 
   @media (--mobile) {
     grid-column: 4/5;
@@ -105,6 +105,11 @@
   @media (--mobile) {
     margin-right: 0;
   }
+}
+
+.showIconIsOpened:hover {
+  cursor: auto;
+  top: 0;
 }
 
 .description {
