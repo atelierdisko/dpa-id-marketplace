@@ -11,7 +11,23 @@ export default function Navigation({
   displayNavigation,
   isLight,
   iconColor,
+  activeIndex = 0,
 }) {
+  const primaryNavigationLinks = [
+    {
+      href: "#applications",
+      text: "Marktplatz",
+    },
+    {
+      href: "#quotes",
+      text: "Best Practises",
+    },
+    {
+      href: "#functionalities",
+      text: "Funktionalitäten",
+    },
+  ];
+
   return (
     <nav
       className={cn(
@@ -31,23 +47,22 @@ export default function Navigation({
         className={styles.list}
         style={!displayNavigation ? { display: "none" } : null}
       >
-        <li className={typography.zeta500}>
-          <Link href="/#applications" scroll={true}>
-            <a>Marktplatz</a>
-          </Link>
-        </li>
-        <li className={typography.zeta500}>
-          <Link href="/#quotes">
-            <a>Best Practises</a>
-          </Link>
-        </li>
-        <li className={typography.zeta500}>
-          <Link href="/#functionalities">
-            <a>Funktionalitäten</a>
-          </Link>
-        </li>
+        {primaryNavigationLinks.map((link, index) => (
+          <li
+            className={cn(
+              typography.zeta500,
+              index === activeIndex && styles.activeLink
+            )}
+            key={index}
+          >
+            <Link href={link.href}>
+              <a>{link.text}</a>
+            </Link>
+          </li>
+        ))}
+
         <li className={typography.etaInter500}>
-          <Link href="/#signIn">
+          <Link href="#signIn">
             <a>
               <Button
                 className={styles.signInButton}
