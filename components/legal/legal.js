@@ -3,8 +3,8 @@ import Button from "../button/button";
 import grid from "../../styles/grid.module.css";
 import cn from "classnames";
 import typography from "../../styles/typography.module.css";
-
 import Link from "next/link";
+
 export default function Legal({ type, className }) {
   return (
     <div className={cn(styles.root, grid.root)}>
