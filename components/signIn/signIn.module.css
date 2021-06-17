@@ -1,5 +1,5 @@
 .root {
-  background: var(--color-royal-blue);
+  background: var(--color-mid-blue);
   background-image: linear-gradient(
     to bottom,
     var(--color-royal-blue),
@@ -45,7 +45,6 @@
   grid-column: 3 / span 6;
   grid-row: 4/5;
   margin-top: calc(var(--spacing-unit) * 3);
-  color: var(--color-gray-900);
   @media (--tablet), (--mobile) {
     grid-column: 3 / -3;
     margin-top: calc(var(--spacing-unit) * 5);
