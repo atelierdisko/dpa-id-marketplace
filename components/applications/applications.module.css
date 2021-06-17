@@ -2,7 +2,7 @@
   padding-top: calc(var(--spacing-unit) * 12);
   padding-bottom: calc(var(--spacing-unit) * 12);
   color: var(--color-white);
-  background-color: var(--color-royal-blue);
+  background-color: var(--color-mid-blue);
   background-image: linear-gradient(
       to right,
       rgba(26, 30, 40, 0.1),
