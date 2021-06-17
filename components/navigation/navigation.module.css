@@ -49,6 +49,7 @@
     grid-column: span 3/-3;
   }
 }
+
 .list li:nth-child(-n + 2) {
   margin-right: calc(var(--spacing-unit) * 4.5);
 }
