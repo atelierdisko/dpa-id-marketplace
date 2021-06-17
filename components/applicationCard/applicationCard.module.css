@@ -108,7 +108,7 @@
 }
 
 .showIconIsOpened:hover {
-  cursor: auto;
+  position: relative;
   top: 0;
 }
 
