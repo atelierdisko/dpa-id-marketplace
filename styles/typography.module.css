@@ -2,7 +2,7 @@
   font-family: var(--font-family-primary-demi);
   font-size: 90px;
   font-weight: 500;
-  line-height: 108px;
+  line-height: 90px;
   letter-spacing: -3px;
   @media (--tablet) {
     font-size: 80px;
