@@ -48,7 +48,6 @@ export default function Applications({
   }, [appNumber]);
 
   useEffect(() => {
-    console.log(appNumber, filteredApplications.length);
     if (displayedApplications.length === filteredApplications.length)
       setIsButtonDisabled(true);
     else setIsButtonDisabled(false);
