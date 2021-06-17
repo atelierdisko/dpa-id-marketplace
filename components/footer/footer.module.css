@@ -39,3 +39,7 @@
     margin-right: calc(var(--spacing-unit) * 2);
   }
 }
+
+.legal li:hover {
+  opacity: 0.8;
+}
