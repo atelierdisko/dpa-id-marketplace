@@ -2,7 +2,7 @@
   background: var(--color-mid-blue);
   background-image: linear-gradient(
     to bottom,
-    var(--color-royal-blue),
+    var(--color-mid-blue),
     rgba(255, 255, 255, 0.3)
   );
   color: var(--color-white);
