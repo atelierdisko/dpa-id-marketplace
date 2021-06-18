@@ -93,9 +93,13 @@
   }
 }
 
-.showIcon:hover {
+.showIcon {
   cursor: pointer;
   position: relative;
+  top: 0;
+}
+
+.root:hover .showIcon {
   top: 4px;
 }
 
@@ -107,7 +111,7 @@
   }
 }
 
-.showIconIsOpened:hover {
+.root:hover .showIconIsOpened {
   position: relative;
   top: 0;
 }
