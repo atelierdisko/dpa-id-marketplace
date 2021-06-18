@@ -6,10 +6,7 @@ import cn from "classnames";
 
 export default function SignIn({ className, id }) {
   return (
-    <section
-      className={cn(className, styles.root, grid.root)}
-      id={id}
-    >
+    <section className={cn(className, styles.root, grid.root)} id={id}>
       <p className={cn(typography.zeta500, styles.signalPhrase)}>
         Der Marktplatz wartet
       </p>
@@ -20,25 +17,25 @@ export default function SignIn({ className, id }) {
         Jetzt kostenlos dpa ID registrieren und den Marktplatz entdecken!
       </p>
       <div className={styles.drawingsAndCallToAction}>
-        <div className={styles.callToActionButton}>
-          <Logo classname={styles.logo} withName={false} />
-          <div className={typography.etaInter500}>dpa ID anlegen</div>
-        </div>
         <img
           src={"./images/signUp-pattern.svg"}
           className={styles.pattern}
           alt={""}
         />
-      </div>
-      <div className={styles.callToActionButtonTabletAndMobile}>
-        <Logo classname={styles.logo} withName={false} />
-        <div className={typography.etaInter500}>dpa ID anlegen</div>
+        <a className={styles.callToActionButton} href={"/"}>
+          <Logo classname={styles.logo} withName={false} />
+          <div className={typography.etaInter500}>dpa ID anlegen</div>
+        </a>
       </div>
       <img
         src={"./images/BG Image.svg"}
         className={styles.patternTabletAndMobile}
         alt={""}
       />
+      <a className={styles.callToActionButtonTabletAndMobile} href={"/"}>
+        <Logo classname={styles.logo} withName={false} />
+        <div className={typography.etaInter500}>dpa ID anlegen</div>
+      </a>
     </section>
   );
 }
