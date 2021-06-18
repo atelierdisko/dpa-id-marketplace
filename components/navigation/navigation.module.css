@@ -40,14 +40,6 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-
-  @media (--tablet) {
-    grid-column: span 5/-3;
-  }
-
-  @media (--mobile) {
-    grid-column: span 3/-3;
-  }
 }
 
 .list li:nth-child(-n + 2) {

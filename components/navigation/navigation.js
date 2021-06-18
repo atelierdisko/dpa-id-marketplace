@@ -30,14 +30,14 @@ export default function Navigation({
     },
   ];
   function onScroll() {
-    if (typeof document === "undefined" && ref.current) {
-      return;
-    }
     let index = 0;
     let prevTop = null;
     while (index < primaryNavigationLinks.length) {
       const { href } = primaryNavigationLinks[index];
       const el = document.querySelector(href);
+      if (!el) {
+        return;
+      }
       const { height: navHeight } = ref.current?.getBoundingClientRect();
       const currentTop = el.getBoundingClientRect().top - navHeight;
       if (currentTop > 0 && prevTop < 0) {
@@ -51,7 +51,7 @@ export default function Navigation({
   }
 
   useEffect(() => {
-    if (typeof document === "undefined" && ref.current) {
+    if (typeof document === "undefined" || !ref.current) {
       return;
     }
     onScroll();
@@ -71,6 +71,7 @@ export default function Navigation({
         className
       )}
     >
+      {console.log("render") || null}
       <Link href={"/"}>
         <a className={styles.logo}>
           <FullLogoIcon color={iconColor} />
