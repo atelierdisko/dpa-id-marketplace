@@ -4,16 +4,42 @@ import typography from "../../styles/typography.module.css";
 import grid from "../../styles/grid.module.css";
 import cn from "classnames";
 import { motion, useTransform, useViewportScroll } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
+import { customMedia } from "../../styles/cssExports";
 
 export default function Hero({ className }) {
-  const speed = 0.15;
-  const startY = -100;
-  const stopY = -200;
+  const isDesktopXL = useMediaQuery({ query: customMedia["--desktop-xl"] });
+  const isDesktop = useMediaQuery({ query: customMedia["--desktop"] });
+  const isTablet = useMediaQuery({ query: customMedia["--tablet"] });
+  const isMobile = useMediaQuery({ query: customMedia["--mobile"] });
+
   const { scrollYProgress } = useViewportScroll();
 
-  const y = useTransform(scrollYProgress, [0.02, speed], [startY, stopY], {
-    clamp: true,
-  });
+  let startScroll = 0.02;
+  let stopScroll = 0.15;
+  let startY = -100;
+  let stopY = -200;
+  if (isTablet) {
+    startScroll = 0.08;
+    stopScroll = 0.2;
+    startY = -100;
+    stopY = -200;
+  }
+  if (isMobile) {
+    startScroll = 0.02;
+    stopScroll = 0.15;
+    startY = -100;
+    stopY = -200;
+  }
+
+  const y = useTransform(
+    scrollYProgress,
+    [startScroll, stopScroll],
+    [startY, stopY],
+    {
+      clamp: true,
+    }
+  );
   return (
     <section className={cn(className, styles.root, grid.root)}>
       <h1 className={cn(styles.title, typography.beta500)}>
