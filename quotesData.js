@@ -2,7 +2,7 @@ export default [
   {
     signalPhrase: "Name der Person — Position der Person  ",
     quote:
-      "„Hier steht ein kurzer Text mit einem Zitat. Lorem ipsum dolor sit amet, consetetur sadipscing elitr”",
+      "„Hier steht ein kurzer Text mit einem Zitat. Lorem ipsum dolor sit amet, consetetur sadipscing elitr Hier steht ein kurzer Text mit einem Zitat. Lorem ipsum d”",
     image: "../images/quotes-image2.png",
   },
   {
