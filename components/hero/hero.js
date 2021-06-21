@@ -3,9 +3,16 @@ import styles from "./hero.module.css";
 import typography from "../../styles/typography.module.css";
 import grid from "../../styles/grid.module.css";
 import cn from "classnames";
-import { motion, useTransform, useViewportScroll } from "framer-motion";
+import {
+  motion,
+  useAnimation,
+  useTransform,
+  useViewportScroll,
+} from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 import { customMedia } from "../../styles/cssExports";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 
 export default function Hero({ className }) {
   const isDesktopXL = useMediaQuery({ query: customMedia["--desktop-xl"] });
@@ -26,8 +33,8 @@ export default function Hero({ className }) {
     stopY = -200;
   }
   if (isMobile) {
-    startScroll = 0.02;
-    stopScroll = 0.15;
+    startScroll = 0.1;
+    stopScroll = 0.2;
     startY = -100;
     stopY = -200;
   }
@@ -40,6 +47,24 @@ export default function Hero({ className }) {
       clamp: true,
     }
   );
+  const { ref, inView } = useInView();
+  const controls = useAnimation();
+  const variants = {
+    initial: {
+      y: 0,
+    },
+    final: {
+      y: startY,
+      transition: {
+        duration: 1,
+      },
+    },
+  };
+  useEffect(() => {
+    if (inView) {
+      controls.start("final");
+    }
+  }, [inView]);
   return (
     <section className={cn(className, styles.root, grid.root)}>
       <h1 className={cn(styles.title, typography.beta500)}>
@@ -65,8 +90,12 @@ export default function Hero({ className }) {
       <motion.div className={styles.appMenu} style={{ y }}>
         {/*{" "}*/}
         <motion.img
-          animate={{ y: startY }}
-          transition={{ duration: 1 }}
+          ref={ref}
+          initial="initial"
+          animate={controls}
+          variants={variants}
+          // animate={{ y: startY }}
+          // transition={{ duration: 1 }}
           src={"./images/appswitcher_trans.png"}
           alt={""}
         />
