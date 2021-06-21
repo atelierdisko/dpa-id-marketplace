@@ -3,7 +3,8 @@
 @value paddingS: calc(var(--spacing-unit)*7);
 
 .root {
-  background-color: var(--color-gray-400);
+  position: relative;
+  overflow: hidden;
   grid-template-rows: paddingM repeat(7, min-content) paddingM;
   @media (--tablet) {
     grid-template-rows: paddingL repeat(8, min-content);
@@ -11,6 +12,18 @@
   @media (--mobile) {
     grid-template-rows: paddingS repeat(8, min-content);
   }
+}
+
+.root::before {
+  display: block;
+  content: "\A";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-gray-400);
+  z-index: -2;
 }
 
 .pattern {

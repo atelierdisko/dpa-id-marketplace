@@ -16,8 +16,8 @@ export default function Message({
   setHiddenMessages,
   message,
   setMessage,
-  setPhoneMessages,
   hiddenMessages,
+  onClick,
 }) {
   const controls = useAnimation();
 
@@ -41,7 +41,7 @@ export default function Message({
   const handleClick = () => {
     if (!message.disabled) {
       controls.start("shrink").then(() => controls.start("normal"));
-      setPhoneMessages((prev) => [message, ...prev]);
+      onClick?.();
     }
 
     if (hiddenMessages.length === 0) {
