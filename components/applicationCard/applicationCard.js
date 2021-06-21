@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "../carousel/navigation";
 import { useSwiper } from "../../hooks/useSwiper";
 import cn from "classnames";
+import { motion } from "framer-motion";
 
 ApplicationCard.propTypes = {
   /**
@@ -64,9 +65,11 @@ export default function ApplicationCard({
   }, [filter]);
 
   return (
-    <div
+    <motion.div
       className={cn(styles.root)}
       style={isOpen ? { backgroundColor: "#eeeeee" } : null}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
     >
       <div className={styles.header} onClick={() => setIsOpen(!isOpen)}>
         <div className={styles.iconContainer}>{icon}</div>
@@ -111,6 +114,6 @@ export default function ApplicationCard({
           </Carousel>
         </>
       )}
-    </div>
+    </motion.div>
   );
 }

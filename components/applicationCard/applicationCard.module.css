@@ -85,7 +85,7 @@
   grid-row: 1;
   justify-self: flex-end;
   align-self: center;
-  transition: transform 400ms, top 500ms;
+  transition: all 100ms;
 
   @media (--mobile) {
     grid-column: 4/5;

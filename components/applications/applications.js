@@ -5,6 +5,7 @@ import typography from "../../styles/typography.module.css";
 import grid from "../../styles/grid.module.css";
 import { useEffect, useState } from "react";
 import cn from "classnames";
+import { motion } from "framer-motion";
 
 export default function Applications({
   applications,
@@ -91,7 +92,7 @@ export default function Applications({
           </Button>
         ))}
       </div>
-      <div className={styles.list}>
+      <motion.div className={styles.list}>
         {displayedApplications.map((application, index) => (
           <ApplicationCard
             key={index}
@@ -103,7 +104,7 @@ export default function Applications({
             filter={activeFilter}
           />
         ))}
-      </div>
+      </motion.div>
       <div className={styles.showMoreButtonContainer}>
         <Button
           className={cn(
