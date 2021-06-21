@@ -72,7 +72,7 @@ export default function Navigation({
       )}
     >
       {console.log("render") || null}
-      <Link href={"/"}>
+      <Link href={"#hero"}>
         <a className={styles.logo}>
           <FullLogoIcon color={iconColor} />
         </a>
@@ -99,7 +99,7 @@ export default function Navigation({
         ))}
 
         <li className={typography.etaInter500}>
-          <Link href="#signIn">
+          <Link href="/">
             <a>
               <Button
                 className={styles.signInButton}

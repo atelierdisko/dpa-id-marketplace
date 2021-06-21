@@ -41,7 +41,7 @@ export default function Home() {
         iconColor={"black"}
       />
       <main>
-        <Hero className={styles.hero} />
+        <Hero className={styles.hero} id="hero" />
         <Marquee>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ein Laufband
           mit kurzen, prägnaten Benefits. Suspendisse quis mattis orci.

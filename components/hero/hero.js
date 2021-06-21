@@ -14,7 +14,7 @@ import { customMedia } from "../../styles/cssExports";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 
-export default function Hero({ className }) {
+export default function Hero({ className, id }) {
   const isDesktopXL = useMediaQuery({ query: customMedia["--desktop-xl"] });
   const isDesktop = useMediaQuery({ query: customMedia["--desktop"] });
   const isTablet = useMediaQuery({ query: customMedia["--tablet"] });
@@ -66,7 +66,7 @@ export default function Hero({ className }) {
     }
   }, [inView]);
   return (
-    <section className={cn(className, styles.root, grid.root)}>
+    <section className={cn(className, styles.root, grid.root)} id={id}>
       <h1 className={cn(styles.title, typography.beta500)}>
         Willkommen auf dem dpa-Marktplatz!
       </h1>
