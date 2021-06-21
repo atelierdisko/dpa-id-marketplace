@@ -1,13 +1,21 @@
 import styles from "./message.module.css";
 import typography from "../../styles/typography.module.css";
 import { motion } from "framer-motion";
-import { useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import cn from "classnames";
 
 const variants = {
   initial: { opacity: 0, y: 20, scale: 0 },
   final: { opacity: 1, y: 0, scale: 1 },
 };
+
+/*
+initial={{ scale: 0, y: -100 }}
+animate={{ scale: 1, y: 0 }}
+// variants={variants}
+transition={{ stiffness: 100 }}
+ */
+
 export default function MessageOnPhone({
   type,
   className,
@@ -16,19 +24,23 @@ export default function MessageOnPhone({
   colorTheme,
   postingTime,
   content,
-  // variants,
-  controls,
+  animate,
+  count,
 }) {
-  const ref = useRef();
+  const [animationStyles, setAnimationStyles] = useState();
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+    setAnimationStyles(null);
+    window.requestAnimationFrame(() => {
+      if (animate) {
+        setAnimationStyles(styles.withPopInAnimation);
+      }
+    });
+  }, [count]);
   return (
-    <motion.div
-      ref={ref}
-      className={cn(styles.root, className)}
-      initial={{ scale: 0, y: -100 }}
-      animate={{ scale: 1, y: 0 }}
-      // variants={variants}
-      transition={{ stiffness: 100 }}
-    >
+    <div className={cn(animationStyles, styles.root, className)}>
       <div className={cn(styles.typeContainer, styles.typeContainerIsOnPhone)}>
         <div className={styles.typeLogo}>{icon}</div>
         <div>{`Neue ${type} im`}</div>
@@ -50,6 +62,6 @@ export default function MessageOnPhone({
       >
         {content}
       </div>
-    </motion.div>
+    </div>
   );
 }

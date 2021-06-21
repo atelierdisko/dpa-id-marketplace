@@ -1,9 +1,26 @@
 .root {
   display: grid;
 }
+
 .root:hover {
   cursor: pointer;
 }
+
+.withPopInAnimation {
+  animation: fadein 200ms;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translateY(-100%) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 .overlay {
   grid-column: 1/-1;
   grid-row: 1/3;

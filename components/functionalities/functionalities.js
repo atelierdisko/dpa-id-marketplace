@@ -1,17 +1,16 @@
 import styles from "./functionalities.module.css";
 import typography from "../../styles/typography.module.css";
 import grid from "../../styles/grid.module.css";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Message from "../message/message";
 import Logo from "../logo/logo";
 import cn from "classnames";
 import { useSwiper } from "../../hooks/useSwiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import MessageOnPhone from "../message/messageOnPhone";
-import { motion } from "framer-motion";
 import Button from "../carousel/button";
 import { Pagination } from "../carousel/pagination";
-import Circle from "../message/circle";
+import MessagePath from "./messagePath/messagePath";
 
 export default function Functionalities({
   functionalities,
@@ -19,17 +18,13 @@ export default function Functionalities({
   id,
   messages,
 }) {
-  const {
-    setSwiper,
-    slideNext,
-    onSlideChange,
-    slideTo,
-    currentSlideIndex,
-  } = useSwiper();
+  const { setSwiper, slideNext, onSlideChange, slideTo, currentSlideIndex } =
+    useSwiper();
 
   const [time, setTime] = useState(
     new Date().toLocaleTimeString("de-DE", { timeStyle: "short" })
   );
+
   const [message1, setMessage1] = useState({ ...messages[0], disabled: false });
   const [message2, setMessage2] = useState({ ...messages[1], disabled: false });
   const [message3, setMessage3] = useState({ ...messages[2], disabled: false });
@@ -41,6 +36,8 @@ export default function Functionalities({
     messages[6],
   ]);
 
+  const [messageQueue, setMessageQueue] = useState([]);
+
   useEffect(() => {
     const intervalId = setInterval(() => {
       setTime(new Date().toLocaleTimeString("de-DE", { timeStyle: "short" }));
@@ -48,13 +45,15 @@ export default function Functionalities({
     return () => clearInterval(intervalId);
   }, []);
 
+  const onMessageButtonClick = (index, message) => {
+    setMessageQueue((prev) => [
+      { index, startTime: Date.now(), message },
+      ...prev,
+    ]);
+  };
+
   return (
     <section className={cn(styles.root, grid.root, className)} id={id}>
-      <img
-        src="./images/features-pattern.svg"
-        className={styles.pattern}
-        alt={""}
-      />
       <h2 className={cn(styles.title, typography.beta500)}>
         Features Ihrer dpa ID
       </h2>
@@ -112,6 +111,7 @@ export default function Functionalities({
           message={message1}
           setMessage={setMessage1}
           hiddenMessages={hiddenMessages}
+          onClick={() => onMessageButtonClick(0, message1)}
         />
         <Message
           type={message2.type}
@@ -124,6 +124,7 @@ export default function Functionalities({
           message={message2}
           setMessage={setMessage2}
           hiddenMessages={hiddenMessages}
+          onClick={() => onMessageButtonClick(1, message2)}
         />
         <Message
           type={message3.type}
@@ -136,6 +137,7 @@ export default function Functionalities({
           message={message3}
           setMessage={setMessage3}
           hiddenMessages={hiddenMessages}
+          onClick={() => onMessageButtonClick(2, message3)}
         />
       </div>
       <div className={styles.phoneContainer}>
@@ -150,11 +152,8 @@ export default function Functionalities({
         <div className={styles.applicationTitle}>
           <span>HEUTE</span>
         </div>
-        <motion.div
-          className={styles.applicationMessageContainer}
-          transition={{ staggerDirection: -1 }}
-        >
-          {phoneMessages.map((message, index) => (
+        <div className={styles.applicationMessageContainer}>
+          {phoneMessages.map((message, index, array) => (
             <MessageOnPhone
               key={index}
               type={message.type}
@@ -164,11 +163,17 @@ export default function Functionalities({
               className={styles.messageOnPhone}
               colorTheme={message.colorTheme}
               content={message.content}
+              animate={message.animate && index === 0}
+              count={array.length}
             />
           ))}
-        </motion.div>
+        </div>
       </div>
-      {/*<Circle className={styles.circle} />*/}
+      <MessagePath
+        messageQueue={messageQueue}
+        setMessageQueue={setMessageQueue}
+        setPhoneMessages={setPhoneMessages}
+      />
     </section>
   );
 }
