@@ -9,8 +9,7 @@
       rgba(255, 255, 255, 0.1)
     ),
     url("../../public/images/applications-pattern.svg");
-  //background-repeat: repeat;
-  background-size: cover;
+  background-size: 212%;
   background-position: 50%; /*to center the image*/
 
   @media (--tablet) {
