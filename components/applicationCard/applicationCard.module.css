@@ -11,10 +11,23 @@
     padding: 16px;
     grid-template-columns: 48px 16px 1fr auto;
   }
+
+  transition-property: opacity, transform;
+  transition-duration: 400ms;
 }
 
 .root:hover {
   background: var(--color-gray-200);
+}
+
+.hidden {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.visible {
+  opacity: 1;
+  transform: scale(1);
 }
 
 /* todo: remove display content usage for improved browser support ,*/

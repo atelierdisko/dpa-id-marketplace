@@ -2,7 +2,7 @@ import styles from "./applicationCard.module.css";
 import typography from "../../styles/typography.module.css";
 import { CaretDownIcon, Icon } from "../icon/icon";
 import Button from "../button/button";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "../carousel/navigation";
@@ -58,21 +58,19 @@ export default function ApplicationCard({
   images,
   description,
   filter,
-  index,
+  delayIndex,
 }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [style, setStyle] = useState(isOpen ? styles.visible : styles.hidden);
+
+  useEffect(() => {
+    setStyle(styles.visible);
+  }, []);
+
   useEffect(() => {
     setIsOpen(false);
   }, [filter]);
-  const variants = {
-    hidden: { opacity: 0, scale: 0 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: { delay: 0.3 * index, duration: 0.2 },
-    },
-    opened: {},
-  };
+
   const controls = useAnimation();
   const variantsDetails = {
     visible: { opacity: 1, transition: { duration: 1 } },
@@ -80,11 +78,13 @@ export default function ApplicationCard({
   useEffect(() => {
     controls.start("visible");
   }, [isOpen]);
+
   return (
-    <motion.div
-      className={cn(styles.root)}
-      style={isOpen ? { backgroundColor: "#eeeeee" } : null}
-      variants={variants}
+    <div
+      className={cn(styles.root, style)}
+      style={Object.assign(isOpen ? { backgroundColor: "#eeeeee" } : {}, {
+        transitionDelay: `${100 * delayIndex}ms`,
+      })}
     >
       <div className={styles.header} onClick={() => setIsOpen(!isOpen)}>
         <div className={styles.iconContainer}>{icon}</div>
@@ -133,6 +133,6 @@ export default function ApplicationCard({
           </Carousel>
         </>
       )}
-    </motion.div>
+    </div>
   );
 }

@@ -3,7 +3,7 @@ import ApplicationCard from "../applicationCard/applicationCard";
 import styles from "./applications.module.css";
 import typography from "../../styles/typography.module.css";
 import grid from "../../styles/grid.module.css";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import cn from "classnames";
 import { motion, useAnimation } from "framer-motion";
 
@@ -22,6 +22,7 @@ export default function Applications({
   const [filteredApplications, setFilteredApplications] = useState([
     ...applications,
   ]);
+  const prevDisplayedApplicationsRef = useRef([]);
   const [displayedApplications, setDisplayedApplications] = useState([
     ...applications.slice(0, appNumber),
   ]);
@@ -53,6 +54,10 @@ export default function Applications({
       setIsButtonDisabled(true);
     else setIsButtonDisabled(false);
   }, [displayedApplications, filteredApplications, activeFilter]);
+
+  useEffect(() => {
+    prevDisplayedApplicationsRef.current = displayedApplications;
+  }, [displayedApplications]);
 
   const handleClick = () => {
     if (displayedApplications.length < filteredApplications.length) {
@@ -109,15 +114,10 @@ export default function Applications({
           </Button>
         ))}
       </div>
-      <motion.div
-        className={styles.list}
-        // variants={variants}
-        // initial="hidden"
-        // animate={controls}
-      >
-        {displayedApplications.map((application, index) => (
+      <div className={styles.list}>
+        {displayedApplications.map((application, index, arr) => (
           <ApplicationCard
-            key={index}
+            key={application.title}
             index={index}
             title={application.title}
             excerpt={application.excerpt}
@@ -125,9 +125,13 @@ export default function Applications({
             icon={application.icon}
             images={application.images}
             filter={activeFilter}
+            delayIndex={Math.max(
+              0,
+              index - prevDisplayedApplicationsRef.current?.length
+            )}
           />
         ))}
-      </motion.div>
+      </div>
       <motion.div className={styles.showMoreButtonContainer} layout>
         <Button
           className={cn(
