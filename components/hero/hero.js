@@ -21,22 +21,23 @@ export default function Hero({ className, id }) {
   const isMobile = useMediaQuery({ query: customMedia["--mobile"] });
 
   const { scrollYProgress } = useViewportScroll();
+  console.log(scrollYProgress);
 
   let startScroll = 0.02;
   let stopScroll = 0.15;
   let startY = -100;
   let stopY = -200;
   if (isTablet) {
-    startScroll = 0.08;
-    stopScroll = 0.2;
+    startScroll = 0.11;
+    stopScroll = 0.17;
     startY = -100;
     stopY = -200;
   }
   if (isMobile) {
-    startScroll = 0.1;
-    stopScroll = 0.2;
-    startY = -100;
-    stopY = -200;
+    startScroll = 0.96;
+    stopScroll = 0.16;
+    startY = -60;
+    stopY = -160;
   }
 
   const y = useTransform(
@@ -47,7 +48,19 @@ export default function Hero({ className, id }) {
       clamp: true,
     }
   );
-  const { ref, inView } = useInView();
+  const { ref, inView, entry } = useInView({
+    delay: 100,
+    trackVisibility: true,
+  });
+
+  useEffect(() => {
+    // if (typeof document === "undefined") return;
+    // else {
+    //   const el = document.querySelector("#appMenuImg").getBoundingClientRect();
+    //   console.log(el);
+    // }
+    if (entry) console.log(entry.intersectionRatio);
+  }, [entry]);
   const controls = useAnimation();
   const variants = {
     initial: {
@@ -62,9 +75,10 @@ export default function Hero({ className, id }) {
   };
   useEffect(() => {
     if (inView) {
+      // if (scrollYProgress >= startY) {
       controls.start("final");
     }
-  }, [inView]);
+  }, [inView, entry]);
   return (
     <section className={cn(className, styles.root, grid.root)} id={id}>
       <h1 className={cn(styles.title, typography.beta500)}>
@@ -87,19 +101,22 @@ export default function Hero({ className, id }) {
         className={styles.laptopImage}
         alt={""}
       />
-      <motion.div className={styles.appMenu} style={{ y }}>
+      <motion.div
+        className={styles.appMenu}
+        // style={{ y }}
+      >
         {/*{" "}*/}
         <motion.img
-          ref={ref}
+          // ref={ref}
+          id="appMenuImg"
           initial="initial"
           animate={controls}
           variants={variants}
-          // animate={{ y: startY }}
-          // transition={{ duration: 1 }}
           src={"./images/appswitcher_trans.png"}
           alt={""}
         />
       </motion.div>
+      <div ref={ref} />
     </section>
   );
 }
