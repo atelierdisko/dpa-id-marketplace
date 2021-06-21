@@ -8,7 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "../carousel/navigation";
 import { useSwiper } from "../../hooks/useSwiper";
 import cn from "classnames";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 
 ApplicationCard.propTypes = {
   /**
@@ -58,18 +58,33 @@ export default function ApplicationCard({
   images,
   description,
   filter,
+  index,
 }) {
   const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
     setIsOpen(false);
   }, [filter]);
-
+  const variants = {
+    hidden: { opacity: 0, scale: 0 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { delay: 0.3 * index, duration: 0.2 },
+    },
+    opened: {},
+  };
+  const controls = useAnimation();
+  const variantsDetails = {
+    visible: { opacity: 1, transition: { duration: 1 } },
+  };
+  useEffect(() => {
+    controls.start("visible");
+  }, [isOpen]);
   return (
     <motion.div
       className={cn(styles.root)}
       style={isOpen ? { backgroundColor: "#eeeeee" } : null}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      variants={variants}
     >
       <div className={styles.header} onClick={() => setIsOpen(!isOpen)}>
         <div className={styles.iconContainer}>{icon}</div>
@@ -88,13 +103,17 @@ export default function ApplicationCard({
 
       {isOpen && (
         <>
-          <p className={cn(typography.epsilon400, styles.excerptMobile)}>
+          <motion.p className={cn(typography.epsilon400, styles.excerptMobile)}>
             {excerpt}
-          </p>
+          </motion.p>
 
-          <div className={cn(styles.description, typography.epsilon400)}>
+          <motion.div
+            className={cn(styles.description, typography.epsilon400)}
+            variants={variantsDetails}
+            animate={controls}
+          >
             {description}
-          </div>
+          </motion.div>
 
           <Button
             isActive={true}

@@ -15,10 +15,12 @@
   @media (--tablet) {
     padding-top: calc(var(--spacing-unit) * 15);
     padding-bottom: calc(var(--spacing-unit) * 15);
+    background-size: 290%;
   }
   @media (--mobile) {
     padding-top: calc(var(--spacing-unit) * 10);
     padding-bottom: calc(var(--spacing-unit) * 7);
+    background-size: 450%;
   }
 }
 

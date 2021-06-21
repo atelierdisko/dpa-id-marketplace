@@ -5,7 +5,7 @@ import typography from "../../styles/typography.module.css";
 import grid from "../../styles/grid.module.css";
 import { useEffect, useState } from "react";
 import cn from "classnames";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 
 export default function Applications({
   applications,
@@ -64,6 +64,23 @@ export default function Applications({
     }
   };
 
+  // const variants = {
+  //   hidden: { opacity: 1, transition: { duration: 0, delay: 0 } },
+  //   visible: {
+  //     opacity: 1,
+  //     transition: {
+  //       duration: 0,
+  //       delay: 0,
+  //       delayChildren: 0,
+  //       staggerChildren: 0.1,
+  //     },
+  //   },
+  // };
+  // const controls = useAnimation();
+  // useEffect(() => {
+  //   controls.start("visible");
+  // }, [displayedApplications, appNumber]);
+
   return (
     <section className={cn(grid.root, styles.root, className)} id={id}>
       <h2 className={cn(typography.beta500, styles.title)}>
@@ -92,10 +109,16 @@ export default function Applications({
           </Button>
         ))}
       </div>
-      <motion.div className={styles.list}>
+      <motion.div
+        className={styles.list}
+        // variants={variants}
+        // initial="hidden"
+        // animate={controls}
+      >
         {displayedApplications.map((application, index) => (
           <ApplicationCard
             key={index}
+            index={index}
             title={application.title}
             excerpt={application.excerpt}
             description={application.description}
@@ -105,7 +128,7 @@ export default function Applications({
           />
         ))}
       </motion.div>
-      <div className={styles.showMoreButtonContainer}>
+      <motion.div className={styles.showMoreButtonContainer} layout>
         <Button
           className={cn(
             styles.showMoreButton,
@@ -118,7 +141,7 @@ export default function Applications({
         >
           Mehr anzeigen
         </Button>
-      </div>
+      </motion.div>
     </section>
   );
 }
