@@ -3,9 +3,9 @@ import ApplicationCard from "../applicationCard/applicationCard";
 import styles from "./applications.module.css";
 import typography from "../../styles/typography.module.css";
 import grid from "../../styles/grid.module.css";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import cn from "classnames";
-import { motion, useAnimation } from "framer-motion";
+import { AnimatePresence, motion, useAnimation } from "framer-motion";
 
 export default function Applications({
   applications,
@@ -22,10 +22,11 @@ export default function Applications({
   const [filteredApplications, setFilteredApplications] = useState([
     ...applications,
   ]);
+  const prevDisplayedApplicationRef = useRef([]);
+
   const [displayedApplications, setDisplayedApplications] = useState([
     ...applications.slice(0, appNumber),
   ]);
-
   useEffect(() => {
     setAppNumber(initialAppNumber);
     if (activeFilter === "Alle anzeigen") {
@@ -54,6 +55,10 @@ export default function Applications({
     else setIsButtonDisabled(false);
   }, [displayedApplications, filteredApplications, activeFilter]);
 
+  useEffect(() => {
+    prevDisplayedApplicationRef.current = displayedApplications;
+  }, [displayedApplications]);
+
   const handleClick = () => {
     if (displayedApplications.length < filteredApplications.length) {
       setAppNumber((prevNumber) =>
@@ -72,7 +77,7 @@ export default function Applications({
   //       duration: 0,
   //       delay: 0,
   //       delayChildren: 0,
-  //       staggerChildren: 0.1,
+  //       staggerChildren: 0.2,
   //     },
   //   },
   // };
@@ -109,7 +114,8 @@ export default function Applications({
           </Button>
         ))}
       </div>
-      <motion.div
+      {/*<AnimatePresence>*/}
+      <div
         className={styles.list}
         // variants={variants}
         // initial="hidden"
@@ -117,7 +123,7 @@ export default function Applications({
       >
         {displayedApplications.map((application, index) => (
           <ApplicationCard
-            key={index}
+            key={application.title}
             index={index}
             title={application.title}
             excerpt={application.excerpt}
@@ -125,9 +131,14 @@ export default function Applications({
             icon={application.icon}
             images={application.images}
             filter={activeFilter}
+            delayIndex={Math.max(
+              0,
+              index - prevDisplayedApplicationRef.current?.length
+            )}
           />
         ))}
-      </motion.div>
+      </div>
+      {/*</AnimatePresence>*/}
       <motion.div className={styles.showMoreButtonContainer} layout>
         <Button
           className={cn(
