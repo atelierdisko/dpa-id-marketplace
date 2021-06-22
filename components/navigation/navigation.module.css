@@ -45,6 +45,7 @@
 
   @media (--mobile) {
     display: inline-flex;
+    width: 122px;
   }
 }
 
