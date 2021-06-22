@@ -1,14 +1,19 @@
 import {
   BotTalkIcon,
   DpaAgendaIcon,
+  DpaAudioHub,
   DpaNewsIcon,
   DpaPictureAllianceIcon,
   DpaSelectIcon,
   DpaShopIcon,
   DpaVideoPortalIcon,
+  f23,
   GenericIcon,
   Icon,
+  Minty,
+  NewsAktuell,
   PoliticsIcon,
+  Tnn,
 } from "./components/icon/icon";
 
 export default [
@@ -45,7 +50,7 @@ export default [
     description:
       "O-Töne, Interviews, Atmo – im dpa-AudioHub bieten wir unseren Schatz an Audio-Inhalten sowie Inhalte von Partnern in einem übersichtlichen und schnell durchsuchbaren Audio-Baukasten zum Download an.",
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
-    icon: <Icon Component={GenericIcon} color="#FD7239" />,
+    icon: <Icon Component={DpaAudioHub} />,
     tags: ["audio"],
   },
   {
@@ -72,7 +77,7 @@ export default [
     description:
       "Die dpa-Tochter news aktuell bietet mit den Marken ots, zimpel und dem Presseportal innovative Lösungen für die erfolgreiche Kommunikation an Medien und Verbrauchern. Übermitteln Sie mit Hilfe des Auftrags­systems Texte, Bilder und weiteres Pressematerial.",
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
-    icon: <Icon Component={GenericIcon} color="#FD7239" />,
+    icon: <Icon Component={NewsAktuell} />,
     tags: ["aktuelles"],
   },
   {
@@ -81,7 +86,7 @@ export default [
     description:
       "Das TNN-Videoportal versorgt öffentlich-rechtliche und private TV-Stationen mit tagesaktuellen Videos zu den relevanten News-Ereignissen und Entertainment-Themen.",
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
-    icon: <Icon Component={GenericIcon} color="#FD7239" />,
+    icon: <Icon Component={Tnn} />,
     tags: ["video"],
   },
   {
@@ -117,7 +122,7 @@ export default [
     description:
       "Mit unserem Partner-Tool Minty finden Sie in Sekundenschnelle die richtigen Künstler für Ihre visuellen Produktionen. Das All-in-One-Tool bietet Kontakt zu 3.500 verifizierten Illustratorinnen und Illustratoren und unterstützt bei Lizenzierung und Projektmanagement.",
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
-    icon: <Icon Component={GenericIcon} color="#0030AA" />,
+    icon: <Icon Component={Minty} />,
     tags: ["daten"],
   },
   {
@@ -126,7 +131,7 @@ export default [
     description:
       "Mit unserem Partner 23° Atlas können Sie Ihre eigenen Statistiken publizieren oder Millionen von thematischen Statistiken einfach weiterverwenden – ob regionale Corona-Daten, Wirtschaftsstatistiken oder Studienergebnisse. Die automatisierten Statistiken funktionieren auf Websites, in Präsentationen oder Pressemitteilungen.",
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
-    icon: <Icon Component={GenericIcon} color="#212121" />,
+    icon: <Icon Component={f23} />,
     tags: ["visuals", "daten"],
   },
   {
@@ -162,7 +167,7 @@ export default [
     description:
       "O-Töne, Interviews, Atmo – im dpa-AudioHub bieten wir unseren Schatz an Audio-Inhalten sowie Inhalte von Partnern in einem übersichtlichen und schnell durchsuchbaren Audio-Baukasten zum Download an.",
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
-    icon: <Icon Component={GenericIcon} color="#FD7239" />,
+    icon: <Icon Component={DpaAudioHub} />,
     tags: ["audio"],
   },
   {
@@ -189,7 +194,7 @@ export default [
     description:
       "Die dpa-Tochter news aktuell bietet mit den Marken ots, zimpel und dem Presseportal innovative Lösungen für die erfolgreiche Kommunikation an Medien und Verbrauchern. Übermitteln Sie mit Hilfe des Auftrags­systems Texte, Bilder und weiteres Pressematerial.",
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
-    icon: <Icon Component={GenericIcon} color="#FD7239" />,
+    icon: <Icon Component={NewsAktuell} />,
     tags: ["aktuelles"],
   },
   {
@@ -198,7 +203,7 @@ export default [
     description:
       "Das TNN-Videoportal versorgt öffentlich-rechtliche und private TV-Stationen mit tagesaktuellen Videos zu den relevanten News-Ereignissen und Entertainment-Themen.",
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
-    icon: <Icon Component={GenericIcon} color="#FD7239" />,
+    icon: <Icon Component={Tnn} />,
     tags: ["video"],
   },
   {
@@ -234,7 +239,7 @@ export default [
     description:
       "Mit unserem Partner-Tool Minty finden Sie in Sekundenschnelle die richtigen Künstler für Ihre visuellen Produktionen. Das All-in-One-Tool bietet Kontakt zu 3.500 verifizierten Illustratorinnen und Illustratoren und unterstützt bei Lizenzierung und Projektmanagement.",
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
-    icon: <Icon Component={GenericIcon} color="#0030AA" />,
+    icon: <Icon Component={Minty} />,
     tags: ["daten"],
   },
   {
@@ -243,7 +248,7 @@ export default [
     description:
       "Mit unserem Partner 23° Atlas können Sie Ihre eigenen Statistiken publizieren oder Millionen von thematischen Statistiken einfach weiterverwenden – ob regionale Corona-Daten, Wirtschaftsstatistiken oder Studienergebnisse. Die automatisierten Statistiken funktionieren auf Websites, in Präsentationen oder Pressemitteilungen.",
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
-    icon: <Icon Component={GenericIcon} color="#212121" />,
+    icon: <Icon Component={f23} />,
     tags: ["visuals", "daten"],
   },
 ];
