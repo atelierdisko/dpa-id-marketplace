@@ -40,10 +40,10 @@ export default [
     tags: ["distribution", "daten"],
   },
   {
-    title: "dpa-Audio Hub",
+    title: "dpa-AudioHub",
     excerpt: "Eine Plattform – alle Töne",
     description:
-      "O-Töne, Interviews, Atmo – im dpa-Audio Hub bieten wir unseren Schatz an Audio-Inhalten sowie Inhalte von Partnern in einem übersichtlichen und schnell durchsuchbaren Audio-Baukasten zum Download an.",
+      "O-Töne, Interviews, Atmo – im dpa-AudioHub bieten wir unseren Schatz an Audio-Inhalten sowie Inhalte von Partnern in einem übersichtlichen und schnell durchsuchbaren Audio-Baukasten zum Download an.",
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={GenericIcon} color="#FD7239" />,
     tags: ["audio"],
@@ -157,10 +157,10 @@ export default [
     tags: ["distribution", "daten"],
   },
   {
-    title: "dpa-Audio Hub",
+    title: "dpa-AudioHub",
     excerpt: "Eine Plattform – alle Töne",
     description:
-      "O-Töne, Interviews, Atmo – im dpa-Audio Hub bieten wir unseren Schatz an Audio-Inhalten sowie Inhalte von Partnern in einem übersichtlichen und schnell durchsuchbaren Audio-Baukasten zum Download an.",
+      "O-Töne, Interviews, Atmo – im dpa-AudioHub bieten wir unseren Schatz an Audio-Inhalten sowie Inhalte von Partnern in einem übersichtlichen und schnell durchsuchbaren Audio-Baukasten zum Download an.",
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={GenericIcon} color="#FD7239" />,
     tags: ["audio"],
