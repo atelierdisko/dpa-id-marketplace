@@ -61,23 +61,6 @@ export default function Applications({
   const getDelayIndex = (arr, index) =>
     Math.max(0, index - (arr.length - deltaAppNumberRef.current));
 
-  // const variants = {
-  //   hidden: { opacity: 1, transition: { duration: 0, delay: 0 } },
-  //   visible: {
-  //     opacity: 1,
-  //     transition: {
-  //       duration: 0,
-  //       delay: 0,
-  //       delayChildren: 0,
-  //       staggerChildren: 0.1,
-  //     },
-  //   },
-  // };
-  // const controls = useAnimation();
-  // useEffect(() => {
-  //   controls.start("visible");
-  // }, [displayedApplications, appNumber]);
-
   return (
     <section className={cn(grid.root, styles.root, className)} id={id}>
       <h2 className={cn(typography.beta500, styles.title)}>
