@@ -96,7 +96,7 @@
   @media (--mobile) {
     display: inline-block;
     grid-column: 1/5;
-    //margin-top: 18px;
+    margin-top: 18px;
   }
 }
 
@@ -136,6 +136,7 @@
   position: relative;
   top: 0;
 }
+
 .details {
   width: 100%;
   color: var(--color-gray-900);
@@ -155,32 +156,43 @@
     grid-template-columns: 48px 16px 1fr auto;
   }
 }
+
 .isOpenedDetails {
   //display: grid;
   transform: scaleY(1);
 }
+
 .excerptMobile,
 .description,
 .button,
 .carousel {
-  opacity: 0;
-  transition: opacity 500ms;
-  transition-delay: 600ms;
+  //opacity: 0;
+  //transition: opacity 500ms;
+  //transition-delay: 600ms;
 }
+
 .isVisibleDetails {
-  opacity: 1;
+  //opacity: 1;
 }
 .description {
-  grid-column: 2/7;
-  //margin-top: calc(var(--spacing-unit) * 5);
+  //grid-column: 2/7;
+  margin-left: 56px;
+  margin-right: 42px;
+
+  grid-column: 7/-1;
+  margin-top: calc(var(--spacing-unit) * 5);
 
   @media (--tablet) {
+    margin-left: 0;
+    margin-right: 0;
     grid-column: 2/12;
     grid-row: 2/3;
-    //margin-top: calc(var(--spacing-unit) * 4.5);
+    margin-top: calc(var(--spacing-unit) * 4.5);
   }
 
   @media (--mobile) {
+    margin-left: 0;
+    margin-right: 0;
     grid-column: 1/5;
     margin-top: calc(var(--spacing-unit) * 3);
   }
@@ -189,19 +201,28 @@
 .button {
   margin-top: calc(var(--spacing-unit) * 3);
   margin-bottom: calc(var(--spacing-unit) * 5);
-  grid-column: 2/5;
-  grid-row: 2 / span 1;
+  margin-left: 56px;
+  margin-right: 42px;
+
+  grid-column: 7/-1;
+  //grid-column: 2/5;
+  //grid-row: 2 / span 1;
   align-self: flex-end;
   justify-self: flex-start;
   transition: all 300ms;
 
   @media (--tablet) {
+    margin-left: 0;
+    margin-right: 0;
+
     margin-top: calc(var(--spacing-unit) * 5.5);
     grid-column: 2/9;
     grid-row: 4/5;
   }
 
   @media (--mobile) {
+    margin-left: 0;
+    margin-right: 0;
     grid-column: 1/5;
     grid-row: 6 / span 1;
     justify-self: stretch;
@@ -216,10 +237,12 @@
 }
 
 .carousel {
-  grid-column: 7/12;
-  grid-row: 1/5;
-  margin-left: 56px;
-  //margin-top: calc(var(--spacing-unit) * 5);
+  grid-column: 2/7;
+  //grid-column: 7/12;
+  //grid-row: 1/5;
+  grid-row: 2/5;
+  //margin-left: 56px;
+  margin-top: calc(var(--spacing-unit) * 5);
   margin-bottom: calc(var(--spacing-unit) * 5);
   width: 100%;
   height: auto;
