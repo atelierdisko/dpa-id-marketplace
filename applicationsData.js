@@ -25,6 +25,7 @@ export default [
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={DpaNewsIcon} />,
     tags: ["aktuelles", "daten"],
+    link: "https://sso.dpa-id.de/goto/register?product=dpa-News",
   },
   {
     title: "dpa-Select",
@@ -34,6 +35,7 @@ export default [
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={DpaSelectIcon} />,
     tags: ["planung", "daten"],
+    link: "https://sso.dpa-id.de/goto/register?product=dpa-Select",
   },
   {
     title: "dpa-Agenda",
@@ -43,6 +45,7 @@ export default [
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={DpaAgendaIcon} />,
     tags: ["distribution", "daten"],
+    link: "https://sso.dpa-id.de/goto/register?product=dpa-Agenda",
   },
   {
     title: "dpa-AudioHub",
@@ -52,6 +55,7 @@ export default [
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={DpaAudioHub} />,
     tags: ["audio"],
+    link: "https://sso.dpa-id.de/goto/register?product=dpa-Audio%20Hub",
   },
   {
     title: "dpa-Videoportal",
@@ -61,6 +65,7 @@ export default [
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={DpaVideoPortalIcon} />,
     tags: ["video", "visuals"],
+    link: "https://sso.dpa-id.de/goto/register?product=dpa-Videoportal",
   },
   {
     title: "dpa-Shop",
@@ -70,6 +75,7 @@ export default [
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={DpaShopIcon} />,
     tags: ["recherche", "daten"],
+    link: "https://sso.dpa-id.de/goto/register?product=dpa-Shop",
   },
   {
     title: "my news aktuell",
@@ -79,6 +85,7 @@ export default [
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={NewsAktuell} />,
     tags: ["aktuelles"],
+    link: "https://sso.dpa-id.de/goto/register?product=my%20news%20aktuell",
   },
   {
     title: "TNN-Videoportal",
@@ -88,6 +95,7 @@ export default [
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={Tnn} />,
     tags: ["video"],
+    link: "https://sso.dpa-id.de/goto/register?product=TNN-Videoportal",
   },
   {
     title: "dpa-picture alliance",
@@ -97,6 +105,8 @@ export default [
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={DpaPictureAllianceIcon} />,
     tags: ["aktuelles"],
+    link:
+      "https://sso.dpa-id.de/goto/register?product=dpa%20picture%20alliance",
   },
   {
     title: "Polit-X",
@@ -106,6 +116,7 @@ export default [
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={PoliticsIcon} />,
     tags: ["aktuelles", "distribution"],
+    link: "https://sso.dpa-id.de/goto/register?product=Polit-X",
   },
   {
     title: "BotTalk",
@@ -115,6 +126,7 @@ export default [
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={BotTalkIcon} />,
     tags: ["recherche", "daten"],
+    link: "https://sso.dpa-id.de/goto/register?product=BotTalk",
   },
   {
     title: "Minty Illustrators",
@@ -124,6 +136,7 @@ export default [
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={Minty} />,
     tags: ["daten"],
+    link: "https://sso.dpa-id.de/goto/register?product=Minty%20Illustrators",
   },
   {
     title: "23º Atlas",
@@ -133,6 +146,7 @@ export default [
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={f23} />,
     tags: ["visuals", "daten"],
+    link: "https://sso.dpa-id.de/goto/register?product=23%C2%B0%20Atlas",
   },
   {
     title: "dpa-News",
@@ -142,6 +156,7 @@ export default [
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={DpaNewsIcon} />,
     tags: ["aktuelles", "daten"],
+    link: "https://sso.dpa-id.de/goto/register?product=dpa-News",
   },
   {
     title: "dpa-Select",
@@ -151,6 +166,7 @@ export default [
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={DpaSelectIcon} />,
     tags: ["planung", "daten"],
+    link: "https://sso.dpa-id.de/goto/register?product=dpa-Select",
   },
   {
     title: "dpa-Agenda",
@@ -160,6 +176,7 @@ export default [
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={DpaAgendaIcon} />,
     tags: ["distribution", "daten"],
+    link: "https://sso.dpa-id.de/goto/register?product=dpa-Agenda",
   },
   {
     title: "dpa-AudioHub",
@@ -169,6 +186,7 @@ export default [
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={DpaAudioHub} />,
     tags: ["audio"],
+    link: "https://sso.dpa-id.de/goto/register?product=dpa-Audio%20Hub",
   },
   {
     title: "dpa-Videoportal",
@@ -178,6 +196,7 @@ export default [
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={DpaVideoPortalIcon} />,
     tags: ["video", "visuals"],
+    link: "https://sso.dpa-id.de/goto/register?product=dpa-Videoportal",
   },
   {
     title: "dpa-Shop",
@@ -187,6 +206,7 @@ export default [
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={DpaShopIcon} />,
     tags: ["recherche", "daten"],
+    link: "https://sso.dpa-id.de/goto/register?product=dpa-Shop",
   },
   {
     title: "my news aktuell",
@@ -196,6 +216,7 @@ export default [
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={NewsAktuell} />,
     tags: ["aktuelles"],
+    link: "https://sso.dpa-id.de/goto/register?product=my%20news%20aktuell",
   },
   {
     title: "TNN-Videoportal",
@@ -205,6 +226,7 @@ export default [
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={Tnn} />,
     tags: ["video"],
+    link: "https://sso.dpa-id.de/goto/register?product=TNN-Videoportal",
   },
   {
     title: "dpa-picture alliance",
@@ -214,6 +236,8 @@ export default [
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={DpaPictureAllianceIcon} />,
     tags: ["aktuelles"],
+    link:
+      "https://sso.dpa-id.de/goto/register?product=dpa%20picture%20alliance",
   },
   {
     title: "Polit-X",
@@ -223,6 +247,7 @@ export default [
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={PoliticsIcon} />,
     tags: ["aktuelles", "distribution"],
+    link: "https://sso.dpa-id.de/goto/register?product=Polit-X",
   },
   {
     title: "BotTalk",
@@ -232,6 +257,7 @@ export default [
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={BotTalkIcon} />,
     tags: ["recherche", "daten"],
+    link: "https://sso.dpa-id.de/goto/register?product=BotTalk",
   },
   {
     title: "Minty Illustrators",
@@ -241,6 +267,7 @@ export default [
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={Minty} />,
     tags: ["daten"],
+    link: "https://sso.dpa-id.de/goto/register?product=Minty%20Illustrators",
   },
   {
     title: "23º Atlas",
@@ -250,5 +277,6 @@ export default [
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
     icon: <Icon Component={f23} />,
     tags: ["visuals", "daten"],
+    link: "https://sso.dpa-id.de/goto/register?product=23%C2%B0%20Atlas",
   },
 ];

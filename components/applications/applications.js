@@ -101,6 +101,7 @@ export default function Applications({
             images={application.images}
             filter={activeFilter}
             delayIndex={getDelayIndex(arr, index)}
+            link={application.link}
           />
         ))}
       </div>

@@ -45,6 +45,7 @@ export default function Button({
       onClick={onClick}
       name={children}
       href={href}
+      target="_blank"
     >
       {children}
     </a>

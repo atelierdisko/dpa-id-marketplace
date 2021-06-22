@@ -59,6 +59,7 @@ export default function ApplicationCard({
   description,
   filter,
   delayIndex,
+  link,
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const [style, setStyle] = useState(
@@ -73,8 +74,6 @@ export default function ApplicationCard({
   useEffect(() => {
     setIsOpen(false);
   }, [filter]);
-
-  console.log(delayIndex);
 
   return (
     <>
@@ -133,6 +132,8 @@ export default function ApplicationCard({
               isDoublePadding={true}
               className={cn(styles.button, isOpen && styles.isVisibleDetails)}
               isBlue={true}
+              asButton={false}
+              href={link}
             >
               {`Jetzt ${title} testen`}
             </Button>
