@@ -64,14 +64,14 @@ export default function Applications({
   return (
     <section className={cn(grid.root, styles.root, className)} id={id}>
       <h2 className={cn(typography.beta500, styles.title)}>
-        Der dpa ID Marktplatz im Überblick
+        Der Marktplatz im Überblick
       </h2>
       <p className={cn(typography.delta400, styles.description)}>
-        Mit Ihrer dpa ID betreten Sie den dpa ID Martkpltz und haben direkten
-        Zugang zu allen Tools der dpa und unserer Partner.
+        Mit Ihrer dpa ID betreten Sie den dpa-Marketplace und haben direkten und
+        sicheren Zugang zu allen Tools der dpa und unserer Partner.
       </p>
       <p className={cn(styles.filterOptions, typography.zeta500)}>
-        Filteroptionen:
+        Finden Sie die Tools, die für Ihre Arbeit relevant sind:
       </p>
       <div className={styles.filters}>
         {filters.map((filter, index) => (

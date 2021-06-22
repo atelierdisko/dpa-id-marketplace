@@ -69,7 +69,7 @@ export default [
   },
   {
     title: "dpa-Shop",
-    excerpt: "Inhalte fürs Netz – ready-to-publishr",
+    excerpt: "Inhalte fürs Netz – ready-to-publish",
     description:
       "Erhalten Sie Liveblogs, interaktive Grafiken und weitere Embed-Produkte der dpa schnell und unkompliziert über unseren Onlineshop.",
     images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],

@@ -82,7 +82,7 @@ export default function Hero({ className, id }) {
   return (
     <section className={cn(className, styles.root, grid.root)} id={id}>
       <h1 className={cn(styles.title, typography.beta500)}>
-        Willkommen auf dem dpa-Marktplatz!
+        Willkommen auf dem Marktplatz der dpa!
       </h1>
       <p className={cn(styles.description, typography.delta400)}>
         dpa bietet einen Marktplatz für Nachrichtenprofis und
@@ -93,7 +93,12 @@ export default function Hero({ className, id }) {
         jetzt kostenfrei und entdecken neue Produkte und Services.
       </p>
 
-      <Button isDoublePadding={true} className={styles.button}>
+      <Button
+        isDoublePadding={true}
+        className={styles.button}
+        asButton={false}
+        href="https://sso.dpa-id.de/goto/register"
+      >
         Jetzt dpa ID anlegen und Tools testen
       </Button>
       <img

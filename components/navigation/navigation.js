@@ -104,32 +104,26 @@ export default function Navigation({
         ))}
 
         <li className={typography.etaInter500}>
-          <Link href="/">
-            <a>
-              <Button
-                className={styles.signInButton}
-                asButton={false}
-                isActive={true}
-              >
-                <LogoIcon className={styles.signInButtonLogo} />
-                Anmelden
-              </Button>
-            </a>
-          </Link>
+          <Button
+            className={styles.signInButton}
+            asButton={false}
+            isActive={true}
+            href="https://sso.dpa-id.de/goto/products"
+          >
+            <LogoIcon className={styles.signInButtonLogo} />
+            Anmelden
+          </Button>
         </li>
 
         <li className={typography.etaInter500}>
-          <Link href="/#createId">
-            <a>
-              <Button
-                asButton={false}
-                isBlue={true}
-                className={styles.registerButton}
-              >
-                Jetzt dpa ID anlegen
-              </Button>
-            </a>
-          </Link>
+          <Button
+            asButton={false}
+            isBlue={true}
+            className={styles.registerButton}
+            href="https://sso.dpa-id.de/goto/register"
+          >
+            Jetzt dpa ID anlegen
+          </Button>
         </li>
       </ul>
     </nav>
