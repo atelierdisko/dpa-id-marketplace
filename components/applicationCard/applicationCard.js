@@ -62,7 +62,7 @@ export default function ApplicationCard({
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const [style, setStyle] = useState(isOpen ? styles.visible : styles.hidden);
-  // const [detailsStyle, setDetailsStyle] = useState({ display: "none" });
+  const [detailsStyle, setDetailsStyle] = useState({ display: "none" });
 
   useEffect(() => {
     setStyle(styles.visible);
@@ -71,6 +71,7 @@ export default function ApplicationCard({
   useEffect(() => {
     setIsOpen(false);
   }, [filter]);
+
   // useEffect(() => {
   //   if (!isOpen) {
   //     setTimeout(() => {
@@ -124,22 +125,25 @@ export default function ApplicationCard({
         <div className={styles.header} onClick={() => setIsOpen(!isOpen)}>
           <div className={styles.iconContainer}>{icon}</div>
 
-        <div className={styles.textContainer}>
-          <h5 className={cn(typography.epsilon500, styles.title)}>{title}</h5>
-          <p className={cn(typography.epsilon400, styles.excerpt)}>{excerpt}</p>
-        </div>
+          <div className={styles.textContainer}>
+            <h5 className={cn(typography.epsilon500, styles.title)}>{title}</h5>
+            <p className={cn(typography.epsilon400, styles.excerpt)}>
+              {excerpt}
+            </p>
+          </div>
 
-        <button
-          className={cn(styles.showIcon, isOpen && styles.showIconIsOpened)}
-        >
-          <Icon Component={CaretDownIcon} />
-        </button>
+          <button
+            className={cn(styles.showIcon, isOpen && styles.showIconIsOpened)}
+          >
+            <Icon Component={CaretDownIcon} />
+          </button>
+        </div>
       </div>
 
       {/*{isOpen && (*/}
       <div
         className={cn(styles.details, isOpen && styles.isOpenedDetails)}
-        // style={detailsStyle}
+        style={detailsStyle}
       >
         <p
           className={cn(
