@@ -10,6 +10,12 @@
   animation: fadein 200ms;
 }
 
+.hidden {
+  overflow: hidden;
+  height: 0;
+  flex: 1 1;
+}
+
 @keyframes fadein {
   from {
     opacity: 0;

@@ -2,6 +2,7 @@ import styles from "./message.module.css";
 import typography from "../../styles/typography.module.css";
 import { motion, useAnimation } from "framer-motion";
 import cn from "classnames";
+import React, { useEffect, useRef, useState } from "react";
 
 Message.defaultProps = {
   isDisabled: false,
@@ -18,14 +19,36 @@ export default function Message({
   setMessage,
   hiddenMessages,
   onClick,
+  hideBelowMinWidth = false,
 }) {
   const controls = useAnimation();
+  const ref = useRef();
+  const [width, setWidth] = useState({ width: null });
+  const minWidth = 256;
+
+  const observer = useRef(
+    typeof window === "undefined"
+      ? null
+      : new ResizeObserver((entries) => {
+          const { width } = entries[0].contentRect;
+          setWidth(width);
+        })
+  );
+
+  useEffect(() => {
+    observer?.current?.observe(ref.current);
+    return () => {
+      if (ref.current) {
+        observer?.current?.unobserve(ref.current);
+      }
+    };
+  }, [ref, observer]);
 
   const variants = {
     normal: {
       scale: 1,
       transition: {
-        duration: 0.3,
+        duration: 0.1,
         ease: "easeOut",
       },
     },
@@ -52,12 +75,16 @@ export default function Message({
     }
   };
 
+  const hiddenStyle =
+    hideBelowMinWidth && width < minWidth ? styles.hidden : null;
+
   return (
     <motion.div
-      className={cn(styles.root, className)}
+      className={cn(styles.root, className, hiddenStyle)}
       onClick={handleClick}
       animate={controls}
       variants={variants}
+      ref={ref}
     >
       <div className={cn(styles.typeContainer)}>
         <div className={styles.typeLogo}>{icon}</div>

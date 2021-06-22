@@ -37,6 +37,7 @@ export default function Functionalities({
   ]);
 
   const [messageQueue, setMessageQueue] = useState([]);
+  const messageContainerRef = useRef();
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -57,49 +58,51 @@ export default function Functionalities({
       <h2 className={cn(styles.title, typography.beta500)}>
         Features Ihrer dpa ID
       </h2>
-      <div className={cn(styles.carouselNavigation)}>
-        <Pagination
-          count={functionalities.length}
-          activeIndex={currentSlideIndex}
-          slideTo={slideTo}
-          color={"black"}
-        />
+      <div className={styles.content}>
+        <div className={cn(styles.carouselNavigation)}>
+          <Pagination
+            count={functionalities.length}
+            activeIndex={currentSlideIndex}
+            slideTo={slideTo}
+            color={"black"}
+          />
 
-        <Button
-          onClick={() => slideNext()}
-          className={cn(typography.zeta500, styles.nextButton)}
+          <Button
+            onClick={() => slideNext()}
+            className={cn(typography.zeta500, styles.nextButton)}
+          >
+            Nächste Funktionalität ›
+          </Button>
+        </div>
+        <h5 className={cn(typography.delta500, styles.functionalityTitle)}>
+          {functionalities[currentSlideIndex].title}
+        </h5>
+        <Swiper
+          loop={true}
+          keyboard={true}
+          onSwiper={setSwiper}
+          onSlideChange={onSlideChange}
+          className={styles.carouselContainer}
         >
-          Nächste Funktionalität ›
-        </Button>
+          {functionalities.map((functionality, index) => (
+            <SwiperSlide key={index} className={styles.carouselSlide}>
+              <div
+                className={cn(
+                  typography.delta400,
+                  styles.functionalityDescription
+                )}
+              >
+                {functionality.description}
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        <div className={cn(typography.etaInter500, styles.chooseMessage)}>
+          Aus Ihrer Anwendung direkt in die Taschen Ihre Nutzer – wählen Sie
+          eine Nachricht:
+        </div>
       </div>
-      <h5 className={cn(typography.delta500, styles.functionalityTitle)}>
-        {functionalities[currentSlideIndex].title}
-      </h5>
-      <Swiper
-        loop={true}
-        keyboard={true}
-        onSwiper={setSwiper}
-        onSlideChange={onSlideChange}
-        className={styles.carouselContainer}
-      >
-        {functionalities.map((functionality, index) => (
-          <SwiperSlide key={index} className={styles.carouselSlide}>
-            <div
-              className={cn(
-                typography.delta400,
-                styles.functionalityDescription
-              )}
-            >
-              {functionality.description}
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-      <p className={cn(typography.etaInter500, styles.chooseMessage)}>
-        Aus Ihrer Anwendung direkt in die Taschen Ihre Nutzer – wählen Sie eine
-        Nachricht:
-      </p>
-      <div className={styles.messageContainer}>
+      <div className={styles.messageContainer} ref={messageContainerRef}>
         <Message
           type={message1.type}
           icon={message1.icon}
@@ -138,6 +141,7 @@ export default function Functionalities({
           setMessage={setMessage3}
           hiddenMessages={hiddenMessages}
           onClick={() => onMessageButtonClick(2, message3)}
+          hideBelowMinWidth
         />
       </div>
       <div className={styles.phoneContainer}>
@@ -173,6 +177,7 @@ export default function Functionalities({
         messageQueue={messageQueue}
         setMessageQueue={setMessageQueue}
         setPhoneMessages={setPhoneMessages}
+        messageContainerRef={messageContainerRef}
       />
     </section>
   );
