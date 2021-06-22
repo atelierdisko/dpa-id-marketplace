@@ -61,7 +61,9 @@ export default function ApplicationCard({
   delayIndex,
 }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [style, setStyle] = useState(isOpen ? styles.visible : styles.hidden);
+  const [style, setStyle] = useState(
+    isOpen || delayIndex <= 0 ? styles.visible : styles.hidden
+  );
   const [detailsStyle, setDetailsStyle] = useState({ display: "none" });
 
   useEffect(() => {

@@ -17,57 +17,49 @@ export default function Applications({
   const initialAppNumber = 10;
   const stepNumber = 5;
   const [appNumber, setAppNumber] = useState(initialAppNumber);
-  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
   const [activeFilter, setActiveFilter] = useState(initialFilter);
-  const [filteredApplications, setFilteredApplications] = useState([
-    ...applications,
-  ]);
-  const prevDisplayedApplicationsRef = useRef([]);
-  const [displayedApplications, setDisplayedApplications] = useState([
-    ...applications.slice(0, appNumber),
-  ]);
+
+  const deltaAppNumberRef = useRef(0);
 
   useEffect(() => {
+    deltaAppNumberRef.current = 0;
     setAppNumber(initialAppNumber);
-    if (activeFilter === "Alle anzeigen") {
-      setDisplayedApplications([...applications.slice(0, appNumber)]);
-      setFilteredApplications([...applications]);
-      return;
-    }
-    setFilteredApplications(
-      applications.filter((application) =>
-        application.tags.includes(activeFilter.toLowerCase())
-      )
-    );
   }, [activeFilter]);
 
-  useEffect(() => {
-    setDisplayedApplications(filteredApplications.slice(0, appNumber));
-  }, [filteredApplications]);
+  const applyFilter = (data, activeFilter) => {
+    if (activeFilter === "Alle anzeigen") {
+      return data;
+    }
+    return data.filter((item) =>
+      item.tags.includes(activeFilter.toLowerCase())
+    );
+  };
 
-  useEffect(() => {
-    setDisplayedApplications(filteredApplications.slice(0, appNumber));
-  }, [appNumber]);
+  const limitByCount = (data, count) => {
+    return [...data.slice(0, count)];
+  };
 
-  useEffect(() => {
-    if (displayedApplications.length === filteredApplications.length)
-      setIsButtonDisabled(true);
-    else setIsButtonDisabled(false);
-  }, [displayedApplications, filteredApplications, activeFilter]);
+  const filteredApplications = applyFilter(applications, activeFilter);
+  const displayedApplications = limitByCount(filteredApplications, appNumber);
 
-  useEffect(() => {
-    prevDisplayedApplicationsRef.current = displayedApplications;
-  }, [displayedApplications]);
+  const isButtonDisabled =
+    displayedApplications.length === filteredApplications.length;
 
   const handleClick = () => {
     if (displayedApplications.length < filteredApplications.length) {
-      setAppNumber((prevNumber) =>
-        prevNumber + stepNumber < filteredApplications.length
-          ? prevNumber + stepNumber
-          : filteredApplications.length
-      );
+      setAppNumber((prevNumber) => {
+        const nextNumber =
+          prevNumber + stepNumber < filteredApplications.length
+            ? prevNumber + stepNumber
+            : filteredApplications.length;
+        deltaAppNumberRef.current = nextNumber - prevNumber;
+        return nextNumber;
+      });
     }
   };
+
+  const getDelayIndex = (arr, index) =>
+    Math.max(0, index - (arr.length - deltaAppNumberRef.current));
 
   // const variants = {
   //   hidden: { opacity: 1, transition: { duration: 0, delay: 0 } },
@@ -125,10 +117,7 @@ export default function Applications({
             icon={application.icon}
             images={application.images}
             filter={activeFilter}
-            delayIndex={Math.max(
-              0,
-              index - prevDisplayedApplicationsRef.current?.length
-            )}
+            delayIndex={getDelayIndex(arr, index)}
           />
         ))}
       </div>
