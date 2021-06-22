@@ -61,8 +61,10 @@ export default function ApplicationCard({
   delayIndex,
 }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [style, setStyle] = useState(isOpen ? styles.visible : styles.hidden);
-  // const [detailsStyle, setDetailsStyle] = useState({ display: "none" });
+  const [style, setStyle] = useState(
+    isOpen || delayIndex <= 0 ? styles.visible : styles.hidden
+  );
+  const [detailsStyle, setDetailsStyle] = useState({ display: "none" });
 
   useEffect(() => {
     setStyle(styles.visible);
@@ -116,24 +118,24 @@ export default function ApplicationCard({
               {excerpt}
             </p>
 
-            <div
-              className={cn(
-                styles.description,
-                typography.epsilon400,
-                isOpen && styles.isVisibleDetails
-              )}
-            >
-              {description}
-            </div>
+        <div
+          className={cn(
+            styles.description,
+            typography.epsilon400,
+            isOpen && styles.isVisibleDetails
+          )}
+        >
+          {description}
+        </div>
 
-            <Button
-              isActive={true}
-              isDoublePadding={true}
-              className={cn(styles.button, isOpen && styles.isVisibleDetails)}
-              isBlue={true}
-            >
-              {`Jetzt ${title} testen`}
-            </Button>
+        <Button
+          isActive={true}
+          isDoublePadding={true}
+          className={cn(styles.button, isOpen && styles.isVisibleDetails)}
+          isBlue={true}
+        >
+          {`Jetzt ${title} testen`}
+        </Button>
 
             <Carousel
               classname={cn(styles.carousel, isOpen && styles.isVisibleDetails)}
