@@ -2,7 +2,7 @@ import styles from "./applicationCard.module.css";
 import typography from "../../styles/typography.module.css";
 import { CaretDownIcon, Icon } from "../icon/icon";
 import Button from "../button/button";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "../carousel/navigation";
@@ -58,7 +58,6 @@ export default function ApplicationCard({
   images,
   description,
   filter,
-  index,
   delayIndex,
 }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -125,19 +124,16 @@ export default function ApplicationCard({
         <div className={styles.header} onClick={() => setIsOpen(!isOpen)}>
           <div className={styles.iconContainer}>{icon}</div>
 
-          <div className={styles.textContainer}>
-            <h5 className={cn(typography.epsilon500, styles.title)}>{title}</h5>
-            <p className={cn(typography.epsilon400, styles.excerpt)}>
-              {excerpt}
-            </p>
-          </div>
-
-          <button
-            className={cn(styles.showIcon, isOpen && styles.showIconIsOpened)}
-          >
-            <Icon Component={CaretDownIcon} />
-          </button>
+        <div className={styles.textContainer}>
+          <h5 className={cn(typography.epsilon500, styles.title)}>{title}</h5>
+          <p className={cn(typography.epsilon400, styles.excerpt)}>{excerpt}</p>
         </div>
+
+        <button
+          className={cn(styles.showIcon, isOpen && styles.showIconIsOpened)}
+        >
+          <Icon Component={CaretDownIcon} />
+        </button>
       </div>
 
       {/*{isOpen && (*/}

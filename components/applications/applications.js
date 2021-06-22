@@ -22,11 +22,11 @@ export default function Applications({
   const [filteredApplications, setFilteredApplications] = useState([
     ...applications,
   ]);
-  const prevDisplayedApplicationRef = useRef([]);
-
+  const prevDisplayedApplicationsRef = useRef([]);
   const [displayedApplications, setDisplayedApplications] = useState([
     ...applications.slice(0, appNumber),
   ]);
+
   useEffect(() => {
     setAppNumber(initialAppNumber);
     if (activeFilter === "Alle anzeigen") {
@@ -56,7 +56,7 @@ export default function Applications({
   }, [displayedApplications, filteredApplications, activeFilter]);
 
   useEffect(() => {
-    prevDisplayedApplicationRef.current = displayedApplications;
+    prevDisplayedApplicationsRef.current = displayedApplications;
   }, [displayedApplications]);
 
   const handleClick = () => {
@@ -77,7 +77,7 @@ export default function Applications({
   //       duration: 0,
   //       delay: 0,
   //       delayChildren: 0,
-  //       staggerChildren: 0.2,
+  //       staggerChildren: 0.1,
   //     },
   //   },
   // };
@@ -114,14 +114,8 @@ export default function Applications({
           </Button>
         ))}
       </div>
-      {/*<AnimatePresence>*/}
-      <div
-        className={styles.list}
-        // variants={variants}
-        // initial="hidden"
-        // animate={controls}
-      >
-        {displayedApplications.map((application, index) => (
+      <div className={styles.list}>
+        {displayedApplications.map((application, index, arr) => (
           <ApplicationCard
             key={application.title}
             index={index}
@@ -133,12 +127,11 @@ export default function Applications({
             filter={activeFilter}
             delayIndex={Math.max(
               0,
-              index - prevDisplayedApplicationRef.current?.length
+              index - prevDisplayedApplicationsRef.current?.length
             )}
           />
         ))}
       </div>
-      {/*</AnimatePresence>*/}
       <motion.div className={styles.showMoreButtonContainer} layout>
         <Button
           className={cn(
