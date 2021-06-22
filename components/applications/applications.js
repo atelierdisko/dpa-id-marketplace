@@ -56,8 +56,17 @@ export default function Applications({
   }, [displayedApplications, filteredApplications, activeFilter]);
 
   useEffect(() => {
-    prevDisplayedApplicationsRef.current = displayedApplications;
+    if (
+      prevDisplayedApplicationsRef.current.length !==
+      displayedApplications.length
+    ) {
+      prevDisplayedApplicationsRef.current = displayedApplications;
+    }
   }, [displayedApplications]);
+  console.log(
+    prevDisplayedApplicationsRef.current.length,
+    displayedApplications.length
+  );
 
   const handleClick = () => {
     if (displayedApplications.length < filteredApplications.length) {
