@@ -18,7 +18,7 @@ export default function Navigation({
   const primaryNavigationLinks = [
     {
       href: "#applications",
-      text: "Marktplatz",
+      text: "Tools",
     },
     {
       href: "#quotes",
@@ -26,7 +26,7 @@ export default function Navigation({
     },
     {
       href: "#functionalities",
-      text: "Funktionalitäten",
+      text: "Features",
     },
   ];
   function onScroll() {
