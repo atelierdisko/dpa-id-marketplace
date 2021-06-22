@@ -11,9 +11,11 @@
 }
 
 .hidden {
-  overflow: hidden;
-  height: 0;
-  flex: 1 1;
+  && {
+    overflow: hidden;
+    height: 0;
+    flex: 1 1;
+  }
 }
 
 @keyframes fadein {

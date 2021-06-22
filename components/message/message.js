@@ -23,7 +23,7 @@ export default function Message({
 }) {
   const controls = useAnimation();
   const ref = useRef();
-  const [width, setWidth] = useState({ width: null });
+  const [width, setWidth] = useState();
   const minWidth = 256;
 
   const observer = useRef(
