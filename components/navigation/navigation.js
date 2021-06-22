@@ -72,9 +72,14 @@ export default function Navigation({
       )}
     >
       {console.log("render") || null}
-      <Link href={"#hero"}>
+      <Link href={"/#hero"}>
         <a className={styles.logo}>
           <FullLogoIcon color={iconColor} />
+        </a>
+      </Link>
+      <Link href={"/#hero"}>
+        <a className={styles.logoMobile}>
+          <FullLogoIcon color={iconColor} mobile={true} />
         </a>
       </Link>
 

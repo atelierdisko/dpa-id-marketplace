@@ -22,7 +22,7 @@
 }
 
 .logo {
-  grid-column: 3 / span 2;
+  grid-column: 3 / span 3;
   align-self: center;
   cursor: pointer;
   height: 33px;
@@ -31,7 +31,20 @@
   display: inline-flex;
 
   @media (--mobile) {
-    width: 122px;
+    display: none;
+  }
+}
+.logoMobile {
+  display: none;
+  grid-column: 3 / span 3;
+  align-self: center;
+  cursor: pointer;
+  height: 33px;
+  width: auto;
+  grid-row: 1;
+
+  @media (--mobile) {
+    display: inline-flex;
   }
 }
 
