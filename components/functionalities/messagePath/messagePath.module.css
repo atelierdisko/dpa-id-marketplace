@@ -1,10 +1,13 @@
 .root {
   grid-column: 3 / -3;
-  grid-row: 4 / span 3;
+  grid-row: 3 / span 1;
   position: absolute;
   width: 100%;
   height: 100%;
   z-index: -1;
+  @media (--tablet-and-mobile) {
+    grid-row: 4 / span 1;
+  }
 }
 
 .pattern {
@@ -30,6 +33,18 @@
   }
 }
 
-.circle {
+.svgGroupCircle {
   filter: drop-shadow(0 20px 40px rgba(26, 30, 40, 1));
+}
+
+.svgGroupPatternDesktop {
+  @media (--tablet-and-mobile) {
+    display: none;
+  }
+}
+
+.svgGroupPatternMobile {
+  @media (--desktop-xl-to-tablet) {
+    display: none;
+  }
 }

@@ -3,7 +3,16 @@
 @custom-media --desktop (min-width: 1160px) and (max-width: 1631px);
 @custom-media --tablet (min-width: 720px) and (max-width: 1159px);
 @custom-media --mobile (max-width: 719px);
-@custom-media --tablet-and-mobile (min-width: 720px) and (max-width: 719px);
+
+/* Breakpoint ranges */
+
+@custom-media --desktop-xl-and-desktop (min-width: 1160px);
+@custom-media --tablet-and-mobile (max-width: 1159px);
+@custom-media --desktop-xl-to-tablet (min-width: 720px);
+
+/* Special breakpoints */
+
+@custom-media --desktop-s (min-width: 1160px) and (max-width: 1323px);
 
 :root {
   /*Colors*/
