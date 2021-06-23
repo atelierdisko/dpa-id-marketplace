@@ -48,7 +48,11 @@ function Meta({title, description, image, robots, children}) {
             <meta name="theme-color" content="#0E26FC"/>
             <meta name="robots" content={robots ? robots : defaultRobots}/>
 
+            <script dangerouslySetInnerHTML={{__html: 'var _paq = window._paq = window._paq || []; /* tracker methods like "setCustomDimension" should be called before "trackPageView" */ _paq.push([\'trackPageView\']); _paq.push([\'enableLinkTracking\']); (function() { var u="https://used.dpa.com/"; _paq.push([\'setTrackerUrl\', u+\'matomo.php\']); _paq.push([\'setSiteId\', \'11\']); var d=document, g=d.createElement(\'script\'), s=d.getElementsByTagName(\'script\')[0]; g.type=\'text/javascript\'; g.async=true; g.src=u+\'matomo.js\'; s.parentNode.insertBefore(g,s); })();'}}/>
+
             {children}
+
+
         </Head>
     );
 }
