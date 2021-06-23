@@ -1,5 +1,4 @@
 import "../styles/globals/index.css";
-import "../components/notificationsDemo/index.css";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 

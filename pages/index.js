@@ -7,7 +7,6 @@ import Quotes from "../components/quotes/quotes";
 import SignIn from "../components/signIn/signIn";
 import Applications from "../components/applications/applications";
 import Functionalities from "../components/functionalities/functionalities";
-import NotificationsDemo from "../components/notificationsDemo";
 import applicationsData from "../applicationsData";
 import quotesData from "../quotesData";
 import functionalitiesData from "../functionalitiesData";
@@ -61,7 +60,6 @@ export default function Home() {
           id="functionalities"
           messages={messagesData}
         />
-        {/*<NotificationsDemo id="functionalities" />*/}
         <SignIn className={styles.signIn} id="signIn" />
       </main>
 
