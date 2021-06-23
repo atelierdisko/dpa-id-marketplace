@@ -92,6 +92,7 @@ export default function Applications({
       <div className={styles.list}>
         {displayedApplications.map((application, index, arr) => (
           <ApplicationCard
+            className={styles.applicationCard}
             key={`${application.title}-${index}`}
             index={index}
             title={application.title}

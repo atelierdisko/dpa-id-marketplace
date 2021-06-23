@@ -4,10 +4,7 @@ module.exports = {
 		'--desktop': '(min-width: 1160px) and (max-width: 1631px)',
 		'--tablet': '(min-width: 720px) and (max-width: 1159px)',
 		'--mobile': '(max-width: 719px)',
-		'--desktop-xl-and-desktop': '(min-width: 1160px)',
-		'--tablet-and-mobile': '(max-width: 1159px)',
-		'--desktop-xl-to-tablet': '(min-width: 720px)',
-		'--desktop-s': '(min-width: 1160px) and (max-width: 1323px)'
+		'--tablet-and-mobile': '(min-width: 720px) and (max-width: 719px)'
 	},
 	customProperties: {
 		'--color-gray-900': '#212121',
