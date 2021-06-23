@@ -77,11 +77,8 @@
   }
 }
 
-.list > div:not(:first-child) {
+.applicationCard {
   margin-top: calc(var(--spacing-unit) * 2);
-}
-.list .details {
-  //margin-top: 0;
 }
 
 .showMoreButtonContainer {
