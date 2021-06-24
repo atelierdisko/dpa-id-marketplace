@@ -185,6 +185,7 @@ export default function Functionalities({ messages }) {
               count={array.length}
             />
           ))}
+          <div className={styles.shadow} />
         </div>
       </div>
 
