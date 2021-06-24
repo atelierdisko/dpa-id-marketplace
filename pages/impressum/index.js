@@ -15,7 +15,9 @@ export default function Index() {
         iconColor={"white"}
         className={cn(styles.navigation)}
       />
+
       <Legal type="imprint" />
+
       <Footer />
     </div>
   );

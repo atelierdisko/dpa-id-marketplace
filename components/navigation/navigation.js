@@ -71,7 +71,6 @@ export default function Navigation({
         className
       )}
     >
-      {console.log("render") || null}
       <Link href={"/#hero"}>
         <a className={styles.logo}>
           <FullLogoIcon color={iconColor} />

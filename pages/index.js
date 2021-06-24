@@ -8,19 +8,9 @@ import Applications from "../components/applications/applications";
 import Functionalities from "../components/functionalities/functionalities";
 import Marquee from "../components/marquee/marquee";
 import { Meta } from "../components/meta/meta";
+import axios from "axios";
 
-export default function Home() {
-  const filters = [
-    "Aktuelles",
-    "Recherche",
-    "Planung",
-    "Distribution",
-    "Audio",
-    "Video",
-    "Visuals",
-    "Daten",
-    "Alle anzeigen",
-  ];
+export default function Home({ messages }) {
   return (
     <div>
       <Meta title={"Home"} />
@@ -31,8 +21,10 @@ export default function Home() {
         isLight={true}
         iconColor={"black"}
       />
+
       <main>
-        <Hero className={styles.hero} id="hero" />
+        <Hero />
+
         <Marquee>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ein Laufband
           mit kurzen, prägnaten Benefits. Suspendisse quis mattis orci.

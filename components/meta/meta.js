@@ -8,7 +8,7 @@ Meta.defaultProps = {
     "https://atelierdisko-17f76.kxcdn.com/cms/48831a5e-9ceb-49a8-abdd-ece09694b8ce.jpg",
 };
 
-function Meta({ title, description, image, robots, children }) {
+function Meta({ title, description, robots, children }) {
   let url = null;
 
   if (typeof document !== "undefined") {
@@ -16,6 +16,7 @@ function Meta({ title, description, image, robots, children }) {
   }
 
   const defaultRobots = "index, follow";
+  const image = "/sharing.jpeg";
 
   return (
     <Head>
@@ -30,18 +31,12 @@ function Meta({ title, description, image, robots, children }) {
       <meta property="og:locale" content="de_DE" />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={url} />
-      <meta
-        property="og:image"
-        content={`${image}?width=1200&height=627&crop=smart`}
-      />
+      <meta property="og:image" content={image} />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta
-        name="twitter:image"
-        content={`${image}?width=1200&height=627&crop=smart`}
-      />
+      <meta name="twitter:image" content={image} />
 
       <meta name="theme-color" content="#0E26FC" />
       <meta name="robots" content={robots ? robots : defaultRobots} />

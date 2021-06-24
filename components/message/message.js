@@ -12,7 +12,7 @@ Message.defaultProps = {
 export default function Message({
   type,
   className,
-  icon,
+  icon, // icon prop currently not used a it is hardcoded to DpaSelectIcon below
   isDisabled,
   content,
   setHiddenMessages,
@@ -88,7 +88,9 @@ export default function Message({
       ref={ref}
     >
       <div className={cn(styles.typeContainer)}>
-        <div className={styles.typeLogo}>{icon}</div>
+        <div className={styles.typeLogo}>
+          <Icon Component={DpaSelectIcon} />
+        </div>
         <div>{type}</div>
       </div>
       <div className={cn(typography.etaInter500, styles.content)}>

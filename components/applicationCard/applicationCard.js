@@ -75,7 +75,6 @@ export default function ApplicationCard({
   }, []);
 
   useEffect(() => {
-    console.log(ref.current.style);
     if (isOpen) {
       setDetailsStyle({ maxHeight: ref.current.scrollHeight });
     } else {
@@ -111,6 +110,7 @@ export default function ApplicationCard({
           <Icon Component={CaretDownIcon} />
         </button>
       </button>
+
       <div ref={ref} className={styles.details} style={detailsStyle}>
         <p
           className={cn(
@@ -121,6 +121,7 @@ export default function ApplicationCard({
         >
           {excerpt}
         </p>
+
         <div
           className={cn(
             styles.description,
@@ -130,6 +131,7 @@ export default function ApplicationCard({
         >
           {description}
         </div>
+
         <Button
           isActive={true}
           isDoublePadding={true}
@@ -140,6 +142,7 @@ export default function ApplicationCard({
         >
           {`Jetzt ${title} testen`}
         </Button>
+
         <Carousel
           classname={cn(styles.carousel, isOpen && styles.isVisibleDetails)}
         >
@@ -149,6 +152,7 @@ export default function ApplicationCard({
             </SwiperSlide>
           ))}
         </Carousel>
+
         <div className={styles.additionalPadding} />
       </div>
     </div>

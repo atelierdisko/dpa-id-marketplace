@@ -1,53 +1,54 @@
 import styles from "./quotes.module.css";
 import typography from "../../styles/typography.module.css";
 import grid from "../../styles/grid.module.css";
-import { Swiper, SwiperSlide } from "swiper/react";
+import {Swiper, SwiperSlide} from "swiper/react";
 import cn from "classnames";
-import { Navigation } from "../carousel/navigation";
-import { useSwiper } from "../../hooks/useSwiper";
+import {Navigation} from "../carousel/navigation";
+import {useSwiper} from "../../hooks/useSwiper";
+import quotes from "../../data/quotes";
 
-export default function Quotes({ className, data: quotes, id }) {
-  const {
-    setSwiper,
-    slidePrev,
-    slideNext,
-    onSlideChange,
-    slideTo,
-    currentSlideIndex,
-  } = useSwiper();
+export default function Quotes({}) {
+    const {
+        setSwiper,
+        slidePrev,
+        slideNext,
+        onSlideChange,
+        slideTo,
+        currentSlideIndex,
+    } = useSwiper();
 
-  return (
-    <div className={cn(styles.root, grid.root, className)} id={id}>
-      <Swiper
-        loop={true}
-        keyboard={true}
-        onSwiper={setSwiper}
-        onSlideChange={onSlideChange}
-        className={styles.carouselContainer}
-      >
-        {quotes.map((quote, index) => (
-          <SwiperSlide key={index} className={styles.carouselSlide}>
-            <img src={quote.image} alt={""} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+    return (
+        <div className={cn(styles.root, grid.root)} id={"quotes"}>
+            <Swiper
+                loop={true}
+                keyboard={true}
+                onSwiper={setSwiper}
+                onSlideChange={onSlideChange}
+                className={styles.carouselContainer}
+            >
+                {quotes.map((quote, index) => (
+                    <SwiperSlide key={index} className={styles.carouselSlide}>
+                        <img src={quote.image} alt={""}/>
+                    </SwiperSlide>
+                ))}
+            </Swiper>
 
-      <p className={cn(typography.zeta500, styles.signalPhrase)}>
-        {quotes[currentSlideIndex].signalPhrase}
-      </p>
-      <p className={cn(typography.gamma500, styles.quote)}>
-        {quotes[currentSlideIndex].quote}
-      </p>
+            <p className={cn(typography.zeta500, styles.signalPhrase)}>
+                {quotes[currentSlideIndex].signalPhrase}
+            </p>
+            <p className={cn(typography.gamma500, styles.quote)}>
+                {quotes[currentSlideIndex].quote}
+            </p>
 
-      <Navigation
-        className={styles.carouselNavigation}
-        index={currentSlideIndex}
-        length={quotes.length}
-        slideTo={slideTo}
-        slideNext={slideNext}
-        slidePrev={slidePrev}
-        color={"white"}
-      />
-    </div>
-  );
+            <Navigation
+                className={styles.carouselNavigation}
+                index={currentSlideIndex}
+                length={quotes.length}
+                slideTo={slideTo}
+                slideNext={slideNext}
+                slidePrev={slidePrev}
+                color={"white"}
+            />
+        </div>
+    );
 }
