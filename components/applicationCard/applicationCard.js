@@ -2,13 +2,12 @@ import styles from "./applicationCard.module.css";
 import typography from "../../styles/typography.module.css";
 import { CaretDownIcon, Icon } from "../icon/icon";
 import Button from "../button/button";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "../carousel/navigation";
 import { useSwiper } from "../../hooks/useSwiper";
 import cn from "classnames";
-import { motion, useAnimation } from "framer-motion";
 
 ApplicationCard.propTypes = {
   /**
@@ -27,28 +26,30 @@ function Carousel({ children, classname }) {
     currentSlideIndex,
   } = useSwiper();
 
-  return (
-    <div className={classname}>
-      <Swiper
-        loop={true}
-        keyboard={true}
-        onSwiper={setSwiper}
-        onSlideChange={onSlideChange}
-        className={styles.carouselContainer}
-      >
-        {children}
-      </Swiper>
+  return useMemo(() => {
+    return (
+      <div className={classname}>
+        <Swiper
+          loop={true}
+          keyboard={true}
+          onSwiper={setSwiper}
+          onSlideChange={onSlideChange}
+          className={styles.carouselContainer}
+        >
+          {children}
+        </Swiper>
 
-      <Navigation
-        className={styles.carouselNavigation}
-        index={currentSlideIndex}
-        length={children.length}
-        slideTo={slideTo}
-        slideNext={slideNext}
-        slidePrev={slidePrev}
-      />
-    </div>
-  );
+        <Navigation
+          className={styles.carouselNavigation}
+          index={currentSlideIndex}
+          length={children.length}
+          slideTo={slideTo}
+          slideNext={slideNext}
+          slidePrev={slidePrev}
+        />
+      </div>
+    );
+  }, [children]);
 }
 
 export default function ApplicationCard({
@@ -74,7 +75,6 @@ export default function ApplicationCard({
   }, []);
 
   useEffect(() => {
-    console.log(ref.current.style);
     if (isOpen) {
       setDetailsStyle({ maxHeight: ref.current.scrollHeight });
     } else {
@@ -110,6 +110,7 @@ export default function ApplicationCard({
           <Icon Component={CaretDownIcon} />
         </button>
       </button>
+
       <div ref={ref} className={styles.details} style={detailsStyle}>
         <p
           className={cn(
@@ -120,6 +121,7 @@ export default function ApplicationCard({
         >
           {excerpt}
         </p>
+
         <div
           className={cn(
             styles.description,
@@ -129,6 +131,7 @@ export default function ApplicationCard({
         >
           {description}
         </div>
+
         <Button
           isActive={true}
           isDoublePadding={true}
@@ -139,6 +142,7 @@ export default function ApplicationCard({
         >
           {`Jetzt ${title} testen`}
         </Button>
+
         <Carousel
           classname={cn(styles.carousel, isOpen && styles.isVisibleDetails)}
         >
@@ -148,6 +152,7 @@ export default function ApplicationCard({
             </SwiperSlide>
           ))}
         </Carousel>
+
         <div className={styles.additionalPadding} />
       </div>
     </div>

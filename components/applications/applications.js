@@ -5,15 +5,24 @@ import typography from "../../styles/typography.module.css";
 import grid from "../../styles/grid.module.css";
 import { useEffect, useRef, useState } from "react";
 import cn from "classnames";
-import { AnimatePresence, motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
+import applications from "../../data/applications";
 
-export default function Applications({
-  applications,
-  filters,
-  initialFilter,
-  className,
-  id,
-}) {
+const filters = [
+  "Aktuelles",
+  "Recherche",
+  "Planung",
+  "Distribution",
+  "Audio",
+  "Video",
+  "Visuals",
+  "Daten",
+  "Alle anzeigen",
+];
+
+const initialFilter = "Alle anzeigen";
+
+export default function Applications({}) {
   const initialAppNumber = 10;
   const stepNumber = 5;
   const [appNumber, setAppNumber] = useState(initialAppNumber);
@@ -62,7 +71,7 @@ export default function Applications({
     Math.max(0, index - (arr.length - deltaAppNumberRef.current));
 
   return (
-    <section className={cn(grid.root, styles.root, className)} id={id}>
+    <section className={cn(grid.root, styles.root)} id={"applications"}>
       <h2 className={cn(typography.beta500, styles.title)}>
         Der Marktplatz im Überblick
       </h2>
@@ -89,6 +98,7 @@ export default function Applications({
           </Button>
         ))}
       </div>
+
       <div className={styles.list}>
         {displayedApplications.map((application, index, arr) => (
           <ApplicationCard
@@ -106,6 +116,7 @@ export default function Applications({
           />
         ))}
       </div>
+
       <motion.div className={styles.showMoreButtonContainer} layout>
         <Button
           className={cn(
