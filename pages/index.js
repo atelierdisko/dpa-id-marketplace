@@ -6,10 +6,6 @@ import Quotes from "../components/quotes/quotes";
 import SignIn from "../components/signIn/signIn";
 import Applications from "../components/applications/applications";
 import Functionalities from "../components/functionalities/functionalities";
-import applicationsData from "../applicationsData";
-import quotesData from "../quotesData";
-import functionalitiesData from "../functionalitiesData";
-import messagesData from "../messagesData";
 import Marquee from "../components/marquee/marquee";
 import { Meta } from "../components/meta/meta";
 
@@ -42,24 +38,30 @@ export default function Home() {
           mit kurzen, prägnaten Benefits. Suspendisse quis mattis orci.
           Curabitur libero erat, imperdiet eu posuere ac, blandit ut sem.
         </Marquee>
-        <Applications
-          className={styles.applications}
-          filters={filters}
-          applications={applicationsData}
-          initialFilter={"Alle anzeigen"}
-          id="applications"
-        />
 
-        <Quotes className={styles.quotes} data={quotesData} id="quotes" />
-        <Functionalities
-          functionalities={functionalitiesData}
-          id="functionalities"
-          messages={messagesData}
-        />
-        <SignIn className={styles.signIn} id="signIn" />
+        <Applications />
+
+        <Quotes />
+
+        <Functionalities messages={messages} />
+
+        <SignIn id="signIn" />
       </main>
 
       <Footer className={styles.footer} />
     </div>
   );
 }
+
+export const getStaticProps = async () => {
+  const { data } = await axios.get(
+    "https://partnerprogramm.dpa-id.de/select-api"
+  );
+
+  return {
+    props: {
+      messages: data,
+    },
+    revalidate: 10,
+  };
+};

@@ -11,20 +11,3 @@
 .footer {
   bottom: 0;
 }
-
-.hero {
-  /*margin-top: calc(var(--spacing-unit) * 12);*/
-}
-.quotes {
-  /*margin-top: 102px;*/
-}
-
-.applications {
-  /*margin-bottom: calc(var(--spacing-unit) * 35);*/
-}
-
-.partnerProgram {
-}
-
-.signInButton {
-}

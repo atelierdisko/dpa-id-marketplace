@@ -11,15 +11,16 @@ import MessageOnPhone from "../message/messageOnPhone";
 import Button from "../carousel/button";
 import { Pagination } from "../carousel/pagination";
 import MessagePath from "./messagePath/messagePath";
+import functionalities from "../../data/functionalities";
 
-export default function Functionalities({
-  functionalities,
-  className,
-  id,
-  messages,
-}) {
-  const { setSwiper, slideNext, onSlideChange, slideTo, currentSlideIndex } =
-    useSwiper();
+export default function Functionalities({ messages }) {
+  const {
+    setSwiper,
+    slideNext,
+    onSlideChange,
+    slideTo,
+    currentSlideIndex,
+  } = useSwiper();
 
   const [time, setTime] = useState(
     new Date().toLocaleTimeString("de-DE", { timeStyle: "short" })
@@ -28,7 +29,9 @@ export default function Functionalities({
   const [message1, setMessage1] = useState({ ...messages[0], disabled: false });
   const [message2, setMessage2] = useState({ ...messages[1], disabled: false });
   const [message3, setMessage3] = useState({ ...messages[2], disabled: false });
+
   const [hiddenMessages, setHiddenMessages] = useState(messages.slice(7));
+
   const [phoneMessages, setPhoneMessages] = useState([
     messages[3],
     messages[4],
@@ -54,10 +57,11 @@ export default function Functionalities({
   };
 
   return (
-    <section className={cn(styles.root, grid.root, className)} id={id}>
+    <section className={cn(styles.root, grid.root)} id={"functionalities"}>
       <h2 className={cn(styles.title, typography.beta500)}>
         Features Ihrer dpa ID
       </h2>
+
       <div className={styles.content}>
         <div className={cn(styles.carouselNavigation)}>
           <Pagination
@@ -74,9 +78,11 @@ export default function Functionalities({
             Nächste Funktionalität ›
           </Button>
         </div>
+
         <h5 className={cn(typography.delta500, styles.functionalityTitle)}>
           {functionalities[currentSlideIndex].title}
         </h5>
+
         <Swiper
           loop={true}
           keyboard={true}
@@ -97,17 +103,19 @@ export default function Functionalities({
             </SwiperSlide>
           ))}
         </Swiper>
+
         <div className={cn(typography.etaInter500, styles.chooseMessage)}>
           Aus Ihrer Anwendung direkt in die Taschen Ihre Nutzer – wählen Sie
           eine Nachricht:
         </div>
       </div>
+
       <div className={styles.messageContainer} ref={messageContainerRef}>
         <Message
-          type={message1.type}
+          type={message1.genre}
           icon={message1.icon}
           className={styles.messageToSend}
-          content={message1.content}
+          content={message1.headline}
           isDisabled={message1.disabled}
           setPhoneMessages={setPhoneMessages}
           setHiddenMessages={setHiddenMessages}
@@ -116,11 +124,12 @@ export default function Functionalities({
           hiddenMessages={hiddenMessages}
           onClick={() => onMessageButtonClick(0, message1)}
         />
+
         <Message
-          type={message2.type}
+          type={message2.genre}
           icon={message2.icon}
           className={styles.messageToSend}
-          content={message2.content}
+          content={message2.headline}
           isDisabled={message2.disabled}
           setPhoneMessages={setPhoneMessages}
           setHiddenMessages={setHiddenMessages}
@@ -129,12 +138,13 @@ export default function Functionalities({
           hiddenMessages={hiddenMessages}
           onClick={() => onMessageButtonClick(1, message2)}
         />
+
         <Message
-          type={message3.type}
+          type={message3.genre}
           icon={message3.icon}
           isDisabled={message3.disabled}
           className={styles.messageToSend}
-          content={message3.content}
+          content={message3.headline}
           setPhoneMessages={setPhoneMessages}
           setHiddenMessages={setHiddenMessages}
           message={message3}
@@ -144,8 +154,10 @@ export default function Functionalities({
           hideBelowMinWidth
         />
       </div>
+
       <div className={styles.phoneContainer}>
         <div className={styles.phoneScreen} />
+
         <div className={styles.headerDpaApplication}>
           <div className={styles.Block1} />
           <div className={styles.Block2} />
@@ -153,26 +165,30 @@ export default function Functionalities({
           <div className={styles.applicationTime}>{time}</div>
           <Logo whiteLogo={true} classname={styles.applicationLogo} />
         </div>
+
         <div className={styles.applicationTitle}>
           <span>HEUTE</span>
         </div>
+
         <div className={styles.applicationMessageContainer}>
           {phoneMessages.map((message, index, array) => (
             <MessageOnPhone
               key={index}
-              type={message.type}
-              theme={message.theme}
+              type={message.genre}
+              theme={message.category}
               icon={message.icon}
               postingTime={message.time}
               className={styles.messageOnPhone}
               colorTheme={message.colorTheme}
-              content={message.content}
+              content={message.headline}
               animate={message.animate && index === 0}
               count={array.length}
             />
           ))}
+          <div className={styles.shadow} />
         </div>
       </div>
+
       <MessagePath
         messageQueue={messageQueue}
         setMessageQueue={setMessageQueue}
