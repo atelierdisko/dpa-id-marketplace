@@ -1,13 +1,13 @@
 .navigation,
 .footer {
-    /*position: fixed;*/
-    width: 100%;
+  /*position: fixed;*/
+  width: 100%;
 }
 
 .navigation {
-    top: 0;
+  top: 0;
 }
 
 .footer {
-    bottom: 0;
+  bottom: 0;
 }
