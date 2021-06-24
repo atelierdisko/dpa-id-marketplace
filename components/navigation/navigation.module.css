@@ -57,12 +57,12 @@
   align-items: center;
 }
 
-.list li:nth-child(-n + 2) {
+.list li:nth-child(-n + 3) {
   margin-right: calc(var(--spacing-unit) * 4.5);
 }
 
 .list li:nth-child(3) {
-  margin-right: calc(var(--spacing-unit) * 3.25);
+  //margin-right: calc(var(--spacing-unit) * 3.25);
 }
 
 .primaryLink {
