@@ -39,8 +39,6 @@ export default function Functionalities({ messages }) {
     messages[6],
   ]);
 
-  console.log(phoneMessages);
-
   const [messageQueue, setMessageQueue] = useState([]);
   const messageContainerRef = useRef();
 

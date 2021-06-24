@@ -75,7 +75,6 @@ export default function ApplicationCard({
   }, []);
 
   useEffect(() => {
-    console.log(ref.current.style);
     if (isOpen) {
       setDetailsStyle({ maxHeight: ref.current.scrollHeight });
     } else {
