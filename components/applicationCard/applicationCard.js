@@ -74,6 +74,7 @@ export default function ApplicationCard({
   }, []);
 
   useEffect(() => {
+    console.log(ref.current.style);
     if (isOpen) {
       setDetailsStyle({ maxHeight: ref.current.scrollHeight });
     } else {
@@ -147,6 +148,7 @@ export default function ApplicationCard({
             </SwiperSlide>
           ))}
         </Carousel>
+        <div className={styles.additionalPadding} />
       </div>
     </div>
   );
