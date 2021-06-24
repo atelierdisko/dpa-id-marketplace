@@ -52,6 +52,7 @@ function Carousel({ children, classname }) {
 }
 
 export default function ApplicationCard({
+  className,
   title,
   excerpt,
   icon,
@@ -66,91 +67,89 @@ export default function ApplicationCard({
     isOpen || delayIndex <= 0 ? styles.visible : styles.hidden
   );
   const [detailsStyle, setDetailsStyle] = useState({ display: "none" });
+  const ref = useRef();
 
   useEffect(() => {
     setStyle(styles.visible);
   }, []);
 
   useEffect(() => {
+    console.log(ref.current.style);
+    if (isOpen) {
+      setDetailsStyle({ maxHeight: ref.current.scrollHeight });
+    } else {
+      setDetailsStyle({ maxHeight: null });
+    }
+  }, [isOpen]);
+
+  useEffect(() => {
     setIsOpen(false);
   }, [filter]);
 
   return (
-    <>
-      <div
-        className={cn(styles.root, style)}
-        style={Object.assign(isOpen ? { backgroundColor: "#eeeeee" } : {}, {
-          transitionDelay: `${100 * delayIndex}ms`,
-        })}
+    <div
+      className={cn(className, style)}
+      style={{
+        transitionDelay: `${100 * delayIndex}ms`,
+      }}
+    >
+      <button
+        className={cn(styles.header)}
+        style={Object.assign(isOpen ? { backgroundColor: "#eeeeee" } : {})}
+        onClick={() => setIsOpen(!isOpen)}
       >
-        <div className={styles.header} onClick={() => setIsOpen(!isOpen)}>
-          <div className={styles.iconContainer}>{icon}</div>
-
-          <div className={styles.textContainer}>
-            <h5 className={cn(typography.epsilon500, styles.title)}>{title}</h5>
-            <p className={cn(typography.epsilon400, styles.excerpt)}>
-              {excerpt}
-            </p>
-          </div>
-
-          <button
-            className={cn(styles.showIcon, isOpen && styles.showIconIsOpened)}
-          >
-            <Icon Component={CaretDownIcon} />
-          </button>
+        <div className={styles.iconContainer}>{icon}</div>
+        <div className={styles.textContainer}>
+          <h5 className={cn(typography.epsilon500, styles.title)}>{title}</h5>
+          <p className={cn(typography.epsilon400, styles.excerpt)}>{excerpt}</p>
         </div>
-        {/*</div>*/}
 
-        {isOpen && (
-          // <div
-          //   className={cn(styles.details, isOpen && styles.isOpenedDetails)}
-          //   // style={detailsStyle}
-          // >
-          <>
-            <p
-              className={cn(
-                typography.epsilon400,
-                styles.excerptMobile,
-                isOpen && styles.isVisibleDetails
-              )}
-            >
-              {excerpt}
-            </p>
-
-            <div
-              className={cn(
-                styles.description,
-                typography.epsilon400,
-                isOpen && styles.isVisibleDetails
-              )}
-            >
-              {description}
-            </div>
-
-            <Button
-              isActive={true}
-              isDoublePadding={true}
-              className={cn(styles.button, isOpen && styles.isVisibleDetails)}
-              isBlue={true}
-              asButton={false}
-              href={link}
-            >
-              {`Jetzt ${title} testen`}
-            </Button>
-
-            <Carousel
-              classname={cn(styles.carousel, isOpen && styles.isVisibleDetails)}
-            >
-              {images.map((image, index) => (
-                <SwiperSlide className={styles.carouselSlide}>
-                  <img src={image} alt={""} key={index} />
-                </SwiperSlide>
-              ))}
-            </Carousel>
-            {/*</div>*/}
-          </>
-        )}
+        <button
+          className={cn(styles.showIcon, isOpen && styles.showIconIsOpened)}
+        >
+          <Icon Component={CaretDownIcon} />
+        </button>
+      </button>
+      <div ref={ref} className={styles.details} style={detailsStyle}>
+        <p
+          className={cn(
+            typography.epsilon400,
+            styles.excerptMobile,
+            isOpen && styles.isVisibleDetails
+          )}
+        >
+          {excerpt}
+        </p>
+        <div
+          className={cn(
+            styles.description,
+            typography.epsilon400,
+            isOpen && styles.isVisibleDetails
+          )}
+        >
+          {description}
+        </div>
+        <Button
+          isActive={true}
+          isDoublePadding={true}
+          className={cn(styles.button, isOpen && styles.isVisibleDetails)}
+          isBlue={true}
+          asButton={false}
+          href={link}
+        >
+          {`Jetzt ${title} testen`}
+        </Button>
+        <Carousel
+          classname={cn(styles.carousel, isOpen && styles.isVisibleDetails)}
+        >
+          {images.map((image, index) => (
+            <SwiperSlide className={styles.carouselSlide}>
+              <img src={image} alt={""} key={index} />
+            </SwiperSlide>
+          ))}
+        </Carousel>
+        <div className={styles.additionalPadding} />
       </div>
-    </>
+    </div>
   );
 }

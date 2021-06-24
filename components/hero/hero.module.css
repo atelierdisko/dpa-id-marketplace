@@ -9,7 +9,7 @@
   padding-top: calc(var(--spacing-unit) * 8.5);
   padding-bottom: calc(var(--spacing-unit) * 16.5 - 100px);
   margin-top: navigationHeightM;
-  grid-template-rows: repeat(5, auto) 100px;
+  grid-template-rows: repeat(4, auto) 100px;
   @media (--tablet) {
     padding-top: calc(var(--spacing-unit) * 7.5);
     padding-bottom: calc(var(--spacing-unit) * 14 - 100px);
@@ -19,7 +19,7 @@
   @media (--mobile) {
     padding-top: calc(var(--spacing-unit) * 6.5);
     padding-bottom: 0;
-    grid-template-rows: repeat(8, auto) 46px 10px;
+    grid-template-rows: repeat(7, auto) 46px 10px;
     margin-top: navigationHeightS;
   }
 }
@@ -41,6 +41,7 @@
     margin-top: 0;
   }
 }
+
 .description {
   margin-top: calc(var(--spacing-unit) * 3);
   grid-row: 2/4;
@@ -48,6 +49,7 @@
     margin-top: calc(var(--spacing-unit) * 5);
   }
 }
+
 .button {
   grid-row: 4;
   margin-top: calc(var(--spacing-unit) * 4);
@@ -57,7 +59,8 @@
   align-self: flex-start;
   background: var(--color-blue);
   color: var(--color-white);
-  transition: all 300ms;
+  transition-property: transform, box-shadow;
+  transition-duration: 300ms;
 
   @media (--tablet) {
     margin-top: calc(var(--spacing-unit) * 5);
@@ -69,6 +72,7 @@
     margin-bottom: 0;
   }
 }
+
 .button:hover {
   box-shadow: 0 8px 24px rgba(26, 30, 40, 0.2);
   transform: scale(1.01);
@@ -76,7 +80,7 @@
 
 .laptopImage {
   grid-column: span 8 / -1;
-  grid-row: 1/6;
+  grid-row: 1/-1;
   overflow: hidden;
   padding-left: 15%;
   width: 100%;
@@ -89,62 +93,44 @@
     height: auto;
     width: 105%;
     margin-top: calc(var(--spacing-unit) * 5);
-    margin-bottom: calc(var(--spacing-unit) * 20);
+    margin-bottom: calc(var(--spacing-unit) * 22);
     padding-left: 0;
   }
   @media (--mobile) {
     grid-column: 3/-1;
     grid-row: 5/8;
-    height: 90%;
+    height: 70%;
     padding-left: 0;
     margin-top: calc(var(--spacing-unit) * 5);
-    margin-bottom: calc(var(--spacing-unit) * 10);
+    margin-bottom: calc(var(--spacing-unit) * 20);
   }
 }
 
-.appMenu {
+.appMenuContainer {
   grid-column: 11 / span 6;
   grid-row: 1/-1;
-  height: 60%;
+  width: 50%;
   align-self: flex-end;
   justify-self: flex-start;
   z-index: 1;
   margin-left: 20px;
   display: flex;
-  align-items: flex-end;
-  //background: red;
   @media (--tablet), (--mobile) {
     margin-left: 0;
-    //height: auto;
   }
   @media (--tablet) {
-    grid-row: span 2/-1;
+    grid-row: 5/-1;
     grid-column: 4 / span 4;
     width: 70%;
   }
   @media (--mobile) {
-    grid-row: 7/9;
+    grid-row: 6/-2;
     grid-column: 3 / span 4;
-    width: 70%;
+    width: 60%;
   }
 }
 
-.appMenu img {
-  width: 317px;
-  height: 298px;
-  //justify-self: flex-end;
-  @media (--tablet), (--mobile) {
-    margin-left: 0;
-    height: auto;
-  }
-  @media (--tablet) {
-    //grid-row: 5;
-    //grid-column: 4 / span 4;
-    width: 97%;
-  }
-  @media (--mobile) {
-    //grid-row: 6/8;
-    //grid-column: 3 / span 4;
-    width: 70%;
-  }
+.appMenu {
+  box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.12);
+  width: 100%;
 }
