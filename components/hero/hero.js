@@ -14,23 +14,24 @@ import { customMedia } from "../../styles/cssExports";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 
-export default function Hero({ className, id }) {
+export default function Hero({}) {
   const isDesktopXL = useMediaQuery({ query: customMedia["--desktop-xl"] });
   const isDesktop = useMediaQuery({ query: customMedia["--desktop"] });
   const isTablet = useMediaQuery({ query: customMedia["--tablet"] });
   const isMobile = useMediaQuery({ query: customMedia["--mobile"] });
 
   const { scrollYProgress } = useViewportScroll();
-  // console.log("scroll", scrollYProgress);
 
   let startScroll = 0;
   let stopScroll = 0.16;
   let startY = 0;
   let stopY = -200;
+
   if (isTablet) {
     startScroll = 0.11;
     stopScroll = 0.2;
   }
+
   if (isMobile) {
     startScroll = 0.1;
     stopScroll = 0.3;
@@ -66,7 +67,7 @@ export default function Hero({ className, id }) {
   }, [inView]);
 
   return (
-    <section className={cn(className, styles.root, grid.root)} id={id}>
+    <section className={cn(styles.root, grid.root)} id={"hero"}>
       <h1 className={cn(styles.title, typography.beta500)}>
         Willkommen auf dem Marktplatz der dpa!
       </h1>
