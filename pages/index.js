@@ -37,7 +37,7 @@ export default function Home({ messages }) {
 
         <Functionalities messages={messages} />
 
-        <SignIn id="signIn" />
+        <SignIn />
       </main>
 
       <Footer className={styles.footer} />
