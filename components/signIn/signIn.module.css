@@ -1,40 +1,40 @@
 .root {
   background-color: var(--color-mid-blue);
   color: var(--color-white);
-  background-image: linear-gradient(
-    to top,
-    rgba(255, 255, 255, 0.3),
-    rgba(255, 255, 255, 0)
-  );
   position: relative;
   grid-template-rows: calc(var(--spacing-unit) * 9) repeat(3, auto) calc(
       var(--spacing-unit) * 12
     );
+  @media (--tablet), (--mobile) {
+    background-image: url("../../public/images/BG Image.svg");
+  }
   @media (--tablet) {
+    background-size: 100vw 110%;
     grid-template-rows: calc(var(--spacing-unit) * 15) repeat(3, auto) 66px calc(
         var(--spacing-unit) * 15
       );
   }
   @media (--mobile) {
+    background-size: 180% 110%;
+    background-position: center;
     grid-template-rows: calc(var(--spacing-unit) * 7) repeat(2, auto) 66px calc(
         var(--spacing-unit) * 15
       );
   }
 }
 .root::before {
-  display: none;
-  @media (--tablet) (--mobile) {
-    display: block;
-    //position: absolute;
-    //top: 0;
-    //right: 0;
-    //left: 0;
-    //bottom: 0;
-    //content: url("../../public/images/BG Image.svg");
-    transform: scaleY(1.06);
-    //object-fit: cover;
-    background-image: url("../../public/images/BG Image.svg");
-  }
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  content: "\A";
+  background-image: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0)
+  );
 }
 
 .signalPhrase {
