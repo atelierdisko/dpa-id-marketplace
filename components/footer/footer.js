@@ -16,7 +16,7 @@ export default function Footer({ className }) {
       text: "Impressum",
     },
     {
-      href: "/datenshutz",
+      href: "/datenschutz",
       text: "Datenschutz",
     },
   ];
