@@ -31,11 +31,6 @@ export default function SignIn({ className, id }) {
           <div className={typography.etaInter500}>dpa ID anlegen</div>
         </a>
       </div>
-      {/*<img*/}
-      {/*  src={"./images/BG Image.svg"}*/}
-      {/*  className={styles.patternTabletAndMobile}*/}
-      {/*  alt={""}*/}
-      {/*/>*/}
       <a className={styles.callToActionButtonTabletAndMobile} href={"/"}>
         <Logo classname={styles.logo} withName={false} />
         <div className={typography.etaInter500}>dpa ID anlegen</div>
