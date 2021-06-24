@@ -1,11 +1,12 @@
 .root {
-  background: var(--color-mid-blue);
-  background-image: linear-gradient(
-    to bottom,
-    var(--color-mid-blue),
-    rgba(255, 255, 255, 0.3)
-  );
+  background-color: var(--color-mid-blue);
   color: var(--color-white);
+  background-image: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0)
+  );
+  position: relative;
   grid-template-rows: calc(var(--spacing-unit) * 9) repeat(3, auto) calc(
       var(--spacing-unit) * 12
     );
@@ -18,6 +19,21 @@
     grid-template-rows: calc(var(--spacing-unit) * 7) repeat(2, auto) 66px calc(
         var(--spacing-unit) * 15
       );
+  }
+}
+.root::before {
+  display: none;
+  @media (--tablet) (--mobile) {
+    display: block;
+    //position: absolute;
+    //top: 0;
+    //right: 0;
+    //left: 0;
+    //bottom: 0;
+    //content: url("../../public/images/BG Image.svg");
+    transform: scaleY(1.06);
+    //object-fit: cover;
+    background-image: url("../../public/images/BG Image.svg");
   }
 }
 

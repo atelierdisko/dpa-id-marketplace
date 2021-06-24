@@ -11,7 +11,7 @@ import quotesData from "../quotesData";
 import functionalitiesData from "../functionalitiesData";
 import messagesData from "../messagesData";
 import Marquee from "../components/marquee/marquee";
-import {Meta} from "../components/meta/meta";
+import { Meta } from "../components/meta/meta";
 
 export default function Home() {
   const filters = [
@@ -27,7 +27,7 @@ export default function Home() {
   ];
   return (
     <div>
-      <Meta title={'Home'}/>
+      <Meta title={"Home"} />
 
       <Navigation
         className={styles.navigation}
