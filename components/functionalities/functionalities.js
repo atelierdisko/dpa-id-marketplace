@@ -15,12 +15,14 @@ import functionalities from "../../data/functionalities";
 
 export default function Functionalities({ messages }) {
   const {
-    setSwiper,
+    swiper: quoteSwiper,
+    setSwiper: setQuoteSwiper,
     slideNext,
     onSlideChange,
     slideTo,
     currentSlideIndex,
   } = useSwiper();
+  const [titleSwiper, setTitleSwiper] = useState(null);
 
   const [time, setTime] = useState(
     new Date().toLocaleTimeString("de-DE", { timeStyle: "short" })
@@ -79,25 +81,42 @@ export default function Functionalities({ messages }) {
           </Button>
         </div>
 
-        <h5 className={cn(typography.delta500, styles.functionalityTitle)}>
-          {functionalities[currentSlideIndex].title}
-        </h5>
+        <Swiper
+          loop={true}
+          keyboard={true}
+          onSwiper={setTitleSwiper}
+          onSlideChange={onSlideChange}
+          className={styles.titleSwiper}
+          controller={{ control: quoteSwiper }}
+          // speed={800}
+          effect={"fade"}
+          fadeEffect={{
+            crossFade: true,
+          }}
+        >
+          {functionalities.map((functionality, index) => (
+            <SwiperSlide key={index}>
+              <h5 className={styles.slideTitle}>{functionality.title}</h5>
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
         <Swiper
           loop={true}
           keyboard={true}
-          onSwiper={setSwiper}
+          onSwiper={setQuoteSwiper}
           onSlideChange={onSlideChange}
-          className={styles.carouselContainer}
+          className={styles.descriptionSwiper}
+          controller={{ control: titleSwiper }}
+          // speed={800}
+          effect={"fade"}
+          fadeEffect={{
+            crossFade: true,
+          }}
         >
           {functionalities.map((functionality, index) => (
-            <SwiperSlide key={index} className={styles.carouselSlide}>
-              <div
-                className={cn(
-                  typography.delta400,
-                  styles.functionalityDescription
-                )}
-              >
+            <SwiperSlide key={index}>
+              <div className={typography.delta400}>
                 {functionality.description}
               </div>
             </SwiperSlide>
