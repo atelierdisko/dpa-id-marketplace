@@ -1,8 +1,8 @@
 .beta500 {
   font-family: var(--font-family-primary-demi);
-  font-size: 90px;
+  font-size: 80px;
   font-weight: 500;
-  line-height: 90px;
+  line-height: 80px;
   letter-spacing: -3px;
   @media (--tablet) {
     font-size: 80px;
@@ -37,8 +37,8 @@
 }
 
 .delta400 {
-  font-size: 36px;
-  line-height: 51px;
+  font-size: 32px;
+  line-height: 45px;
   @media (--mobile) {
     font-size: 24px;
     line-height: 34px;

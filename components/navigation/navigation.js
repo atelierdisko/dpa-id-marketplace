@@ -17,15 +17,15 @@ export default function Navigation({
   const [activeIndex, setActiveIndex] = useState(null);
   const primaryNavigationLinks = [
     {
-      href: "#applications",
+      href: "#tools",
       text: "Tools",
     },
     {
-      href: "#quotes",
+      href: "#best-practices",
       text: "Best Practises",
     },
     {
-      href: "#functionalities",
+      href: "#features",
       text: "Features",
     },
   ];

@@ -55,7 +55,7 @@ export default [
       "./images/applicationCards/mockups/img2.jpeg",
     ],
     icon: <Icon Component={DpaAgendaIcon} />,
-    tags: [],
+    tags: ["planung"],
     link: "https://sso.dpa-id.de/goto/register?product=dpa-Agenda",
   },
   {
@@ -186,7 +186,7 @@ export default [
     link: "https://sso.dpa-id.de/goto/register?product=Minty%20Illustrators",
   },
   {
-    title: "23º Atlas",
+    title: "23° Atlas",
     excerpt: "Datenvisualisierung leicht gemacht",
     description:
       "Mit unserem Partner 23° Atlas können Sie Ihre eigenen Statistiken publizieren oder Millionen von thematischen Statistiken einfach weiterverwenden – ob regionale Corona-Daten, Wirtschaftsstatistiken oder Studienergebnisse. Die automatisierten Statistiken funktionieren auf Websites, in Präsentationen oder Pressemitteilungen.",
