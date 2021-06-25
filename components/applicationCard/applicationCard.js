@@ -49,7 +49,7 @@ function Carousel({ children, classname }) {
         />
       </div>
     );
-  }, [children]);
+  }, [children, currentSlideIndex]);
 }
 
 export default function ApplicationCard({
