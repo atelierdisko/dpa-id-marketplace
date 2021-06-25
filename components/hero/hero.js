@@ -65,12 +65,11 @@ export default function Hero({}) {
   return (
     <section className={cn(styles.root, grid.root)} id={"hero"}>
       <h1 className={cn(styles.title, typography.beta500)}>
-        Willkommen auf dem Marktplatz der dpa!
+        Willkommen auf dem dpa-Marketplace!
       </h1>
       <p className={cn(styles.description, typography.delta400)}>
         dpa bietet einen Marktplatz für Nachrichtenprofis und
-        Kommunikationsteams. Auf diesem Marktplatz ermöglichen wir Ihnen einen
-        einfachen und schnellen Zugang zu wertvollen Tools der dpa und unserer
+        Kommunikationsteams. Hier finden Sie wertvolle Tools der dpa und unserer
         Partner, die Ihnen Ihre tägliche Arbeit erleichtern. Die dpa ID ist Ihr
         persönlicher Schlüssel zu unserem Marktplatz. Registrieren Sie sich
         jetzt kostenfrei und entdecken neue Produkte und Services.
