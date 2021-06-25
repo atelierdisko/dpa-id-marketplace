@@ -6,7 +6,7 @@
       var(--spacing-unit) * 12
     );
   @media (--tablet), (--mobile) {
-    background-image: url("../../public/images/BG Image.svg");
+    background-image: url("../../public/images/signIn/BG Image.svg");
     background-repeat: no-repeat;
   }
   @media (--tablet) {

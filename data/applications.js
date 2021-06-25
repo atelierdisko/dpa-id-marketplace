@@ -21,7 +21,11 @@ export default [
     excerpt: "Das Nachrichtenportal der Deutschen Presse-Agentur",
     description:
       "Was sind die wichtigsten Themen der Stunde? Mit dpa-News ermöglichen wir redaktionell Verantwortlichen einen schnellen Zugang zum Informationsangebot der Nachrichtenagentur. ",
-    images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
+    images: [
+      "./images/applicationCards/mockups/img0.jpg",
+      "./images/applicationCards/mockups/img1.jpeg",
+      "./images/applicationCards/mockups/img2.jpeg",
+    ],
     icon: <Icon Component={DpaNewsIcon} />,
     tags: ["aktuelles"],
     link: "https://sso.dpa-id.de/goto/register?product=dpa-News",
@@ -31,7 +35,11 @@ export default [
     excerpt: "Ihr persönlicher News-Ticker in Echtzeit",
     description:
       "Erhalten Sie jederzeit alle dpa-Inhalte und bleiben Sie über wichtige Themen auf dem Laufenden. dpa-Select liefert alle relevanten News aus den dpa-Diensten in Echtzeit und nach Ihren Bedürfnissen gefiltert.",
-    images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
+    images: [
+      "./images/applicationCards/select/select@2x.png",
+      "./images/applicationCards/mockups/img1.jpeg",
+      "./images/applicationCards/mockups/img2.jpeg",
+    ],
     icon: <Icon Component={DpaSelectIcon} />,
     tags: ["recherche"],
     link: "https://sso.dpa-id.de/goto/register?product=dpa-Select",
@@ -41,7 +49,11 @@ export default [
     excerpt: "Termine und Themen für Ihre Planung",
     description:
       "Wann beginnt morgen die Online-Pressekonferenz? Welches Thema beschäftigt in den nächsten Wochen die Medien? Mit dpa-Agenda finden Sie Themen und Termine schnell und gezielt in einer minütlich aktualisierten Datenbank mit über 10.000 aktuellen Branchenevents. ",
-    images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
+    images: [
+      "./images/applicationCards/agenda/agenda@2x.png",
+      "./images/applicationCards/mockups/img1.jpeg",
+      "./images/applicationCards/mockups/img2.jpeg",
+    ],
     icon: <Icon Component={DpaAgendaIcon} />,
     tags: [],
     link: "https://sso.dpa-id.de/goto/register?product=dpa-Agenda",
@@ -51,7 +63,11 @@ export default [
     excerpt: "Eine Plattform – alle Töne",
     description:
       "O-Töne, Interviews, Atmo – im dpa-AudioHub bieten wir unseren Schatz an Audio-Inhalten sowie Inhalte von Partnern in einem übersichtlichen und schnell durchsuchbaren Audio-Baukasten zum Download an.",
-    images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
+    images: [
+      "./images/applicationCards/audioHub/audio-hub@2x.png",
+      "./images/applicationCards/mockups/img1.jpeg",
+      "./images/applicationCards/mockups/img2.jpeg",
+    ],
     icon: <Icon Component={DpaAudioHub} />,
     tags: ["audio"],
     link: "https://sso.dpa-id.de/goto/register?product=dpa-Audio%20Hub",
@@ -61,7 +77,11 @@ export default [
     excerpt: "Tagesaktueller Video-Content",
     description:
       "Auf dem dpa-Videoportal haben Sie Zugriff auf tagesaktuelle Beiträge und Rohmaterial aus allen Ressorts.",
-    images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
+    images: [
+      "./images/applicationCards/video/video@2x.png",
+      "./images/applicationCards/mockups/img1.jpeg",
+      "./images/applicationCards/mockups/img2.jpeg",
+    ],
     icon: <Icon Component={DpaVideoPortalIcon} />,
     tags: ["video"],
     link: "https://sso.dpa-id.de/goto/register?product=dpa-Videoportal",
@@ -71,7 +91,11 @@ export default [
     excerpt: "Inhalte fürs Netz – ready-to-publish",
     description:
       "Erhalten Sie Liveblogs, interaktive Grafiken und weitere Embed-Produkte der dpa schnell und unkompliziert über unseren Onlineshop.",
-    images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
+    images: [
+      "./images/applicationCards/shop/Shop@2x.png",
+      "./images/applicationCards/mockups/img1.jpeg",
+      "./images/applicationCards/mockups/img2.jpeg",
+    ],
     icon: <Icon Component={DpaShopIcon} />,
     tags: ["aktuelles"],
     link: "https://sso.dpa-id.de/goto/register?product=dpa-Shop",
@@ -81,7 +105,11 @@ export default [
     excerpt: "Content unkompliziert verbreiten",
     description:
       "Die dpa-Tochter news aktuell bietet mit den Marken ots, zimpel und dem Presseportal innovative Lösungen für die erfolgreiche Kommunikation an Medien und Verbrauchern. Übermitteln Sie mit Hilfe des Auftrags­systems Texte, Bilder und weiteres Pressematerial.",
-    images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
+    images: [
+      "./images/applicationCards/na/na@2x.png",
+      "./images/applicationCards/mockups/img1.jpeg",
+      "./images/applicationCards/mockups/img2.jpeg",
+    ],
     icon: <Icon Component={NewsAktuell} />,
     tags: ["distribution"],
     link: "https://sso.dpa-id.de/goto/register?product=my%20news%20aktuell",
@@ -91,7 +119,11 @@ export default [
     excerpt: "Tagesaktuelles Rohmaterial für Fernsehsender",
     description:
       "Das TNN-Videoportal versorgt öffentlich-rechtliche und private TV-Stationen mit tagesaktuellen Videos zu den relevanten News-Ereignissen und Entertainment-Themen.",
-    images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
+    images: [
+      "./images/applicationCards/tnn/tnn@2x.png",
+      "./images/applicationCards/mockups/img1.jpeg",
+      "./images/applicationCards/mockups/img2.jpeg",
+    ],
     icon: <Icon Component={Tnn} />,
     tags: ["video"],
     link: "https://sso.dpa-id.de/goto/register?product=TNN-Videoportal",
@@ -101,7 +133,11 @@ export default [
     excerpt: "Das Portal für visuelle Inhalte",
     description:
       "Mit der dpa picture alliance stehen Ihnen mehr als 100 Mio. Bilder, Grafiken und Illustrationen von über 300 Partneragenturen weltweit zur Verfügung. ",
-    images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
+    images: [
+      "./images/applicationCards/pa/pa@2x.png",
+      "./images/applicationCards/mockups/img1.jpeg",
+      "./images/applicationCards/mockups/img2.jpeg",
+    ],
     icon: <Icon Component={DpaPictureAllianceIcon} />,
     tags: ["visuals"],
     link:
@@ -112,7 +148,11 @@ export default [
     excerpt: "Individuelles Politikmonitoring zu Ihren Themen",
     description:
       "Der dpa ID Partner Polit-X ermöglicht datengetriebenes und dokumentenbasiertes Politikmonitoring und Parlamentsanalysen.",
-    images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
+    images: [
+      "./images/applicationCards/politx/polit-x@2x.png",
+      "./images/applicationCards/mockups/img1.jpeg",
+      "./images/applicationCards/mockups/img2.jpeg",
+    ],
     icon: <Icon Component={PoliticsIcon} />,
     tags: ["recherche"],
     link: "https://sso.dpa-id.de/goto/register?product=Polit-X",
@@ -122,7 +162,11 @@ export default [
     excerpt: "Leser zu Zuhörern machen",
     description:
       "Unser Partner BotTalk bietet eine Text-to-Speech-Lösung, die Nachrichtenartikel mit einem Klick in Audio-Dateien umwandelt.",
-    images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
+    images: [
+      "./images/applicationCards/bottalk/bottalk@2x.png",
+      "./images/applicationCards/mockups/img1.jpeg",
+      "./images/applicationCards/mockups/img2.jpeg",
+    ],
     icon: <Icon Component={BotTalkIcon} />,
     tags: ["audio"],
     link: "https://sso.dpa-id.de/goto/register?product=BotTalk",
@@ -132,7 +176,11 @@ export default [
     excerpt: "Illustrationen finden und beauftragen",
     description:
       "Mit unserem Partner-Tool Minty finden Sie in Sekundenschnelle die richtigen Künstler für Ihre visuellen Produktionen. Das All-in-One-Tool bietet Kontakt zu 3.500 verifizierten Illustratorinnen und Illustratoren und unterstützt bei Lizenzierung und Projektmanagement.",
-    images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
+    images: [
+      "./images/applicationCards/minty/minty@2x.png",
+      "./images/applicationCards/mockups/img1.jpeg",
+      "./images/applicationCards/mockups/img2.jpeg",
+    ],
     icon: <Icon Component={Minty} />,
     tags: ["visuals"],
     link: "https://sso.dpa-id.de/goto/register?product=Minty%20Illustrators",
@@ -142,7 +190,11 @@ export default [
     excerpt: "Datenvisualisierung leicht gemacht",
     description:
       "Mit unserem Partner 23° Atlas können Sie Ihre eigenen Statistiken publizieren oder Millionen von thematischen Statistiken einfach weiterverwenden – ob regionale Corona-Daten, Wirtschaftsstatistiken oder Studienergebnisse. Die automatisierten Statistiken funktionieren auf Websites, in Präsentationen oder Pressemitteilungen.",
-    images: ["./images/img0.jpg", "./images/img1.jpeg", "./images/img2.jpeg"],
+    images: [
+      "./images/applicationCards/23degrees/23 degrees@2x.png",
+      "./images/applicationCards/mockups/img1.jpeg",
+      "./images/applicationCards/mockups/img2.jpeg",
+    ],
     icon: <Icon Component={f23} />,
     tags: ["daten"],
     link: "https://sso.dpa-id.de/goto/register?product=23%C2%B0%20Atlas",
