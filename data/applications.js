@@ -55,7 +55,7 @@ export default [
       "./images/applicationCards/mockups/img2.jpeg",
     ],
     icon: <Icon Component={DpaAgendaIcon} />,
-    tags: [],
+    tags: ["planung"],
     link: "https://sso.dpa-id.de/goto/register?product=dpa-Agenda",
   },
   {
