@@ -4,9 +4,9 @@ import Logo from "../logo/logo";
 import grid from "../../styles/grid.module.css";
 import cn from "classnames";
 
-export default function SignIn({ className, id }) {
+export default function SignIn() {
   return (
-    <section className={cn(className, styles.root, grid.root)} id={id}>
+    <section className={cn(styles.root, grid.root)} id={"signIn"}>
       <p className={cn(typography.zeta500, styles.signalPhrase)}>
         Marktplatz für Nachrichtenservices
       </p>
@@ -14,7 +14,7 @@ export default function SignIn({ className, id }) {
         Haben wir Ihr Interesse geweckt?
       </h2>
       <p className={cn(typography.delta400, styles.description)}>
-        Jetzt kostenlos dpa ID registrieren und den dpa-Marketplace entdecken!
+        Jetzt kostenfrei eine dpa ID anlegen und den dpa-Marketplace entdecken!
       </p>
       <div className={styles.drawingsAndCallToAction}>
         <img

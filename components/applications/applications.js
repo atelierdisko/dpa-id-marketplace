@@ -23,7 +23,7 @@ const filters = [
 const initialFilter = "Alle anzeigen";
 
 export default function Applications({}) {
-  const initialAppNumber = 10;
+  const initialAppNumber = 15;
   const stepNumber = 5;
   const [appNumber, setAppNumber] = useState(initialAppNumber);
   const [activeFilter, setActiveFilter] = useState(initialFilter);
@@ -73,11 +73,11 @@ export default function Applications({}) {
   return (
     <section className={cn(grid.root, styles.root)} id={"applications"}>
       <h2 className={cn(typography.beta500, styles.title)}>
-        Der Marktplatz im Überblick
+        Unser Marktplatz im Überblick
       </h2>
       <p className={cn(typography.delta400, styles.description)}>
-        Mit Ihrer dpa ID betreten Sie den dpa-Marketplace und haben direkten und
-        sicheren Zugang zu allen Tools der dpa und unserer Partner.
+        Mit Ihrer dpa ID betreten Sie den dpa-Marketplace und haben schnellen
+        und sicheren Zugang zu allen Tools der dpa und unserer Partner.
       </p>
       <p className={cn(styles.filterOptions, typography.zeta500)}>
         Finden Sie die Tools, die für Ihre Arbeit relevant sind:

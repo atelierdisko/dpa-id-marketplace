@@ -7,16 +7,20 @@
     );
   @media (--tablet), (--mobile) {
     background-image: url("../../public/images/BG Image.svg");
+    background-repeat: no-repeat;
   }
   @media (--tablet) {
-    background-size: 100vw 110%;
+    background-size: 100vw 100%;
+    background-position: top center;
+
     grid-template-rows: calc(var(--spacing-unit) * 15) repeat(3, auto) 66px calc(
         var(--spacing-unit) * 15
       );
   }
   @media (--mobile) {
-    background-size: 180% 110%;
-    background-position: center;
+    background-size: 180vw 100%;
+    background-position: center center;
+
     grid-template-rows: calc(var(--spacing-unit) * 7) repeat(2, auto) 66px calc(
         var(--spacing-unit) * 15
       );
@@ -137,6 +141,10 @@
     color: var(--color-gray-900);
     grid-row: 5/6;
     z-index: 1;
+    width: 85%;
+    min-width: 343px;
+    max-width: 460px;
+    justify-self: center;
   }
   @media (--tablet) {
     grid-column: 5/9;
