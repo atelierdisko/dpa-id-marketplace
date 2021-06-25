@@ -57,7 +57,7 @@ export default function Functionalities({ messages }) {
   };
 
   return (
-    <section className={cn(styles.root, grid.root)} id={"functionalities"}>
+    <section className={cn(styles.root, grid.root)} id={"features"}>
       <h2 className={cn(styles.title, typography.beta500)}>
         Features Ihrer dpa ID
       </h2>

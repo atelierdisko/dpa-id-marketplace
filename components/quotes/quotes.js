@@ -18,7 +18,7 @@ export default function Quotes({}) {
   } = useSwiper();
 
   return (
-    <div className={cn(styles.root, grid.root)} id={"quotes"}>
+    <div className={cn(styles.root, grid.root)} id={"best-practices"}>
       <Swiper
         loop={true}
         keyboard={true}

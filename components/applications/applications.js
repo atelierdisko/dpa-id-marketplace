@@ -71,7 +71,7 @@ export default function Applications({}) {
     Math.max(0, index - (arr.length - deltaAppNumberRef.current));
 
   return (
-    <section className={cn(grid.root, styles.root)} id={"applications"}>
+    <section className={cn(grid.root, styles.root)} id={"tools"}>
       <h2 className={cn(typography.beta500, styles.title)}>
         Unser Marktplatz im Überblick
       </h2>
