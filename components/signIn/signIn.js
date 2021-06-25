@@ -18,7 +18,7 @@ export default function SignIn() {
       </p>
       <div className={styles.drawingsAndCallToAction}>
         <img
-          src={"./images/signUp-pattern.svg"}
+          src={"./images/signIn/signUp-pattern.svg"}
           className={styles.pattern}
           alt={""}
         />

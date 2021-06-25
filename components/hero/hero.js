@@ -84,7 +84,7 @@ export default function Hero({}) {
         Jetzt dpa ID anlegen und Tools testen
       </Button>
       <img
-        src={"./images/hero-laptop.png"}
+        src={"./images/hero/hero-laptop.png"}
         className={styles.laptopImage}
         alt={""}
       />
@@ -99,7 +99,7 @@ export default function Hero({}) {
           className={styles.appMenu}
           id="appMenuImg"
           style={{ y }}
-          src={"./images/appswitcher_trans.png"}
+          src={"./images/hero/appswitcher_trans.png"}
           alt={""}
         />
       </motion.div>
