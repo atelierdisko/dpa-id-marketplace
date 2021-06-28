@@ -3,10 +3,11 @@ import ApplicationCard from "../applicationCard/applicationCard";
 import styles from "./applications.module.css";
 import typography from "../../styles/typography.module.css";
 import grid from "../../styles/grid.module.css";
-import { useEffect, useRef, useState } from "react";
+import { memo, useEffect, useRef, useState } from "react";
 import cn from "classnames";
 import { motion } from "framer-motion";
 import applications from "../../data/applications";
+import { nanoid } from "nanoid";
 
 const filters = [
   "Aktuelles",
@@ -21,6 +22,11 @@ const filters = [
 ];
 
 const initialFilter = "Alle anzeigen";
+
+const applicationsWithId = applications.map((item) => ({
+  ...item,
+  id: nanoid(),
+}));
 
 export default function Applications({}) {
   const initialAppNumber = 15;
@@ -48,7 +54,7 @@ export default function Applications({}) {
     return [...data.slice(0, count)];
   };
 
-  const filteredApplications = applyFilter(applications, activeFilter);
+  const filteredApplications = applyFilter(applicationsWithId, activeFilter);
   const displayedApplications = limitByCount(filteredApplications, appNumber);
 
   const isButtonDisabled =
@@ -103,7 +109,7 @@ export default function Applications({}) {
         {displayedApplications.map((application, index, arr) => (
           <ApplicationCard
             className={styles.applicationCard}
-            key={`${application.title}-${index}`}
+            key={application.id}
             index={index}
             title={application.title}
             excerpt={application.excerpt}
