@@ -43,7 +43,6 @@ function useSwiper() {
 
   const onSlideChange = (swiper) => {
     setCurrentSlideIndex(swiper.realIndex);
-    console.log(swiper.realIndex);
   };
 
   return {
