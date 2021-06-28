@@ -1,0 +1,9 @@
+.root {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  will-change: height;
+  transition-property: height;
+  transition-timing-function: ease;
+}

@@ -79,14 +79,8 @@ export default function Message({
   const hiddenStyle =
     hideBelowMinWidth && width < minWidth ? styles.hidden : null;
 
-  return (
-    <motion.div
-      className={cn(styles.root, className, hiddenStyle)}
-      onClick={handleClick}
-      animate={controls}
-      variants={variants}
-      ref={ref}
-    >
+  const contentComp = (
+    <div className={cn(styles.message, styles.messageToSend)}>
       <div className={cn(styles.typeContainer)}>
         <div className={styles.typeLogo}>
           <Icon Component={DpaSelectIcon} />
@@ -94,9 +88,26 @@ export default function Message({
         <div>{type}</div>
       </div>
       <div className={cn(typography.etaInter500, styles.content)}>
-        {content}
+        <div className={styles.contentText}>{content}</div>
       </div>
       <div className={cn(styles.overlay, isDisabled && styles.isDisabled)} />
-    </motion.div>
+    </div>
+  );
+
+  return (
+    <div
+      className={cn(styles.root, hiddenStyle, className)}
+      ref={ref}
+      onClick={handleClick}
+    >
+      <div className={styles.relativeWrapper}>{contentComp}</div>
+      <motion.div
+        className={styles.absoluteWrapper}
+        animate={controls}
+        variants={variants}
+      >
+        {contentComp}
+      </motion.div>
+    </div>
   );
 }
