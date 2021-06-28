@@ -18,8 +18,8 @@ export default function Quotes({}) {
     slideTo,
     currentSlideIndex,
   } = useSwiper();
-  // const [signalPhraseSwiper, setSignalPhraseSwiper] = useState(null);
   const [quoteSwiper, setQuoteSwiper] = useState(null);
+  const [signalPhraseSwiper, setSignalPhraseSwiper] = useState(null);
 
   return (
     <div className={cn(styles.root, grid.root)} id={"best-practices"}>
@@ -29,7 +29,12 @@ export default function Quotes({}) {
         onSwiper={setImageSwiper}
         onSlideChange={onSlideChange}
         className={styles.imageContainer}
-        controller={{ control: quoteSwiper }}
+        controller={{
+          control:
+            signalPhraseSwiper && quoteSwiper
+              ? [signalPhraseSwiper, quoteSwiper]
+              : null,
+        }}
       >
         {quotes.map((quote, index) => (
           <SwiperSlide key={index} className={styles.imageSlide}>
@@ -38,16 +43,19 @@ export default function Quotes({}) {
         ))}
       </Swiper>
       <div className={styles.textContainer}>
-        {/*<p className={cn(typography.zeta500, styles.signalPhrase)}>*/}
-        {/*  {quotes[currentSlideIndex].signalPhrase}*/}
-        {/*</p>*/}
         <Swiper
           loop={true}
-          keyboard={true}
-          // onSwiper={setQuoteSwiper}
-          // onSlideChange={onSlideChange}
+          onSwiper={(swiper) => {
+            setSignalPhraseSwiper(swiper);
+          }}
           className={styles.signalPhraseContainer}
-          controller={{ control: quoteSwiper }}
+          controller={{
+            control: imageSwiper,
+          }}
+          effect={"fade"}
+          fadeEffect={{
+            crossFade: true,
+          }}
         >
           {quotes.map((quote, index) => (
             <SwiperSlide key={index} className={styles.signalPhraseSlide}>
@@ -58,9 +66,9 @@ export default function Quotes({}) {
 
         <Swiper
           loop={true}
-          keyboard={true}
-          onSwiper={setQuoteSwiper}
-          onSlideChange={onSlideChange}
+          onSwiper={(swiper) => {
+            setQuoteSwiper(swiper);
+          }}
           className={styles.quoteContainer}
           controller={{ control: imageSwiper }}
           effect={"fade"}
