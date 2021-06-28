@@ -18,8 +18,8 @@ export default function Quotes({}) {
     slideTo,
     currentSlideIndex,
   } = useSwiper();
-  const [signalPhraseSwiper, setSignalPhraseSwiper] = useState(null);
   const [quoteSwiper, setQuoteSwiper] = useState(null);
+  const [signalPhraseSwiper, setSignalPhraseSwiper] = useState(null);
 
   return (
     <div className={cn(styles.root, grid.root)} id={"best-practices"}>
@@ -43,17 +43,19 @@ export default function Quotes({}) {
         ))}
       </Swiper>
       <div className={styles.textContainer}>
-        {/*<p className={cn(typography.zeta500, styles.signalPhrase)}>*/}
-        {/*  {quotes[currentSlideIndex].signalPhrase}*/}
-        {/*</p>*/}
         <Swiper
           loop={true}
           onSwiper={(swiper) => {
             setSignalPhraseSwiper(swiper);
           }}
-          onSlideChange={onSlideChange}
-          className={styles.signalPhrase}
-          controller={{ control: quoteSwiper }}
+          className={styles.signalPhraseContainer}
+          controller={{
+            control: imageSwiper,
+          }}
+          effect={"fade"}
+          fadeEffect={{
+            crossFade: true,
+          }}
         >
           {quotes.map((quote, index) => (
             <SwiperSlide key={index} className={styles.signalPhraseSlide}>
@@ -64,9 +66,9 @@ export default function Quotes({}) {
 
         <Swiper
           loop={true}
-          keyboard={true}
-          onSwiper={setQuoteSwiper}
-          onSlideChange={onSlideChange}
+          onSwiper={(swiper) => {
+            setQuoteSwiper(swiper);
+          }}
           className={styles.quoteContainer}
           controller={{ control: imageSwiper }}
           effect={"fade"}
