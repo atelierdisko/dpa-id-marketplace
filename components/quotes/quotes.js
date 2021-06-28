@@ -18,7 +18,7 @@ export default function Quotes({}) {
     slideTo,
     currentSlideIndex,
   } = useSwiper();
-  // const [signalPhraseSwiper, setSignalPhraseSwiper] = useState(null);
+  const [signalPhraseSwiper, setSignalPhraseSwiper] = useState(null);
   const [quoteSwiper, setQuoteSwiper] = useState(null);
 
   return (
@@ -29,7 +29,12 @@ export default function Quotes({}) {
         onSwiper={setImageSwiper}
         onSlideChange={onSlideChange}
         className={styles.imageContainer}
-        controller={{ control: quoteSwiper }}
+        controller={{
+          control:
+            signalPhraseSwiper && quoteSwiper
+              ? [signalPhraseSwiper, quoteSwiper]
+              : null,
+        }}
       >
         {quotes.map((quote, index) => (
           <SwiperSlide key={index} className={styles.imageSlide}>
@@ -43,10 +48,11 @@ export default function Quotes({}) {
         {/*</p>*/}
         <Swiper
           loop={true}
-          keyboard={true}
-          // onSwiper={setQuoteSwiper}
-          // onSlideChange={onSlideChange}
-          className={styles.signalPhraseContainer}
+          onSwiper={(swiper) => {
+            setSignalPhraseSwiper(swiper);
+          }}
+          onSlideChange={onSlideChange}
+          className={styles.signalPhrase}
           controller={{ control: quoteSwiper }}
         >
           {quotes.map((quote, index) => (
