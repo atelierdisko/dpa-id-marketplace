@@ -5,44 +5,47 @@
   grid-template-rows: calc(var(--spacing-unit) * 9) repeat(3, auto) calc(
       var(--spacing-unit) * 12
     );
-  @media (--tablet), (--mobile) {
-    background-image: url("../../public/images/signIn/BG Image.svg");
-    background-repeat: no-repeat;
-  }
+  background-image: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0)
+  );
   @media (--tablet) {
-    background-size: 100vw 100%;
-    background-position: top center;
-
     grid-template-rows: calc(var(--spacing-unit) * 15) repeat(3, auto) 66px calc(
         var(--spacing-unit) * 15
       );
   }
   @media (--mobile) {
-    background-size: 180vw 100%;
-    background-position: center center;
-
     grid-template-rows: calc(var(--spacing-unit) * 7) repeat(2, auto) 66px calc(
         var(--spacing-unit) * 15
       );
   }
 }
 .root::before {
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  content: "\A";
-  background-image: linear-gradient(
-    to top,
-    rgba(255, 255, 255, 0.3),
-    rgba(255, 255, 255, 0)
-  );
+  display: none;
+  @media (--tablet), (--mobile) {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    content: "\A";
+    background-image: url("../../public/images/signIn/BG Image.svg");
+    background-repeat: no-repeat;
+  }
+  @media (--tablet) {
+    background-position: center bottom -60px;
+    background-size: 1158px auto;
+  }
+  @media (--mobile) {
+    background-position: center bottom;
+    background-size: 720px auto;
+  }
 }
 
 .signalPhrase {
-  grid-column: 3 / span 4;
+  grid-column: 3 / -3;
   grid-row: 2/3;
   @media (--mobile) {
     display: none;
@@ -132,6 +135,7 @@
 .callToActionButtonTabletAndMobile {
   display: none;
   @media (--mobile), (--tablet) {
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -139,7 +143,6 @@
     box-shadow: 0 20px 40px 0 rgba(26, 30, 40, 0.3);
     padding: 0 calc(var(--spacing-unit) * 3);
     color: var(--color-gray-900);
-    grid-row: 5/6;
     z-index: 1;
     width: 85%;
     min-width: 343px;
@@ -147,11 +150,12 @@
     justify-self: center;
   }
   @media (--tablet) {
-    grid-column: 5/9;
+    bottom: 119px;
+    height: 75px;
   }
   @media (--mobile) {
-    grid-column: 3/-3;
-    grid-row: 4/5;
+    height: 66px;
+    bottom: 92px;
   }
 }
 
