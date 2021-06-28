@@ -10,7 +10,7 @@
     ),
     url("../../public/images/applications/applications-pattern.svg");
   background-size: 212%;
-  background-position: 50%; /*to center the image*/
+  background-position: 50% 0; /*to center the image*/
 
   @media (--tablet) {
     padding-top: calc(var(--spacing-unit) * 15);
@@ -90,21 +90,22 @@
   @media (--tablet) {
     margin-top: calc(var(--spacing-unit) * 5);
   }
+}
 
-  .showMoreButton {
-    border: 1px solid var(--color-white);
-  }
+.showMoreButton {
+  border: 1px solid var(--color-white);
+}
 
-  .showMoreButton:hover {
-    background-color: var(--color-white);
-    color: var(--color-blue);
-  }
-  .showMoreButtonDisabled,
-  .showMoreButtonDisabled:hover {
-    //border: 1px solid var(--color-gray-300);
-    //background-color: transparent;
-    //color: var(--color-gray-300);
-    //cursor: auto;
-    display: none;
-  }
+.showMoreButton:hover {
+  background-color: var(--color-white);
+  color: var(--color-blue);
+}
+
+.showMoreButtonDisabled,
+.showMoreButtonDisabled:hover {
+  border: 1px solid var(--color-gray-300);
+  background-color: transparent;
+  color: var(--color-gray-300);
+  cursor: auto;
+  display: none;
 }

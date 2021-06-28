@@ -130,12 +130,14 @@
   padding: 0 32px;
   background: var(--color-gray-200);
   color: var(--color-gray-900);
-  overflow: hidden;
+  /*overflow: hidden; */
   display: grid;
   grid-template-columns: 104px repeat(11, 1fr);
-  //grid-template-rows: repeat(4, auto) 56px;
+  /*
+  grid-template-rows: repeat(4, auto) 56px;
   max-height: 0;
   transition: max-height 300ms ease-in-out;
+   */
   @media (--tablet) {
     padding-top: 0;
   }
@@ -205,19 +207,18 @@
   transform: scale(1.01);
 }
 
-.carousel {
+.carouselWrapper {
   grid-column: 2/7;
-  //grid-column: 7/12;
+  /* grid-column: 7/12; */
   grid-row: 1/5;
-  //grid-row: 2/5;
-  //margin-left: 56px;
+  /* grid-row: 2/5; */
+  /* margin-left: 56px; */
   margin-top: calc(var(--spacing-unit) * 3);
   width: 100%;
-  height: auto;
+  height: 100%;
   max-width: 100%;
   overflow: hidden;
   padding-bottom: 56px;
-
   @media (--tablet) {
     grid-column: 2/12;
     grid-row: 3/4;
@@ -237,7 +238,29 @@
   }
 }
 
+.carousel {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.carouselPlaceholder {
+  width: 100%;
+  height: auto;
+  opacity: 1;
+  transition-property: opacity;
+  transition-delay: 100ms;
+  transition-duration: 0ms;
+}
+
+.carouselPlaceholderHidden {
+  opacity: 0;
+}
+
 .carouselContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
   /* Swiper context fixes */
   /* https://github.com/nolimits4web/swiper/issues/3599 */
   width: 100%;
@@ -273,16 +296,19 @@
   object-position: top;
 }
 
-.excerptMobile,
-.description,
-.carousel {
+.isHiddenDetails > * {
   opacity: 0;
-  transition: opacity 500ms ease-in-out;
-  transition-delay: 350ms;
+  transition-property: opacity;
+  transition-duration: 400ms;
+  transition-delay: 0ms;
+  transition-timing-function: ease-out;
 }
 
-.isVisibleDetails {
+.isVisibleDetails > * {
   opacity: 1;
+  transition-duration: 250ms;
+  transition-delay: 50ms;
+  transition-timing-function: ease-in;
 }
 
 .additionalPadding {
