@@ -18,7 +18,7 @@ export default function Quotes({}) {
     slideTo,
     currentSlideIndex,
   } = useSwiper();
-  const [signalPhraseSwiper, setSignalPhraseSwiper] = useState(null);
+  // const [signalPhraseSwiper, setSignalPhraseSwiper] = useState(null);
   const [quoteSwiper, setQuoteSwiper] = useState(null);
 
   return (
@@ -38,25 +38,23 @@ export default function Quotes({}) {
         ))}
       </Swiper>
       <div className={styles.textContainer}>
-        <p className={cn(typography.zeta500, styles.signalPhrase)}>
-          {quotes[currentSlideIndex].signalPhrase}
-        </p>
-        {/*<Swiper*/}
-        {/*  loop={true}*/}
-        {/*  keyboard={true}*/}
-        {/*  onSwiper={setQuoteSwiper}*/}
-        {/*  onSlideChange={onSlideChange}*/}
-        {/*  className={styles.signalPhraseContainer}*/}
-        {/*  // controller={{ control: quoteSwiper }}*/}
-        {/*>*/}
-        {/*  {quotes.map((quote, index) => (*/}
-        {/*    <SwiperSlide key={index} className={styles.styles.signalPhraseSlide}>*/}
-        {/*      <p className={cn(typography.zeta500)}>*/}
-        {/*        {quote.signalPhrase}*/}
-        {/*      </p>*/}
-        {/*    </SwiperSlide>*/}
-        {/*  ))}*/}
-        {/*</Swiper>*/}
+        {/*<p className={cn(typography.zeta500, styles.signalPhrase)}>*/}
+        {/*  {quotes[currentSlideIndex].signalPhrase}*/}
+        {/*</p>*/}
+        <Swiper
+          loop={true}
+          keyboard={true}
+          // onSwiper={setQuoteSwiper}
+          // onSlideChange={onSlideChange}
+          className={styles.signalPhraseContainer}
+          controller={{ control: quoteSwiper }}
+        >
+          {quotes.map((quote, index) => (
+            <SwiperSlide key={index} className={styles.signalPhraseSlide}>
+              <p className={cn(typography.zeta500)}>{quote.signalPhrase}</p>
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
         <Swiper
           loop={true}

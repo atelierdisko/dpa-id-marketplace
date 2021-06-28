@@ -55,11 +55,21 @@
 /*.signalPhraseContainer{*/
 .signalPhrase {
   grid-row: 2/3;
+  opacity: 0;
+  animation: fadein 5s;
+  animation-fill-mode: forwards;
   @media (--tablet), (--mobile) {
     grid-row: 3/4;
   }
 }
-
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .quoteContainer {
   grid-row: 3/4;
   margin-top: calc(var(--spacing-unit) * 3);
