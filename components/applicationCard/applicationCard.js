@@ -2,12 +2,13 @@ import styles from "./applicationCard.module.css";
 import typography from "../../styles/typography.module.css";
 import { CaretDownIcon, Icon } from "../icon/icon";
 import Button from "../button/button";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "../carousel/navigation";
 import { useSwiper } from "../../hooks/useSwiper";
 import cn from "classnames";
+import Collapsible from "../collapsible/collapsible";
 
 ApplicationCard.propTypes = {
   /**
@@ -16,7 +17,7 @@ ApplicationCard.propTypes = {
   icon: PropTypes.elementType.isRequired,
 };
 
-function Carousel({ children, classname }) {
+function Carousel({ classname, images, initSwiper }) {
   const {
     setSwiper,
     slidePrev,
@@ -25,10 +26,17 @@ function Carousel({ children, classname }) {
     slideTo,
     currentSlideIndex,
   } = useSwiper();
-
-  return useMemo(() => {
-    return (
-      <div className={classname}>
+  return (
+    <div className={classname}>
+      <img
+        className={cn(
+          styles.carouselPlaceholder,
+          initSwiper && styles.carouselPlaceholderHidden
+        )}
+        src={images?.[0]}
+        alt=""
+      />
+      {initSwiper ? (
         <Swiper
           loop={true}
           keyboard={true}
@@ -36,20 +44,23 @@ function Carousel({ children, classname }) {
           onSlideChange={onSlideChange}
           className={styles.carouselContainer}
         >
-          {children}
+          {images.map((image, index) => (
+            <SwiperSlide className={styles.carouselSlide} key={index}>
+              <img src={image} alt={""} />
+            </SwiperSlide>
+          ))}
         </Swiper>
-
-        <Navigation
-          className={styles.carouselNavigation}
-          index={currentSlideIndex}
-          length={children.length}
-          slideTo={slideTo}
-          slideNext={slideNext}
-          slidePrev={slidePrev}
-        />
-      </div>
-    );
-  }, [children, currentSlideIndex]);
+      ) : null}
+      <Navigation
+        className={styles.carouselNavigation}
+        index={currentSlideIndex}
+        length={images.length}
+        slideTo={slideTo}
+        slideNext={slideNext}
+        slidePrev={slidePrev}
+      />
+    </div>
+  );
 }
 
 export default function ApplicationCard({
@@ -64,23 +75,7 @@ export default function ApplicationCard({
   link,
 }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [style, setStyle] = useState(
-    isOpen || delayIndex <= 0 ? styles.visible : styles.hidden
-  );
-  const [detailsStyle, setDetailsStyle] = useState({ display: "none" });
-  const ref = useRef();
-
-  useEffect(() => {
-    setStyle(styles.visible);
-  }, []);
-
-  useEffect(() => {
-    if (isOpen) {
-      setDetailsStyle({ maxHeight: ref.current.scrollHeight });
-    } else {
-      setDetailsStyle({ maxHeight: null });
-    }
-  }, [isOpen]);
+  const [initSwiper, setInitSwiper] = useState(false);
 
   useEffect(() => {
     setIsOpen(false);
@@ -88,9 +83,23 @@ export default function ApplicationCard({
 
   return (
     <div
-      className={cn(className, style)}
+      className={className}
       style={{
         transitionDelay: `${100 * delayIndex}ms`,
+      }}
+      ref={(node) => {
+        if (!node) {
+          return;
+        }
+        node.classList.remove(styles.hidden);
+        node.classList.remove(styles.visible);
+        window.requestAnimationFrame(() => {
+          if (isOpen || delayIndex <= 0) {
+            node.classList.add(styles.visible);
+          } else {
+            node.classList.remove(styles.hidden);
+          }
+        });
       }}
     >
       <button
@@ -110,51 +119,58 @@ export default function ApplicationCard({
           <Icon Component={CaretDownIcon} />
         </button>
       </button>
-
-      <div ref={ref} className={styles.details} style={detailsStyle}>
-        <p
-          className={cn(
-            typography.epsilon400,
-            styles.excerptMobile,
-            isOpen && styles.isVisibleDetails
-          )}
-        >
-          {excerpt}
-        </p>
-
+      <Collapsible
+        isOpen={isOpen}
+        speed={2}
+        unmountOnClose={false}
+        onOpenTransitionEnd={() => {
+          setInitSwiper(true);
+        }}
+        onCloseTransitionEnd={() => {
+          setInitSwiper(false);
+        }}
+      >
         <div
-          className={cn(
-            styles.description,
-            typography.epsilon400,
-            isOpen && styles.isVisibleDetails
-          )}
+          className={cn(styles.details, styles.isHiddenDetails)}
+          ref={(node) => {
+            if (!node) {
+              return;
+            }
+            window.requestAnimationFrame(() => {
+              if (isOpen) {
+                node.classList.add(styles.isVisibleDetails);
+              } else {
+                node.classList.remove(styles.isVisibleDetails);
+              }
+            });
+          }}
         >
-          {description}
+          <p className={cn(typography.epsilon400, styles.excerptMobile)}>
+            {excerpt}
+          </p>
+          <div className={cn(styles.description, typography.epsilon400)}>
+            {description}
+          </div>
+          <Button
+            isActive={true}
+            isDoublePadding={true}
+            className={cn(styles.button)}
+            isBlue={true}
+            asButton={false}
+            href={link}
+          >
+            {`Jetzt ${title} testen`}
+          </Button>
+          <div className={cn(styles.carouselWrapper)}>
+            <Carousel
+              images={images}
+              classname={styles.carousel}
+              initSwiper={initSwiper}
+            />
+          </div>
+          <div className={styles.additionalPadding} />
         </div>
-
-        <Button
-          isActive={true}
-          isDoublePadding={true}
-          className={cn(styles.button, isOpen && styles.isVisibleDetails)}
-          isBlue={true}
-          asButton={false}
-          href={link}
-        >
-          {`Jetzt ${title} testen`}
-        </Button>
-
-        <Carousel
-          classname={cn(styles.carousel, isOpen && styles.isVisibleDetails)}
-        >
-          {images.map((image, index) => (
-            <SwiperSlide className={styles.carouselSlide}>
-              <img src={image} alt={""} key={index} />
-            </SwiperSlide>
-          ))}
-        </Carousel>
-
-        <div className={styles.additionalPadding} />
-      </div>
+      </Collapsible>
     </div>
   );
 }
