@@ -136,7 +136,6 @@
 }
 
 .messageToSend {
-  filter: drop-shadow(0px 20px 40px rgba(26, 30, 40, 0.3));
   height: calc(var(--spacing-unit) * 11.5);
   width: calc(var(--spacing-unit) * 32);
   @media (--desktop-xl-and-desktop) {

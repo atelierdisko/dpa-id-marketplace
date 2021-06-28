@@ -80,7 +80,7 @@ export default function Message({
     hideBelowMinWidth && width < minWidth ? styles.hidden : null;
 
   const contentComp = (
-    <div className={styles.message}>
+    <div className={cn(styles.message, styles.messageToSend)}>
       <div className={cn(styles.typeContainer)}>
         <div className={styles.typeLogo}>
           <Icon Component={DpaSelectIcon} />
