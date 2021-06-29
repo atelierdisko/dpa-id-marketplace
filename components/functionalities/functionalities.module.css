@@ -65,7 +65,7 @@
   }
 }
 .oneSlideFeature {
-  margin-top: calc(var(--spacing-unit) * 3);
+  margin-top: calc(var(--spacing-unit) * 6);
 }
 .descriptionSwiper,
 .titleSwiper,
