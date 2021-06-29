@@ -64,9 +64,12 @@
     margin-right: 0;
   }
 }
-
+.oneSlideFeature {
+  margin-top: calc(var(--spacing-unit) * 3);
+}
 .descriptionSwiper,
-.titleSwiper {
+.titleSwiper,
+.oneSlideFeature {
   width: 100%;
   @media (--tablet), (--mobile) {
     grid-column: 3 / -3;

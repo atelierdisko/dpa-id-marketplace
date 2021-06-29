@@ -66,12 +66,12 @@ export default function Functionalities({ messages }) {
 
       <div className={styles.content}>
         {functionalities.length === 1 && (
-          <>
+          <div className={styles.oneSlideFeature}>
             <h5 className={styles.slideTitle}>{functionalities[0].title}</h5>
             <div className={typography.delta400}>
               {functionalities[0].description}
             </div>
-          </>
+          </div>
         )}
 
         {functionalities.length > 1 && (
