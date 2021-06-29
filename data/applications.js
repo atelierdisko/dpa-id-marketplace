@@ -22,9 +22,9 @@ export default [
     description:
       "Was sind die wichtigsten Themen der Stunde? Mit dpa-News ermöglichen wir redaktionell Verantwortlichen einen schnellen Zugang zum Informationsangebot der Nachrichtenagentur. ",
     images: [
-      "./images/applicationCards/dpaNews/news@2x.png",
-      // "./images/applicationCards/mockups/img1.jpeg",
-      // "./images/applicationCards/mockups/img2.jpeg",
+      "./images/applicationCards/dpaNews/news_mockup_2x.png",
+      "./images/applicationCards/mockups/img1.jpeg",
+      "./images/applicationCards/mockups/img2.jpeg",
     ],
     icon: <Icon Component={DpaNewsIcon} />,
     tags: ["aktuelles"],
@@ -178,8 +178,8 @@ export default [
       "Mit unserem Partner-Tool Minty finden Sie in Sekundenschnelle die richtigen Künstler für Ihre visuellen Produktionen. Das All-in-One-Tool bietet Kontakt zu 3.500 verifizierten Illustratorinnen und Illustratoren und unterstützt bei Lizenzierung und Projektmanagement.",
     images: [
       "./images/applicationCards/minty/minty@2x.png",
-      // "./images/applicationCards/mockups/img1.jpeg",
-      // "./images/applicationCards/mockups/img2.jpeg",
+      "./images/applicationCards/mockups/img1.jpeg",
+      "./images/applicationCards/mockups/img2.jpeg",
     ],
     icon: <Icon Component={Minty} />,
     tags: ["visuals"],
