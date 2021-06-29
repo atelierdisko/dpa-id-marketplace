@@ -22,7 +22,7 @@ export default [
     description:
       "Was sind die wichtigsten Themen der Stunde? Mit dpa-News ermöglichen wir redaktionell Verantwortlichen einen schnellen Zugang zum Informationsangebot der Nachrichtenagentur. ",
     images: [
-      "./images/applicationCards/mockups/img0.jpg",
+      "./images/applicationCards/dpaNews/news@2x.png",
       "./images/applicationCards/mockups/img1.jpeg",
       "./images/applicationCards/mockups/img2.jpeg",
     ],
