@@ -25,11 +25,11 @@ export default function Home({ messages }) {
       <main>
         <Hero />
 
-        <Marquee>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ein Laufband
-          mit kurzen, prägnaten Benefits. Suspendisse quis mattis orci.
-          Curabitur libero erat, imperdiet eu posuere ac, blandit ut sem.
-        </Marquee>
+        {/*<Marquee>*/}
+        {/*  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ein Laufband*/}
+        {/*  mit kurzen, prägnaten Benefits. Suspendisse quis mattis orci.*/}
+        {/*  Curabitur libero erat, imperdiet eu posuere ac, blandit ut sem.*/}
+        {/*</Marquee>*/}
 
         <Applications />
 
