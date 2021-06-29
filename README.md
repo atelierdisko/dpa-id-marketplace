@@ -44,4 +44,4 @@ docker run -d -p 80:80 foo/bar:latest
 Most contents are separated from component logic and can be found in the data directory, 
 assets like images in the public directory.
 
-When updating contents a new version of the docker image needs to be built and deployed, to reflect the changes made on a remote system.
+When updating contents a new version of the docker image needs to be built and deployed to reflect the changes on a remote system.
