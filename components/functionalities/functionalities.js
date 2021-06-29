@@ -65,63 +65,74 @@ export default function Functionalities({ messages }) {
       </h2>
 
       <div className={styles.content}>
-        <div className={cn(styles.carouselNavigation)}>
-          <Pagination
-            count={functionalities.length}
-            activeIndex={currentSlideIndex}
-            slideTo={slideTo}
-            color={"black"}
-          />
+        {functionalities.length === 1 && (
+          <div className={styles.oneSlideFeature}>
+            <h5 className={styles.slideTitle}>{functionalities[0].title}</h5>
+            <div className={typography.delta400}>
+              {functionalities[0].description}
+            </div>
+          </div>
+        )}
 
-          <Button
-            onClick={() => slideNext()}
-            className={cn(typography.zeta500, styles.nextButton)}
-          >
-            Nächste Funktionalität ›
-          </Button>
-        </div>
+        {functionalities.length > 1 && (
+          <>
+            <div className={cn(styles.carouselNavigation)}>
+              <Pagination
+                count={functionalities.length}
+                activeIndex={currentSlideIndex}
+                slideTo={slideTo}
+                color={"black"}
+              />
 
-        <Swiper
-          loop={true}
-          keyboard={true}
-          onSwiper={setTitleSwiper}
-          onSlideChange={onSlideChange}
-          className={styles.titleSwiper}
-          controller={{ control: quoteSwiper }}
-          // speed={800}
-          effect={"fade"}
-          fadeEffect={{
-            crossFade: true,
-          }}
-        >
-          {functionalities.map((functionality, index) => (
-            <SwiperSlide key={index}>
-              <h5 className={styles.slideTitle}>{functionality.title}</h5>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-
-        <Swiper
-          loop={true}
-          keyboard={true}
-          onSwiper={setQuoteSwiper}
-          onSlideChange={onSlideChange}
-          className={styles.descriptionSwiper}
-          controller={{ control: titleSwiper }}
-          // speed={800}
-          effect={"fade"}
-          fadeEffect={{
-            crossFade: true,
-          }}
-        >
-          {functionalities.map((functionality, index) => (
-            <SwiperSlide key={index}>
-              <div className={typography.delta400}>
-                {functionality.description}
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+              <Button
+                onClick={() => slideNext()}
+                className={cn(typography.zeta500, styles.nextButton)}
+              >
+                Nächste Funktionalität ›
+              </Button>
+            </div>
+            <Swiper
+              loop={true}
+              keyboard={true}
+              onSwiper={setTitleSwiper}
+              onSlideChange={onSlideChange}
+              className={styles.titleSwiper}
+              controller={{ control: quoteSwiper }}
+              // speed={800}
+              effect={"fade"}
+              fadeEffect={{
+                crossFade: true,
+              }}
+            >
+              {functionalities.map((functionality, index) => (
+                <SwiperSlide key={index}>
+                  <h5 className={styles.slideTitle}>{functionality.title}</h5>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+            <Swiper
+              loop={true}
+              keyboard={true}
+              onSwiper={setQuoteSwiper}
+              onSlideChange={onSlideChange}
+              className={styles.descriptionSwiper}
+              controller={{ control: titleSwiper }}
+              // speed={800}
+              effect={"fade"}
+              fadeEffect={{
+                crossFade: true,
+              }}
+            >
+              {functionalities.map((functionality, index) => (
+                <SwiperSlide key={index}>
+                  <div className={typography.delta400}>
+                    {functionality.description}
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>{" "}
+          </>
+        )}
 
         <div className={cn(typography.etaInter500, styles.chooseMessage)}>
           Aus Ihrer Anwendung direkt in die Taschen Ihre Nutzer – wählen Sie

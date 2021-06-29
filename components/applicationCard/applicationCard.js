@@ -162,11 +162,16 @@ export default function ApplicationCard({
             {`Jetzt ${title} testen`}
           </Button>
           <div className={cn(styles.carouselWrapper)}>
-            <Carousel
-              images={images}
-              classname={styles.carousel}
-              initSwiper={initSwiper}
-            />
+            {images.length > 1 && (
+              <Carousel
+                images={images}
+                classname={styles.carousel}
+                initSwiper={initSwiper}
+              />
+            )}
+            {images.length === 1 && (
+              <img src={images[0]} alt={""} className={styles.carousel} />
+            )}
           </div>
           <div className={styles.additionalPadding} />
         </div>
