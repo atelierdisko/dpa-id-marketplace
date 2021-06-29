@@ -33,7 +33,7 @@ export default function Home({ messages }) {
 
         <Applications />
 
-        <Quotes />
+        {/*<Quotes />*/}
 
         <Functionalities messages={messages} />
 
