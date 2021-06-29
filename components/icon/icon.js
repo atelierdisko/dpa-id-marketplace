@@ -473,7 +473,7 @@ function Minty() {
   );
 }
 
-function f23() {
+function F23() {
   return (
     <svg
       width="32"
@@ -669,7 +669,7 @@ export {
   DpaNewsIcon,
   DpaSelectIcon,
   DpaAgendaIcon,
-  f23,
+  F23,
   DpaVideoPortalIcon,
   DpaShopIcon,
   Minty,
