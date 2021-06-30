@@ -24,7 +24,7 @@ export default function Legal({ type, className }) {
       <p className={cn(styles.description, typography.epsilon400)}>
         Nachfolgend informieren wir Sie darüber, welche personenbezogenen Daten
         wir im Zusammenhangmit Ihrer Nutzung der Website des dpa Marketplace –
-        <a href={"https://www.dpa.com/de/portale/#dpa-id"}>www.dpa-id.com</a>
+        <a href={"https://www.dpa.com/de/portale/#dpa-id"}>www.dpa-id.com</a>{" "}
         verarbeiten. Um eine faireVerarbeitung zu gewährleisten, möchten wir Sie
         außerdem über Ihre Rechte nach der
         EuropäischenDatenschutz-Grundverordnung (DSGVO) und dem
@@ -38,8 +38,8 @@ export default function Legal({ type, className }) {
         gilt. Für die Registrierungs-, Profil- und Login-Website der dpa ID, für
         die Nutzung des dpa ID Single-Sign-On-Service sowie die an der dpa ID
         angeschlossenen Dienste gelten gesonderte Datenschutzerklärungen. Diese
-        finden Sie für die Registrierungs-, Profil- und Login-Website der dpa ID
-        <a href={"https://sso.dpa-id.de/goto/privacy-policy-website"}>hier</a>
+        finden Sie für die Registrierungs-, Profil- und Login-Website der dpa ID{" "}
+        <a href={"https://sso.dpa-id.de/goto/privacy-policy-website"}>hier</a>{" "}
         und für den dpa ID Single-Sign-On-Service{" "}
         <a href={"https://sso.dpa-id.de/goto/privacy-policy-sso"}>hier</a>. Die
         entsprechenden Datenschutzerklärungen der an die dpa ID angeschlossenen
