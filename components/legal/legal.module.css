@@ -46,3 +46,41 @@
 .description *:not(:first-child) {
   margin-top: calc(var(--spacing-unit) * 2);
 }
+
+.address {
+  margin-top: 0;
+}
+
+.description a {
+  color: blue;
+  text-decoration: underline;
+}
+.list {
+  list-style: disc;
+}
+.list > li {
+  margin-left: 100px;
+}
+.firstList {
+  grid-column: 3/11;
+  grid-row: 38;
+  @media (--tablet), (--mobile) {
+    grid-column: 3/-3;
+  }
+}
+.secondList {
+  grid-column: 3/11;
+  grid-row: 41;
+  @media (--tablet), (--mobile) {
+    grid-column: 3/-3;
+  }
+}
+.underlinedBold {
+  text-decoration: underline;
+  font-weight: 500;
+  grid-column: 3/11;
+  grid-row: 42;
+  @media (--tablet), (--mobile) {
+    grid-column: 3/-3;
+  }
+}
