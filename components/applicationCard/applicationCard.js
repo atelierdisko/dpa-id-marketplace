@@ -29,8 +29,12 @@ function Carousel({ classname, images, initSwiper }) {
   } = useSwiper();
   useEffect(() => {
     if (swiper) {
-      swiper.updateSize();
+      // swiper.updateSize();
+      setTimeout(() => {
+        swiper.updateSize();
+      }, 200);
     }
+    // setSwiper(swiper);
   }, [swiper]);
   return (
     <div className={classname}>
