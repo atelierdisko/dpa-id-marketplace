@@ -24,7 +24,9 @@ export default function Legal({ type, className }) {
       <p className={cn(styles.description, typography.epsilon400)}>
         Nachfolgend informieren wir Sie darüber, welche personenbezogenen Daten
         wir im Zusammenhangmit Ihrer Nutzung der Website des dpa Marketplace –
-        <a href={"https://www.dpa.com/de/portale/#dpa-id"}>www.dpa-id.com</a>{" "}
+        <a href={"https://www.dpa.com/de/portale/#dpa-id"} target="_blank">
+          www.dpa-id.com
+        </a>{" "}
         verarbeiten. Um eine faireVerarbeitung zu gewährleisten, möchten wir Sie
         außerdem über Ihre Rechte nach der
         EuropäischenDatenschutz-Grundverordnung (DSGVO) und dem
@@ -34,16 +36,29 @@ export default function Legal({ type, className }) {
       <p className={cn(styles.description, typography.epsilon400)}>
         Bitte beachten Sie, dass Datenschutzerklärung nur für die Nutzung der
         Website des dpa Marketplace –{" "}
-        <a href={"https://www.dpa.com/de/portale/#dpa-id"}>www.dpa-id.com</a>{" "}
+        <a href={"https://www.dpa.com/de/portale/#dpa-id"} target="_blank">
+          www.dpa-id.com
+        </a>{" "}
         gilt. Für die Registrierungs-, Profil- und Login-Website der dpa ID, für
         die Nutzung des dpa ID Single-Sign-On-Service sowie die an der dpa ID
         angeschlossenen Dienste gelten gesonderte Datenschutzerklärungen. Diese
         finden Sie für die Registrierungs-, Profil- und Login-Website der dpa ID{" "}
-        <a href={"https://sso.dpa-id.de/goto/privacy-policy-website"}>hier</a>{" "}
+        <a
+          href={"https://sso.dpa-id.de/goto/privacy-policy-website"}
+          target="_blank"
+        >
+          hier
+        </a>{" "}
         und für den dpa ID Single-Sign-On-Service{" "}
-        <a href={"https://sso.dpa-id.de/goto/privacy-policy-sso"}>hier</a>. Die
-        entsprechenden Datenschutzerklärungen der an die dpa ID angeschlossenen
-        Dienste finden Sie auf der Webseite des jeweiligen Dienstes.
+        <a
+          href={"https://sso.dpa-id.de/goto/privacy-policy-sso"}
+          target="_blank"
+        >
+          hier
+        </a>
+        . Die entsprechenden Datenschutzerklärungen der an die dpa ID
+        angeschlossenen Dienste finden Sie auf der Webseite des jeweiligen
+        Dienstes.
       </p>
       <p className={cn(styles.description, typography.epsilon400)}>
         Verantwortlich für die Datenverarbeitung ist die dpa Deutsche
@@ -150,7 +165,7 @@ export default function Legal({ type, className }) {
           styles.address
         )}
       >
-        E-Mail: <a href="mailto:  datenschutz@dpa.comm">datenschutz@dpa.comm</a>
+        E-Mail: <a href="mailto:  datenschutz@dpa.comm">datenschutz@dpa.com</a>
       </p>
       <p className={cn(styles.description, typography.epsilon400)}>
         1.3 Allgemeine Angaben zur Datenverarbeitung
