@@ -19,6 +19,7 @@ ApplicationCard.propTypes = {
 
 function Carousel({ classname, images, initSwiper }) {
   const {
+    swiper,
     setSwiper,
     slidePrev,
     slideNext,
@@ -26,6 +27,15 @@ function Carousel({ classname, images, initSwiper }) {
     slideTo,
     currentSlideIndex,
   } = useSwiper();
+  useEffect(() => {
+    if (swiper) {
+      // swiper.updateSize();
+      setTimeout(() => {
+        swiper.updateSize();
+      }, 200);
+    }
+    // setSwiper(swiper);
+  }, [swiper]);
   return (
     <div className={classname}>
       <img
@@ -40,7 +50,12 @@ function Carousel({ classname, images, initSwiper }) {
         <Swiper
           loop={true}
           keyboard={true}
-          onSwiper={setSwiper}
+          onSwiper={(swiper) => {
+            setSwiper(swiper);
+            setTimeout(() => {
+              swiper.updateSize();
+            }, 200);
+          }}
           onSlideChange={onSlideChange}
           className={styles.carouselContainer}
         >
