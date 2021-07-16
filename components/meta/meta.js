@@ -3,7 +3,7 @@ import React from "react";
 
 Meta.defaultProps = {
   description:
-    "dpa bietet einen Marktplatz für Nachrichtenprofis und Kommunikationsteams. Auf diesem Marktplatz ermöglichen wir Ihnen einen einfachen und schnellen Zugang zu wertvollen Tools der dpa und unserer Partner, die Ihnen Ihre tägliche Arbeit erleichtern. Die dpa ID ist Ihr persönlicher Schlüssel zu unserem Marktplatz.",
+    "Der dpa-Marketplace bietet Nachrichten- und PR-Profis wertvolle Tools für die tägliche Arbeit. Registrieren Sie sich kostenfrei für eine dpa ID und entdecken neue Produkte und Services.",
   image:
     "https://atelierdisko-17f76.kxcdn.com/cms/48831a5e-9ceb-49a8-abdd-ece09694b8ce.jpg",
 };
