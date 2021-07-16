@@ -3,13 +3,13 @@ export default [
     signalPhrase: "Name der Person — Position der Person  ",
     quote:
       "Hier steht ein kurzer Text mit einem Zitat. Lorem ipsum dolor sit amet, consetetur sadipscing elitr Hier steht ein kurzer Text mit einem Zitat.Hier steht ein kurzer Text mit einem Zitat.",
-    image: "../images/quotes/quotes-image2.png",
+    image: "../images/quotes/update.jpg",
   },
   {
     signalPhrase: " 1 Name der Person — Position der Person  ",
     quote:
       "1 Hier steht ein kurzer Text mit einem Zitat. Lorem ipsum dolor sit amet, consetetur sadipscing elitr",
-    image: "../images/quotes/quotes-image3.jpeg",
+    image: "../images/quotes/3update-1.jpg",
   },
   {
     signalPhrase: " 2 Name der Person — Position der Person  ",
