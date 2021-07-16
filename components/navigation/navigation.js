@@ -20,10 +20,10 @@ export default function Navigation({
       href: "#tools",
       text: "Tools",
     },
-    // {
-    //   href: "#best-practices",
-    //   text: "Best Practises",
-    // },
+    {
+      href: "#best-practices",
+      text: "Best Practises",
+    },
     {
       href: "#features",
       text: "Features",
