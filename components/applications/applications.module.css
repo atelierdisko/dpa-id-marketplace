@@ -5,7 +5,7 @@
   background-color: var(--color-mid-blue);
   background-image: linear-gradient(
       to right,
-      rgba(26, 30, 40, 0.1),
+      rgba(0, 48, 170, 1),
       rgba(255, 255, 255, 0.1)
     ),
     url("../../public/images/applications/applications-pattern.svg");
