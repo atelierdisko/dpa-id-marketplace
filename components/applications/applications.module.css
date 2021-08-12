@@ -3,8 +3,7 @@
   padding-bottom: calc(var(--spacing-unit) * 12);
   color: var(--color-white);
   background-color: var(--color-mid-blue);
-  background-image: 
-    url("../../public/images/applications/applications-pattern.svg");
+  background-image: url("../../public/images/applications/applications-pattern.svg");
   background-size: 212%;
   background-position: 50% 0; /*to center the image*/
 
