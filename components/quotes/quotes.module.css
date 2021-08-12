@@ -10,84 +10,101 @@
 
 @value paddingBottomS: calc(var(--spacing-unit) * 8);
 
+
 .root {
-  background-color: var(--color-gray-900);
-  color: var(--color-white);
-  grid-template-rows: paddingTopL 24px auto 24px paddingBottomL;
-  @media (--tablet) {
-    grid-template-rows: auto paddingTopM 24px auto auto paddingBottomM;
-  }
-  @media (--mobile) {
-    grid-template-rows: auto paddingTopS 24px auto auto paddingBottomS;
-  }
+    background-color: var(--color-gray-900);
+    color: var(--color-white);
+    padding-top: calc(12 * var(--spacing-unit));
+    padding-bottom: calc(10 * var(--spacing-unit));
+    @media (--tablet) {
+        padding-top: calc(10 * var(--spacing-unit));
+        padding-bottom: calc(15 * var(--spacing-unit));
+    }
+    @media (--mobile) {
+        padding-top: calc(7 * var(--spacing-unit));
+        padding-bottom: calc(7 * var(--spacing-unit));
+    }
 }
+
+.titleWrapper {
+    grid-column: 1/-1;
+    grid-row:1;
+}
+.block{
+    height: 85%;
+    width: 12px;
+    background: var(--color-mid-blue);
+    justify-self: flex-start;
+    align-self: center;
+    @media(--mobile) {
+        width: 4px;
+    }
+}
+.title{
+    grid-column: 3/-5;
+    @media(--tablet),(--mobile) {
+        grid-column: 3/-3;
+    }
+}
+
 .imageContainer,
 .textContainer {
-  height: auto;
-  width: 100%;
-  object-fit: cover;
-  object-position: center;
+    margin-top: calc(13 * var(--spacing-unit));
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
 }
+
 .imageContainer {
-  grid-column: 2/9;
-  grid-row: 1/-1;
-  @media (--tablet), (--mobile) {
-    grid-row: 1/2;
-    grid-column: 1/-1;
-  }
-  @media (--mobile) {
-    height: 300px;
-  }
+    height: auto;
+    grid-column: 3/9;
+    grid-row: 2;
+    @media (--tablet), (--mobile) {
+        grid-column: 3/-3;
+    }
+    @media (--mobile) {
+        height: 300px;
+    }
 }
 
 .textContainer {
-  grid-column: 9/-3;
-  grid-row: 2/5;
-  justify-self: flex-start;
-  margin-left: calc(var(--spacing-unit) * 7);
-  @media (--tablet), (--mobile) {
-    grid-column: 3/-3;
-    grid-row: 3/5;
-    margin-left: 0;
-  }
-}
-
-/*.signalPhraseContainer{*/
-.signalPhrase {
-  grid-row: 2/3;
-  @media (--tablet), (--mobile) {
-    grid-row: 3/4;
-  }
+    grid-column: 9/-3;
+    grid-row: 2;
+    background: var(--color-white);
+    color:var(--color-gray-900);
+    display: grid;
+    grid-template-rows: 40px auto 24px 40px;
+    grid-template-columns: 40px auto 60px;
+    @media (--tablet), (--mobile) {
+        height: 400px;
+        grid-column: 3/-3;
+        grid-row: 3;
+        margin-top: 0;
+    }
+    @media (--mobile) {
+        height: 350px;
+        grid-template-columns: 25px auto 22px;
+    }
 }
 
 .quoteContainer {
-  grid-row: 3/4;
-  margin-top: calc(var(--spacing-unit) * 3);
-  margin-bottom: calc(var(--spacing-unit) * 3);
-  @media (--tablet), (--mobile) {
-    grid-row: 4/5;
-  }
+    grid-row: 2;
+    grid-column: 2/3;
+    width:100%;
 }
 
 .imageSlide img,
 .quoteSlide p {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
 }
 
 .carouselNavigation {
-  grid-row: 4/5;
-  justify-self: stretch;
-  align-self: center;
-  @media (--tablet), (--mobile) {
-    grid-column: 3/-3;
-    grid-row: 5/6;
-    margin-top: calc(var(--spacing-unit) * 5);
-  }
-  @media (--mobile) {
-    margin-top: calc(var(--spacing-unit) * 6);
-  }
+    grid-row: 3;
+    grid-column: 2/3;
+    justify-self: stretch;
+    align-self: center;
 }
