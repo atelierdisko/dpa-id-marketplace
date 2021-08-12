@@ -14,7 +14,7 @@ export default [
   {
     signalPhrase: " 3 Name der Person — Position der Person  ",
     quote:
-      "Immer informiert! Die dpa ID App ist der persönliche Informationsassistent und pusht relevante Themen direkt auf Ihr Smartphone.r",
+      "Immer informiert! Die dpa ID App ist der persönliche Informationsassistent und pusht relevante Themen direkt auf Ihr Smartphone.",
     image: "../images/quotes/DPAID_Illu3_small.jpg",
   },
   {
