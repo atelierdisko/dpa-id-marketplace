@@ -14,6 +14,10 @@
     background-color: var(--color-white);
 }
 
+.isGray{
+    background: var(--color-gray-300);
+}
+
 .root :hover {
     background-color: blue;
 }

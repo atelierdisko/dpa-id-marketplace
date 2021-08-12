@@ -17,6 +17,7 @@ function Navigation({
   index,
   length,
   color,
+    paginationColor
 }) {
   return (
     <div
@@ -37,7 +38,7 @@ function Navigation({
         count={length}
         activeIndex={index}
         slideTo={slideTo}
-        color={color}
+        color={paginationColor}
       />
 
       <Button
