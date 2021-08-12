@@ -42,6 +42,8 @@
 .title {
   grid-column: 3 / -3;
   grid-row: 1;
+  color: var(--color-gray-900);
+
 }
 
 .content {
@@ -52,6 +54,7 @@
   width: 100%;
   margin-left: 0;
   margin-right: calc(-4 * var(--spacing-unit));
+  color: var(--color-gray-900);
   @media (--desktop-s) {
     grid-column: 3 / span 6;
     margin-right: 0;
