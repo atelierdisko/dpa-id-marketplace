@@ -23,7 +23,7 @@ export default function Quotes({}) {
     return (
 
         <div className={cn(styles.root, grid.root)} id={"best-practices"}>
-            <div className={cn(styles.titleWrapper,grid.root)}>
+            <div className={cn(styles.titleWrapper, grid.root)}>
                 <div className={styles.block}/>
                 <h1 className={cn(styles.title, typography.beta500)}>Arbeiten mit dem dpa-Marketplace</h1>
             </div>
@@ -58,7 +58,10 @@ export default function Quotes({}) {
                 >
                     {quotes.map((quote, index) => (
                         <SwiperSlide key={index} className={styles.quoteSlide}>
-                            <p className={cn(typography.delta400)}>{quote.quote}</p>
+                            <div>
+                                <p className={cn(typography.delta500)}>{quote.quote.split(':')[0]}:</p>
+                                <p className={cn(typography.delta400)}>{quote.quote.split(':')[1]}</p>
+                            </div>
                         </SwiperSlide>
                     ))}
                 </Swiper>

@@ -75,9 +75,10 @@
     background: var(--color-white);
     color:var(--color-gray-900);
     display: grid;
-    grid-template-rows: 40px auto 24px 40px;
+    grid-template-rows: 64px auto 24px 40px;
     grid-template-columns: 40px auto 60px;
     @media (--tablet), (--mobile) {
+        grid-template-rows: 40px auto 24px 40px;
         height: 400px;
         grid-column: 3/-3;
         grid-row: 3;
@@ -96,7 +97,7 @@
 }
 
 .imageSlide img,
-.quoteSlide p {
+.quoteSlide div {
     display: block;
     width: 100%;
     height: 100%;
@@ -109,4 +110,8 @@
     grid-column: 2/3;
     justify-self: stretch;
     align-self: center;
+}
+
+.quoteSlide p {
+    display: inline;
 }
