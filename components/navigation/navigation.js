@@ -22,7 +22,7 @@ export default function Navigation({
     },
     {
       href: "#best-practices",
-      text: "Best Practise",
+      text: "Best Practice",
     },
     {
       href: "#features",
